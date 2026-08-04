@@ -1,3 +1,3 @@
 # NextEleven
 
-**Live:** https://seanebones-lang.github.io/nexteleven-web/
+https://www.mothership-ai.com
