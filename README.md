@@ -1,5 +1,3 @@
-NextEleven marketing site (static Vite build).
+NextEleven marketing site
 
-Live: https://seanebones-lang.github.io/nexteleven-web/
-
-Source: https://github.com/seanebones-lang/NextElevenWeb
+https://seanebones-lang.github.io/nexteleven-web/
