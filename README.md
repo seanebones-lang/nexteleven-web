@@ -1,5 +1,5 @@
-# NextEleven Web
+# NextEleven
 
-**Live site:** https://seanebones-lang.github.io/nexteleven-web/
+**Live:** https://seanebones-lang.github.io/nexteleven-web/
 
-Static marketing site for NextEleven LLC.
+Single-page CEO marketing site. Featured product: NextEleven Parts Inventory System.
