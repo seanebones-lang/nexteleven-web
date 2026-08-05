@@ -1,269 +1,324 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="theme-color" content="#070b14" />
-    <title>NextEleven — Production AI for real operations</title>
-    <meta name="title" content="NextEleven — Production AI for real operations" />
-    <meta name="description" content="NextEleven builds production AI systems with human control. Flagship: NextEleven Parts Inventory System — dealership parts OS with AI search, email desk, DMS, and multi-location transfers." />
-    <meta name="author" content="NextEleven LLC" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.mothership-ai.com/" />
-    <meta property="og:title" content="NextEleven — Production AI for real operations" />
-    <meta property="og:description" content="Production AI with control, not chaos. Flagship product: NextEleven Parts Inventory System." />
-    <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.mothership-ai.com/" />
-    <meta property="twitter:title" content="NextEleven — Production AI for real operations" />
-    <meta property="twitter:description" content="Production AI with control, not chaos. Flagship: Parts Inventory System." />
-    <meta property="twitter:site" content="@nextelevenai" />
-    <link rel="canonical" href="https://www.mothership-ai.com/" />
-    <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
-    <link rel="stylesheet" href="/ceopage.css" />
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body { background: #070b14; color: #e8edf7; }
-      .skip-link {
-        position: absolute; top: -40px; left: 0; background: #2563eb; color: #fff;
-        padding: .5rem 1rem; z-index: 100; text-decoration: none;
-      }
-      .skip-link:focus { top: 0; }
-      .ceopage-stats {
-        display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.5rem;
-      }
-      @media (min-width: 720px) {
-        .ceopage-stats { grid-template-columns: repeat(4, 1fr); }
-      }
-      .ceopage-stat {
-        border: 1px solid rgba(148,163,184,.16); background: #0f172aa6;
-        border-radius: 14px; padding: 1rem 1.1rem;
-      }
-      .ceopage-stat strong {
-        display: block; font-size: 1.35rem; color: #f8fafc; letter-spacing: -.02em; margin-bottom: .2rem;
-      }
-      .ceopage-stat span {
-        color: #94a3b8; font-size: .88rem; line-height: 1.4;
-      }
-      .ceopage-proof {
-        display: grid; gap: .75rem;
-      }
-      @media (min-width: 720px) {
-        .ceopage-proof { grid-template-columns: 1fr 1fr; }
-      }
-      .ceopage-proof-card {
-        border: 1px solid rgba(148,163,184,.14); border-radius: 14px;
-        padding: 1.1rem 1.15rem; background: #070b1473;
-      }
-      .ceopage-proof-card h3 {
-        font-size: 1rem; color: #f1f5f9; margin-bottom: .4rem;
-      }
-      .ceopage-proof-card p {
-        color: #94a3b8; font-size: .92rem; line-height: 1.55; margin: 0;
-      }
-      .ceopage-chiprow {
-        display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem;
-      }
-      .ceopage-chip {
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: .72rem; letter-spacing: .04em; color: #93c5fd;
-        border: 1px solid rgba(147,197,253,.28); border-radius: 999px;
-        padding: .28rem .65rem; background: rgba(37,99,235,.08);
-      }
-      .ceopage-menu-btn svg { display: block; }
-      .ceopage-mobile[hidden] { display: none !important; }
-      @media (min-width: 768px) {
-        .ceopage-mobile { display: none !important; }
-      }
-    </style>
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div class="ceopage">
-      <header class="ceopage-nav">
-        <div class="ceopage-nav-inner">
-          <a href="/" class="ceopage-brand">
-            <img class="ceopage-logo" src="/images/nexteleven.jpg" alt="" width="32" height="32" />
-            <span>NextEleven</span>
-          </a>
-          <nav class="ceopage-links" aria-label="Primary">
-            <a href="#parts">Parts</a>
-            <a href="#capability">Capability</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <a class="ceopage-nav-cta" href="mailto:seanebones@gmail.com?subject=NextEleven%20inquiry">Talk to us</a>
-          <button type="button" class="ceopage-menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>NextEleven — Production AI for real operations</title>
+  <meta name="description" content="NextEleven builds production AI systems with human control. Flagship: NextEleven Parts Inventory System — dealership parts OS with AI search, email desk, DMS, and multi-location transfers." />
+  <meta name="author" content="NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mothership-ai.com/" />
+  <meta property="og:title" content="NextEleven — Production AI for real operations" />
+  <meta property="og:description" content="Production AI with control, not chaos. Flagship product: NextEleven Parts Inventory System." />
+  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:site" content="@nextelevenai" />
+  <link rel="canonical" href="https://www.mothership-ai.com/" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#parts">Parts</a>
+        <a href="#proof">Proof</a>
+        <a href="#build">Build</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="mailto:seanebones@gmail.com?subject=NextEleven%20inquiry">Talk to us</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <a href="#parts">Parts</a>
+      <a href="#proof">Proof</a>
+      <a href="#build">Build</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-solid" href="mailto:seanebones@gmail.com?subject=NextEleven%20inquiry">Talk to us</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO: asymmetric editorial -->
+    <section class="hero shell" aria-label="Who we are">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="pulse"></span>
+          NextEleven LLC · Mansfield, TX
+        </p>
+        <h1>
+          Production AI that makes operators faster —
+          <em>with control, not chaos.</em>
+        </h1>
+        <p class="lede">
+          A product studio that ships working systems. Vertical RAG, operator desks, and custom agents —
+          retrieval-first, human-gated where it matters, no fake “live” features.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#parts">See the flagship</a>
+          <a class="btn btn-ghost" href="mailto:seanebones@gmail.com?subject=Parts%20pilot%20inquiry">Request a pilot</a>
         </div>
-        <nav class="ceopage-mobile" id="mobile-menu" hidden aria-label="Mobile">
-          <a href="#parts">Parts</a>
-          <a href="#capability">Capability</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-          <a href="mailto:seanebones@gmail.com?subject=NextEleven%20inquiry">Talk to us</a>
-        </nav>
-      </header>
+      </div>
 
-      <main id="main-content">
-        <section class="ceopage-identity" aria-label="Who we are">
-          <p class="ceopage-kicker">NextEleven LLC · Mansfield, TX · AI systems for real operations</p>
-          <h1>We build production AI that makes operators faster — <span class="ceopage-accent">with control, not chaos.</span></h1>
-          <p class="ceopage-lead">
-            Who we are: a product studio that ships working systems.
-            What we do: vertical RAG, operator desks, and custom AI agents.
-            Why us: retrieval-first design, human gates where it matters, and no fake “live” features.
-          </p>
-          <div class="ceopage-triad" role="list">
-            <div role="listitem"><strong>Who</strong><span>NextEleven — product + engineering</span></div>
-            <div role="listitem"><strong>What</strong><span>Parts OS · vertical RAG · agents</span></div>
-            <div role="listitem"><strong>Why</strong><span>Speed with auditability</span></div>
+      <aside class="hero-rail" aria-label="Identity">
+        <div class="rail-card">
+          <span class="rail-k">Who</span>
+          <p>NextEleven — product + engineering</p>
+        </div>
+        <div class="rail-card">
+          <span class="rail-k">What</span>
+          <p>Parts OS · vertical RAG · agents</p>
+        </div>
+        <div class="rail-card">
+          <span class="rail-k">Why</span>
+          <p>Speed with auditability</p>
+        </div>
+        <div class="rail-meta">
+          <div>
+            <strong>280+</strong>
+            <span>repos shipped &amp; iterated</span>
           </div>
-          <div class="ceopage-stats" aria-label="Credibility">
-            <div class="ceopage-stat"><strong>280+</strong><span>engineering repos shipped &amp; iterated</span></div>
-            <div class="ceopage-stat"><strong>v0.15</strong><span>Parts flagship in active production build</span></div>
-            <div class="ceopage-stat"><strong>Full stack</strong><span>Python · TypeScript · Rust · Swift</span></div>
-            <div class="ceopage-stat"><strong>DFW</strong><span>US-based founder/CTO delivery</span></div>
+          <div>
+            <strong>v0.15</strong>
+            <span>Parts in active build</span>
           </div>
-        </section>
+          <div>
+            <strong>Stack</strong>
+            <span>Python · TS · Rust · Swift</span>
+          </div>
+        </div>
+      </aside>
+    </section>
 
-        <section id="parts" class="ceopage-feature" aria-labelledby="parts-title">
-          <div class="ceopage-feature-badge">Featured product</div>
-          <h2 id="parts-title">NextEleven Parts Inventory System</h2>
-          <p class="ceopage-feature-dek">
-            Multi-location dealership parts OS: AI counter search, email desk with green/yellow/red control,
+    <!-- PARTS: split feature -->
+    <section id="parts" class="parts" aria-labelledby="parts-title">
+      <div class="shell parts-grid">
+        <div class="parts-main">
+          <div class="section-label">
+            <span class="num">01</span>
+            <span>Featured product</span>
+          </div>
+          <h2 id="parts-title">NextEleven Parts<br />Inventory System</h2>
+          <p class="parts-dek">
+            Multi-location dealership parts OS: AI counter search, email desk with green / yellow / red control,
             inventory &amp; orders, inter-store transfers, and OEM feeds — fail closed until your keys are connected.
           </p>
-          <ul class="ceopage-bullets">
+          <ul class="check">
             <li>Plain-English parts lookup across rooftops</li>
             <li>Email desk specialists + human approve path</li>
             <li>DMS core, transfers with manager thresholds</li>
             <li>Honest integrations — no invented OEM, pay, or ship</li>
             <li>JWT / RBAC multi-tenant foundation for partner pilots</li>
           </ul>
-          <div class="ceopage-chiprow" aria-label="Product status">
-            <span class="ceopage-chip">M1 single-site GA closed</span>
-            <span class="ceopage-chip">Email desk production-ready</span>
-            <span class="ceopage-chip">Postgres DMS + Alembic</span>
-            <span class="ceopage-chip">Inter-store transfers</span>
-          </div>
-          <div class="ceopage-feature-actions" style="margin-top:1.25rem">
-            <a class="ceopage-btn ceopage-btn-primary" href="https://seanebones-lang.github.io/nexteleven-parts-pitch/" target="_blank" rel="noopener noreferrer">
+          <div class="parts-cta">
+            <a class="btn btn-solid" href="https://seanebones-lang.github.io/nexteleven-parts-pitch/" target="_blank" rel="noopener noreferrer">
               View product pitch
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
             </a>
-            <a class="ceopage-btn ceopage-btn-secondary" href="https://github.com/seanebones-lang/parts" target="_blank" rel="noopener noreferrer">Product repository</a>
-            <a class="ceopage-btn ceopage-btn-ghost" href="mailto:seanebones@gmail.com?subject=Parts%20pilot%20inquiry">Request a pilot</a>
+            <a class="btn btn-line" href="https://github.com/seanebones-lang/parts" target="_blank" rel="noopener noreferrer">Repository</a>
+            <a class="btn btn-text" href="mailto:seanebones@gmail.com?subject=Parts%20pilot%20inquiry">Request a pilot</a>
           </div>
-        </section>
+        </div>
 
-        <section id="capability" class="ceopage-section" aria-labelledby="capability-title">
-          <h2 id="capability-title">What we are proven at</h2>
-          <p class="ceopage-section-dek">
-            Depth from real builds — not a product carousel. Dead links removed. Only live work is linked.
-          </p>
-          <div class="ceopage-proof">
-            <article class="ceopage-proof-card">
-              <h3>Vertical RAG desks</h3>
-              <p>
-                Ingest messy proprietary catalogs, build hybrid retrieval (keyword + vector + metadata),
-                and put a human-gated operator desk on top. Parts is instance #1 of a repeatable pattern
-                for dealership, retail, and document-heavy ops.
-              </p>
-            </article>
-            <article class="ceopage-proof-card">
-              <h3>Operator AI &amp; agents</h3>
-              <p>
-                Production assistants with fail-closed tools, audit trails, and multi-step workflows —
-                built for people who cannot afford hallucinated inventory, quotes, or shipping states.
-              </p>
-            </article>
-            <article class="ceopage-proof-card">
-              <h3>Native mobile &amp; desktop</h3>
-              <p>
-                iOS/Android and macOS work when the product needs a real client: Swift/SwiftUI apps,
-                App Store packaging experience, and field-friendly offline-first patterns.
-              </p>
-            </article>
-            <article class="ceopage-proof-card">
-              <h3>Domain-specific systems</h3>
-              <p>
-                Deep product work in verticals we actually understand — automotive parts operations,
-                tattoo artist tooling, small-business document desks, and internal coding agents.
-              </p>
-            </article>
+        <div class="parts-panel" aria-label="System status">
+          <div class="panel-head">
+            <span class="panel-title">Control plane</span>
+            <span class="panel-live"><i></i> fail-closed</span>
           </div>
-        </section>
-
-        <section id="services" class="ceopage-section ceopage-section-alt" aria-labelledby="services-title">
-          <h2 id="services-title">What we build</h2>
-          <p class="ceopage-section-dek">Custom work when a product needs to fit your operation.</p>
-          <div class="ceopage-services">
-            <div class="ceopage-service">
-              <h3>Dealership parts systems</h3>
-              <p>Search, email desk, inventory, transfers, OEM feeds.</p>
-            </div>
-            <div class="ceopage-service">
-              <h3>RAG &amp; knowledge systems</h3>
-              <p>Grounded AI on your documents and data — retrieval first.</p>
-            </div>
-            <div class="ceopage-service">
-              <h3>Custom AI &amp; agents</h3>
-              <p>Production assistants built for a real operating process.</p>
-            </div>
-            <div class="ceopage-service">
-              <h3>Mobile apps</h3>
-              <p>iOS and Android when the product needs a native client.</p>
+          <div class="panel-row">
+            <span class="dot green"></span>
+            <div>
+              <strong>Email desk</strong>
+              <em>production-ready</em>
             </div>
           </div>
-        </section>
-
-        <section id="contact" class="ceopage-section" aria-labelledby="contact-title">
-          <h2 id="contact-title">Contact</h2>
-          <p class="ceopage-section-dek">Sean McDonnell · Founder &amp; CTO · NextEleven LLC · Mansfield, Texas</p>
-          <div class="ceopage-feature-actions">
-            <a class="ceopage-btn ceopage-btn-primary" href="mailto:seanebones@gmail.com?subject=NextEleven%20inquiry">Email Sean</a>
-            <a class="ceopage-btn ceopage-btn-secondary" href="https://www.linkedin.com/in/sean-mcdonnell-077b15b8" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="ceopage-btn ceopage-btn-ghost" href="https://github.com/seanebones-lang" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <div class="panel-row">
+            <span class="dot green"></span>
+            <div>
+              <strong>M1 single-site GA</strong>
+              <em>closed</em>
+            </div>
           </div>
-          <p class="ceopage-fine">Prefer a measured pilot over a pitch deck. Bring your top questions and sample workflow.</p>
-        </section>
-      </main>
+          <div class="panel-row">
+            <span class="dot amber"></span>
+            <div>
+              <strong>Postgres DMS</strong>
+              <em>Alembic migrations live</em>
+            </div>
+          </div>
+          <div class="panel-row">
+            <span class="dot green"></span>
+            <div>
+              <strong>Inter-store transfers</strong>
+              <em>manager thresholds</em>
+            </div>
+          </div>
+          <div class="panel-row">
+            <span class="dot red"></span>
+            <div>
+              <strong>OEM / pay / ship</strong>
+              <em>gated until keys connected</em>
+            </div>
+          </div>
+          <div class="panel-foot">
+            Human gates where money and inventory move.
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <footer class="ceopage-footer">
-        <span>© <span id="y"></span> NextEleven LLC</span>
-        <span>Production AI · no nonsense</span>
-      </footer>
-    </div>
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-      (function () {
-        var btn = document.getElementById('menu-btn');
-        var menu = document.getElementById('mobile-menu');
-        if (!btn || !menu) return;
-        btn.addEventListener('click', function () {
-          var open = menu.hasAttribute('hidden');
-          if (open) {
-            menu.removeAttribute('hidden');
-            btn.setAttribute('aria-expanded', 'true');
-            btn.setAttribute('aria-label', 'Close menu');
-          } else {
-            menu.setAttribute('hidden', '');
-            btn.setAttribute('aria-expanded', 'false');
-            btn.setAttribute('aria-label', 'Open menu');
-          }
+    <!-- PROOF: numbered strip, not card grid -->
+    <section id="proof" class="proof shell" aria-labelledby="proof-title">
+      <div class="section-label">
+        <span class="num">02</span>
+        <span>Capability</span>
+      </div>
+      <div class="proof-head">
+        <h2 id="proof-title">What we are<br /><em>proven at</em></h2>
+        <p>Depth from real builds across 280+ engineering iterations — only live work is linked.</p>
+      </div>
+
+      <ol class="proof-list">
+        <li>
+          <span class="proof-n">01</span>
+          <div>
+            <h3>Vertical RAG desks</h3>
+            <p>Ingest messy proprietary catalogs, hybrid retrieval (keyword + vector + metadata), human-gated operator desk. Parts is instance #1 of a pattern for dealership, retail, and document-heavy ops.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">02</span>
+          <div>
+            <h3>Operator AI &amp; agents</h3>
+            <p>Production assistants with fail-closed tools, audit trails, and multi-step workflows — built for people who cannot afford hallucinated inventory, quotes, or shipping states.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">03</span>
+          <div>
+            <h3>Native mobile &amp; desktop</h3>
+            <p>iOS / Android and macOS when the product needs a real client: Swift / SwiftUI, App Store packaging, field-friendly offline-first patterns.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">04</span>
+          <div>
+            <h3>Domain-specific systems</h3>
+            <p>Deep product work in verticals we actually understand — automotive parts operations, tattoo artist tooling, small-business document desks, internal coding agents.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- BUILD: horizontal service rail -->
+    <section id="build" class="build" aria-labelledby="build-title">
+      <div class="shell">
+        <div class="section-label">
+          <span class="num">03</span>
+          <span>Services</span>
+        </div>
+        <div class="build-head">
+          <h2 id="build-title">What we build</h2>
+          <p>Custom work when a product needs to fit your operation.</p>
+        </div>
+        <div class="rail">
+          <article>
+            <span>01</span>
+            <h3>Dealership parts systems</h3>
+            <p>Search, email desk, inventory, transfers, OEM feeds.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>RAG &amp; knowledge systems</h3>
+            <p>Grounded AI on your documents and data — retrieval first.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Custom AI &amp; agents</h3>
+            <p>Production assistants built for a real operating process.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Mobile apps</h3>
+            <p>iOS and Android when the product needs a native client.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact shell" aria-labelledby="contact-title">
+      <div class="contact-card">
+        <div class="section-label">
+          <span class="num">04</span>
+          <span>Contact</span>
+        </div>
+        <h2 id="contact-title">Let’s talk about a measured pilot.</h2>
+        <p class="contact-sub">Sean McDonnell · Founder &amp; CTO · NextEleven LLC · Mansfield, Texas</p>
+        <div class="contact-actions">
+          <a class="btn btn-solid" href="mailto:seanebones@gmail.com?subject=NextEleven%20inquiry">Email Sean</a>
+          <a class="btn btn-line" href="https://www.linkedin.com/in/sean-mcdonnell-077b15b8" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-text" href="https://github.com/seanebones-lang" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <p class="fine">Prefer a measured pilot over a pitch deck. Bring your top questions and sample workflow.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot shell">
+    <span>© <span id="y"></span> NextEleven LLC</span>
+    <span class="foot-tag">Production AI · no nonsense</span>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var drawer = document.getElementById('drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.hasAttribute('hidden');
+        if (open) {
+          drawer.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+          btn.classList.add('open');
+        } else {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        }
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
         });
-        menu.querySelectorAll('a').forEach(function (a) {
-          a.addEventListener('click', function () {
-            menu.setAttribute('hidden', '');
-            btn.setAttribute('aria-expanded', 'false');
-            btn.setAttribute('aria-label', 'Open menu');
-          });
-        });
-      })();
-    </script>
-  </body>
+      });
+    })();
+  </script>
+</body>
 </html>
