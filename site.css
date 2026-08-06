@@ -794,3 +794,87 @@ em { font-style: italic; color: var(--accent); }
   background: var(--amber);
   box-shadow: 0 0 10px rgba(251,191,36,.55);
 }
+
+/* tight CEO hero (no side rail) */
+.hero-tight {
+  grid-template-columns: 1fr !important;
+  gap: 1.25rem;
+  padding: clamp(2.25rem, 5vw, 3.5rem) 0 clamp(1.25rem, 3vw, 2rem);
+  align-items: start;
+}
+.hero-tight .hero h1,
+.hero-tight h1 {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 5.2vw, 3.4rem);
+  margin-bottom: .85rem;
+}
+.hero-copy-full { max-width: 46rem; }
+.lede-tight {
+  max-width: 40rem;
+  margin-bottom: 1.15rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.hero-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem 1.25rem;
+  margin-top: 1.15rem;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.hero-meta-row strong {
+  color: var(--ink);
+  font-weight: 600;
+  margin-right: .25rem;
+}
+
+/* collapsible work details */
+.drop-stack {
+  display: grid;
+  gap: .65rem;
+  margin-top: .25rem;
+  max-width: 52rem;
+}
+.drop {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(10, 15, 26, .72);
+  overflow: hidden;
+}
+.drop summary {
+  cursor: pointer;
+  list-style: none;
+  padding: .95rem 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.drop summary::-webkit-details-marker { display: none; }
+.drop summary::after {
+  content: "+";
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.drop[open] summary::after { content: "–"; }
+.drop summary:hover { background: rgba(255,255,255,.03); }
+.drop-list {
+  padding: 0 1.15rem 1.1rem 1.15rem;
+  display: grid;
+  gap: .55rem;
+  color: #b7c3d9;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+.drop-list li { padding-left: 0; }
+.drop-list strong { color: #e8eef8; font-weight: 600; }
+.drop-ol { list-style: decimal; padding-left: 1.25rem; }
+.drop-ol li { padding-left: .25rem; }
