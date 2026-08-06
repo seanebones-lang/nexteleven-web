@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- NextEleven Lot Management pitch — offline vehicle retail desk -->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NextEleven Lot Management — Vehicle Retail Desk</title>
+<meta name="description" content="NextEleven Lot Management: offline-first inventory, CRM, sales, PDF invoices, KBB desk fields, Arabic/Spanish/English. White-label by NextEleven LLC." />
+<style>
+:root{--bg:#070b12;--panel:#111a2b;--panel2:#162033;--line:rgba(120,200,255,.14);--text:#e8eef8;--muted:#93a4bd;--cyan:#3de0ff;--emerald:#3dffa8;--amber:#ffc857;--red:#ff6b6b;--white:#fff;--sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,SF Mono,Menlo,Consolas,monospace;--max:1080px;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 600px at 10% -10%,#14304a 0%,transparent 55%),radial-gradient(900px 500px at 100% 0%,#2a1a0f 0%,transparent 50%),var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan);text-decoration:none}.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+.topnav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(7,11,18,.82);border-bottom:1px solid var(--line)}
+.topnav .inner{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted)}.brand strong{color:var(--white)}
+.navlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:13px}.navlinks a{color:var(--muted)}
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;letter-spacing:-.03em;font-weight:650;max-width:18ch;margin-bottom:18px}
+h1 span{color:var(--emerald)}.lede{font-size:1.15rem;color:var(--muted);max-width:62ch;margin-bottom:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;border-radius:999px;padding:12px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid transparent}
+.btn-primary{background:linear-gradient(135deg,var(--amber),#ff9f1c);color:#1a1004;font-weight:700}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
+.section-lead{color:var(--muted);max-width:68ch;margin-bottom:28px}
+.grid{display:grid;gap:14px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:860px){.grid-2,.grid-3{grid-template-columns:1fr!important}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h3{font-size:1.02rem;margin-bottom:8px;color:var(--white)}.card p,.card li{color:var(--muted);font-size:.95rem}
+.card ul{margin-left:1.1rem}.card li{margin:4px 0}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);margin-bottom:8px}
+.tag.warn{color:var(--amber)}.tag.live{color:var(--cyan)}
+.table{width:100%;border-collapse:collapse;font-size:.92rem;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.table th,.table td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.table th{color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.03)}
+.table tr:last-child td{border-bottom:0}.price{color:var(--emerald);font-weight:650;font-family:var(--mono)}
+.note{margin-top:16px;padding:12px 14px;border-left:3px solid var(--amber);background:rgba(255,200,87,.06);color:var(--muted);font-size:.92rem;border-radius:0 10px 10px 0}
+.footer{padding:40px 0 70px;color:var(--muted);font-size:.9rem}.footer strong{color:var(--white)}
+.mono{font-family:var(--mono);font-size:.88em;color:var(--cyan)}
+</style>
+</head>
+<body>
+<header class="topnav"><div class="inner">
+  <div class="brand"><strong>NEXTELEVEN</strong> · LOT MANAGEMENT</div>
+  <nav class="navlinks">
+    <a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#live">Live vs gated</a>
+    <a href="#pricing">Pricing</a><a href="#cta">Pilot</a>
+    <a href="/lot/NextEleven_Lot_Rate_Card.pdf">PDF rate card</a>
+  </nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div class="kicker">Dealership OS · vehicle retail desk · offline-first</div>
+  <h1>Run the lot on your machine — <span>inventory to invoice</span>.</h1>
+  <p class="lede">NextEleven Lot Management is the white-label used-car / independent lot desk from NextEleven LLC: VIN-first inventory, CRM, sales, PDF invoices, documents, scheduling, manual KBB book-out fields, and English / Spanish / Arabic — without waiting on a cloud DMS rip-and-replace.</p>
+  <div class="ctas">
+    <a class="btn btn-primary" href="mailto:hello@mothership-ai.com?subject=Lot%20pilot">Book a pilot · hello@mothership-ai.com</a>
+    <a class="btn btn-ghost" href="/lot/NextEleven_Lot_Rate_Card.pdf">Download PDF rate card</a>
+    <a class="btn btn-ghost" href="https://www.mothership-ai.com/">mothership-ai.com</a>
+  </div>
+  <div class="meta-row">
+    <span class="chip">SKU · NextEleven Lot Management</span>
+    <span class="chip">Umbrella · Dealership OS</span>
+    <span class="chip">Sibling · NextEleven Parts Inventory System</span>
+    <span class="chip">Desktop · Electron · local lot.db</span>
+  </div>
+</div></section>
+
+<section id="problem"><div class="wrap">
+  <h2>The problem</h2>
+  <p class="section-lead">Independent lots still juggle spreadsheets, phone cameras, half-finished invoices, and sticky-note CRM — while buyers expect a clean desk.</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="tag warn">Scattered stock</div><h3>Units live in too many places</h3><p>Photos on phones, costs in a sheet, VINs in text threads — no single lot truth.</p></div>
+    <div class="card"><div class="tag warn">Weak close path</div><h3>Sale → invoice is fragile</h3><p>Tax, void, and paperwork break when the desk is improvised every time.</p></div>
+    <div class="card"><div class="tag warn">Book-out gap</div><h3>KBB values get lost</h3><p>Managers book out on KBB, then the numbers never land on the unit card where pricing decisions happen.</p></div>
+  </div>
+</div></section>
+
+<section id="solution"><div class="wrap">
+  <h2>Solution — the desk bar</h2>
+  <p class="section-lead">One offline-first desktop app for the lot floor: vehicle inventory, customers, sales, documents, and ops — with human control and honest limits.</p>
+  <div class="grid grid-2">
+    <div class="card"><div class="tag live">Live</div><h3>Inventory</h3>
+      <ul><li>VIN decode (NHTSA + offline fallback)</li><li>Cost / pack / list price</li><li>Photos on unit cards</li><li>Manual KBB trade / retail / wholesale</li></ul>
+    </div>
+    <div class="card"><div class="tag live">Live</div><h3>CRM &amp; sales</h3>
+      <ul><li>Customers + leads</li><li>Create sale · tax rate · void restores stock</li><li>PDF invoices to local Documents</li><li>Deal notes on the unit</li></ul>
+    </div>
+    <div class="card"><div class="tag live">Live</div><h3>Operations</h3>
+      <ul><li>Scheduling</li><li>Reports dashboard</li><li>DB backup create / restore</li><li>Session auth + forced first password change</li></ul>
+    </div>
+    <div class="card"><div class="tag live">Live</div><h3>Language &amp; desk UX</h3>
+      <ul><li>English / Español / العربية RTL</li><li>Dark mode that stays readable</li><li>Documents sidebar for invoices</li><li>Local-only data on your Mac/PC</li></ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="live"><div class="wrap">
+  <h2>What’s live today vs gated</h2>
+  <div class="grid grid-2">
+    <div class="card"><div class="tag live">In desk now</div><h3>Ship with measured surfaces</h3>
+      <ul>
+        <li>Inventory · CRM · Sales · Documents · Scheduling · Reports · Settings</li>
+        <li>PDF invoice generation + Finder open</li>
+        <li>Manual KBB book-out fields</li>
+        <li>i18n + RTL Arabic</li>
+        <li>Local SQLite + backups</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag warn">Gated / later</div><h3>We will not fake these</h3>
+      <ul>
+        <li>Live Kelley Blue Book dealer API (needs Cox / B2B license)</li>
+        <li>Full multi-user cloud SaaS day one</li>
+        <li>CDK / Reynolds / full DMS replacement</li>
+        <li>Shared multi-lot cloud DB without SOW</li>
+        <li>Unsupervised external payments or title e-file</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2>Commercial ladder</h2>
+  <p class="section-lead">Rate card v1.0 — pilot credit applies to production months. Priced by site band, not cloud seats.</p>
+  <table class="table"><thead><tr><th>Tier</th><th>Sites</th><th>Price</th></tr></thead><tbody>
+    <tr><td><strong>Pilot</strong></td><td>1</td><td class="price">$1,500 one-time</td></tr>
+    <tr><td><strong>Desk</strong></td><td>1</td><td class="price">$449 / mo</td></tr>
+    <tr><td><strong>Multi-site</strong></td><td>2–3</td><td class="price">$399 / site / mo</td></tr>
+    <tr><td><strong>Group</strong></td><td>4+</td><td class="price">Custom · ~$299–349 / site</td></tr>
+  </tbody></table>
+  <p class="note">Pilot fully credited against first 3 months of production fees on conversion. PDF: <a href="/lot/NextEleven_Lot_Rate_Card.pdf">NextEleven_Lot_Rate_Card.pdf</a> · hello@mothership-ai.com</p>
+  <div class="ctas" style="margin-top:18px">
+    <a class="btn btn-ghost" href="/lot/NextEleven_Lot_Rate_Card.pdf">Download PDF pricing</a>
+  </div>
+</div></section>
+
+<section id="cta"><div class="wrap">
+  <h2>Pilot that produces a decision</h2>
+  <p class="section-lead">30 days · one lot desk on your hardware. Bring sample inventory, a week of real deals shape, and who owns pricing.</p>
+  <div class="grid grid-3">
+    <div class="card"><h3>Week 1</h3><p>Install · seed units · train book-out + sale path.</p></div>
+    <div class="card"><h3>Weeks 2–3</h3><p>Live desk use · invoices · CRM · measure time-to-list and close friction.</p></div>
+    <div class="card"><h3>Week 4</h3><p>Go / no-go pack: adoption, invoice hygiene, next sites.</p></div>
+  </div>
+  <div class="ctas" style="margin-top:24px">
+    <a class="btn btn-primary" href="mailto:hello@mothership-ai.com?subject=NextEleven%20Lot%20pilot">Start pilot conversation</a>
+    <a class="btn btn-ghost" href="https://www.mothership-ai.com/">www.mothership-ai.com</a>
+    <a class="btn btn-ghost" href="https://www.mothership-ai.com/parts/">Sibling: Parts pitch</a>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap">
+  <p><strong>NextEleven LLC</strong> · Lot Management by NextEleven · white-label dealership software</p>
+  <p>hello@mothership-ai.com · www.mothership-ai.com · SKU <span class="mono">Lot</span> under Dealership OS</p>
+  <p style="margin-top:10px;font-size:.82rem">Invoices are operational deal receipts — not a state DMV title packet. KBB fields are manual desk entry unless a licensed feed is contracted.</p>
+</div></footer>
+</body>
+</html>
