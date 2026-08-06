@@ -580,7 +580,70 @@ em { font-style: italic; color: var(--accent); }
   outline-offset: 3px;
 }
 
-/* ── Product split (Parts | Lot) ─────────────────────────────────────────── */
+/* ── Services ───────────────────────────────────────────────────────────── */
+.services {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.75rem, 4vw, 2.75rem) 0 clamp(1rem, 2vw, 1.5rem);
+}
+.services-head {
+  margin: .35rem 0 1.35rem;
+}
+.services-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  letter-spacing: -.03em;
+  color: #fff;
+  margin-bottom: .55rem;
+}
+.services-dek {
+  color: var(--muted);
+  max-width: 62ch;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.services-grid {
+  display: grid;
+  gap: .85rem;
+}
+@media (min-width: 700px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1000px) {
+  .services-grid { grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+}
+.svc-card {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  padding: 1.15rem 1.2rem 1.2rem;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.035), transparent 45%),
+    rgba(10, 15, 26, .7);
+}
+.svc-k {
+  display: block;
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: .55rem;
+}
+.svc-card h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: .4rem;
+  letter-spacing: -.01em;
+}
+.svc-card p {
+  color: #b7c3d9;
+  font-size: .94rem;
+  line-height: 1.55;
+}
+
+/* ── Product split (4 featured systems) ─────────────────────────────────── */
 .product-split {
   position: relative;
   z-index: 1;
@@ -599,6 +662,8 @@ em { font-style: italic; color: var(--accent); }
   max-width: 48ch;
   margin-bottom: 1.5rem;
 }
+.split-dek-wide { max-width: 64ch; }
+.split-dek a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .split-grid {
   display: grid;
   gap: 1rem;
@@ -608,6 +673,9 @@ em { font-style: italic; color: var(--accent); }
     grid-template-columns: 1fr 1fr;
     gap: 1.15rem;
   }
+}
+.split-grid-4 {
+  align-items: stretch;
 }
 .split-card {
   border-radius: 22px;
@@ -636,6 +704,20 @@ em { font-style: italic; color: var(--accent); }
     linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%),
     rgba(10, 15, 26, .78);
 }
+.split-harness {
+  border-color: rgba(52, 211, 153, .28);
+  background:
+    radial-gradient(500px 200px at 0% 0%, rgba(16,185,129,.16), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%),
+    rgba(10, 15, 26, .78);
+}
+.split-rag {
+  border-color: rgba(167, 139, 250, .3);
+  background:
+    radial-gradient(500px 200px at 100% 0%, rgba(139,92,246,.16), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%),
+    rgba(10, 15, 26, .78);
+}
 .split-kicker {
   font-family: var(--mono);
   font-size: .68rem;
@@ -646,7 +728,7 @@ em { font-style: italic; color: var(--accent); }
 .split-card h3 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(1.55rem, 2.6vw, 1.95rem);
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
   letter-spacing: -.02em;
   color: #fff;
   line-height: 1.15;
@@ -656,6 +738,11 @@ em { font-style: italic; color: var(--accent); }
   font-size: .98rem;
   line-height: 1.6;
   flex: 1;
+}
+.split-card code {
+  font-family: var(--mono);
+  font-size: .85em;
+  color: var(--accent);
 }
 .split-bullets {
   display: grid;
@@ -681,11 +768,18 @@ em { font-style: italic; color: var(--accent); }
 .split-lot .split-bullets li::before {
   background: var(--amber);
 }
+.split-harness .split-bullets li::before {
+  background: var(--green);
+}
+.split-rag .split-bullets li::before {
+  background: #a78bfa;
+}
 .split-actions {
   display: flex;
   flex-wrap: wrap;
   gap: .55rem;
-  margin-top: .35rem;
+  margin-top: auto;
+  padding-top: .2rem;
 }
 
 .lot-block .parts-grid {
