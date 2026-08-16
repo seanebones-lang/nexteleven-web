@@ -71,6 +71,20 @@
 
       <div id="log">
         <div class="entry">
+          <date>2026-08-16</date>
+          <h3>AK47v7.62 release 0 + 24h acceptance cycle</h3>
+          <p>Closed release item 0, repaired connection-epoch implementation, deployed, and proved both changes in production. Started a precisely bounded 24-hour acceptance cycle with defined safety gates and availability measurements.</p>
+          <ul>
+            <li>Duty-cycle closing grace (commit 455694a): tape now stays open 5s after window close — proved with Coinbase frames continuing past boundary</li>
+            <li>Connection-epoch refactor (commit 2233f72): atomic socket reset, fresh OrderBook, preserved diagnostics; 10/10 epoch mutants killed</li>
+            <li>Production verification via /proc: commit, PID 431404, MAX_VOL_PCT=0.16, real reconnects exercised with clean ACK + snapshot</li>
+            <li>Subscribe-ACK watchdog: 56% failure rate observed; reduced exposure from full 15m window to bounded reconnect</li>
+            <li>Additional defects documented: backoff never resets, tape_members.py OOMs on large archives, stop() leaves state populated</li>
+            <li>Acceptance cycle started: 24h window, explicit safety rules, availability metrics tracked separately</li>
+          </ul>
+          <p style="margin-top:0.75rem;color:#8fa3d4;font-size:0.95rem;">Frozen conditions for the cycle: no reboot, no deployment, no config change. PID identity check at 24h boundary.</p>
+        </div>
+        <div class="entry">
           <date>2026-08-15</date>
           <h3>Live verification + /proc endpoint</h3>
           <p>Added a lightweight HTTP /proc endpoint that returns current position, last fill, cycle health, and paper vs live parity status. Used by both Telegram bot and external monitoring.</p>
