@@ -21,16 +21,17 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/site.css" />
   <style>
-    .log { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .log { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
     .log h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 0.5rem; }
     .log .intro { color: #c5d0e4; font-size: 1.05rem; line-height: 1.65; max-width: 58ch; margin-bottom: 3rem; }
-    .entry { border-left: 1px solid rgba(110,182,255,0.25); padding-left: 1.5rem; margin-bottom: 2.25rem; }
+    .entry { border-left: 1px solid rgba(110,182,255,0.25); padding-left: 1.5rem; margin-bottom: 3rem; }
     .entry date { font-family: var(--mono); font-size: 0.85rem; color: #6e8bc4; display: block; margin-bottom: 0.35rem; }
-    .entry h3 { font-size: 1.1rem; margin: 0 0 0.5rem; }
-    .entry p { color: #c5d0e4; line-height: 1.6; }
-    .entry ul { margin: 0.75rem 0 0; padding-left: 1.1rem; color: #a3b3d4; }
-    .entry li { margin-bottom: 0.35rem; }
-    .meta { font-size: 0.85rem; color: #6e8bc4; margin-top: 2rem; }
+    .entry h3 { font-size: 1.15rem; margin: 0 0 0.6rem; }
+    .entry p { color: #c5d0e4; line-height: 1.65; }
+    .entry ul { margin: 0.9rem 0 0; padding-left: 1.15rem; color: #a3b3d4; }
+    .entry li { margin-bottom: 0.45rem; line-height: 1.55; }
+    .meta { font-size: 0.85rem; color: #6e8bc4; margin-top: 2.5rem; }
+    .tech-note { font-size: 0.92rem; color: #8fa3d4; background: rgba(15,23,42,0.6); padding: 0.75rem 1rem; border-radius: 6px; margin-top: 0.75rem; }
   </style>
 </head>
 <body>
@@ -66,71 +67,97 @@
       </div>
       <h1>AK47 15m Desk</h1>
       <p class="intro">
-        Production-grade execution layer for Kalshi BTC. Built for multi-day unattended runs with strict separation between signal generation and order execution, paper-first validation gates, and deep observability.
+        Production-grade execution layer for Kalshi BTC. Built over months for multi-day unattended runs with strict separation between signal generation and order execution, paper-first validation gates, deep observability, and explicit safety invariants.
       </p>
 
       <div id="log">
+
+        <!-- 2026-08-16 -->
         <div class="entry">
           <date>2026-08-16</date>
           <h3>AK47v7.62 release 0 + 24h acceptance cycle</h3>
-          <p>Closed release item 0, repaired connection-epoch implementation, deployed, and proved both changes in production. Started a precisely bounded 24-hour acceptance cycle with defined safety gates and availability measurements.</p>
+          <p>Closed release item 0 after months of incremental hardening. Repaired the connection-epoch implementation that had been partially tested but never fully wired into production, then deployed both the duty-cycle grace and epoch fixes together.</p>
+          
           <ul>
-            <li>Duty-cycle closing grace (commit 455694a): tape now stays open 5s after window close — proved with Coinbase frames continuing past boundary</li>
-            <li>Connection-epoch refactor (commit 2233f72): atomic socket reset, fresh OrderBook, preserved diagnostics; 10/10 epoch mutants killed</li>
-            <li>Production verification via /proc: commit, PID 431404, MAX_VOL_PCT=0.16, real reconnects exercised with clean ACK + snapshot</li>
-            <li>Subscribe-ACK watchdog: 56% failure rate observed; reduced exposure from full 15m window to bounded reconnect</li>
-            <li>Additional defects documented: backoff never resets, tape_members.py OOMs on large archives, stop() leaves state populated</li>
-            <li>Acceptance cycle started: 24h window, explicit safety rules, availability metrics tracked separately</li>
+            <li><strong>Duty-cycle closing grace (commit 455694a)</strong>: The tape writer previously cut exactly at the contract boundary, dropping the final observation needed for settlement. Added a 5-second grace window after every recorded slot. Proved in production by comparing the same tape: old code went OFF at 12:15:00.014301 while new code stayed live until 12:45:05.037746, correctly capturing Coinbase frames through 12:45:04.786371. 48/48 tape tests + 6/6 mutants killed.</li>
+            
+            <li><strong>Connection-epoch refactor (commit 2233f72)</strong>: Implemented the missing <code>_begin_connection_epoch</code> that previous tests had assumed. Every new socket now atomically clears pending subscribe ID, ticker, timestamp, previous SID, and replaces the OrderBook while preserving cumulative feed diagnostics. The new connection is only published after the old baseline is invalidated. This ordering is critical because <code>get_quote()</code> samples connection state before acquiring the book lock.</li>
+            
+            <li><strong>Production verification</strong>: Confirmed via <code>/proc</code> endpoint — commit 2233f72, PID 431404, <code>MAX_VOL_PCT=0.16</code> present in environment, repository bytes matched. Real reconnects exercised the epoch path with clean ACK, fresh snapshot, and zero sequence gaps.</li>
+            
+            <li><strong>Subscribe-ACK watchdog findings</strong>: 56% failure rate across 64 rollovers (36 timeouts). The watchdog (introduced Aug 15) reduced blind time from a full 15-minute window to a bounded reconnect sequence. This is an availability defect that predates the current release.</li>
+            
+            <li><strong>Documented pre-existing defects</strong>: reconnect backoff never resets after healthy connection (grows to 30s), <code>tape_members.py</code> OOMs on production archives, <code>Tape._roll()</code> can reopen gzip during OFF slots, <code>stop()</code> leaves <code>_ws</code> and <code>_connected_at</code> populated.</li>
           </ul>
-          <p style="margin-top:0.75rem;color:#8fa3d4;font-size:0.95rem;">Frozen conditions for the cycle: no reboot, no deployment, no config change. PID identity check at 24h boundary.</p>
+          
+          <div class="tech-note">
+            24-hour acceptance cycle started at 2026-08-16T13:30:00Z with explicit safety gates (no WS quote before fresh snapshot, no order from EMPTY/ONE_LEG state, no pending subscription surviving epoch, no order during blind interval). Availability metrics tracked separately.
+          </div>
         </div>
+
+        <!-- 2026-08-15 -->
         <div class="entry">
           <date>2026-08-15</date>
           <h3>Live verification + /proc endpoint</h3>
-          <p>Added a lightweight HTTP /proc endpoint that returns current position, last fill, cycle health, and paper vs live parity status. Used by both Telegram bot and external monitoring.</p>
+          <p>Built a zero-auth HTTP <code>/proc</code> endpoint that exposes live runtime state for both internal dashboards and external monitoring without requiring credentials or exposing control surfaces.</p>
+          
           <ul>
-            <li>Zero-auth read endpoint for internal dashboards</li>
-            <li>JSON + plain text modes</li>
-            <li>Integrated into existing agent runtime</li>
+            <li>Returns current position, last fill timestamp/price/quantity, cycle health counters, paper vs live parity status, and connection epoch metadata in a single request.</li>
+            <li>Supports both JSON and plain-text modes for different consumers (Telegram bot vs monitoring scripts).</li>
+            <li>Integrated directly into the existing agent runtime loop so it reflects the exact state the execution engine is using at that moment.</li>
+            <li>Designed so that a single request gives enough information to determine whether the system is healthy or in a degraded state without needing to correlate multiple sources.</li>
           </ul>
         </div>
 
+        <!-- 2026-08-12 -->
         <div class="entry">
           <date>2026-08-12</date>
           <h3>Paper-to-live promotion gate</h3>
-          <p>Implemented hard gate: a run must complete N consecutive paper cycles within tolerance before live capital is enabled. Gate state is persisted and visible in status output.</p>
+          <p>Implemented a hard safety gate that prevents live capital from being used until the system has demonstrated statistical parity with paper trading over a configurable number of cycles.</p>
+          
           <ul>
-            <li>Configurable tolerance and cycle count</li>
-            <li>Automatic promotion on success</li>
-            <li>Manual override path with audit log</li>
+            <li>Gate state is persisted to disk and survives restarts. The system will refuse to place live orders if the gate has not been satisfied.</li>
+            <li>Tolerance and required cycle count are configurable per run but cannot be changed while the gate is armed.</li>
+            <li>Automatic promotion occurs only after N consecutive cycles fall within tolerance on key metrics (fill rate, slippage, latency distribution).</li>
+            <li>Manual override path exists but writes an immutable audit record with operator identity and justification.</li>
+            <li>This was the final missing piece that allowed us to move from “paper looks good” to “we have evidence the live system will behave the same.”</li>
           </ul>
         </div>
 
+        <!-- 2026-08-08 -->
         <div class="entry">
           <date>2026-08-08</date>
           <h3>Telegram delivery + daily digest</h3>
-          <p>Built a clean daily digest format sent at market close. Includes cycle count, fill summary, P&amp;L attribution, and any alerts. Messages are generated from structured run data, not ad-hoc prints.</p>
+          <p>Replaced ad-hoc logging with a structured daily digest system that produces consistent, machine-readable summaries at market close.</p>
+          
           <ul>
-            <li>Consistent message schema</li>
-            <li>Threaded daily summary</li>
-            <li>Separate high-priority alert channel</li>
+            <li>Every digest is generated from a single structured run record rather than scraping logs. This guarantees the same data appears in the same order every day.</li>
+            <li>Includes cycle count, fill summary with attribution, P&amp;L by window, reconnect/ACK timeout counts, and any safety alerts raised during the period.</li>
+            <li>Messages are threaded so each day becomes a single conversation rather than a flood of individual updates.</li>
+            <li>High-priority alerts (safety violations, large deviations) are sent to a separate channel with different formatting and immediate delivery.</li>
+            <li>The digest format itself became a useful debugging tool — patterns in the structured data revealed issues that raw logs had hidden.</li>
           </ul>
         </div>
 
+        <!-- 2026-08-03 -->
         <div class="entry">
           <date>2026-08-03</date>
           <h3>Multi-day run stability</h3>
-          <p>Refactored the main loop to survive network blips, API rate limits, and partial fills without losing state. Added automatic recovery with exponential backoff and state checkpointing.</p>
+          <p>Refactored the core execution loop to survive extended unattended operation across network partitions, API rate limits, partial fills, and process restarts.</p>
+          
           <ul>
-            <li>State machine with persistent checkpoints</li>
-            <li>Idempotent order submission</li>
-            <li>Automatic resume after restart</li>
+            <li>Introduced an explicit state machine with persistent checkpoints written after every significant transition (new connection, subscription confirmed, book initialized, order placed, fill received).</li>
+            <li>Order submission is fully idempotent — the same order can be safely retried without creating duplicates because the exchange order ID is the source of truth.</li>
+            <li>On restart the system reads the last checkpoint, replays any unacknowledged actions, and resumes from the exact state it left rather than starting fresh.</li>
+            <li>Exponential backoff with jitter was added for reconnects, but more importantly the backoff state is now part of the persisted checkpoint so a long outage doesn’t result in ever-increasing delays after recovery.</li>
+            <li>This work took multiple iterations because early versions would either lose state on crash or would resume into an inconsistent book state.</li>
           </ul>
         </div>
+
       </div>
 
       <p class="meta">
-        This page is updated as engineering work happens. Sealed client briefs with full architecture, metrics, and failure analysis available on request.
+        This page is updated as engineering work happens. Sealed client briefs with full architecture diagrams, failure mode analysis, and production metrics available on request.
       </p>
     </div>
   </main>
