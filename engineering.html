@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>Engineering Notes — NextEleven</title>
+  <meta name="description" content="Engineering logs from NextEleven LLC: production execution runtimes, paper-first validation gates, immutable accounting journals, and the reliability practices behind our client work." />
+  <meta name="author" content="NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mothership-ai.com/engineering.html" />
+  <meta property="og:title" content="Engineering Notes — NextEleven" />
+  <meta property="og:description" content="Internal R&amp;D logs: execution runtimes, validation gates, and the reliability practices behind our client work." />
+  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.mothership-ai.com/engineering.html" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#systems">What we build</a>
+        <a href="/#process">Process</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="mailto:hello@mothership-ai.com?subject=Intro%20call">Book a call</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <a href="/#systems">What we build</a>
+      <a href="/#process">Process</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-solid" href="mailto:hello@mothership-ai.com?subject=Intro%20call">Book a call</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero-tight shell" aria-label="Introduction">
+      <div class="hero-copy hero-copy-full">
+        <p class="eyebrow">
+          <span class="pulse"></span>
+          NextEleven LLC · Internal R&amp;D
+        </p>
+        <h1>Engineering notes</h1>
+        <p class="lede lede-tight">
+          These are our own research systems, not client products. We build them because financial execution is
+          the least forgiving environment we know of — every reliability habit that survives here is one our
+          client work inherits.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" href="/#systems">Back to what we build</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-split shell" aria-label="Research systems">
+      <div class="section-label">
+        <span class="num">01</span>
+        <span>Research systems</span>
+      </div>
+      <h2 class="split-title">What we are testing on ourselves</h2>
+      <p class="split-dek">
+        Both systems run paper-first with live trading paths hard-disabled until they clear their gates. The
+        engineering logs below are written as they happen, including the parts that did not work.
+      </p>
+
+      <div class="split-grid">
+        <article class="split-card" id="ak47-card">
+          <div class="split-kicker">Execution runtime</div>
+          <h3>AK47 15m Desk</h3>
+          <p>An execution layer built to run unattended for days without a human unlocking anything. Signal
+          generation and order execution are kept strictly separate, every action lands in an audit trail, and
+          the whole run is verified against the live process rather than trusted from logs.</p>
+          <ul class="split-bullets">
+            <li>Paper-to-live parity gate before anything trades</li>
+            <li>15-minute cycle · zero manual unlocks</li>
+            <li>Full audit trail with delivery to Telegram</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-line" href="/ak47.html">Read the log</a>
+          </div>
+        </article>
+
+        <article class="split-card" id="market-card">
+          <div class="split-kicker">Backtesting &amp; research</div>
+          <h3>Market Spot BTC</h3>
+          <p>A research trader built around a broker-adapter architecture, so the strategy never knows or cares
+          which venue it is pointed at. Accounting is written to an immutable journal, benchmarks are
+          deterministic and cost-equivalent, and live paths stay disabled until the gates clear.</p>
+          <ul class="split-bullets">
+            <li>Benchmarks locked and reproducible</li>
+            <li>Immutable accounting journal</li>
+            <li>Live execution disabled by default</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-line" href="/market.html">Read the log</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bar-block shell" aria-labelledby="why-title">
+      <div class="section-label">
+        <span class="num">02</span>
+        <span>Why this matters to clients</span>
+      </div>
+      <h2 id="why-title" class="split-title">Why this is on our site</h2>
+      <ul class="bar-list">
+        <li>
+          <strong>Fail-closed is a habit, not a feature.</strong>
+          <span>The same rule that stops a trade on unverified state is the rule that stops a parts order from moving stock nobody counted.</span>
+        </li>
+        <li>
+          <strong>We validate before we go live, every time.</strong>
+          <span>Paper-first gates here become dry-run drafts and human approval in the software we ship to you.</span>
+        </li>
+        <li>
+          <strong>If it is not measured, it is not done.</strong>
+          <span>Deterministic benchmarks and immutable journals are the same discipline behind the numbers we hand you at the end of a pilot.</span>
+        </li>
+      </ul>
+      <p class="bar-note">Nothing on this page is offered as a product, a service, or investment advice. It is internal research we publish because the engineering is worth reading.</p>
+    </section>
+
+    <section class="contact shell" aria-labelledby="contact-title">
+      <div class="contact-card">
+        <div class="section-label">
+          <span class="num">03</span>
+          <span>Contact</span>
+        </div>
+        <h2 id="contact-title">Want this rigor on your operation?</h2>
+        <p class="contact-sub">NextEleven LLC · Mansfield, TX · Working with clients across the US, remote</p>
+        <p class="email-line">
+          <a href="mailto:hello@mothership-ai.com?subject=Intro%20call">hello@mothership-ai.com</a>
+          <span>· we usually reply the same day</span>
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn-solid" href="mailto:hello@mothership-ai.com?subject=Intro%20call">Book a 20-minute call</a>
+          <a class="btn btn-line" href="/#systems">See what we build</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot shell">
+    <span>© <span id="y"></span> NextEleven LLC</span>
+    <span class="foot-tag">Parts · Lot · Private Search · Engineering notes</span>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var drawer = document.getElementById('drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.hasAttribute('hidden');
+        if (open) {
+          drawer.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+          btn.classList.add('open');
+        } else {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        }
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
