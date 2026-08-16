@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>Market Spot BTC — Engineering Notes</title>
+  <meta name="description" content="Autonomous spot BTC trader with broker-adapter architecture. Paper-first backtesting gates, immutable accounting, deterministic benchmarks, and production-readiness roadmap." />
+  <meta name="author" content="Sean McDonnell · NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mothership-ai.com/market.html" />
+  <meta property="og:title" content="Market Spot BTC — Engineering Notes" />
+  <meta property="og:description" content="Autonomous spot BTC trader. Paper-first backtesting, immutable journal, cost-equivalent benchmarks, and strict production gates." />
+  <meta property="og:image" content="https://mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://mothership-ai.com/market.html" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
+  <style>
+    .log { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .log h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 0.5rem; }
+    .log .intro { color: #c5d0e4; font-size: 1.05rem; line-height: 1.65; max-width: 58ch; margin-bottom: 3rem; }
+    .entry { border-left: 1px solid rgba(110,182,255,0.25); padding-left: 1.5rem; margin-bottom: 3rem; }
+    .entry date { font-family: var(--mono); font-size: 0.85rem; color: #6e8bc4; display: block; margin-bottom: 0.35rem; }
+    .entry h3 { font-size: 1.15rem; margin: 0 0 0.6rem; }
+    .entry p { color: #c5d0e4; line-height: 1.65; }
+    .entry ul { margin: 0.9rem 0 0; padding-left: 1.15rem; color: #a3b3d4; }
+    .entry li { margin-bottom: 0.45rem; line-height: 1.55; }
+    .meta { font-size: 0.85rem; color: #6e8bc4; margin-top: 2.5rem; }
+    .tech-note { font-size: 0.92rem; color: #8fa3d4; background: rgba(15,23,42,0.6); padding: 0.75rem 1rem; border-radius: 6px; margin-top: 0.75rem; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="#log">Log</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="mailto:nextelevenstudios@gmail.com?subject=Market%20brief">Email Sean</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="log">
+      <div class="section-label">
+        <span class="num">04</span>
+        <span>Research &amp; backtesting</span>
+      </div>
+      <h1>Market Spot BTC</h1>
+      <p class="intro">
+        Autonomous spot BTC trader with broker-adapter architecture targeting Robinhood Crypto. Strict paper-first validation, immutable accounting journal, deterministic cost-equivalent benchmarks, and gated production-readiness roadmap. All live execution paths remain hard-disabled.
+      </p>
+
+      <div id="log">
+        <!-- 2026-08-16 -->
+        <div class="entry">
+          <date>2026-08-16</date>
+          <h3>G2.7 cost-equivalent passive benchmarks + journal integration</h3>
+          <p>Completed G2.7 gate: every nonempty backtest now emits three deterministic comparators (Cash, Matched-notional buy-and-hold, Periodic DCA) derived from the immutable accounting journal rather than ad-hoc simulation.</p>
+          
+          <ul>
+            <li><strong>Matched notional rule</strong>: Uses peak gross inventory cost basis capped by starting cash adjusted for entry fees. Guarantees apples-to-apples capital deployment vs. strategy.</li>
+            <li><strong>Adverse slippage &amp; fee model</strong>: Benchmarks execute at synthetic bar-open for buys and last-close synthetic bid with slippage for sells, exactly matching strategy fill assumptions.</li>
+            <li><strong>Risk-adjusted metric</strong>: net P&amp;L / max drawdown (undefined on zero-drawdown runs) plus explicit zero-drawdown status flags. No fabricated Sharpe/Calmar labels.</li>
+            <li><strong>Hand-verified three-bar proof</strong>: Manual recalculation of a minimal 3-bar run confirmed journal round-trips, fee application, liquidation-to-flat, and benchmark parity.</li>
+          </ul>
+          
+          <div class="tech-note">
+            G2 gate series now covers data quality (G2.1–G2.3a), accounting immutability (G2.5–G2.6), and benchmark parity (G2.7). G2.8 remains open for full research statistics and golden tests.
+          </div>
+        </div>
+
+        <!-- 2026-08-15 -->
+        <div class="entry">
+          <date>2026-08-15</date>
+          <h3>Immutable accounting journal + G2.5/G2.6 contract</h3>
+          <p>Introduced a single source-of-truth append-only journal that records every order, execution, partial fill, closed trade, fee, cost basis, and net liquidation value transition.</p>
+          
+          <ul>
+            <li>Separates gross realized/unrealized P&amp;L, fees, marked equity, and final liquidation value per run.</li>
+            <li>Enables exact reconstruction of any historical run state without re-simulation.</li>
+            <li>Flat-to-flat round trip identification and open inventory tracking now deterministic.</li>
+            <li>End-of-data liquidation is treated as a real, fully costed sell fill that forces the run flat.</li>
+          </ul>
+        </div>
+
+        <!-- 2026-08-12 -->
+        <div class="entry">
+          <date>2026-08-12</date>
+          <h3>Broker adapter + Robinhood target architecture</h3>
+          <p>Refactored execution path into a clean broker-agnostic core with pluggable adapters. Robinhood Crypto (BTC-USD) is the primary live target; all other brokers remain future adapters.</p>
+          
+          <ul>
+            <li>Strategy, risk, ledger, and operations layers never reference broker-specific types.</li>
+            <li>Hard transport lock + CLI refusal prevents any live order submission until explicit gates pass.</li>
+            <li>Paper mode and backtest engine use identical fill and accounting paths as the future live adapter.</li>
+          </ul>
+        </div>
+
+        <!-- 2026-08-04 -->
+        <div class="entry">
+          <date>2026-08-04</date>
+          <h3>Production-readiness roadmap (G1–G3)</h3>
+          <p>Published controlling gate plan that sequences data fidelity, backtest correctness, research statistics, risk rails, and only then live authorization. Current status: G2.7 locked, live money authorization = None.</p>
+          
+          <ul>
+            <li>G1: data gate (completed, versioned 5-year Coinbase artifact with declared gaps).</li>
+            <li>G2: backtest fidelity + accounting + benchmarks (in progress, G2.7 done).</li>
+            <li>G3: risk rails, observability, and operator dashboards before any capital exposure.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="meta">
+        This page is updated as engineering work happens. Sealed client briefs with full architecture diagrams, failure mode analysis, and production metrics available on request.
+      </p>
+    </div>
+  </main>
+
+  <section id="contact" class="contact shell" aria-labelledby="contact-title">
+    <div class="section-label">
+      <span class="num">05</span>
+      <span>Contact</span>
+    </div>
+    <h2 id="contact-title">Let’s talk systems</h2>
+    <p class="contact-lede">I’m selective about new work. Best results come from clear problems, real data, and operators who stay involved.</p>
+    <a class="btn btn-solid btn-large" href="mailto:nextelevenstudios@gmail.com?subject=Market%20brief">Email Sean</a>
+    <div class="contact-meta">
+      <span>Remote US · Mansfield, TX</span>
+    </div>
+  </section>
+</body>
+</html>
