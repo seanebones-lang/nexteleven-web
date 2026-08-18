@@ -52,10 +52,11 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
-        <a href="#log">Log</a>
+        <a href="#log">Live Build Status</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="btn btn-solid top-cta" href="mailto:nextelevenstudios@gmail.com?subject=AK47%20brief">Email Sean</a>
+    <a class="btn btn-solid top-cta" href="https://x.com/VerticalBullfrg" target="_blank" rel="noopener" style="margin-left: 0.5rem;">X @VerticalBullfrg</a>
     </div>
   </header>
 
@@ -158,6 +159,23 @@
 
       <p class="meta">
         This page is updated as engineering work happens. Sealed client briefs with full architecture diagrams, failure mode analysis, and production metrics available on request.
+        <!-- 2026-08-17 -->
+        <div class="entry">
+          <date>2026-08-17</date>
+          <h3>24h acceptance cycle — all safety gates PASS</h3>
+          <p>Completed 24-hour acceptance cycle (commit 2233f72, PID 431404 stable across interval). Feed and book safety PASS; execution contamination exercised and PASSED. Zero sequence gaps for the full 24h window.</p>
+          
+          <ul>
+            <li>42 reconnects and subscribe ACK timeouts exercised the connection-epoch path cleanly with fresh snapshots.</li>
+            <li>All 11,943 REST_BID decisions taken on valid WS book; the single CANCEL on one-sided REST was a removal, not a creation.</li>
+            <li>Blind intervals measured (max 43s); minimum placement margin 17.3s observed on all 96 entries.</li>
+            <li>Pre-existing defects remain documented (reconnect backoff growth, tape OOM on archives, gzip reopen during OFF).</li>
+          </ul>
+          
+          <div class="tech-note">
+            Full counters, provenance join, gate-by-gate verification, and timing analysis in docs/49_CYCLE_RESULT_2026-08-17.md. This run was clean; the next cycle can contain gaps.
+          </div>
+        </div>
       </p>
     </div>
   </main>
@@ -170,6 +188,7 @@
     <h2 id="contact-title">Let’s talk systems</h2>
     <p class="contact-lede">I’m selective about new work. Best results come from clear problems, real data, and operators who stay involved.</p>
     <a class="btn btn-solid btn-large" href="mailto:nextelevenstudios@gmail.com?subject=AK47%20brief">Email Sean</a>
+    <a class="btn btn-solid top-cta" href="https://x.com/VerticalBullfrg" target="_blank" rel="noopener" style="margin-left: 0.5rem;">X @VerticalBullfrg</a>
     <div class="contact-meta">
       <span>Remote US · Mansfield, TX</span>
     </div>

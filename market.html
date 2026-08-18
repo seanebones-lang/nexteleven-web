@@ -132,6 +132,22 @@
 
       <p class="meta">
         This page is updated as engineering work happens. Sealed client briefs with full architecture diagrams, failure mode analysis, and production metrics available on request.
+        <!-- 2026-08-17 -->
+        <div class="entry">
+          <date>2026-08-17</date>
+          <h3>G3.2e preflight blocked + support escalation</h3>
+          <p>Current status: G3.2e read-only collector implemented and locally verified, but live preflight fails closed on Robinhood best-price row reporting ask below bid (contrary to v2 field definitions). Authenticated support case 021436592 escalated to back-end team. No cost evidence written; G3.3 paused pending protocol 2.0 redesign.</p>
+          
+          <ul>
+            <li>Detectability frontier (closed-form): minimum detectable annualized Sharpe for 27-month stitched OOS is 1.66 (m=1) to 2.56 (m=36) at 80% power / 5% FWER. 5-year G1 dataset requires 1.11–1.71.</li>
+            <li>Connection-failure review: crossed rows correctly terminate collection immediately (ValidationError path); retrying them would truncate the signed-spread distribution and bias the estimand. Refactor to separate payload / observation / admissibility policy is future work but must be behavior-preserving.</li>
+            <li>Live trading remains hard-disabled; no build can submit orders until gates pass.</li>
+          </ul>
+          
+          <div class="tech-note">
+            Full status in README.md and docs/reviews/2026-08-17-*.md. Robinhood case remains the active dependency.
+          </div>
+        </div>
       </p>
     </div>
   </main>
