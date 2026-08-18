@@ -917,3 +917,7 @@ em { font-style: italic; color: var(--accent); }
 .proof-strip {
   padding-top: .15rem;
 }
+
+@media (max-width: 768px) {
+  .orb, .grid-fade, .noise { opacity: 0.2; }
+}
