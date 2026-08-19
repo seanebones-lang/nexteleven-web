@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- NextEleven Harness — Rust coding agent runtime -->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NextEleven Harness — Rust Coding Agent Runtime</title>
+<meta name="description" content="NextEleven Harness is a terminal-native AI coding agent written in Rust. Multi-provider models, sandboxed tools, swarm workers, MCP, sessions, and a local HTTP/SSE server. Public beta from NextEleven LLC." />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mothership-ai.com/harness/" />
+<meta property="og:title" content="NextEleven Harness — Rust Coding Agent Runtime" />
+<meta property="og:description" content="Multi-provider coding agent in Rust: tools, swarm, MCP, sessions, cost tracking. The runtime behind NextEleven custom builds." />
+<link rel="canonical" href="https://www.mothership-ai.com/harness/" />
+<style>
+:root{--bg:#070b12;--panel:#111a2b;--panel2:#162033;--line:rgba(120,200,255,.14);--text:#e8eef8;--muted:#93a4bd;--cyan:#3de0ff;--emerald:#3dffa8;--amber:#ffc857;--red:#ff6b6b;--white:#fff;--sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,SF Mono,Menlo,Consolas,monospace;--max:1080px;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 600px at 10% -10%,#14304a 0%,transparent 55%),radial-gradient(900px 500px at 100% 0%,#1a1030 0%,transparent 50%),var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan);text-decoration:none}.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+.topnav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(7,11,18,.82);border-bottom:1px solid var(--line)}
+.topnav .inner{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted)}.brand strong{color:var(--white)}
+.navlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:13px}.navlinks a{color:var(--muted)}
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;letter-spacing:-.03em;font-weight:650;max-width:18ch;margin-bottom:18px}
+h1 span{color:var(--emerald)}.lede{font-size:1.15rem;color:var(--muted);max-width:62ch;margin-bottom:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;border-radius:999px;padding:12px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid transparent}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),#2bb8ff);color:#041018;font-weight:700}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
+.section-lead{color:var(--muted);max-width:68ch;margin-bottom:28px}
+.grid{display:grid;gap:14px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:860px){.grid-2,.grid-3{grid-template-columns:1fr!important}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h3{font-size:1.02rem;margin-bottom:8px;color:var(--white)}.card p,.card li{color:var(--muted);font-size:.95rem}
+.card ul{margin-left:1.1rem}.card li{margin:4px 0}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);margin-bottom:8px}
+.tag.warn{color:var(--amber)}.tag.live{color:var(--cyan)}
+.note{margin-top:16px;padding:12px 14px;border-left:3px solid var(--amber);background:rgba(255,200,87,.06);color:var(--muted);font-size:.92rem;border-radius:0 10px 10px 0}
+.footer{padding:40px 0 70px;color:var(--muted);font-size:.9rem}.footer strong{color:var(--white)}
+.mono{font-family:var(--mono);font-size:.88em;color:var(--cyan)}
+.code{font-family:var(--mono);font-size:.85rem;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--muted);overflow-x:auto;white-space:pre}
+</style>
+</head>
+<body>
+<header class="topnav"><div class="inner">
+  <div class="brand"><strong>NEXTELEVEN</strong> · HARNESS</div>
+  <nav class="navlinks">
+    <a href="#why">Why it exists</a><a href="#what">What it does</a><a href="#live">What's ready</a>
+    <a href="#start">Get started</a>
+    <a href="https://github.com/seanebones-lang/harness">GitHub</a>
+    <a href="/">mothership</a>
+  </nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div class="kicker">Rust · multi-provider · terminal-native coding agent</div>
+  <h1>The agent runtime we ship <span>custom work on.</span></h1>
+  <p class="lede">NextEleven Harness is a coding agent written in Rust. It edits a real repo with sandboxed tools, tracks cost and sessions, runs parallel swarm workers, speaks MCP, and can serve a local HTTP/SSE UI. Multi-provider. Recoverable runs. Built so the next engagement reuses infrastructure we already trust — not a blank file and a new set of bugs.</p>
+  <div class="ctas">
+    <a class="btn btn-primary" href="https://github.com/seanebones-lang/harness">View on GitHub</a>
+    <a class="btn btn-ghost" href="mailto:nextelevenstudios@gmail.com?subject=Harness">Talk to us about a build</a>
+    <a class="btn btn-ghost" href="https://www.mothership-ai.com/">mothership-ai.com</a>
+  </div>
+  <div class="meta-row">
+    <span class="chip">Public beta · v1.3</span>
+    <span class="chip">Rust · CLI + TUI + serve</span>
+    <span class="chip">Multi-model · swarm · MCP</span>
+    <span class="chip">Proprietary · NextEleven LLC</span>
+  </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <h2>Why this exists</h2>
+  <p class="section-lead">Most “agent demos” die the week after the pitch. Harness is the opposite bet: one maintained runtime that custom desks and internal tools can stand on.</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="tag warn">One-off scripts</div><h3>Every project reinvented the agent</h3><p>New Python glue, new tool schemas, new crash modes. Cost tracking and session recovery were optional extras people forgot until production.</p></div>
+    <div class="card"><div class="tag warn">Fragile providers</div><h3>One API key failure stops the job</h3><p>Real work needs a router that can fall through providers, keep a session, and resume instead of starting over when a call fails.</p></div>
+    <div class="card"><div class="tag warn">Unsupervised tools</div><h3>Agents that write anywhere are a liability</h3><p>Shell, git, and file edits need allowlists, plan mode, and recoverable runs — not “trust me” on a customer machine.</p></div>
+  </div>
+</div></section>
+
+<section id="what"><div class="wrap">
+  <h2>What Harness does</h2>
+  <p class="section-lead">A terminal-native coding agent with the pieces operators actually need after the demo.</p>
+  <div class="grid grid-2">
+    <div class="card"><div class="tag live">Working today</div><h3>Models and routing</h3>
+      <ul>
+        <li>Anthropic, OpenAI-compatible, xAI, Gemini, Bedrock, Ollama, MLX</li>
+        <li>Smart fall-through based on configured keys</li>
+        <li>Streaming chat, cost dashboard, model picker</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag live">Working today</div><h3>Tools on a real repo</h3>
+      <ul>
+        <li>Read / write / patch files, search, shell, git, gh, tests</li>
+        <li>LSP helpers, plan mode for destructive steps</li>
+        <li>Optional gated tools: browser, docker, notebook, database</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag live">Working today</div><h3>Swarm and sessions</h3>
+      <ul>
+        <li>Parallel workers with SQLite registry and timeouts</li>
+        <li>Session resume, project memory, semantic recall</li>
+        <li>TUI panel for swarm status and results</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag live">Working today</div><h3>Ops surface</h3>
+      <ul>
+        <li><span class="mono">harness serve</span> — local HTTP + SSE</li>
+        <li>MCP tools/resources, doctor, bench, sync, bridges</li>
+        <li>macOS / Linux / Windows CI on the public tree</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="live"><div class="wrap">
+  <h2>What's ready, and what isn't</h2>
+  <p class="section-lead">Public beta / POC. Daily-driver capable. Stable is blocked on a full release smoke matrix — we do not pretend otherwise.</p>
+  <div class="grid grid-2">
+    <div class="card"><div class="tag live">Running now</div><h3>What you get today</h3>
+      <ul>
+        <li>Interactive TUI and one-shot CLI</li>
+        <li>Multi-provider streaming + tool loop</li>
+        <li>Swarm workers, sessions, cost tracking</li>
+        <li>Local serve endpoint and MCP path</li>
+        <li>Install script + docs in the public repo</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag warn">Not yet</div><h3>What we won't claim</h3>
+      <ul>
+        <li>A finished “stable 1.0” release stamp</li>
+        <li>Open-source / MIT licensing — this is proprietary NextEleven LLC software with a public proof tree</li>
+        <li>Turnkey SaaS hosting (local-first by design)</li>
+        <li>Every optional tool on by default — gated extras stay off until you enable them</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">License: proprietary · NextEleven LLC. The GitHub repo is for proof and install visibility, not a free software grant.</p>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <h2>Get started</h2>
+  <p class="section-lead">Install from the public repo, or talk to us if you want a custom desk that sits on this runtime.</p>
+  <div class="code"># macOS / Linux — prebuilt from GitHub Releases
+curl -fsSL https://raw.githubusercontent.com/seanebones-lang/harness/main/scripts/install.sh | bash
+
+# or build from source
+git clone https://github.com/seanebones-lang/harness.git
+cd harness && cargo build --release
+./target/release/harness doctor</div>
+  <div class="ctas" style="margin-top:24px">
+    <a class="btn btn-primary" href="https://github.com/seanebones-lang/harness">GitHub · seanebones-lang/harness</a>
+    <a class="btn btn-ghost" href="mailto:nextelevenstudios@gmail.com?subject=Custom%20build%20on%20Harness">Custom build inquiry</a>
+    <a class="btn btn-ghost" href="/rag/">Also: Private Document Search</a>
+    <a class="btn btn-ghost" href="/parts/">Also: Parts desk</a>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap">
+  <p><strong>NextEleven LLC</strong> · Harness by NextEleven · Rust coding agent runtime</p>
+  <p>nextelevenstudios@gmail.com · www.mothership-ai.com · github.com/seanebones-lang/harness</p>
+  <p style="margin-top:10px;font-size:.82rem">Public beta. Proprietary software. Not open source. Pricing for commercial use and custom integrations is by signed SOW.</p>
+</div></footer>
+</body>
+</html>

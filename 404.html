@@ -122,11 +122,43 @@
       </div>
       <h2 class="split-title">Products that are already running</h2>
       <p class="split-dek">
-        Two shipping systems for dealerships, plus the infrastructure we build custom work on.
-        Everything below is real software with a price, not a concept.
+        Agent runtime and private search first, then the two shipping dealership desks.
+        Cards stay short — detail lives on each product page.
       </p>
 
       <div class="split-grid split-grid-4">
+        <article class="split-card split-harness" id="harness-card">
+          <div class="split-kicker">Agent platform</div>
+          <h3>NextEleven Harness</h3>
+          <p>Our own agent runtime, written in Rust. Multi-provider models, sandboxed tools, swarm
+          workers, MCP, and recoverable sessions — the reason a custom build reuses infrastructure
+          instead of starting from a blank file.</p>
+          <ul class="split-bullets">
+            <li>Multi-model · recoverable runs</li>
+            <li>Public beta · proprietary</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-solid" href="/harness/">See the details</a>
+            <a class="btn btn-line" href="https://github.com/seanebones-lang/harness" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <article class="split-card split-rag" id="rag-card">
+          <div class="split-kicker">Private knowledge</div>
+          <h3>Private Document Search</h3>
+          <p>Ask plain-language questions against your own contracts, manuals, and internal notes, and get
+          answers with the source attached. Runs entirely on hardware you control — nothing is uploaded and
+          nothing trains someone else's model.</p>
+          <ul class="split-bullets">
+            <li>Self-hosted · open source</li>
+            <li>Works with local models</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-solid" href="/rag/">See the details</a>
+            <a class="btn btn-line" href="https://github.com/seanebones-lang/personal-RAG" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </article>
+
         <article class="split-card split-parts" id="parts-card">
           <div class="split-kicker">Dealership operations</div>
           <h3>Parts Inventory System</h3>
@@ -156,36 +188,6 @@
           <div class="split-actions">
             <a class="btn btn-solid" href="/lot/">See the details</a>
             <a class="btn btn-line" href="/lot/NextEleven_Lot_Rate_Card.pdf" target="_blank" rel="noopener noreferrer">Rate card</a>
-          </div>
-        </article>
-
-        <article class="split-card split-rag" id="rag-card">
-          <div class="split-kicker">Private knowledge</div>
-          <h3>Private Document Search</h3>
-          <p>Ask plain-language questions against your own contracts, manuals, and internal notes, and get
-          answers with the source attached. Runs entirely on hardware you control — nothing is uploaded and
-          nothing trains someone else's model.</p>
-          <ul class="split-bullets">
-            <li>Self-hosted · open source</li>
-            <li>Works with local models</li>
-          </ul>
-          <div class="split-actions">
-            <a class="btn btn-line" href="https://github.com/seanebones-lang/personal-RAG" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="split-card split-harness" id="harness-card">
-          <div class="split-kicker">How we ship fast</div>
-          <h3>NextEleven Harness</h3>
-          <p>Our own agent runtime, written in Rust. It is the reason a custom build takes weeks instead of
-          months — every engagement starts on infrastructure we already maintain and trust, rather than a
-          blank file and a new set of bugs.</p>
-          <ul class="split-bullets">
-            <li>Multi-model · runs recover after failure</li>
-            <li>Open source · public beta</li>
-          </ul>
-          <div class="split-actions">
-            <a class="btn btn-line" href="https://github.com/seanebones-lang/harness" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </div>
         </article>
       </div>
@@ -288,7 +290,7 @@
 
   <footer class="foot shell">
     <span>© <span id="y"></span> NextEleven LLC</span>
-    <span class="foot-tag">Parts · Lot · Private Search · <a href="/engineering.html">Engineering notes</a></span>
+    <span class="foot-tag">Harness · RAG · Parts · Lot · <a href="/engineering.html">Engineering notes</a></span>
   </footer>
 
   <div class="mobile-cta" aria-label="Quick contact">

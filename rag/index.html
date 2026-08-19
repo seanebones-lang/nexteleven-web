@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- NextEleven Personal RAG — local-first private document search -->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NextEleven Personal RAG — Private Document Search on Your Machine</title>
+<meta name="description" content="PersonalRAGVault: local-first RAG for your own files. Ingest PDFs, notes, and code; embed on CPU; query in plain language with citations. Optional Ollama. Open source MIT. Nothing leaves your disk." />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mothership-ai.com/rag/" />
+<meta property="og:title" content="NextEleven Personal RAG — Private Document Search" />
+<meta property="og:description" content="Ask plain-language questions against your own contracts, manuals, and notes. Runs on your hardware. Open source." />
+<link rel="canonical" href="https://www.mothership-ai.com/rag/" />
+<style>
+:root{--bg:#070b12;--panel:#111a2b;--panel2:#162033;--line:rgba(120,200,255,.14);--text:#e8eef8;--muted:#93a4bd;--cyan:#3de0ff;--emerald:#3dffa8;--amber:#ffc857;--red:#ff6b6b;--white:#fff;--sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,SF Mono,Menlo,Consolas,monospace;--max:1080px;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 600px at 10% -10%,#0f2a24 0%,transparent 55%),radial-gradient(900px 500px at 100% 0%,#14304a 0%,transparent 50%),var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan);text-decoration:none}.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+.topnav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(7,11,18,.82);border-bottom:1px solid var(--line)}
+.topnav .inner{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted)}.brand strong{color:var(--white)}
+.navlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:13px}.navlinks a{color:var(--muted)}
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--emerald);margin-bottom:16px}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;letter-spacing:-.03em;font-weight:650;max-width:18ch;margin-bottom:18px}
+h1 span{color:var(--cyan)}.lede{font-size:1.15rem;color:var(--muted);max-width:62ch;margin-bottom:28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;border-radius:999px;padding:12px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid transparent}
+.btn-primary{background:linear-gradient(135deg,var(--emerald),#2bd48a);color:#041810;font-weight:700}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
+.section-lead{color:var(--muted);max-width:68ch;margin-bottom:28px}
+.grid{display:grid;gap:14px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:860px){.grid-2,.grid-3{grid-template-columns:1fr!important}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h3{font-size:1.02rem;margin-bottom:8px;color:var(--white)}.card p,.card li{color:var(--muted);font-size:.95rem}
+.card ul{margin-left:1.1rem}.card li{margin:4px 0}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);margin-bottom:8px}
+.tag.warn{color:var(--amber)}.tag.live{color:var(--cyan)}
+.note{margin-top:16px;padding:12px 14px;border-left:3px solid var(--emerald);background:rgba(61,255,168,.06);color:var(--muted);font-size:.92rem;border-radius:0 10px 10px 0}
+.footer{padding:40px 0 70px;color:var(--muted);font-size:.9rem}.footer strong{color:var(--white)}
+.mono{font-family:var(--mono);font-size:.88em;color:var(--cyan)}
+.code{font-family:var(--mono);font-size:.85rem;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--muted);overflow-x:auto;white-space:pre}
+</style>
+</head>
+<body>
+<header class="topnav"><div class="inner">
+  <div class="brand"><strong>NEXTELEVEN</strong> · PERSONAL RAG</div>
+  <nav class="navlinks">
+    <a href="#why">Why it exists</a><a href="#what">What it does</a><a href="#live">What's ready</a>
+    <a href="#start">Get started</a>
+    <a href="https://github.com/seanebones-lang/personal-RAG">GitHub</a>
+    <a href="/">mothership</a>
+  </nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div class="kicker">Local-first · private vault · open source MIT</div>
+  <h1>Ask your own files. <span>Nothing leaves the machine.</span></h1>
+  <p class="lede">PersonalRAGVault is local-first document search for contracts, manuals, notes, and code on your disk. Ingest a folder, embed on CPU, store vectors in Chroma, and ask plain-language questions with citations. Optional local answers via Ollama. No cloud account. No training someone else's model on your data.</p>
+  <div class="ctas">
+    <a class="btn btn-primary" href="https://github.com/seanebones-lang/personal-RAG">View on GitHub</a>
+    <a class="btn btn-ghost" href="mailto:nextelevenstudios@gmail.com?subject=Private%20RAG">Talk about a private deploy</a>
+    <a class="btn btn-ghost" href="https://www.mothership-ai.com/">mothership-ai.com</a>
+  </div>
+  <div class="meta-row">
+    <span class="chip">Self-hosted · open source</span>
+    <span class="chip">Chroma · hybrid search</span>
+    <span class="chip">Optional Ollama</span>
+    <span class="chip">CLI · API · optional UI</span>
+  </div>
+</div></section>
+
+<section id="why"><div class="wrap">
+  <h2>Why it exists</h2>
+  <p class="section-lead">Most “AI over your docs” products want an upload. Operators with real contracts and internal notes need the opposite.</p>
+  <div class="grid grid-3">
+    <div class="card"><div class="tag warn">Cloud upload</div><h3>Sensitive files leave the building</h3><p>Once a PDF hits someone else's index, you have a new vendor risk and a new place your data can leak. Local vaults remove that step.</p></div>
+    <div class="card"><div class="tag warn">No citations</div><h3>Answers without sources are unusable</h3><p>If you cannot open the page the model used, you cannot trust the answer in a dealership, legal pack, or ops manual.</p></div>
+    <div class="card"><div class="tag warn">Heavy stacks</div><h3>Docker + GPU just to try it</h3><p>PersonalRAGVault is a small Python CLI: venv, ingest, query. Optional UI and OCR extras when you want them.</p></div>
+  </div>
+</div></section>
+
+<section id="what"><div class="wrap">
+  <h2>What it does</h2>
+  <p class="section-lead">Ingest → embed → retrieve → ask. Built for a personal or team vault on hardware you control.</p>
+  <div class="grid grid-2">
+    <div class="card"><div class="tag live">Working today</div><h3>Ingest</h3>
+      <ul>
+        <li>PDF, Markdown, text, JSON, DOCX, code, calendars, bookmarks</li>
+        <li>WhatsApp chats, Notion exports, optional OCR for images</li>
+        <li>Dedup on re-ingest · skip noise dirs (.git, .obsidian, node_modules)</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag live">Working today</div><h3>Query</h3>
+      <ul>
+        <li>Hybrid vector + keyword (FTS5) with RRF</li>
+        <li>Presets: fast / balanced / quality</li>
+        <li>Streaming answers + automatic citation display</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag live">Working today</div><h3>Operate</h3>
+      <ul>
+        <li><span class="mono">doctor</span> and <span class="mono">config edit</span> for local health</li>
+        <li>Folder watch, purge, reindex, compact</li>
+        <li>Optional Streamlit UI for multi-turn chat</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag live">Working today</div><h3>Integrate</h3>
+      <ul>
+        <li>Local FastAPI: <span class="mono">/query</span>, <span class="mono">/ingest</span>, streaming SSE</li>
+        <li>Optional bearer token for agent/tool access</li>
+        <li>Graph neighbors for linked notes</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="live"><div class="wrap">
+  <h2>What's ready, and what isn't</h2>
+  <p class="section-lead">Open source under MIT. Good for personal vaults and private operator installs. Not a hosted multi-tenant SaaS.</p>
+  <div class="grid grid-2">
+    <div class="card"><div class="tag live">Running now</div><h3>What you get today</h3>
+      <ul>
+        <li>Full local pipeline on Mac or Linux</li>
+        <li>CPU embeddings + Chroma storage</li>
+        <li>Retrieval-only mode or local LLM answers</li>
+        <li>CLI, optional UI, optional local API</li>
+        <li>Public repo with CI and install scripts</li>
+      </ul>
+    </div>
+    <div class="card"><div class="tag warn">Not yet / not the point</div><h3>What we won't pretend</h3>
+      <ul>
+        <li>A NextEleven-hosted cloud vault (you run it)</li>
+        <li>Enterprise SSO/SCIM out of the box</li>
+        <li>Guaranteed accuracy without good source docs</li>
+        <li>A replacement for your DMS or dealership desk products</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Need a hardened private deploy, training, or wiring this into an operator workflow? That is custom work — same fixed-price pilot path as the rest of NextEleven.</p>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <h2>Get started</h2>
+  <p class="section-lead">Clone, setup, doctor, ingest, query. All on your machine.</p>
+  <div class="code">git clone https://github.com/seanebones-lang/personal-RAG.git
+cd personal-RAG
+./scripts/setup.sh --dev
+
+# optional
+pip install -e ".[ui]"          # Streamlit UI
+ollama pull llama3.2            # local answers
+
+personalragvault doctor
+personalragvault ingest ~/Documents
+personalragvault query "find my notes about warranty policy"</div>
+  <div class="ctas" style="margin-top:24px">
+    <a class="btn btn-primary" href="https://github.com/seanebones-lang/personal-RAG">GitHub · seanebones-lang/personal-RAG</a>
+    <a class="btn btn-ghost" href="mailto:nextelevenstudios@gmail.com?subject=Private%20RAG%20deploy">Private deploy inquiry</a>
+    <a class="btn btn-ghost" href="/harness/">Also: NextEleven Harness</a>
+    <a class="btn btn-ghost" href="/lot/">Also: Lot Management</a>
+  </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap">
+  <p><strong>NextEleven LLC</strong> · Personal RAG · local-first private document search</p>
+  <p>nextelevenstudios@gmail.com · www.mothership-ai.com · github.com/seanebones-lang/personal-RAG</p>
+  <p style="margin-top:10px;font-size:.82rem">Open source MIT. Your data stays on your disk. Commercial hardening and private deploys available by SOW.</p>
+</div></footer>
+</body>
+</html>
