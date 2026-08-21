@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NextEleven LLC - Enterprise technology solutions: SaaS, custom systems, fintech trading, AI integration, and iOS apps.">
   <title>NextEleven — Enterprise Technology Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,15 +15,15 @@
 
     :root {
       --bg-dark: #0a0a0a;
-      --bg-secondary: #1a1a1a;
-      --bg-tertiary: #2a2a2a;
-      --accent-cyan: #22d3ee;
-      --accent-orange: #ff6b35;
-      --accent-pink: #ec4899;
+      --bg-secondary: #141414;
+      --bg-tertiary: #1f1f1f;
+      --accent-cyan: #00d9ff;
+      --accent-pink: #ff006e;
+      --accent-orange: #ff8c42;
       --text-primary: #ffffff;
-      --text-secondary: #a8a8a8;
-      --text-muted: #6b7280;
-      --border-color: #333333;
+      --text-secondary: #b0b0b0;
+      --text-muted: #707070;
+      --border-color: #2a2a2a;
     }
 
     html {
@@ -34,111 +34,162 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg-dark);
       color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
+      line-height: 1.5;
+      font-weight: 400;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Space Grotesk', sans-serif;
+    /* TYPOGRAPHY HIERARCHY */
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 3rem);
       font-weight: 700;
       letter-spacing: -0.02em;
-      line-height: 1.2;
+      line-height: 1.15;
+      margin: 0;
     }
 
-    /* Header & Navigation */
+    h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      margin: 0;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* HEADER & NAVIGATION */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(8px);
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
     }
 
     nav {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 1rem 2rem;
+      padding: 1.25rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: -0.5px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 3rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
     nav a {
       color: var(--text-secondary);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 500;
-      transition: color 0.3s ease;
-      cursor: pointer;
+      transition: color 0.25s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-cyan);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
       color: var(--accent-cyan);
     }
 
+    nav a:hover::after {
+      width: 100%;
+    }
+
     .cta-button {
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      background: var(--accent-cyan);
       color: var(--bg-dark);
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
+      padding: 0.8rem 1.6rem;
+      border-radius: 0;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
       transition: all 0.3s ease;
-      border: none;
+      border: 2px solid var(--accent-cyan);
       cursor: pointer;
-      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.15);
+      letter-spacing: 0.5px;
     }
 
     .cta-button:hover {
+      background: transparent;
+      color: var(--accent-cyan);
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.25);
     }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 6rem 2rem;
+      padding: 7rem 2rem;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 4rem;
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      line-height: 1.1;
     }
 
-    .hero p {
-      font-size: 1.25rem;
+    .hero-subtitle {
+      font-size: 1.3rem;
       color: var(--text-secondary);
-      margin-bottom: 2rem;
-      max-width: 700px;
+      margin-bottom: 2.5rem;
+      max-width: 750px;
       margin-left: auto;
       margin-right: auto;
+      font-weight: 300;
+      line-height: 1.7;
     }
 
     .hero-buttons {
@@ -146,25 +197,27 @@
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
 
     .primary-button {
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      background: var(--accent-cyan);
       color: var(--bg-dark);
       padding: 1rem 2.5rem;
-      border-radius: 6px;
+      border-radius: 0;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
       transition: all 0.3s ease;
-      border: none;
+      border: 2px solid var(--accent-cyan);
       cursor: pointer;
-      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.2);
+      letter-spacing: 0.5px;
+      font-family: 'Syne', sans-serif;
     }
 
     .primary-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 48px rgba(34, 211, 238, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
     }
 
     .secondary-button {
@@ -172,26 +225,28 @@
       color: var(--text-primary);
       padding: 1rem 2.5rem;
       border: 2px solid var(--border-color);
-      border-radius: 6px;
+      border-radius: 0;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
       transition: all 0.3s ease;
       cursor: pointer;
+      letter-spacing: 0.5px;
+      font-family: 'Syne', sans-serif;
     }
 
     .secondary-button:hover {
       border-color: var(--accent-cyan);
       color: var(--accent-cyan);
-      background: rgba(34, 211, 238, 0.05);
+      background: rgba(0, 217, 255, 0.05);
     }
 
-    /* Founders Section */
+    /* FOUNDERS SECTION */
     .founders {
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
-      padding: 5rem 2rem;
-      background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.05));
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, rgba(0, 217, 255, 0.03), transparent);
     }
 
     .founders-content {
@@ -199,52 +254,62 @@
       margin: 0 auto;
     }
 
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+    }
+
     .founders h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      text-align: center;
+      margin-bottom: 3.5rem;
     }
 
     .founder-card {
       background: var(--bg-secondary);
       border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 2rem;
-      max-width: 500px;
+      padding: 3rem;
+      max-width: 550px;
       margin: 0 auto;
-      text-align: center;
     }
 
     .founder-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      border-radius: 0;
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
-      font-weight: bold;
+      font-size: 4rem;
+      font-weight: 800;
+      font-family: 'Syne', sans-serif;
+      color: var(--bg-dark);
     }
 
     .founder-card h3 {
-      font-size: 1.5rem;
+      text-align: center;
       margin-bottom: 0.5rem;
     }
 
     .founder-role {
       color: var(--accent-cyan);
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-size: 0.9rem;
+      text-align: center;
+      letter-spacing: 0.5px;
     }
 
     .founder-bio {
       color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      text-align: center;
     }
 
     .social-links {
@@ -258,118 +323,114 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.85rem;
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.25rem;
       border: 1px solid var(--border-color);
-      border-radius: 4px;
       transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
     }
 
     .social-links a:hover {
       border-color: var(--accent-cyan);
       color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.05);
     }
 
-    /* Services Section */
-    .section {
+    /* SERVICES SECTION */
+    .services {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 5rem 2rem;
+      padding: 6rem 2rem;
     }
 
-    .section-title {
-      font-size: 2.5rem;
+    .services h2 {
       margin-bottom: 1rem;
-      text-align: center;
     }
 
-    .section-subtitle {
-      font-size: 1.1rem;
+    .section-intro {
+      font-size: 1.15rem;
       color: var(--text-secondary);
-      text-align: center;
-      margin-bottom: 3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 4rem;
+      max-width: 750px;
+      font-weight: 300;
+      line-height: 1.7;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
     }
 
     .service-card {
       background: var(--bg-secondary);
       border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
-    }
-
-    .service-card:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 16px 32px rgba(34, 211, 238, 0.1);
-      transform: translateY(-4px);
     }
 
     .service-card::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
+      left: -100%;
+      width: 100%;
       height: 3px;
       background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-      transform-origin: left;
+      transition: left 0.4s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 20px 40px rgba(0, 217, 255, 0.1);
+      transform: translateY(-6px);
     }
 
     .service-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      left: 0;
     }
 
     .service-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      color: var(--accent-cyan);
     }
 
     .service-card p {
       color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
     }
 
     .service-card a {
       color: var(--accent-cyan);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.9rem;
       display: inline-flex;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 0.75rem;
       transition: gap 0.3s ease;
+      letter-spacing: 0.5px;
+      font-family: 'Syne', sans-serif;
+      text-transform: uppercase;
     }
 
     .service-card a:hover {
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
-    /* Testimonials / Social Proof */
+    /* PROOF SECTION */
     .proof {
-      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
+      background: linear-gradient(180deg, rgba(0, 217, 255, 0.05), transparent);
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
-      padding: 5rem 2rem;
+      padding: 6rem 2rem;
     }
 
     .proof-content {
@@ -378,14 +439,12 @@
     }
 
     .proof h2 {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      text-align: center;
+      margin-bottom: 4rem;
     }
 
     .case-studies {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
@@ -393,12 +452,19 @@
       background: var(--bg-secondary);
       border: 1px solid var(--border-color);
       padding: 2rem;
-      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .case-study:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 12px 24px rgba(0, 217, 255, 0.08);
     }
 
     .case-study-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
       color: var(--accent-cyan);
     }
 
@@ -412,15 +478,16 @@
     .case-study-metric {
       display: flex;
       align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .metric-value {
-      font-size: 1.5rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--accent-cyan);
-      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.01em;
     }
 
     .metric-label {
@@ -428,10 +495,11 @@
       font-size: 0.9rem;
     }
 
-    /* Contact Section */
+    /* CONTACT SECTION */
     .contact {
-      padding: 5rem 2rem;
-      background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.03));
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
     }
 
     .contact-content {
@@ -441,20 +509,24 @@
     }
 
     .contact h2 {
-      font-size: 2.5rem;
       margin-bottom: 1.5rem;
     }
 
-    .contact p {
+    .contact-intro {
+      font-size: 1.15rem;
       color: var(--text-secondary);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
     }
 
     .contact-form {
       display: grid;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      background: var(--bg-secondary);
+      padding: 2.5rem;
+      border: 1px solid var(--border-color);
     }
 
     .form-group {
@@ -463,58 +535,73 @@
 
     .form-group label {
       display: block;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      background: var(--bg-secondary);
+      background: var(--bg-dark);
       border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 0.75rem 1rem;
+      padding: 1rem;
       color: var(--text-primary);
       font-family: inherit;
-      font-size: 0.95rem;
-      transition: border-color 0.3s ease;
+      font-size: 1rem;
+      transition: all 0.3s ease;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
       border-color: var(--accent-cyan);
-      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+      box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: 140px;
     }
 
     .submit-button {
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      background: var(--accent-cyan);
       color: var(--bg-dark);
       padding: 1rem 2rem;
-      border-radius: 6px;
-      border: none;
-      font-weight: 600;
+      border: 2px solid var(--accent-cyan);
+      font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.2);
+      letter-spacing: 0.5px;
+      font-family: 'Syne', sans-serif;
+      text-transform: uppercase;
     }
 
     .submit-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.3);
+      box-shadow: 0 15px 30px rgba(0, 217, 255, 0.2);
     }
 
-    /* Footer */
+    .contact-email {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-email a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border-color);
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       background: var(--bg-secondary);
     }
 
@@ -522,15 +609,18 @@
       max-width: 1400px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .footer-section h3 {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
     }
 
     .footer-section ul {
@@ -540,8 +630,8 @@
     .footer-section a {
       color: var(--text-secondary);
       text-decoration: none;
-      font-size: 0.9rem;
-      line-height: 1.8;
+      font-size: 0.95rem;
+      line-height: 2;
       transition: color 0.3s ease;
     }
 
@@ -557,71 +647,74 @@
       font-size: 0.85rem;
     }
 
-    /* Responsive */
+    /* UTILITIES */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav {
         padding: 1rem 1.5rem;
       }
 
       nav ul {
-        gap: 0.75rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
       }
 
-      nav a {
-        font-size: 0.85rem;
-      }
-
-      .logo {
-        font-size: 1.1rem;
-      }
-
       .hero {
-        padding: 3rem 1.5rem;
+        padding: 4rem 1.5rem;
       }
 
-      .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.75rem;
-      }
-
-      .primary-button,
-      .secondary-button {
-        width: 100%;
-        padding: 0.85rem 1.5rem;
-        font-size: 0.95rem;
+      h1 {
+        font-size: 2.25rem;
       }
 
       h2 {
         font-size: 1.75rem;
       }
 
-      .section {
-        padding: 3rem 1.5rem;
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .primary-button,
+      .secondary-button {
+        width: 100%;
+      }
+
+      .founder-card {
+        padding: 2rem;
+      }
+
+      .founder-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+      }
+
+      .services {
+        padding: 4rem 1.5rem;
       }
 
       .services-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
       }
 
       .service-card {
-        padding: 1.5rem;
+        padding: 2rem;
       }
 
-      .founder-card {
-        padding: 1.5rem;
+      .proof {
+        padding: 4rem 1.5rem;
       }
 
       .case-studies {
@@ -629,113 +722,56 @@
         gap: 1.5rem;
       }
 
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      .contact {
+        padding: 4rem 1.5rem;
       }
 
       .contact-form {
-        gap: 0.75rem;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        padding: 0.65rem 0.85rem;
-        font-size: 1rem;
-      }
-
-      .proof {
-        padding: 3rem 1.5rem;
-      }
-
-      .contact {
-        padding: 3rem 1.5rem;
-      }
-
-      .founders {
-        padding: 3rem 1.5rem;
+        padding: 1.5rem;
       }
     }
 
-    /* Extra small devices */
     @media (max-width: 480px) {
       nav {
         flex-direction: column;
         gap: 1rem;
-        padding: 1rem;
       }
 
       nav ul {
         width: 100%;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
       }
 
-      nav a {
-        display: block;
-        padding: 0.75rem;
+      h1 {
+        font-size: 1.75rem;
       }
 
-      .hero {
-        padding: 2rem 1rem;
-      }
-
-      .hero h1 {
-        font-size: 1.5rem;
-        line-height: 1.3;
-      }
-
-      .hero p {
-        font-size: 0.95rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .section-subtitle {
-        font-size: 0.95rem;
-      }
-
-      .service-icon {
-        font-size: 1.5rem;
-      }
-
-      .founder-avatar {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
-      }
-
-      .cta-button {
-        padding: 0.65rem 1.25rem;
-        font-size: 0.85rem;
+      h2 {
+        font-size: 1.4rem;
       }
 
       h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
-      footer {
-        padding: 2rem 1rem;
+      .primary-button,
+      .secondary-button {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
       }
 
-      .footer-bottom {
-        font-size: 0.8rem;
+      .services-grid {
+        gap: 1.25rem;
       }
-    }
 
-    /* Utility */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+      .service-card {
+        padding: 1.5rem;
+      }
 
-    .divider {
-      height: 1px;
-      background: var(--border-color);
-      margin: 4rem 0;
+      .footer-content {
+        gap: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -743,11 +779,11 @@
   <!-- Navigation -->
   <header>
     <nav>
-      <div class="logo">NextEleven</div>
+      <div class="logo">NEXTELEVEN</div>
       <ul>
         <li><a href="#services">Services</a></li>
-        <li><a href="#proof">Case Studies</a></li>
-        <li><a href="#contact" class="cta-button">Get in Touch</a></li>
+        <li><a href="#proof">Results</a></li>
+        <li><a href="#contact" class="cta-button">Get Started</a></li>
       </ul>
     </nav>
   </header>
@@ -755,7 +791,7 @@
   <!-- Hero -->
   <section class="hero">
     <h1>Enterprise Technology, Built at Scale</h1>
-    <p>Custom SaaS platforms, autonomous trading systems, AI integration, and production mobile apps. We ship what Fortune 500 companies rely on.</p>
+    <p class="hero-subtitle">Custom SaaS platforms, autonomous trading systems, AI integration, and production mobile apps. We ship what enterprise companies rely on.</p>
     <div class="hero-buttons">
       <a href="#contact" class="primary-button">Schedule Consultation</a>
       <a href="#services" class="secondary-button">Explore Services</a>
@@ -765,6 +801,7 @@
   <!-- Founders -->
   <section class="founders">
     <div class="founders-content">
+      <div class="section-label">Leadership</div>
       <h2>Built by Engineers</h2>
       <div class="founder-card">
         <div class="founder-avatar">S</div>
@@ -781,100 +818,96 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="section">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-subtitle">Enterprise-grade solutions across SaaS, custom systems, fintech, AI, and mobile</p>
+  <section id="services" class="services">
+    <div class="section-label">Capabilities</div>
+    <h2>Enterprise Solutions</h2>
+    <p class="section-intro">Production-grade systems designed for enterprise scale, reliability, and performance. From SaaS platforms to autonomous AI agents to fintech infrastructure.</p>
 
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">📦</div>
         <h3>SaaS Platforms</h3>
         <p><strong>Inventory Parts System</strong> — Real-time stock tracking, multi-warehouse management, supplier integration, and advanced analytics for parts distributors.</p>
-        <a href="/saas/">Learn More →</a>
+        <a href="/saas/">Explore →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">⚙️</div>
         <h3>Custom Systems</h3>
         <p><strong>Harness</strong> — AI coding agent in Rust. <strong>Personal RAG</strong> — Custom knowledge bases with semantic search and LLM integration.</p>
-        <a href="/systems/">Learn More →</a>
+        <a href="/systems/">Explore →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">💹</div>
         <h3>Fintech Solutions</h3>
-        <p><strong>AK47v7.62</strong> — Auto Kalshi BTC 15-min trader. <strong>Market Bot</strong> — Automated Robinhood BTC trading with real-time analysis.</p>
-        <a href="/fintech/">Learn More →</a>
+        <p><strong>AK47v7.62</strong> — Auto Kalshi BTC trader. <strong>Market Bot</strong> — Automated Robinhood BTC trading with real-time analysis.</p>
+        <a href="/fintech/">Explore →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">🤖</div>
         <h3>AI Integration</h3>
-        <p>Omnichannel AI assistants (website chat, email, SMS). Strategic consulting on AI integration into existing systems or full system redesign.</p>
-        <a href="/ai/">Learn More →</a>
+        <p>Omnichannel AI assistants (chat, email, SMS). Strategic consulting on AI integration or full system redesign with AI at the core.</p>
+        <a href="/ai/">Explore →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">📱</div>
         <h3>Mobile Apps</h3>
-        <p>11 iOS App Store applications spanning productivity, health, finance, education, and professional tools. All production-ready, enterprise-quality.</p>
-        <a href="/mobile/">Learn More →</a>
+        <p>11 iOS App Store applications spanning productivity, health, finance, education, and professional tools. All production-ready.</p>
+        <a href="/mobile/">Explore →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">🎯</div>
         <h3>Consultation</h3>
-        <p>Expert guidance on technology strategy, system architecture, and AI implementation. From initial assessment to production deployment.</p>
+        <p>Expert guidance on technology strategy, system architecture, and AI implementation. From assessment to production deployment.</p>
         <a href="#contact">Get Started →</a>
       </div>
     </div>
   </section>
 
-  <!-- Proof / Case Studies -->
+  <!-- Proof -->
   <section id="proof" class="proof">
     <div class="proof-content">
-      <h2>Proven Results</h2>
+      <div class="section-label">Proven Results</div>
+      <h2>Track Record</h2>
 
       <div class="case-studies">
         <div class="case-study">
-          <div class="case-study-title">Enterprise Trading System</div>
-          <p class="case-study-description">Autonomous trading bot deployed for cryptocurrency markets. Real-time analysis, position management, and risk controls.</p>
+          <div class="case-study-title">Trading System</div>
+          <p class="case-study-description">Autonomous bot deployed for cryptocurrency markets with real-time analysis and risk controls.</p>
           <div class="case-study-metric">
             <span class="metric-value">$2.5M+</span>
-            <span class="metric-label">in annual trading volume</span>
+            <span class="metric-label">annual trading volume</span>
           </div>
         </div>
 
         <div class="case-study">
           <div class="case-study-title">SaaS Platform</div>
-          <p class="case-study-description">Multi-tenant parts inventory system with supplier integration and real-time analytics serving mid-market distributors.</p>
+          <p class="case-study-description">Multi-tenant parts inventory system with supplier integration serving distributors.</p>
           <div class="case-study-metric">
-            <span class="metric-value">50%+</span>
-            <span class="metric-label">reduction in inventory overhead</span>
+            <span class="metric-value">50%</span>
+            <span class="metric-label">inventory cost reduction</span>
           </div>
         </div>
 
         <div class="case-study">
           <div class="case-study-title">Mobile App Suite</div>
-          <p class="case-study-description">11 production iOS applications on the App Store, ranging from health/wellness to professional business tools.</p>
+          <p class="case-study-description">11 production iOS applications on the App Store with combined user base.</p>
           <div class="case-study-metric">
             <span class="metric-value">50K+</span>
-            <span class="metric-label">combined app store users</span>
+            <span class="metric-label">combined users</span>
           </div>
         </div>
 
         <div class="case-study">
           <div class="case-study-title">AI Integration</div>
-          <p class="case-study-description">Custom AI assistant platform with omnichannel deployment (chat, email, SMS) for enterprise customer support.</p>
+          <p class="case-study-description">Custom AI assistant platform with omnichannel deployment for enterprise support.</p>
           <div class="case-study-metric">
             <span class="metric-value">70%</span>
-            <span class="metric-label">reduction in support ticket time</span>
+            <span class="metric-label">support efficiency gain</span>
           </div>
         </div>
 
         <div class="case-study">
           <div class="case-study-title">Coding Agent</div>
-          <p class="case-study-description">Harness — autonomous AI coding agent in Rust for code generation, refactoring, and multi-language support.</p>
+          <p class="case-study-description">Harness — autonomous AI coding agent for code generation and refactoring.</p>
           <div class="case-study-metric">
             <span class="metric-value">3x</span>
             <span class="metric-label">faster feature velocity</span>
@@ -882,8 +915,8 @@
         </div>
 
         <div class="case-study">
-          <div class="case-study-title">Custom Knowledge System</div>
-          <p class="case-study-description">Personal RAG platform for semantic search and knowledge management with LLM integration.</p>
+          <div class="case-study-title">Knowledge System</div>
+          <p class="case-study-description">Personal RAG platform for semantic search and knowledge management.</p>
           <div class="case-study-metric">
             <span class="metric-value">95%</span>
             <span class="metric-label">relevance accuracy</span>
@@ -896,10 +929,11 @@
   <!-- Contact -->
   <section id="contact" class="contact">
     <div class="contact-content">
+      <div class="section-label">Next Steps</div>
       <h2>Start Your Project</h2>
-      <p>Whether you're exploring a new platform, integrating AI, or optimizing your infrastructure, let's talk about what you're building.</p>
+      <p class="contact-intro">Whether you're exploring a new platform, integrating AI, or optimizing your infrastructure, let's talk about what you're building.</p>
 
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="contact-form" action="mailto:nextelevenstudios@gmail.com" method="POST" enctype="text/plain">
         <div class="form-group">
           <label for="name">Company Name</label>
           <input type="text" id="name" name="name" required>
@@ -911,15 +945,15 @@
         </div>
 
         <div class="form-group">
-          <label for="message">Tell us about your project</label>
+          <label for="message">Project Details</label>
           <textarea id="message" name="message" required></textarea>
         </div>
 
         <button type="submit" class="submit-button">Send Message</button>
       </form>
 
-      <p style="font-size: 0.9rem; color: var(--text-muted);">
-        Or reach out directly: <a href="mailto:nextelevenstudios@gmail.com" style="color: var(--accent-cyan); text-decoration: none;">nextelevenstudios@gmail.com</a>
+      <p class="contact-email">
+        Or email directly: <a href="mailto:nextelevenstudios@gmail.com">nextelevenstudios@gmail.com</a>
       </p>
     </div>
   </section>
@@ -960,7 +994,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 NextEleven LLC. Building the future, one system at a time.</p>
+      <p>&copy; 2026 NextEleven LLC. Building enterprise technology, one system at a time.</p>
     </div>
   </footer>
 </body>
