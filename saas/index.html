@@ -16,11 +16,16 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     .back-link { display: inline-block; margin-top: 2rem; color: #0d47a1; text-decoration: none; font-weight: 600; }
     .back-link:hover { text-decoration: underline; }
-    .section { padding: 5rem 2rem; }
+    .section { padding: 4rem 2rem; }
     h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #0d47a1; }
+    h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; color: #0d47a1; }
+    h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1565c0; }
     .hero { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); color: white; padding: 4rem 2rem; text-align: center; }
     .hero h1 { color: white; margin-bottom: 1.5rem; }
-    .placeholder-box { background: #f0f4ff; border-left: 4px solid #ff6b35; padding: 2rem; border-radius: 4px; margin: 2rem 0; color: #666; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .product-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff6b35; }
+    .product-card h4 { color: #0d47a1; margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .product-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
     footer { background: #0d47a1; color: white; padding: 2rem; text-align: center; margin-top: 4rem; }
   </style>
 </head>
@@ -41,19 +46,29 @@
 
   <section class="section">
     <div class="container">
-      <h2>Cloud-Native SaaS Architecture</h2>
-      <p>We design and build SaaS platforms engineered for enterprise scale, security, and performance.</p>
+      <h2>Production SaaS Platforms</h2>
+      <p>Enterprise-grade SaaS solutions built for scalability, reliability, and performance.</p>
 
-      <div class="placeholder-box">
-        <strong>📝 Page Under Development</strong><br><br>
-        This page will include:<br>
-        • Multi-tenant architecture design<br>
-        • Subscription & billing systems<br>
-        • Advanced analytics & reporting<br>
-        • Integration capabilities<br>
-        • Security & compliance features<br>
-        • Case studies and client success stories<br><br>
-        <strong>Please provide content and examples, and we'll add them here.</strong>
+      <h3>Inventory Parts System</h3>
+      <p>Comprehensive inventory management platform for parts distributors and retailers. Real-time stock tracking, multi-warehouse support, supplier integration, and automated reordering. Built for mid-market and enterprise inventory operations.</p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <h4>Real-Time Inventory Tracking</h4>
+          <p>Live stock levels across multiple warehouses and locations. Automated alerts for low stock, backorder management, and cycle counting.</p>
+        </div>
+        <div class="product-card">
+          <h4>Supplier Integration</h4>
+          <p>Seamless connections with suppliers for pricing, availability, and automated purchase orders. Multi-supplier sourcing optimization.</p>
+        </div>
+        <div class="product-card">
+          <h4>Advanced Analytics</h4>
+          <p>Turnover analysis, demand forecasting, profitability by SKU, and supplier performance metrics. Actionable business intelligence.</p>
+        </div>
+        <div class="product-card">
+          <h4>API & Integrations</h4>
+          <p>RESTful APIs for ERP, e-commerce, and accounting system integration. Webhook support for real-time event streaming.</p>
+        </div>
       </div>
 
       <a href="/" class="back-link">← Back to Services</a>
