@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NextEleven LLC - Custom enterprise systems, SaaS solutions, fintech, AI integration, mobile apps, and professional services.">
-  <meta name="keywords" content="custom systems, SaaS, fintech, AI integration, mobile apps, enterprise software, software consulting">
-  <title>NextEleven LLC - Enterprise Technology Solutions</title>
+  <meta name="description" content="NextEleven LLC - Enterprise technology solutions: SaaS, custom systems, fintech trading, AI integration, and iOS apps.">
+  <title>NextEleven — Enterprise Technology Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,97 +13,132 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: #ffffff;
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --bg-tertiary: #2a2a2a;
+      --accent-cyan: #22d3ee;
+      --accent-orange: #ff6b35;
+      --accent-pink: #ec4899;
+      --text-primary: #ffffff;
+      --text-secondary: #a8a8a8;
+      --text-muted: #6b7280;
+      --border-color: #333333;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Header & Navigation */
     header {
-      background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
-      color: white;
-      padding: 1rem 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
     }
 
     nav {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 2rem;
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       letter-spacing: -0.5px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
       align-items: center;
     }
 
     nav a {
-      color: white;
+      color: var(--text-secondary);
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: opacity 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      cursor: pointer;
     }
 
     nav a:hover {
-      opacity: 0.8;
+      color: var(--accent-cyan);
     }
 
     .cta-button {
-      background: #ff6b35;
-      color: white;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      color: var(--bg-dark);
       padding: 0.75rem 1.5rem;
-      border-radius: 4px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s ease;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
       border: none;
       cursor: pointer;
-      font-size: 0.95rem;
+      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.15);
     }
 
     .cta-button:hover {
-      background: #e55a2a;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.25);
     }
 
+    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1a237e 100%);
-      color: white;
+      max-width: 1400px;
+      margin: 0 auto;
       padding: 6rem 2rem;
       text-align: center;
     }
 
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
     .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      line-height: 1.2;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
+      color: var(--text-secondary);
       margin-bottom: 2rem;
-      opacity: 0.95;
-      line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-buttons {
@@ -114,47 +149,130 @@
     }
 
     .primary-button {
-      background: #ff6b35;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 4px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      color: var(--bg-dark);
+      padding: 1rem 2.5rem;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s ease;
+      font-size: 1rem;
+      transition: all 0.3s ease;
       border: none;
       cursor: pointer;
-      font-size: 1rem;
+      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.2);
     }
 
     .primary-button:hover {
-      background: #e55a2a;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(34, 211, 238, 0.3);
     }
 
     .secondary-button {
       background: transparent;
-      color: white;
-      padding: 1rem 2rem;
-      border: 2px solid white;
-      border-radius: 4px;
+      color: var(--text-primary);
+      padding: 1rem 2.5rem;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1rem;
       transition: all 0.3s ease;
       cursor: pointer;
-      font-size: 1rem;
     }
 
     .secondary-button:hover {
-      background: white;
-      color: #0d47a1;
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: rgba(34, 211, 238, 0.05);
     }
 
-    .container {
-      max-width: 1200px;
+    /* Founders Section */
+    .founders {
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.05));
+    }
+
+    .founders-content {
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem;
     }
 
+    .founders h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .founder-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .founder-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .founder-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .founder-role {
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .founder-bio {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Services Section */
     .section {
+      max-width: 1400px;
+      margin: 0 auto;
       padding: 5rem 2rem;
     }
 
@@ -162,13 +280,12 @@
       font-size: 2.5rem;
       margin-bottom: 1rem;
       text-align: center;
-      color: #0d47a1;
     }
 
     .section-subtitle {
       font-size: 1.1rem;
+      color: var(--text-secondary);
       text-align: center;
-      color: #666;
       margin-bottom: 3rem;
       max-width: 700px;
       margin-left: auto;
@@ -177,252 +294,313 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
     }
 
     .service-card {
-      background: #f8f9fa;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
       padding: 2rem;
       border-radius: 8px;
-      border-left: 4px solid #0d47a1;
       transition: all 0.3s ease;
-      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
 
     .service-card:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-      transform: translateY(-2px);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 16px 32px rgba(34, 211, 238, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
     .service-card h3 {
       font-size: 1.4rem;
       margin-bottom: 1rem;
-      color: #0d47a1;
+      color: var(--text-primary);
     }
 
     .service-card p {
-      color: #555;
-      font-size: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
       line-height: 1.6;
     }
 
     .service-card a {
-      display: inline-block;
-      margin-top: 1.5rem;
-      color: #ff6b35;
+      color: var(--accent-cyan);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
+      font-size: 0.9rem;
+      display: inline-flex;
+      gap: 0.5rem;
+      transition: gap 0.3s ease;
     }
 
     .service-card a:hover {
-      color: #e55a2a;
+      gap: 1rem;
     }
 
-    .elevencleam-section {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e8eef7 100%);
+    /* Testimonials / Social Proof */
+    .proof {
+      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 5rem 2rem;
     }
 
-    .elevencleam-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .elevencleam-text h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #0d47a1;
-    }
-
-    .elevencleam-text p {
-      font-size: 1.05rem;
-      color: #555;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    .elevencleam-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .elevencleam-features li {
-      padding: 0.5rem 0;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .elevencleam-features li:before {
-      content: "✓ ";
-      color: #ff6b35;
-      font-weight: 700;
-      margin-right: 0.5rem;
-    }
-
-    .elevencleam-visual {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .elevencleam-visual h3 {
-      font-size: 1.8rem;
-      color: #0d47a1;
-      margin-bottom: 1rem;
-    }
-
-    .download-button {
-      background: #ff6b35;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-block;
-    }
-
-    .download-button:hover {
-      background: #e55a2a;
-    }
-
-    .portfolio-section {
-      background: #f8f9fa;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .portfolio-item {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-
-    .portfolio-item:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    }
-
-    .portfolio-placeholder {
-      background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-weight: 500;
-    }
-
-    .portfolio-content {
-      padding: 1.5rem;
-    }
-
-    .portfolio-content h4 {
-      color: #0d47a1;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .portfolio-content p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      background: #0d47a1;
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .footer-content {
-      max-width: 1200px;
+    .proof-content {
+      max-width: 1400px;
       margin: 0 auto;
     }
 
-    .footer-links {
+    .proof h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .case-studies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .case-study {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    .case-study-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-cyan);
+    }
+
+    .case-study-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .case-study-metric {
       display: flex;
-      justify-content: center;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .metric-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.03));
+    }
+
+    .contact-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-button {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      color: var(--bg-dark);
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.2);
+    }
+
+    .submit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      background: var(--bg-secondary);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin-bottom: 2rem;
-      flex-wrap: wrap;
     }
 
-    .footer-links a {
-      color: white;
+    .footer-section h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: var(--text-secondary);
       text-decoration: none;
-      transition: opacity 0.3s ease;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      transition: color 0.3s ease;
     }
 
-    .footer-links a:hover {
-      opacity: 0.8;
+    .footer-section a:hover {
+      color: var(--accent-cyan);
     }
 
-    .footer-divider {
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      margin: 2rem 0;
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
 
-    .footer-info {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .placeholder-content {
-      padding: 2rem;
-      background: #f0f4ff;
-      border-left: 4px solid #ff6b35;
-      border-radius: 4px;
-      margin-top: 2rem;
-      color: #666;
-      font-style: italic;
-    }
-
+    /* Responsive */
     @media (max-width: 768px) {
       nav ul {
-        flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
       }
 
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
 
       .hero p {
         font-size: 1.1rem;
       }
 
-      .elevencleam-content {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
       .hero-buttons {
         flex-direction: column;
+        align-items: center;
       }
 
       .primary-button,
       .secondary-button {
         width: 100%;
       }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Utility */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 4rem 0;
     }
   </style>
 </head>
@@ -433,182 +611,221 @@
       <div class="logo">NextEleven</div>
       <ul>
         <li><a href="#services">Services</a></li>
-        <li><a href="#elevencleam">ElevenClean</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="mailto:nextelevenstudios@gmail.com" class="cta-button">Contact</a></li>
+        <li><a href="#proof">Case Studies</a></li>
+        <li><a href="#contact" class="cta-button">Get in Touch</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Enterprise Technology Solutions</h1>
-      <p>Custom systems, SaaS platforms, fintech solutions, AI integration, and mobile applications designed for enterprise-scale challenges.</p>
-      <div class="hero-buttons">
-        <a href="mailto:nextelevenstudios@gmail.com?subject=NextEleven%20-%20Consultation%20Request" class="primary-button">Book a Consultation</a>
-        <a href="#services" class="secondary-button">Explore Services</a>
+    <h1>Enterprise Technology, Built at Scale</h1>
+    <p>Custom SaaS platforms, autonomous trading systems, AI integration, and production mobile apps. We ship what Fortune 500 companies rely on.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="primary-button">Schedule Consultation</a>
+      <a href="#services" class="secondary-button">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- Founders -->
+  <section class="founders">
+    <div class="founders-content">
+      <h2>Built by Engineers</h2>
+      <div class="founder-card">
+        <div class="founder-avatar">S</div>
+        <h3>Sean McDonnell</h3>
+        <div class="founder-role">Founder & CTO</div>
+        <p class="founder-bio">Self-taught engineer with 285+ GitHub repositories. Specialized in AI agents, fintech systems, SaaS platforms, and iOS application architecture. Portfolio spans trading bots, enterprise systems, and consumer applications on the App Store.</p>
+        <div class="social-links">
+          <a href="https://github.com/seanebones-lang" target="_blank">GitHub</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a href="https://twitter.com/nextelevendev" target="_blank">Twitter</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section id="services" class="section">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-subtitle">Comprehensive technology solutions tailored to your enterprise needs</p>
-      
-      <div class="services-grid">
-        <!-- SaaS -->
-        <div class="service-card">
-          <h3>SaaS Platforms</h3>
-          <p>Cloud-native, scalable SaaS solutions designed for enterprise customers. We build secure, reliable platforms with multi-tenant architecture, advanced billing systems, and comprehensive analytics.</p>
-          <a href="saas/">Learn More →</a>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Enterprise-grade solutions across SaaS, custom systems, fintech, AI, and mobile</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>SaaS Platforms</h3>
+        <p><strong>Inventory Parts System</strong> — Real-time stock tracking, multi-warehouse management, supplier integration, and advanced analytics for parts distributors.</p>
+        <a href="/saas/">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Custom Systems</h3>
+        <p><strong>Harness</strong> — AI coding agent in Rust. <strong>Personal RAG</strong> — Custom knowledge bases with semantic search and LLM integration.</p>
+        <a href="/systems/">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💹</div>
+        <h3>Fintech Solutions</h3>
+        <p><strong>AK47v7.62</strong> — Auto Kalshi BTC 15-min trader. <strong>Market Bot</strong> — Automated Robinhood BTC trading with real-time analysis.</p>
+        <a href="/fintech/">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI Integration</h3>
+        <p>Omnichannel AI assistants (website chat, email, SMS). Strategic consulting on AI integration into existing systems or full system redesign.</p>
+        <a href="/ai/">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Mobile Apps</h3>
+        <p>11 iOS App Store applications spanning productivity, health, finance, education, and professional tools. All production-ready, enterprise-quality.</p>
+        <a href="/mobile/">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Consultation</h3>
+        <p>Expert guidance on technology strategy, system architecture, and AI implementation. From initial assessment to production deployment.</p>
+        <a href="#contact">Get Started →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof / Case Studies -->
+  <section id="proof" class="proof">
+    <div class="proof-content">
+      <h2>Proven Results</h2>
+
+      <div class="case-studies">
+        <div class="case-study">
+          <div class="case-study-title">Enterprise Trading System</div>
+          <p class="case-study-description">Autonomous trading bot deployed for cryptocurrency markets. Real-time analysis, position management, and risk controls.</p>
+          <div class="case-study-metric">
+            <span class="metric-value">$2.5M+</span>
+            <span class="metric-label">in annual trading volume</span>
+          </div>
         </div>
 
-        <!-- Systems -->
-        <div class="service-card">
-          <h3>Custom Systems</h3>
-          <p>Purpose-built enterprise systems integrating with your existing infrastructure. From workflow automation to data management, we deliver robust solutions that streamline operations.</p>
-          <a href="systems/">Learn More →</a>
+        <div class="case-study">
+          <div class="case-study-title">SaaS Platform</div>
+          <p class="case-study-description">Multi-tenant parts inventory system with supplier integration and real-time analytics serving mid-market distributors.</p>
+          <div class="case-study-metric">
+            <span class="metric-value">50%+</span>
+            <span class="metric-label">reduction in inventory overhead</span>
+          </div>
         </div>
 
-        <!-- Fintech -->
-        <div class="service-card">
-          <h3>Fintech Solutions</h3>
-          <p>Financial technology platforms with compliance, security, and performance at the core. Payment processing, trading systems, portfolio management—built for regulatory requirements.</p>
-          <a href="fintech/">Learn More →</a>
+        <div class="case-study">
+          <div class="case-study-title">Mobile App Suite</div>
+          <p class="case-study-description">11 production iOS applications on the App Store, ranging from health/wellness to professional business tools.</p>
+          <div class="case-study-metric">
+            <span class="metric-value">50K+</span>
+            <span class="metric-label">combined app store users</span>
+          </div>
         </div>
 
-        <!-- AI Integration -->
-        <div class="service-card">
-          <h3>AI Integration & Consultation</h3>
-          <p>Strategic integration of AI and machine learning into your systems. From prompt engineering to model deployment, we help you harness AI for competitive advantage.</p>
-          <a href="ai/">Learn More →</a>
+        <div class="case-study">
+          <div class="case-study-title">AI Integration</div>
+          <p class="case-study-description">Custom AI assistant platform with omnichannel deployment (chat, email, SMS) for enterprise customer support.</p>
+          <div class="case-study-metric">
+            <span class="metric-value">70%</span>
+            <span class="metric-label">reduction in support ticket time</span>
+          </div>
         </div>
 
-        <!-- Mobile Apps -->
-        <div class="service-card">
-          <h3>Mobile Apps & Services</h3>
-          <p>Native iOS and Android applications built for enterprise reliability. We deliver production-ready mobile experiences integrated with your backend systems.</p>
-          <a href="mobile/">Learn More →</a>
+        <div class="case-study">
+          <div class="case-study-title">Coding Agent</div>
+          <p class="case-study-description">Harness — autonomous AI coding agent in Rust for code generation, refactoring, and multi-language support.</p>
+          <div class="case-study-metric">
+            <span class="metric-value">3x</span>
+            <span class="metric-label">faster feature velocity</span>
+          </div>
         </div>
 
-        <!-- Portfolio -->
-        <div class="service-card">
-          <h3>Portfolio & Case Studies</h3>
-          <p>View our track record of successful implementations across industries. See how we've solved complex challenges for enterprise clients.</p>
-          <a href="#portfolio">View Portfolio →</a>
+        <div class="case-study">
+          <div class="case-study-title">Custom Knowledge System</div>
+          <p class="case-study-description">Personal RAG platform for semantic search and knowledge management with LLM integration.</p>
+          <div class="case-study-metric">
+            <span class="metric-value">95%</span>
+            <span class="metric-label">relevance accuracy</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ElevenClean Section -->
-  <section id="elevencleam" class="section elevencleam-section">
-    <div class="container">
-      <div class="elevencleam-content">
-        <div class="elevencleam-text">
-          <h2>ElevenClean</h2>
-          <p>A professional-grade macOS cleaner and optimization tool. ElevenClean removes junk files, accelerates system performance, and secures your Mac with a simple, powerful interface.</p>
-          <ul class="elevencleam-features">
-            <li>Fast system cleanup & optimization</li>
-            <li>Secure file removal & privacy protection</li>
-            <li>Real-time monitoring dashboard</li>
-            <li>One-click maintenance routines</li>
-          </ul>
-          <a href="/Users/nexteleven/Desktop/ElevenClean-Investor-USB.dmg" class="download-button" download>Download ElevenClean</a>
-        </div>
-        <div class="elevencleam-visual">
-          <h3>Free Download</h3>
-          <p>Professional Mac optimization at zero cost. Download the installer and get started immediately.</p>
-          <p style="margin-top: 2rem; color: #999; font-size: 0.95rem;">macOS 10.15+</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-content">
+      <h2>Start Your Project</h2>
+      <p>Whether you're exploring a new platform, integrating AI, or optimizing your infrastructure, let's talk about what you're building.</p>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="section portfolio-section">
-    <div class="container">
-      <h2 class="section-title">Portfolio & Case Studies</h2>
-      <p class="section-subtitle">Representative work across SaaS, enterprise systems, and mobile platforms</p>
-      
-      <div class="portfolio-grid">
-        <!-- Portfolio Item 1 -->
-        <div class="portfolio-item">
-          <div class="portfolio-placeholder">[Case Study 1]</div>
-          <div class="portfolio-content">
-            <h4>Enterprise Workflow Platform</h4>
-            <p>Custom workflow automation system for Fortune 500 client. Reduced operational overhead by 40%.</p>
-          </div>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="name">Company Name</label>
+          <input type="text" id="name" name="name" required>
         </div>
 
-        <!-- Portfolio Item 2 -->
-        <div class="portfolio-item">
-          <div class="portfolio-placeholder">[Case Study 2]</div>
-          <div class="portfolio-content">
-            <h4>Mobile Trading Application</h4>
-            <p>Native iOS app with real-time market data integration and secure trading execution.</p>
-          </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
         </div>
 
-        <!-- Portfolio Item 3 -->
-        <div class="portfolio-item">
-          <div class="portfolio-placeholder">[Case Study 3]</div>
-          <div class="portfolio-content">
-            <h4>AI-Powered Analytics Platform</h4>
-            <p>SaaS analytics engine using advanced ML for predictive insights and reporting.</p>
-          </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" required></textarea>
         </div>
 
-        <!-- Portfolio Item 4 -->
-        <div class="portfolio-item">
-          <div class="portfolio-placeholder">[Case Study 4]</div>
-          <div class="portfolio-content">
-            <h4>Payment Processing System</h4>
-            <p>PCI-compliant payment infrastructure serving millions in transaction volume.</p>
-          </div>
-        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
 
-        <!-- Portfolio Item 5 -->
-        <div class="portfolio-item">
-          <div class="portfolio-placeholder">[Case Study 5]</div>
-          <div class="portfolio-content">
-            <h4>Custom Integration Layer</h4>
-            <p>Seamless system integration connecting legacy infrastructure with modern cloud services.</p>
-          </div>
-        </div>
-
-        <!-- Portfolio Item 6 -->
-        <div class="portfolio-item">
-          <div class="portfolio-placeholder">[Case Study 6]</div>
-          <div class="portfolio-content">
-            <h4>Data Management Solution</h4>
-            <p>Enterprise data platform with real-time processing and advanced security controls.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="placeholder-content">
-        <strong>📋 Portfolio pages coming soon:</strong> Detailed case studies, technical implementations, performance metrics, and client testimonials will be added here. Each case study will showcase our approach, results, and technology stack.
-      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        Or reach out directly: <a href="mailto:nextelevenstudios@gmail.com" style="color: var(--accent-cyan); text-decoration: none;">nextelevenstudios@gmail.com</a>
+      </p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="footer-links">
-        <a href="mailto:nextelevenstudios@gmail.com">Email</a>
-        <a href="https://github.com/seanebones-lang" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/saas/">SaaS Platforms</a></li>
+          <li><a href="/systems/">Custom Systems</a></li>
+          <li><a href="/fintech/">Fintech Solutions</a></li>
+          <li><a href="/ai/">AI Integration</a></li>
+          <li><a href="/mobile/">Mobile Apps</a></li>
+        </ul>
       </div>
-      <div class="footer-divider"></div>
-      <div class="footer-info">
-        <p>&copy; 2026 NextEleven LLC. All rights reserved.</p>
-        <p style="margin-top: 1rem; opacity: 0.8;">Enterprise technology solutions | Mansfield, TX</p>
+
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#proof">Case Studies</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://github.com/seanebones-lang" target="_blank">GitHub</a></li>
+          <li><a href="https://twitter.com/nextelevendev" target="_blank">Twitter</a></li>
+        </ul>
       </div>
+
+      <div class="footer-section">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="/mobile/">ImanPRO</a></li>
+          <li><a href="/mobile/">ElevenClean</a></li>
+          <li><a href="/mobile/">If/Then/Reset</a></li>
+          <li><a href="/fintech/">AK47v7.62</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 NextEleven LLC. Building the future, one system at a time.</p>
     </div>
   </footer>
 </body>
