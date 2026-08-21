@@ -3,30 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NextEleven AI Integration & Consultation - Custom AI solutions for enterprises">
+  <meta name="description" content="NextEleven AI Integration - Custom AI assistants and strategic consulting">
   <title>AI Integration & Consultation - NextEleven LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #ffffff; }
-    header { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); color: white; padding: 1rem 0; }
-    nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-    .logo { font-size: 1.5rem; font-weight: 700; }
-    nav a { color: white; text-decoration: none; margin-right: 2rem; transition: opacity 0.3s; }
-    nav a:hover { opacity: 0.8; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .back-link { display: inline-block; margin-top: 2rem; color: #0d47a1; text-decoration: none; font-weight: 600; }
-    .back-link:hover { text-decoration: underline; }
-    .section { padding: 4rem 2rem; }
-    h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #0d47a1; }
-    h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; color: #0d47a1; }
-    h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1565c0; }
-    .hero { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); color: white; padding: 4rem 2rem; text-align: center; }
-    .hero h1 { color: white; margin-bottom: 1.5rem; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
-    .product-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff6b35; }
-    .product-card h4 { color: #0d47a1; margin-bottom: 0.5rem; font-size: 1.1rem; }
-    .product-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
-    footer { background: #0d47a1; color: white; padding: 2rem; text-align: center; margin-top: 4rem; }
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --accent-cyan: #22d3ee;
+      --accent-pink: #ec4899;
+      --text-primary: #ffffff;
+      --text-secondary: #a8a8a8;
+      --text-muted: #6b7280;
+      --border-color: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent-cyan);
+    }
+
+    .section p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .subsection {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .subsection h3 {
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      background: rgba(34, 211, 238, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 6px;
+    }
+
+    .feature-card h4 {
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .pricing-section {
+      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
+      padding: 3rem 0;
+      margin: 2rem 0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .pricing-card {
+      background: var(--bg-secondary);
+      border: 2px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.15);
+    }
+
+    .pricing-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 1rem 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin: 1.5rem 0;
+    }
+
+    .pricing-features li {
+      padding: 0.5rem 0;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features li:before {
+      content: "✓ ";
+      color: var(--accent-cyan);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      color: var(--bg-dark);
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.2);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .use-case-list {
+      margin-left: 1.5rem;
+      color: var(--text-secondary);
+    }
+
+    .use-case-list li {
+      margin-bottom: 1rem;
+    }
+
+    .use-case-list strong {
+      color: var(--text-primary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      background: var(--bg-secondary);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .section { padding: 3rem 1.5rem; }
+      .section h2 { font-size: 1.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -40,65 +301,139 @@
   <section class="hero">
     <div class="container">
       <h1>AI Integration & Consultation</h1>
-      <p style="font-size: 1.2rem; opacity: 0.95;">Custom AI solutions and strategic integration for enterprises</p>
+      <p>Strategic AI implementation for enterprise transformation</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2>AI-Powered Business Transformation</h2>
-      <p>We help enterprises integrate AI into existing systems or build entirely new AI-driven workflows. From chatbots to autonomous agents, we deliver intelligent solutions tailored to your needs.</p>
+      <h2>Custom AI Solutions</h2>
+      <p>We help enterprises harness AI to solve complex problems, automate workflows, and drive innovation. From custom chatbots to autonomous agents to full system redesigns with AI at the core.</p>
 
-      <h3>Custom AI Assistance Platforms</h3>
-      <p>Omnichannel AI assistance for your business. Deploy intelligent agents across website chat, email, SMS, and more. Train on your data, brand voice, and business logic.</p>
+      <div class="subsection">
+        <h3>Custom AI Assistants</h3>
+        <p>Omnichannel AI agents deployed across website chat, email, SMS, and messaging platforms. Train on your data, brand voice, and business logic for personalized customer interactions.</p>
 
-      <div class="product-grid">
-        <div class="product-card">
-          <h4>Website Chat</h4>
-          <p>AI-powered chat agent for your website. Instant customer support, lead qualification, and 24/7 availability without staffing.</p>
-        </div>
-        <div class="product-card">
-          <h4>Email Intelligence</h4>
-          <p>Automated email routing, summarization, and draft responses. Intelligent email classification and priority flagging.</p>
-        </div>
-        <div class="product-card">
-          <h4>SMS & Messaging</h4>
-          <p>Conversational AI via SMS, WhatsApp, and other messaging platforms. Natural language understanding with context awareness.</p>
-        </div>
-        <div class="product-card">
-          <h4>Custom Integrations</h4>
-          <p>Connect AI agents to your CRM, knowledge base, and business systems. Real-time data access for informed responses.</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>Website Chat</h4>
+            <p>AI-powered chat for instant customer support, lead qualification, and 24/7 availability without staffing overhead.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Email Intelligence</h4>
+            <p>Automated email routing, summarization, classification, and intelligent draft responses. Boost support team efficiency 2-3x.</p>
+          </div>
+          <div class="feature-card">
+            <h4>SMS & Messaging</h4>
+            <p>Conversational AI via SMS, WhatsApp, Telegram. Natural language understanding with full context awareness.</p>
+          </div>
+          <div class="feature-card">
+            <h4>System Integration</h4>
+            <p>Connect AI agents to your CRM, knowledge base, and business systems. Real-time data access for informed responses.</p>
+          </div>
         </div>
       </div>
 
-      <h3>AI Integration Consulting</h3>
-      <p>Strategic consulting on integrating AI into your existing systems. From architecture design to implementation and fine-tuning, we guide you through every phase.</p>
+      <div class="subsection">
+        <h3>AI Integration Consulting</h3>
+        <p>Strategic consulting on integrating AI into existing systems or building entirely new AI-driven workflows. From architecture design to implementation and ongoing optimization.</p>
 
-      <div class="product-grid">
-        <div class="product-card">
-          <h4>System Architecture</h4>
-          <p>Design AI integration points in your existing infrastructure. Minimal disruption, maximum impact. Scalable from pilot to enterprise.</p>
-        </div>
-        <div class="product-card">
-          <h4>AI Readiness Assessment</h4>
-          <p>Evaluate your data, systems, and workflows. Identify high-impact AI opportunities and technical requirements.</p>
-        </div>
-        <div class="product-card">
-          <h4>Full System Iteration</h4>
-          <p>Complete system redesign with AI at the core. Build next-generation workflows, automation, and intelligence.</p>
-        </div>
-        <div class="product-card">
-          <h4>Training & Support</h4>
-          <p>Staff training on AI tools and capabilities. Ongoing support and optimization as your AI initiatives evolve.</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>AI Readiness Assessment</h4>
+            <p>Evaluate your data maturity, systems, and workflows. Identify high-impact AI opportunities and technical requirements.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Architecture Design</h4>
+            <p>Design AI integration points in your existing infrastructure. Minimal disruption, maximum impact. Scalable from pilot to enterprise.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Full System Redesign</h4>
+            <p>Complete system overhaul with AI at the core. Build next-generation workflows, automation, and intelligence.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Training & Support</h4>
+            <p>Staff training on AI tools and capabilities. Ongoing support and optimization as your initiatives evolve.</p>
+          </div>
         </div>
       </div>
+
+      <div class="pricing-section">
+        <div class="container">
+          <h2>Consulting & Services Pricing</h2>
+          <p style="text-align: center; margin-bottom: 2rem;">Choose the engagement model that fits your needs. All services include dedicated support and optimization.</p>
+
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <h3>Discovery Session</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">Initial assessment</p>
+              <div class="price">$1,500</div>
+              <ul class="pricing-features">
+                <li>2-hour strategy session</li>
+                <li>AI readiness assessment</li>
+                <li>Opportunity identification</li>
+                <li>Preliminary roadmap</li>
+              </ul>
+              <a href="/" class="cta-button">Book Now</a>
+            </div>
+
+            <div class="pricing-card" style="border-color: var(--accent-cyan);">
+              <h3>Custom AI Assistant</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">Build & deploy</p>
+              <div class="price">$8,500+</div>
+              <ul class="pricing-features">
+                <li>Requirements gathering</li>
+                <li>Model selection & training</li>
+                <li>Multi-channel deployment</li>
+                <li>1 month monitoring</li>
+              </ul>
+              <a href="/" class="cta-button">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+              <h3>Integration Project</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">Consulting + implementation</p>
+              <div class="price">$25K+</div>
+              <ul class="pricing-features">
+                <li>Full architecture design</li>
+                <li>System integration</li>
+                <li>Staff training</li>
+                <li>3 months support</li>
+              </ul>
+              <a href="/" class="cta-button">Inquire</a>
+            </div>
+
+            <div class="pricing-card">
+              <h3>Full Redesign</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">Complete system overhaul</p>
+              <div class="price">$75K+</div>
+              <ul class="pricing-features">
+                <li>Full system redesign</li>
+                <li>AI-first architecture</li>
+                <li>Workflow automation</li>
+                <li>6+ months engagement</li>
+              </ul>
+              <a href="/" class="cta-button">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-top: 3rem; margin-bottom: 1.5rem;">Use Cases</h3>
+      <ul class="use-case-list">
+        <li><strong>Customer Support Automation:</strong> Reduce support ticket volume 60-70% with AI agents handling routine inquiries, classification, and escalation.</li>
+        <li><strong>Sales Acceleration:</strong> AI-powered lead qualification, email assistance, and meeting scheduling. Close deals 2x faster.</li>
+        <li><strong>Content Generation:</strong> Automated content creation, email drafting, document generation with brand-consistent voice.</li>
+        <li><strong>Data Analysis & Insights:</strong> Transform raw data into actionable intelligence. Automate reporting and dashboard generation.</li>
+        <li><strong>Workflow Automation:</strong> Eliminate manual data entry, process documents, and orchestrate complex business workflows.</li>
+      </ul>
 
       <a href="/" class="back-link">← Back to Services</a>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 NextEleven LLC. <a href="mailto:nextelevenstudios@gmail.com" style="color: white; text-decoration: underline;">Contact us</a> for more information.</p>
+    <p>&copy; 2026 NextEleven LLC. Enterprise technology solutions.</p>
   </footer>
 </body>
 </html>
