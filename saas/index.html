@@ -1,416 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NextEleven SaaS Platforms - Real-time inventory management, supplier integration, advanced analytics">
-  <title>SaaS Platforms - NextEleven LLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-secondary: #1a1a1a;
-      --accent-cyan: #22d3ee;
-      --accent-pink: #ec4899;
-      --text-primary: #ffffff;
-      --text-secondary: #a8a8a8;
-      --text-muted: #6b7280;
-      --border-color: #333333;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    nav {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    nav a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent-cyan);
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .hero {
-      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 4rem 2rem;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: var(--accent-cyan);
-    }
-
-    .section p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .feature-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .feature-card:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.1);
-    }
-
-    .feature-card h3 {
-      color: var(--accent-cyan);
-      margin-bottom: 0.75rem;
-      font-size: 1.2rem;
-    }
-
-    .feature-card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .pricing-section {
-      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
-      padding: 3rem 0;
-      margin: 2rem 0;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .pricing-card {
-      background: var(--bg-secondary);
-      border: 2px solid var(--border-color);
-      padding: 2.5rem;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .pricing-card:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.15);
-    }
-
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .price {
-      font-size: 2.5rem;
-      color: var(--accent-cyan);
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      margin: 1rem 0;
-    }
-
-    .price-period {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .pricing-features {
-      list-style: none;
-      text-align: left;
-      margin: 2rem 0;
-    }
-
-    .pricing-features li {
-      padding: 0.5rem 0;
-      color: var(--text-secondary);
-      border-bottom: 1px solid var(--border-color);
-      font-size: 0.9rem;
-    }
-
-    .pricing-features li:last-child {
-      border-bottom: none;
-    }
-
-    .pricing-features li:before {
-      content: "✓ ";
-      color: var(--accent-cyan);
-      font-weight: 700;
-      margin-right: 0.5rem;
-    }
-
-    .cta-button {
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-      color: var(--bg-dark);
-      padding: 0.85rem 1.75rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.2);
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: var(--accent-cyan);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 3rem 2rem;
-      background: var(--bg-secondary);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .section {
-        padding: 3rem 1.5rem;
-      }
-
-      .section h2 {
-        font-size: 1.5rem;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>SaaS Platforms — NextEleven LLC</title>
+  <meta name="description" content="NextEleven SaaS Platforms: real-time inventory management, supplier integration, and analytics built for parts distributors and retailers." />
+  <meta name="author" content="NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mothership-ai.com/saas/" />
+  <meta property="og:title" content="SaaS Platforms — NextEleven LLC" />
+  <meta property="og:description" content="Real-time inventory management, supplier integration, and analytics built for parts distributors and retailers." />
+  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.mothership-ai.com/saas/" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/" class="logo">NextEleven</a>
-      <a href="/">← Back to Home</a>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#services">Services</a>
+        <a href="/#builds">Flagship builds</a>
+        <a href="/#results">Results</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="/#contact">Start a project</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <a href="/#services">Services</a>
+      <a href="/#builds">Flagship builds</a>
+      <a href="/#results">Results</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-solid" href="/#contact">Start a project</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>SaaS Platforms</h1>
-      <p>Production-grade cloud-native solutions designed for enterprise scale and reliability</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Inventory Parts System</h2>
-      <p>A comprehensive SaaS platform for parts distributors and retailers. Real-time inventory tracking across multiple warehouses, supplier integration, automated reordering, and advanced analytics. Built for mid-market and enterprise operations.</p>
-
-      <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-top: 2rem; margin-bottom: 1rem;">Core Features</h3>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Real-Time Inventory</h3>
-          <p>Live stock levels across all locations. Automated low-stock alerts, backorder management, cycle counting, and inventory reconciliation.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Supplier Integration</h3>
-          <p>Seamless connections with suppliers for pricing, availability, and automated purchase orders. Multi-supplier sourcing optimization.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Advanced Analytics</h3>
-          <p>Turnover analysis, demand forecasting, profitability by SKU, and supplier performance. Actionable business intelligence dashboards.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>API & Integrations</h3>
-          <p>RESTful APIs for ERP, e-commerce, and accounting systems. Webhook support for real-time event streaming and automation.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>Multi-Warehouse Support</h3>
-          <p>Manage inventory across unlimited locations. Transfer tracking, warehouse-level analytics, and distributed stock optimization.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>User Management</h3>
-          <p>Role-based access control, audit trails, and activity logging. Team collaboration with granular permissions.</p>
+  <main id="main">
+    <section class="hero hero-tight shell" aria-label="Introduction">
+      <div class="hero-copy hero-copy-full">
+        <p class="eyebrow"><span class="pulse"></span> SaaS Platforms</p>
+        <h1>Inventory software built for <em>distributors, not demos.</em></h1>
+        <p class="lede lede-tight">A cloud-native inventory platform for parts distributors and retailers — real-time stock tracking across warehouses, supplier integration, automated reordering, and analytics built for mid-market and enterprise operations.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="/#contact">Talk about a deployment</a>
+          <a class="btn btn-ghost" href="/">← Back to services</a>
         </div>
       </div>
+    </section>
 
-      <div class="pricing-section">
-        <div class="container">
-          <h2>Pricing & Plans</h2>
-          <p style="text-align: center; margin-bottom: 2rem;">Choose the plan that fits your business. All plans include 14-day free trial and dedicated support.</p>
+    <section class="services shell" aria-label="Core features">
+      <div class="section-label"><span class="num">01</span><span>Inventory Parts System</span></div>
+      <div class="services-head">
+        <h2>Core features</h2>
+        <p class="services-dek">Real-time inventory tracking, supplier integration, and analytics in one platform, built for distributors managing multiple warehouses.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc-card">
+          <span class="svc-k">Inventory</span>
+          <h3>Real-time stock levels</h3>
+          <p>Live stock across all locations, with automated low-stock alerts, backorder management, cycle counting, and reconciliation.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Sourcing</span>
+          <h3>Supplier integration</h3>
+          <p>Direct connections to suppliers for pricing, availability, and automated purchase orders, with multi-supplier sourcing optimization.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Analytics</span>
+          <h3>Turnover &amp; demand forecasting</h3>
+          <p>Turnover analysis, demand forecasting, and profitability by SKU, with supplier performance dashboards.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Integrations</span>
+          <h3>API &amp; webhooks</h3>
+          <p>RESTful APIs for ERP, e-commerce, and accounting systems, with webhook support for real-time event streaming.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Warehouses</span>
+          <h3>Multi-warehouse support</h3>
+          <p>Manage inventory across unlimited locations, with transfer tracking and warehouse-level analytics.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Access</span>
+          <h3>User management</h3>
+          <p>Role-based access control, audit trails, and activity logging, with granular permissions for team collaboration.</p>
+        </article>
+      </div>
+    </section>
 
-          <div class="pricing-grid">
-            <div class="pricing-card">
-              <h3>Starter</h3>
-              <p class="price-period">For small operations</p>
-              <div class="price">$495<span style="font-size: 1.2rem; color: var(--text-secondary);">/mo</span></div>
-              <ul class="pricing-features">
-                <li>Up to 5 warehouses</li>
-                <li>5,000 SKUs</li>
-                <li>Basic analytics</li>
-                <li>Email support</li>
-                <li>Monthly reports</li>
-              </ul>
-              <a href="/" class="cta-button">Get Started</a>
-            </div>
-
-            <div class="pricing-card" style="border-color: var(--accent-cyan);">
-              <h3>Professional</h3>
-              <p class="price-period">Most popular</p>
-              <div class="price">$1,495<span style="font-size: 1.2rem; color: var(--text-secondary);">/mo</span></div>
-              <ul class="pricing-features">
-                <li>Unlimited warehouses</li>
-                <li>50,000 SKUs</li>
-                <li>Advanced analytics</li>
-                <li>Priority support</li>
-                <li>API access</li>
-                <li>Custom integrations</li>
-              </ul>
-              <a href="/" class="cta-button">Get Started</a>
-            </div>
-
-            <div class="pricing-card">
-              <h3>Enterprise</h3>
-              <p class="price-period">Custom deployment</p>
-              <div class="price">Custom</div>
-              <ul class="pricing-features">
-                <li>Unlimited everything</li>
-                <li>Dedicated instance</li>
-                <li>On-premise option</li>
-                <li>24/7 support</li>
-                <li>Custom features</li>
-                <li>SLA guarantee</li>
-              </ul>
-              <a href="/" class="cta-button">Contact Sales</a>
-            </div>
-          </div>
+    <section class="product-split shell" aria-label="Pricing">
+      <div class="section-label"><span class="num">02</span><span>Pricing</span></div>
+      <h2 class="split-title">Plans &amp; pricing</h2>
+      <p class="split-dek split-dek-wide">Choose the plan that fits your business. All plans include a 14-day free trial and dedicated support.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <p class="price-note">For small operations</p>
+          <div class="price-tag">$495<small>/mo</small></div>
+          <ul class="pricing-features">
+            <li>Up to 5 warehouses</li>
+            <li>5,000 SKUs</li>
+            <li>Basic analytics</li>
+            <li>Email support</li>
+            <li>Monthly reports</li>
+          </ul>
+          <a class="btn btn-line" href="/#contact">Get started</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Professional</h3>
+          <p class="price-note">Most popular</p>
+          <div class="price-tag">$1,495<small>/mo</small></div>
+          <ul class="pricing-features">
+            <li>Unlimited warehouses</li>
+            <li>50,000 SKUs</li>
+            <li>Advanced analytics</li>
+            <li>Priority support</li>
+            <li>API access</li>
+            <li>Custom integrations</li>
+          </ul>
+          <a class="btn btn-solid" href="/#contact">Get started</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <p class="price-note">Custom deployment</p>
+          <div class="price-tag">Custom</div>
+          <ul class="pricing-features">
+            <li>Unlimited everything</li>
+            <li>Dedicated instance</li>
+            <li>On-premise option</li>
+            <li>24/7 support</li>
+            <li>Custom features</li>
+            <li>SLA guarantee</li>
+          </ul>
+          <a class="btn btn-line" href="/#contact">Contact sales</a>
         </div>
       </div>
+    </section>
 
-      <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-top: 3rem; margin-bottom: 1rem;">Use Cases</h3>
-      <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
-        <li style="margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Auto Parts Distributors</strong> — Manage complex catalogs with thousands of SKUs across regional warehouses. Real-time OEM integration and dealer ordering.</li>
-        <li style="margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Medical Supply Companies</strong> — Compliance-ready inventory with lot tracking, expiration management, and FDA reporting.</li>
-        <li style="margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Industrial Distributors</strong> — Heavy-duty inventory for B2B operations with supplier pricing engines and quote management.</li>
-        <li style="margin-bottom: 1rem;"><strong style="color: var(--text-primary);">Retail Networks</strong> — Multi-location retail with POS integration, demand forecasting, and automated replenishment.</li>
+    <section class="bar-block shell" aria-label="Use cases">
+      <div class="section-label"><span class="num">03</span><span>Use Cases</span></div>
+      <h2 class="split-title">Who it's built for</h2>
+      <ul class="bar-list">
+        <li><strong>Auto parts distributors.</strong><span>Complex catalogs with thousands of SKUs across regional warehouses, with OEM integration and dealer ordering.</span></li>
+        <li><strong>Medical supply companies.</strong><span>Compliance-ready inventory with lot tracking, expiration management, and FDA reporting.</span></li>
+        <li><strong>Industrial distributors.</strong><span>Heavy-duty inventory for B2B operations, with supplier pricing engines and quote management.</span></li>
+        <li><strong>Retail networks.</strong><span>Multi-location retail with POS integration, demand forecasting, and automated replenishment.</span></li>
       </ul>
+    </section>
 
-      <a href="/" class="back-link">← Back to Services</a>
+    <section id="contact" class="contact shell">
+      <div class="contact-card">
+        <h2>Want to see it running on your catalog?</h2>
+        <p class="contact-sub">A short call is the fastest way to find out if this fits your operation.</p>
+        <div class="contact-actions">
+          <a class="btn btn-solid" href="mailto:nextelevenstudios@gmail.com?subject=SaaS%20platform%20inquiry">Email us</a>
+          <a class="btn btn-line" href="/#contact">Back to contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot shell foot-full">
+    <div class="foot-row">
+      <span>© <span id="y"></span> NextEleven LLC</span>
+      <span class="foot-tag">Mansfield, TX · Remote across the US</span>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 NextEleven LLC. Enterprise technology solutions.</p>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/saas/">SaaS Platforms</a>
+      <a href="/systems/">Custom AI Systems</a>
+      <a href="/fintech/">Fintech</a>
+      <a href="/ai/">AI Integration</a>
+      <a href="/mobile/">Mobile Apps</a>
+      <a href="/parts/">Parts Inventory</a>
+      <a href="/lot/">Lot Management</a>
+      <a href="/harness/">Harness</a>
+      <a href="/rag/">Private RAG</a>
+      <a href="/engineering.html">Engineering notes</a>
+    </nav>
   </footer>
+
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="btn btn-solid" href="/#contact">Start a project</a>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var drawer = document.getElementById('drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.hasAttribute('hidden');
+        if (open) {
+          drawer.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+          btn.classList.add('open');
+        } else {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        }
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

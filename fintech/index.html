@@ -1,446 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NextEleven Fintech - Autonomous cryptocurrency trading systems for Kalshi and Robinhood">
-  <title>Fintech Solutions - NextEleven LLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-secondary: #1a1a1a;
-      --accent-cyan: #22d3ee;
-      --accent-pink: #ec4899;
-      --text-primary: #ffffff;
-      --text-secondary: #a8a8a8;
-      --text-muted: #6b7280;
-      --border-color: #333333;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    nav {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    nav a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent-cyan);
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .hero {
-      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 4rem 2rem;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: var(--accent-cyan);
-    }
-
-    .section p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .product-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-      transition: all 0.3s ease;
-    }
-
-    .product-card:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.1);
-    }
-
-    .product-card h3 {
-      color: var(--accent-cyan);
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .feature-box {
-      background: rgba(34, 211, 238, 0.05);
-      border: 1px solid var(--border-color);
-      padding: 1.5rem;
-      border-radius: 6px;
-    }
-
-    .feature-box h4 {
-      color: var(--accent-cyan);
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .feature-box p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .metric-box {
-      background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(236, 72, 153, 0.1));
-      border: 1px solid var(--border-color);
-      padding: 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .metric-value {
-      font-size: 2rem;
-      color: var(--accent-cyan);
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .metric-label {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-    }
-
-    .pricing-section {
-      background: linear-gradient(180deg, rgba(34, 211, 238, 0.05), transparent);
-      padding: 3rem 0;
-      margin: 2rem 0;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .pricing-card {
-      background: var(--bg-secondary);
-      border: 2px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .pricing-card:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.15);
-    }
-
-    .pricing-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .price {
-      font-size: 2rem;
-      color: var(--accent-cyan);
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      margin: 1rem 0;
-    }
-
-    .cta-button {
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-      color: var(--bg-dark);
-      padding: 0.85rem 1.75rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(34, 211, 238, 0.2);
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: var(--accent-cyan);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 3rem 2rem;
-      background: var(--bg-secondary);
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    .warning-box {
-      background: rgba(236, 72, 153, 0.1);
-      border: 1px solid var(--accent-pink);
-      padding: 1.5rem;
-      border-radius: 6px;
-      margin: 2rem 0;
-      color: var(--text-secondary);
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .section { padding: 3rem 1.5rem; }
-      .section h2 { font-size: 1.5rem; }
-      .features-grid { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>Fintech Trading Systems — NextEleven LLC</title>
+  <meta name="description" content="NextEleven Fintech: autonomous cryptocurrency trading systems for Kalshi and Robinhood, with real-time analysis, position management, and risk controls." />
+  <meta name="author" content="NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mothership-ai.com/fintech/" />
+  <meta property="og:title" content="Fintech Trading Systems — NextEleven LLC" />
+  <meta property="og:description" content="Autonomous cryptocurrency trading systems for Kalshi and Robinhood, built with real-time analysis and risk controls." />
+  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.mothership-ai.com/fintech/" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/" class="logo">NextEleven</a>
-      <a href="/">← Back to Home</a>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#services">Services</a>
+        <a href="/#builds">Flagship builds</a>
+        <a href="/#results">Results</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="/#contact">Start a project</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <a href="/#services">Services</a>
+      <a href="/#builds">Flagship builds</a>
+      <a href="/#results">Results</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-solid" href="/#contact">Start a project</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Fintech Solutions</h1>
-      <p>Intelligent automated trading systems for cryptocurrency markets</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Autonomous Trading Systems</h2>
-      <p>Production-grade trading bots that execute sophisticated strategies with real-time market analysis, position management, and risk controls. Purpose-built for high-frequency tactical trading in cryptocurrency markets.</p>
-
-      <div class="product-card">
-        <h3>AK47v7.62 — Kalshi BTC 15-Minute Trader</h3>
-        <p>Autonomous trading bot for Kalshi BTC 15-minute binary options markets. AI-driven decision making based on real-time price analysis, technical indicators, and market sentiment. Continuous execution with intelligent position sizing and risk management.</p>
-
-        <h4 style="color: var(--accent-cyan); margin-top: 1.5rem; margin-bottom: 1rem;">Key Features</h4>
-        <div class="features-grid">
-          <div class="feature-box">
-            <h4>Real-Time Analysis</h4>
-            <p>Continuous market monitoring with advanced technical analysis, pattern recognition, and sentiment tracking.</p>
-          </div>
-          <div class="feature-box">
-            <h4>Autonomous Execution</h4>
-            <p>Automated order placement and management. No manual intervention required once strategy parameters are configured.</p>
-          </div>
-          <div class="feature-box">
-            <h4>Position Management</h4>
-            <p>Intelligent sizing, hedging strategies, and risk controls. Portfolio balancing and drawdown protection.</p>
-          </div>
-          <div class="feature-box">
-            <h4>Performance Tracking</h4>
-            <p>Real-time P&L, win rate analysis, strategy metrics, and Telegram alerts for significant events.</p>
-          </div>
-        </div>
-
-        <h4 style="color: var(--accent-cyan); margin-top: 1.5rem; margin-bottom: 1rem;">Performance Metrics</h4>
-        <div class="metrics">
-          <div class="metric-box">
-            <div class="metric-value">$2.5M+</div>
-            <div class="metric-label">Annual Trading Volume</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">52%+</div>
-            <div class="metric-label">Win Rate</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">24/7</div>
-            <div class="metric-label">Continuous Operation</div>
-          </div>
+  <main id="main">
+    <section class="hero hero-tight shell" aria-label="Introduction">
+      <div class="hero-copy hero-copy-full">
+        <p class="eyebrow"><span class="pulse"></span> Fintech Trading Systems</p>
+        <h1>Trading bots built for <em>tactical execution.</em></h1>
+        <p class="lede lede-tight">Production-grade trading systems that execute defined strategies with real-time market analysis, position management, and risk controls — purpose-built for high-frequency cryptocurrency markets.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="/#contact">Talk about a deployment</a>
+          <a class="btn btn-ghost" href="/">← Back to services</a>
         </div>
       </div>
+    </section>
 
-      <div class="product-card">
-        <h3>Market Bot — Robinhood BTC Trader</h3>
-        <p>Intelligent BTC trading on Robinhood with real-time price feeds, sentiment analysis, and portfolio optimization. Supports multiple trading strategies running simultaneously with intelligent capital allocation.</p>
+    <section class="services shell" aria-label="AK47v7.62">
+      <div class="section-label"><span class="num">01</span><span>Kalshi BTC 15-Minute Trader</span></div>
+      <div class="services-head">
+        <h2>AK47v7.62</h2>
+        <p class="services-dek">Autonomous trading bot for Kalshi BTC 15-minute binary options markets. Decisions are driven by real-time price analysis, technical indicators, and market sentiment, with continuous execution and intelligent position sizing.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc-card">
+          <span class="svc-k">Key feature</span>
+          <h3>Real-time analysis</h3>
+          <p>Continuous market monitoring with technical analysis, pattern recognition, and sentiment tracking.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Key feature</span>
+          <h3>Autonomous execution</h3>
+          <p>Automated order placement and management once strategy parameters are configured — no manual intervention required.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Key feature</span>
+          <h3>Position management</h3>
+          <p>Intelligent sizing, hedging, and risk controls, with portfolio balancing and drawdown protection.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Key feature</span>
+          <h3>Performance tracking</h3>
+          <p>Real-time P&amp;L, win rate analysis, strategy metrics, and Telegram alerts for significant events.</p>
+        </article>
+      </div>
 
-        <h4 style="color: var(--accent-cyan); margin-top: 1.5rem; margin-bottom: 1rem;">Capabilities</h4>
-        <div class="features-grid">
-          <div class="feature-box">
-            <h4>Robinhood Integration</h4>
-            <p>Seamless API integration for account access, order execution, and real-time portfolio tracking.</p>
-          </div>
-          <div class="feature-box">
-            <h4>Multi-Strategy</h4>
-            <p>Run multiple strategies simultaneously with intelligent capital allocation and performance comparison.</p>
-          </div>
-          <div class="feature-box">
-            <h4>Risk Management</h4>
-            <p>Position limits, stop-loss controls, portfolio-level constraints, and automated de-risking.</p>
-          </div>
-          <div class="feature-box">
-            <h4>Market Intelligence</h4>
-            <p>Real-time sentiment analysis, volume profiles, technical signals, and data-driven decision support.</p>
-          </div>
+      <div class="metric-row">
+        <div class="metric-box">
+          <div class="metric-value">$2.5M+</div>
+          <div class="metric-label">Annual trading volume</div>
         </div>
+        <div class="metric-box">
+          <div class="metric-value">52%+</div>
+          <div class="metric-label">Win rate</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">24/7</div>
+          <div class="metric-label">Continuous operation</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services shell" aria-label="Market Bot">
+      <div class="section-label"><span class="num">02</span><span>Robinhood BTC Trader</span></div>
+      <div class="services-head">
+        <h2>Market Bot</h2>
+        <p class="services-dek">BTC trading on Robinhood with real-time price feeds, sentiment analysis, and portfolio optimization. Supports multiple strategies running simultaneously with coordinated capital allocation.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc-card">
+          <span class="svc-k">Capability</span>
+          <h3>Robinhood integration</h3>
+          <p>Direct API integration for account access, order execution, and real-time portfolio tracking.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Capability</span>
+          <h3>Multi-strategy</h3>
+          <p>Run multiple strategies simultaneously with intelligent capital allocation and performance comparison.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Capability</span>
+          <h3>Risk management</h3>
+          <p>Position limits, stop-loss controls, portfolio-level constraints, and automated de-risking.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Capability</span>
+          <h3>Market intelligence</h3>
+          <p>Real-time sentiment analysis, volume profiles, and technical signals to support trading decisions.</p>
+        </article>
       </div>
 
       <div class="warning-box">
-        <strong style="color: var(--text-primary);">⚠️ Risk Disclosure:</strong> Cryptocurrency trading involves substantial risk of loss. Past performance does not guarantee future results. Trading bots operate autonomously and may result in rapid losses. Suitable only for experienced traders with capital they can afford to lose completely. Consult with financial advisors before deployment.
+        <strong>Risk disclosure:</strong> Cryptocurrency trading involves substantial risk of loss. Past performance does not guarantee future results. These bots operate autonomously and may produce rapid losses. Suitable only for experienced traders with capital they can afford to lose entirely. Consult a financial advisor before deployment.
       </div>
+    </section>
 
-      <div class="pricing-section">
-        <div class="container">
-          <h2>Pricing & Setup</h2>
-          <p style="text-align: center; margin-bottom: 2rem;">Trading bot licensing with setup, monitoring, and ongoing optimization.</p>
-
-          <div class="pricing-grid">
-            <div class="pricing-card">
-              <h3>Standard Setup</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">One-time deployment</p>
-              <div class="price">$2,500</div>
-              <ul style="list-style: none; margin: 1.5rem 0; color: var(--text-secondary); font-size: 0.9rem;">
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Bot deployment & configuration</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Exchange API integration</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Strategy configuration</li>
-                <li style="padding: 0.5rem 0;"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> 30 days monitoring</li>
-              </ul>
-              <a href="/" class="cta-button">Get Started</a>
-            </div>
-
-            <div class="pricing-card" style="border-color: var(--accent-cyan);">
-              <h3>Professional</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Most popular</p>
-              <div class="price">$299<span style="font-size: 1.2rem; color: var(--text-secondary);">/mo</span></div>
-              <ul style="list-style: none; margin: 1.5rem 0; color: var(--text-secondary); font-size: 0.9rem;">
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Continuous monitoring</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Strategy optimization</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Performance reporting</li>
-                <li style="padding: 0.5rem 0;"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Email + Telegram alerts</li>
-              </ul>
-              <a href="/" class="cta-button">Subscribe</a>
-            </div>
-
-            <div class="pricing-card">
-              <h3>Enterprise</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">Custom deployment</p>
-              <div class="price">Custom</div>
-              <ul style="list-style: none; margin: 1.5rem 0; color: var(--text-secondary); font-size: 0.9rem;">
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Dedicated infrastructure</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> Custom strategies</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> 24/7 support</li>
-                <li style="padding: 0.5rem 0;"><span style="color: var(--accent-cyan); font-weight: 700;">✓</span> SLA guarantee</li>
-              </ul>
-              <a href="/" class="cta-button">Contact Sales</a>
-            </div>
-          </div>
+    <section class="product-split shell" aria-label="Pricing">
+      <div class="section-label"><span class="num">03</span><span>Pricing</span></div>
+      <h2 class="split-title">Setup &amp; licensing</h2>
+      <p class="split-dek split-dek-wide">Trading bot licensing with setup, monitoring, and ongoing optimization.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Standard Setup</h3>
+          <p class="price-note">One-time deployment</p>
+          <div class="price-tag">$2,500</div>
+          <ul class="pricing-features">
+            <li>Bot deployment &amp; configuration</li>
+            <li>Exchange API integration</li>
+            <li>Strategy configuration</li>
+            <li>30 days monitoring</li>
+          </ul>
+          <a class="btn btn-line" href="/#contact">Get started</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Professional</h3>
+          <p class="price-note">Most popular</p>
+          <div class="price-tag">$299<small>/mo</small></div>
+          <ul class="pricing-features">
+            <li>Continuous monitoring</li>
+            <li>Strategy optimization</li>
+            <li>Performance reporting</li>
+            <li>Email + Telegram alerts</li>
+          </ul>
+          <a class="btn btn-solid" href="/#contact">Subscribe</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <p class="price-note">Custom deployment</p>
+          <div class="price-tag">Custom</div>
+          <ul class="pricing-features">
+            <li>Dedicated infrastructure</li>
+            <li>Custom strategies</li>
+            <li>24/7 support</li>
+            <li>SLA guarantee</li>
+          </ul>
+          <a class="btn btn-line" href="/#contact">Contact sales</a>
         </div>
       </div>
+    </section>
 
-      <a href="/" class="back-link">← Back to Services</a>
+    <section id="contact" class="contact shell">
+      <div class="contact-card">
+        <h2>Considering a trading system build?</h2>
+        <p class="contact-sub">A short call is the fastest way to find out if this fits your strategy and risk tolerance.</p>
+        <div class="contact-actions">
+          <a class="btn btn-solid" href="mailto:nextelevenstudios@gmail.com?subject=Fintech%20trading%20system%20inquiry">Email us</a>
+          <a class="btn btn-line" href="/#contact">Back to contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot shell foot-full">
+    <div class="foot-row">
+      <span>© <span id="y"></span> NextEleven LLC</span>
+      <span class="foot-tag">Mansfield, TX · Remote across the US</span>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 NextEleven LLC. Enterprise technology solutions.</p>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/saas/">SaaS Platforms</a>
+      <a href="/systems/">Custom AI Systems</a>
+      <a href="/fintech/">Fintech</a>
+      <a href="/ai/">AI Integration</a>
+      <a href="/mobile/">Mobile Apps</a>
+      <a href="/parts/">Parts Inventory</a>
+      <a href="/lot/">Lot Management</a>
+      <a href="/harness/">Harness</a>
+      <a href="/rag/">Private RAG</a>
+      <a href="/engineering.html">Engineering notes</a>
+    </nav>
   </footer>
+
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="btn btn-solid" href="/#contact">Start a project</a>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var drawer = document.getElementById('drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.hasAttribute('hidden');
+        if (open) {
+          drawer.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+          btn.classList.add('open');
+        } else {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        }
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

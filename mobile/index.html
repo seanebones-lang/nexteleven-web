@@ -1,151 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NextEleven Mobile Apps - Enterprise-grade iOS applications">
-  <title>Mobile Apps - NextEleven LLC</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #ffffff; }
-    header { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); color: white; padding: 1rem 0; }
-    nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-    .logo { font-size: 1.5rem; font-weight: 700; }
-    nav a { color: white; text-decoration: none; margin-right: 2rem; transition: opacity 0.3s; }
-    nav a:hover { opacity: 0.8; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .back-link { display: inline-block; margin-top: 2rem; color: #0d47a1; text-decoration: none; font-weight: 600; }
-    .back-link:hover { text-decoration: underline; }
-    .section { padding: 4rem 2rem; }
-    h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #0d47a1; }
-    h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; color: #0d47a1; }
-    h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1565c0; }
-    .hero { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); color: white; padding: 4rem 2rem; text-align: center; }
-    .hero h1 { color: white; margin-bottom: 1.5rem; }
-    .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0; }
-    .app-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff6b35; text-align: center; }
-    .app-card h4 { color: #0d47a1; margin-bottom: 0.5rem; font-size: 1.1rem; }
-    .app-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
-    .app-badge { display: inline-block; background: #0d47a1; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.8rem; margin-top: 0.75rem; }
-    .appstore-link { display: inline-block; margin-top: 0.5rem; color: #ff6b35; text-decoration: none; font-weight: 600; }
-    footer { background: #0d47a1; color: white; padding: 2rem; text-align: center; margin-top: 4rem; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>Mobile Apps — NextEleven LLC</title>
+  <meta name="description" content="NextEleven Mobile Apps: a portfolio of iOS applications spanning productivity, wellness, finance, and professional tools, all built native in SwiftUI." />
+  <meta name="author" content="NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mothership-ai.com/mobile/" />
+  <meta property="og:title" content="Mobile Apps — NextEleven LLC" />
+  <meta property="og:description" content="A portfolio of iOS applications spanning productivity, wellness, finance, and professional tools, built native in SwiftUI." />
+  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.mothership-ai.com/mobile/" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/" class="logo">NextEleven</a>
-      <a href="/">← Back to Home</a>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#services">Services</a>
+        <a href="/#builds">Flagship builds</a>
+        <a href="/#results">Results</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="/#contact">Start a project</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <a href="/#services">Services</a>
+      <a href="/#builds">Flagship builds</a>
+      <a href="/#results">Results</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-solid" href="/#contact">Start a project</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Mobile Apps & Services</h1>
-      <p style="font-size: 1.2rem; opacity: 0.95;">Enterprise-grade iOS applications on the App Store</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>NextEleven App Store Portfolio</h2>
-      <p>A comprehensive suite of iOS applications spanning productivity, wellness, finance, and professional tools. All available on the Apple App Store.</p>
-
-      <div class="app-grid">
-        <div class="app-card">
-          <h4>ImanPRO</h4>
-          <p>Professional Islamic prayer app with qibla direction, prayer times, and community features.</p>
-          <span class="app-badge">Productivity</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>ElevenClean</h4>
-          <p>Mac system cleaner and optimizer. Available as native macOS app and complementary iOS companion.</p>
-          <span class="app-badge">Utilities</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>Habits by NextEleven</h4>
-          <p>Habit tracking and formation app with AI coaching and personalized recommendations.</p>
-          <span class="app-badge">Health & Fitness</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>LexiGlow</h4>
-          <p>Vocabulary building and language learning with spaced repetition and contextual learning.</p>
-          <span class="app-badge">Education</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>If/Then/Reset</h4>
-          <p>Mental health and anxiety management app with trauma-informed design and evidence-based techniques.</p>
-          <span class="app-badge">Health</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>ThriftFlip PRO</h4>
-          <p>Resale and flipping platform for thrift items. Identify value, manage inventory, and reach buyers.</p>
-          <span class="app-badge">Shopping</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>ImanLink</h4>
-          <p>Community platform connecting users through Islamic teachings and shared values.</p>
-          <span class="app-badge">Social</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>Tattoo Artist Helper</h4>
-          <p>Professional tool for tattoo artists. Portfolio management, client communication, and booking.</p>
-          <span class="app-badge">Business</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>Scanner by NextEleven</h4>
-          <p>Document scanning and OCR with cloud storage and organization. Transform photos into searchable documents.</p>
-          <span class="app-badge">Productivity</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>Facts by NextEleven</h4>
-          <p>Daily facts and knowledge sharing app with curated content and community contributions.</p>
-          <span class="app-badge">Education</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
-        </div>
-
-        <div class="app-card">
-          <h4>DreamWeave PRO</h4>
-          <p>AI-powered dream interpretation and journaling. Explore the meaning behind your dreams.</p>
-          <span class="app-badge">Wellness</span>
-          <a href="#" class="appstore-link">View on App Store →</a>
+  <main id="main">
+    <section class="hero hero-tight shell" aria-label="Introduction">
+      <div class="hero-copy hero-copy-full">
+        <p class="eyebrow"><span class="pulse"></span> Mobile Apps</p>
+        <h1>An App Store portfolio, <em>built native.</em></h1>
+        <p class="lede lede-tight">A suite of iOS applications spanning productivity, wellness, finance, and professional tools — all built native in SwiftUI and shipped through the Apple App Store.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="/#contact">Talk about an app</a>
+          <a class="btn btn-ghost" href="/">← Back to services</a>
         </div>
       </div>
+    </section>
 
-      <h3 style="margin-top: 3rem;">Development Excellence</h3>
-      <p>All NextEleven mobile apps are built with:</p>
-      <ul style="margin-left: 2rem; margin-top: 1rem;">
-        <li>Native SwiftUI architecture for performance and responsiveness</li>
-        <li>Enterprise-grade security and data privacy</li>
-        <li>Comprehensive App Store compliance and review</li>
-        <li>Backend integration for real-time features and user data sync</li>
-        <li>Continuous updates and feature enhancements</li>
+    <section class="services shell" aria-label="App portfolio">
+      <div class="section-label"><span class="num">01</span><span>App Store Portfolio</span></div>
+      <div class="services-head">
+        <h2>Eleven apps, one team</h2>
+        <p class="services-dek">Each app is scoped, designed, and shipped end to end — from interface to backend to App Store review.</p>
+      </div>
+      <div class="app-grid">
+        <article class="app-card">
+          <h3>ImanPRO</h3>
+          <p>Islamic prayer app with qibla direction, prayer times, and community features.</p>
+          <span class="app-badge">Productivity</span>
+        </article>
+        <article class="app-card">
+          <h3>ElevenClean</h3>
+          <p>Mac system cleaner and optimizer, available as a native macOS app with a complementary iOS companion.</p>
+          <span class="app-badge">Utilities</span>
+        </article>
+        <article class="app-card">
+          <h3>Habits by NextEleven</h3>
+          <p>Habit tracking and formation app with AI coaching and personalized recommendations.</p>
+          <span class="app-badge">Health &amp; Fitness</span>
+        </article>
+        <article class="app-card">
+          <h3>LexiGlow</h3>
+          <p>Vocabulary building and language learning with spaced repetition and contextual learning.</p>
+          <span class="app-badge">Education</span>
+        </article>
+        <article class="app-card">
+          <h3>If/Then/Reset</h3>
+          <p>Mental health and anxiety management app with trauma-informed design and evidence-based techniques.</p>
+          <span class="app-badge">Health</span>
+        </article>
+        <article class="app-card">
+          <h3>ThriftFlip PRO</h3>
+          <p>Resale and flipping platform for thrift items — identify value, manage inventory, and reach buyers.</p>
+          <span class="app-badge">Shopping</span>
+        </article>
+        <article class="app-card">
+          <h3>ImanLink</h3>
+          <p>Community platform connecting users through Islamic teachings and shared values.</p>
+          <span class="app-badge">Social</span>
+        </article>
+        <article class="app-card">
+          <h3>Tattoo Artist Helper</h3>
+          <p>Professional tool for tattoo artists — portfolio management, client communication, and booking.</p>
+          <span class="app-badge">Business</span>
+        </article>
+        <article class="app-card">
+          <h3>Scanner by NextEleven</h3>
+          <p>Document scanning and OCR with cloud storage and organization, turning photos into searchable documents.</p>
+          <span class="app-badge">Productivity</span>
+        </article>
+        <article class="app-card">
+          <h3>Facts by NextEleven</h3>
+          <p>Daily facts and knowledge sharing app with curated content and community contributions.</p>
+          <span class="app-badge">Education</span>
+        </article>
+        <article class="app-card">
+          <h3>DreamWeave PRO</h3>
+          <p>AI-powered dream interpretation and journaling for exploring the meaning behind your dreams.</p>
+          <span class="app-badge">Wellness</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="bar-block shell" aria-label="Development excellence">
+      <div class="section-label"><span class="num">02</span><span>Development Excellence</span></div>
+      <h2 class="split-title">How these apps are built</h2>
+      <ul class="bar-list">
+        <li><strong>Native SwiftUI architecture.</strong><span>Built for performance and responsiveness on modern iOS.</span></li>
+        <li><strong>Enterprise-grade security.</strong><span>Data privacy handled as a first-class requirement, not an afterthought.</span></li>
+        <li><strong>App Store compliance.</strong><span>Built and reviewed to Apple's current guidelines from day one.</span></li>
+        <li><strong>Backend integration.</strong><span>Real-time features and user data sync backed by production infrastructure.</span></li>
+        <li><strong>Continuous updates.</strong><span>Ongoing maintenance and feature enhancements after launch.</span></li>
       </ul>
+    </section>
 
-      <a href="/" class="back-link" style="margin-top: 2rem;">← Back to Services</a>
+    <section id="contact" class="contact shell">
+      <div class="contact-card">
+        <h2>Have an app idea worth building right?</h2>
+        <p class="contact-sub">A short call is the fastest way to find out if this fits what you're trying to build.</p>
+        <div class="contact-actions">
+          <a class="btn btn-solid" href="mailto:nextelevenstudios@gmail.com?subject=Mobile%20app%20inquiry">Email us</a>
+          <a class="btn btn-line" href="/#contact">Back to contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot shell foot-full">
+    <div class="foot-row">
+      <span>© <span id="y"></span> NextEleven LLC</span>
+      <span class="foot-tag">Mansfield, TX · Remote across the US</span>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 NextEleven LLC. <a href="mailto:nextelevenstudios@gmail.com" style="color: white; text-decoration: underline;">Contact us</a> for more information.</p>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/saas/">SaaS Platforms</a>
+      <a href="/systems/">Custom AI Systems</a>
+      <a href="/fintech/">Fintech</a>
+      <a href="/ai/">AI Integration</a>
+      <a href="/mobile/">Mobile Apps</a>
+      <a href="/parts/">Parts Inventory</a>
+      <a href="/lot/">Lot Management</a>
+      <a href="/harness/">Harness</a>
+      <a href="/rag/">Private RAG</a>
+      <a href="/engineering.html">Engineering notes</a>
+    </nav>
   </footer>
+
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="btn btn-solid" href="/#contact">Start a project</a>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var drawer = document.getElementById('drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.hasAttribute('hidden');
+        if (open) {
+          drawer.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+          btn.classList.add('open');
+        } else {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        }
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

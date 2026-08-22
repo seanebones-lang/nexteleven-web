@@ -1,100 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NextEleven Custom Systems - Enterprise workflow automation and integration">
-  <title>Custom Systems - NextEleven LLC</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #ffffff; }
-    header { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); color: white; padding: 1rem 0; }
-    nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-    .logo { font-size: 1.5rem; font-weight: 700; }
-    nav a { color: white; text-decoration: none; margin-right: 2rem; transition: opacity 0.3s; }
-    nav a:hover { opacity: 0.8; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .back-link { display: inline-block; margin-top: 2rem; color: #0d47a1; text-decoration: none; font-weight: 600; }
-    .back-link:hover { text-decoration: underline; }
-    .section { padding: 4rem 2rem; }
-    h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #0d47a1; }
-    h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; color: #0d47a1; }
-    h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1565c0; }
-    .hero { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); color: white; padding: 4rem 2rem; text-align: center; }
-    .hero h1 { color: white; margin-bottom: 1.5rem; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
-    .product-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff6b35; }
-    .product-card h4 { color: #0d47a1; margin-bottom: 0.5rem; font-size: 1.1rem; }
-    .product-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
-    footer { background: #0d47a1; color: white; padding: 2rem; text-align: center; margin-top: 4rem; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>Custom AI Systems — NextEleven LLC</title>
+  <meta name="description" content="NextEleven Custom AI Systems: purpose-built infrastructure including Harness, a Rust coding agent, and Personal RAG, a private knowledge-search system." />
+  <meta name="author" content="NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mothership-ai.com/systems/" />
+  <meta property="og:title" content="Custom AI Systems — NextEleven LLC" />
+  <meta property="og:description" content="Purpose-built AI infrastructure: Harness, a Rust coding agent, and Personal RAG, a private knowledge-search system." />
+  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.mothership-ai.com/systems/" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="/" class="logo">NextEleven</a>
-      <a href="/">← Back to Home</a>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/#services">Services</a>
+        <a href="/#builds">Flagship builds</a>
+        <a href="/#results">Results</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="/#contact">Start a project</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <a href="/#services">Services</a>
+      <a href="/#builds">Flagship builds</a>
+      <a href="/#results">Results</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-solid" href="/#contact">Start a project</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Custom Systems</h1>
-      <p style="font-size: 1.2rem; opacity: 0.95;">Purpose-built enterprise systems that streamline operations</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Enterprise-Scale Custom Systems</h2>
-      <p>We design and build custom systems tailored to your specific operational needs, integrating seamlessly with your existing infrastructure.</p>
-
-      <h3>Harness Coding Agent</h3>
-      <p>Autonomous AI coding agent built in Rust for high-performance code generation, refactoring, and system analysis. Harness is designed for enterprise development teams that need intelligent, reliable code assistance at scale.</p>
-
-      <div class="product-grid">
-        <div class="product-card">
-          <h4>AI-Powered Code Generation</h4>
-          <p>Autonomous code generation with full context awareness. Understand your codebase and generate production-ready code at scale.</p>
-        </div>
-        <div class="product-card">
-          <h4>Intelligent Refactoring</h4>
-          <p>Automated code improvements, security analysis, and performance optimization across your entire system.</p>
-        </div>
-        <div class="product-card">
-          <h4>Multi-Language Support</h4>
-          <p>Full support for Python, JavaScript, TypeScript, Rust, Go, Java, and more. Language-agnostic architecture.</p>
-        </div>
-        <div class="product-card">
-          <h4>Enterprise Integration</h4>
-          <p>Integrates with your CI/CD pipelines, version control, and development workflows. Self-hosted or cloud deployment options.</p>
+  <main id="main">
+    <section class="hero hero-tight shell" aria-label="Introduction">
+      <div class="hero-copy hero-copy-full">
+        <p class="eyebrow"><span class="pulse"></span> Custom AI Systems</p>
+        <h1>Infrastructure we built once, <em>and now run on.</em></h1>
+        <p class="lede lede-tight">We design and build systems tailored to specific operational needs, integrated with your existing infrastructure. Two of those systems — Harness and Personal RAG — are the foundation every custom engagement builds on.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="/#contact">Talk about a build</a>
+          <a class="btn btn-ghost" href="/">← Back to services</a>
         </div>
       </div>
+    </section>
 
-      <h3>Personal RAG (Retrieval-Augmented Generation)</h3>
-      <p>Knowledge management and semantic search system for personal and enterprise use. Build custom knowledge bases and interact with your data through natural language queries.</p>
+    <section class="services shell" aria-label="Harness">
+      <div class="section-label"><span class="num">01</span><span>Agent Platform</span></div>
+      <div class="services-head">
+        <h2>Harness coding agent</h2>
+        <p class="services-dek">An autonomous coding agent built in Rust for code generation, refactoring, and system analysis — designed for development teams that need reliable code assistance at scale.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc-card">
+          <span class="svc-k">Generation</span>
+          <h3>AI-powered code generation</h3>
+          <p>Autonomous code generation with full context awareness of your codebase, producing production-ready code at scale.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Refactoring</span>
+          <h3>Intelligent refactoring</h3>
+          <p>Automated code improvements, security analysis, and performance optimization across an entire system.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Languages</span>
+          <h3>Multi-language support</h3>
+          <p>Support for Python, JavaScript, TypeScript, Rust, Go, Java, and more with a language-agnostic architecture.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Deployment</span>
+          <h3>Enterprise integration</h3>
+          <p>Integrates with CI/CD pipelines, version control, and development workflows, self-hosted or cloud-deployed.</p>
+        </article>
+      </div>
+      <div class="hero-actions" style="margin-top:1.5rem;">
+        <a class="btn btn-line" href="/harness/">See the details</a>
+      </div>
+    </section>
 
-      <div class="product-grid">
-        <div class="product-card">
-          <h4>Custom Knowledge Bases</h4>
-          <p>Import your documents, files, and data. Index and search across custom knowledge with semantic understanding.</p>
-        </div>
-        <div class="product-card">
-          <h4>Semantic Search</h4>
-          <p>Find answers based on meaning, not keywords. Natural language queries return contextually relevant results.</p>
-        </div>
-        <div class="product-card">
-          <h4>RAG Integration</h4>
-          <p>Seamlessly integrate with LLMs for AI-powered answers grounded in your actual data and documents.</p>
+    <section class="services shell" aria-label="Personal RAG">
+      <div class="section-label"><span class="num">02</span><span>Private Knowledge</span></div>
+      <div class="services-head">
+        <h2>Personal RAG</h2>
+        <p class="services-dek">A knowledge management and semantic search system for personal and enterprise use — build custom knowledge bases and query your data in plain language.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc-card">
+          <span class="svc-k">Ingestion</span>
+          <h3>Custom knowledge bases</h3>
+          <p>Import documents, files, and data. Index and search across custom knowledge with semantic understanding.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Search</span>
+          <h3>Semantic search</h3>
+          <p>Find answers based on meaning, not keywords — natural language queries return contextually relevant results.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-k">Integration</span>
+          <h3>RAG integration</h3>
+          <p>Connects to LLMs for AI-powered answers grounded in your actual data and documents.</p>
+        </article>
+      </div>
+      <div class="hero-actions" style="margin-top:1.5rem;">
+        <a class="btn btn-line" href="/rag/">See the details</a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact shell">
+      <div class="contact-card">
+        <h2>Have an operational problem that needs a custom system?</h2>
+        <p class="contact-sub">A short call is the fastest way to find out if this fits what you're trying to build.</p>
+        <div class="contact-actions">
+          <a class="btn btn-solid" href="mailto:nextelevenstudios@gmail.com?subject=Custom%20AI%20systems%20inquiry">Email us</a>
+          <a class="btn btn-line" href="/#contact">Back to contact</a>
         </div>
       </div>
+    </section>
+  </main>
 
-      <a href="/" class="back-link">← Back to Services</a>
+  <footer class="foot shell foot-full">
+    <div class="foot-row">
+      <span>© <span id="y"></span> NextEleven LLC</span>
+      <span class="foot-tag">Mansfield, TX · Remote across the US</span>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 NextEleven LLC. <a href="mailto:nextelevenstudios@gmail.com" style="color: white; text-decoration: underline;">Contact us</a> for more information.</p>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/saas/">SaaS Platforms</a>
+      <a href="/systems/">Custom AI Systems</a>
+      <a href="/fintech/">Fintech</a>
+      <a href="/ai/">AI Integration</a>
+      <a href="/mobile/">Mobile Apps</a>
+      <a href="/parts/">Parts Inventory</a>
+      <a href="/lot/">Lot Management</a>
+      <a href="/harness/">Harness</a>
+      <a href="/rag/">Private RAG</a>
+      <a href="/engineering.html">Engineering notes</a>
+    </nav>
   </footer>
+
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="btn btn-solid" href="/#contact">Start a project</a>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var drawer = document.getElementById('drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.hasAttribute('hidden');
+        if (open) {
+          drawer.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+          btn.classList.add('open');
+        } else {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        }
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

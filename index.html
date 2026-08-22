@@ -1,1055 +1,499 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NextEleven LLC - Enterprise technology solutions: SaaS, custom systems, fintech trading, AI integration, and iOS apps.">
-  <title>NextEleven — Enterprise Technology Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-secondary: #141414;
-      --bg-tertiary: #1f1f1f;
-      --accent-cyan: #00d9ff;
-      --accent-pink: #ff006e;
-      --accent-orange: #ff8c42;
-      --text-primary: #ffffff;
-      --text-secondary: #b0b0b0;
-      --text-muted: #707070;
-      --border-color: #2a2a2a;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-primary);
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-    /* TYPOGRAPHY HIERARCHY */
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin: 0;
-    }
-
-    h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.75rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin: 0;
-    }
-
-    h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    h4 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: -0.005em;
-      margin: 0;
-    }
-
-    p {
-      font-weight: 400;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* HEADER & NAVIGATION */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    nav {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1.25rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    nav a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.25s ease;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent-cyan);
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent-cyan);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .cta-button {
-      background: var(--accent-cyan);
-      color: var(--bg-dark);
-      padding: 0.8rem 1.6rem;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      border: 2px solid var(--accent-cyan);
-      cursor: pointer;
-      letter-spacing: 0.5px;
-    }
-
-    .cta-button:hover {
-      background: transparent;
-      color: var(--accent-cyan);
-      transform: translateY(-2px);
-    }
-
-    /* HERO SECTION */
-    .hero {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 7rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: var(--text-secondary);
-      margin-bottom: 2.5rem;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-
-    .primary-button {
-      background: var(--accent-cyan);
-      color: var(--bg-dark);
-      padding: 1rem 2.5rem;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      border: 2px solid var(--accent-cyan);
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      font-family: 'Syne', sans-serif;
-    }
-
-    .primary-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
-    }
-
-    .secondary-button {
-      background: transparent;
-      color: var(--text-primary);
-      padding: 1rem 2.5rem;
-      border: 2px solid var(--border-color);
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      font-family: 'Syne', sans-serif;
-    }
-
-    .secondary-button:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      background: rgba(0, 217, 255, 0.05);
-    }
-
-    /* FOUNDERS SECTION */
-    .founders {
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 6rem 2rem;
-      background: linear-gradient(180deg, rgba(0, 217, 255, 0.03), transparent);
-    }
-
-    .founders-content {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent-cyan);
-      margin-bottom: 1rem;
-    }
-
-    .founders h2 {
-      margin-bottom: 3.5rem;
-    }
-
-    .founder-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      padding: 3rem;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    .founder-avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 0;
-      margin: 0 auto 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 2px solid var(--accent-cyan);
-    }
-
-    .founder-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .founder-card h3 {
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .founder-role {
-      color: var(--accent-cyan);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-      text-align: center;
-      letter-spacing: 0.5px;
-    }
-
-    .founder-bio {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .social-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.7rem 1.25rem;
-      border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.75rem;
-    }
-
-    .social-links a:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      background: rgba(0, 217, 255, 0.05);
-    }
-
-    /* SERVICES SECTION */
-    .services {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-    }
-
-    .services h2 {
-      margin-bottom: 1rem;
-    }
-
-    .section-intro {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      margin-bottom: 4rem;
-      max-width: 750px;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.5rem;
-      margin-top: 4rem;
-    }
-
-    .service-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      padding: 2.5rem;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
-      transition: left 0.4s ease;
-    }
-
-    .service-card:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 20px 40px rgba(0, 217, 255, 0.1);
-      transform: translateY(-6px);
-    }
-
-    .service-card:hover::before {
-      left: 0;
-    }
-
-    .service-card h3 {
-      margin-bottom: 1.25rem;
-      color: var(--accent-cyan);
-    }
-
-    .service-card p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-
-    .service-card a {
-      color: var(--accent-cyan);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      transition: gap 0.3s ease;
-      letter-spacing: 0.5px;
-      font-family: 'Syne', sans-serif;
-      text-transform: uppercase;
-    }
-
-    .service-card a:hover {
-      gap: 1.25rem;
-    }
-
-    /* PROOF SECTION */
-    .proof {
-      background: linear-gradient(180deg, rgba(0, 217, 255, 0.05), transparent);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 6rem 2rem;
-    }
-
-    .proof-content {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .proof h2 {
-      margin-bottom: 4rem;
-    }
-
-    .case-studies {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .case-study {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      transition: all 0.3s ease;
-    }
-
-    .case-study:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 12px 24px rgba(0, 217, 255, 0.08);
-    }
-
-    .case-study-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--accent-cyan);
-    }
-
-    .case-study-description {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .case-study-metric {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .metric-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      letter-spacing: -0.01em;
-    }
-
-    .metric-label {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    /* CONTACT SECTION */
-    .contact {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-    }
-
-    .contact-content {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .contact h2 {
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-intro {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      background: var(--bg-secondary);
-      padding: 2.5rem;
-      border: 1px solid var(--border-color);
-    }
-
-    .form-group {
-      text-align: left;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.75rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      background: var(--bg-dark);
-      border: 1px solid var(--border-color);
-      padding: 1rem;
-      color: var(--text-primary);
-      font-family: inherit;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--accent-cyan);
-      box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 140px;
-    }
-
-    .submit-button {
-      background: var(--accent-cyan);
-      color: var(--bg-dark);
-      padding: 1rem 2rem;
-      border: 2px solid var(--accent-cyan);
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      letter-spacing: 0.5px;
-      font-family: 'Syne', sans-serif;
-      text-transform: uppercase;
-    }
-
-    .submit-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(0, 217, 255, 0.2);
-    }
-
-    .form-status {
-      font-size: 0.9rem;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid var(--border-color);
-      display: none;
-    }
-
-    .form-status:not(:empty) {
-      display: block;
-    }
-
-    .form-status.success {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-
-    .form-status.error {
-      border-color: var(--accent-pink);
-      color: var(--accent-pink);
-    }
-
-    .field-error {
-      display: block;
-      color: var(--accent-pink);
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-    }
-
-    .field-error:empty {
-      display: none;
-    }
-
-    .submit-button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none !important;
-    }
-
-    .contact-email {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .contact-email a {
-      color: var(--accent-cyan);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 4rem 2rem;
-      background: var(--bg-secondary);
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .footer-section h3 {
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.75rem;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.95rem;
-      line-height: 2;
-      transition: color 0.3s ease;
-    }
-
-    .footer-section a:hover {
-      color: var(--accent-cyan);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border-color);
-      padding-top: 2rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    /* UTILITIES */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem 1.5rem;
-      }
-
-      nav ul {
-        gap: 1.5rem;
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        padding: 4rem 1.5rem;
-      }
-
-      h1 {
-        font-size: 2.25rem;
-      }
-
-      h2 {
-        font-size: 1.75rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1.1rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .primary-button,
-      .secondary-button {
-        width: 100%;
-      }
-
-      .founder-card {
-        padding: 2rem;
-      }
-
-      .founder-avatar {
-        width: 100px;
-        height: 100px;
-        font-size: 2.5rem;
-      }
-
-      .services {
-        padding: 4rem 1.5rem;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .service-card {
-        padding: 2rem;
-      }
-
-      .proof {
-        padding: 4rem 1.5rem;
-      }
-
-      .case-studies {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .contact {
-        padding: 4rem 1.5rem;
-      }
-
-      .contact-form {
-        padding: 1.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      nav ul {
-        width: 100%;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      h1 {
-        font-size: 1.75rem;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-      }
-
-      h3 {
-        font-size: 1.1rem;
-      }
-
-      .primary-button,
-      .secondary-button {
-        padding: 0.9rem 1.5rem;
-        font-size: 0.9rem;
-      }
-
-      .services-grid {
-        gap: 1.25rem;
-      }
-
-      .service-card {
-        padding: 1.5rem;
-      }
-
-      .footer-content {
-        gap: 1.5rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <title>NextEleven — Enterprise Software, AI Systems &amp; Automation</title>
+  <meta name="description" content="NextEleven LLC designs and ships production software across six disciplines: SaaS platforms, autonomous AI agents, fintech trading systems, AI integration, native iOS apps, and operations software. Fixed-price pilots. Mansfield, TX. Remote across the US." />
+  <meta name="author" content="NextEleven LLC" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mothership-ai.com/" />
+  <meta property="og:title" content="NextEleven — Enterprise Software, AI Systems &amp; Automation" />
+  <meta property="og:description" content="Full-service software partner: SaaS platforms, custom AI agents, fintech automation, AI integration, mobile apps, and operations software. Fixed-price pilots, one team from architecture to production." />
+  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.mothership-ai.com/" />
+  <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "NextEleven LLC",
+    "url": "https://www.mothership-ai.com/",
+    "image": "https://www.mothership-ai.com/images/nexteleven.jpg",
+    "description": "NextEleven LLC builds SaaS platforms, autonomous AI agents, fintech trading systems, AI integration, native iOS apps, and operations software for dealerships.",
+    "email": "nextelevenstudios@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mansfield",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "areaServed": "United States",
+    "founder": { "@type": "Person", "name": "Sean McDonnell", "jobTitle": "Founder & CTO" },
+    "sameAs": [
+      "https://www.linkedin.com/in/mothership-ai",
+      "https://github.com/seanebones-lang",
+      "https://x.com/NextElevenDev"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <div class="logo">NEXTELEVEN</div>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#proof">Results</a></li>
-        <li><a href="#contact" class="cta-button">Get Started</a></li>
-      </ul>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grid-fade"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="/">
+        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
+        <span>NextEleven</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#builds">Flagship builds</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-solid top-cta" href="#contact">Start a project</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <a href="#services">Services</a>
+      <a href="#builds">Flagship builds</a>
+      <a href="#results">Results</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-solid" href="#contact">Start a project</a>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Enterprise Technology, Built at Scale</h1>
-    <p class="hero-subtitle">Custom SaaS platforms, autonomous trading systems, AI integration, and production mobile apps. We ship what enterprise companies rely on.</p>
-    <div class="hero-buttons">
-      <a href="#contact" class="primary-button">Schedule Consultation</a>
-      <a href="#services" class="secondary-button">Explore Services</a>
-    </div>
-  </section>
+  <main id="main">
+    <section class="hero hero-tight shell" aria-label="Introduction">
+      <div class="hero-copy hero-copy-full">
+        <p class="eyebrow">
+          <span class="pulse"></span>
+          NextEleven LLC · Enterprise software &amp; AI systems · Mansfield, TX · Remote across the US
+        </p>
+        <h1>Enterprise software your team will <em>actually use.</em></h1>
+        <p class="lede lede-tight">
+          We design and ship production software across six disciplines: SaaS platforms, autonomous AI agents,
+          fintech trading systems, AI integration, native iOS apps, and operations software for regulated,
+          high-stakes teams. One team from architecture to production, fixed-price pilots, and systems that stop
+          and ask a person instead of guessing when money or data is on the line.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#contact">Start a project</a>
+          <a class="btn btn-ghost" href="#services">See what we build</a>
+        </div>
+        <div class="hero-meta-row" aria-label="At a glance">
+          <span><strong>6</strong> service lines</span>
+          <span><strong>285+</strong> repositories shipped</span>
+          <span><strong>US-based</strong> · Remote</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- Founders -->
-  <section class="founders">
-    <div class="founders-content">
-      <div class="section-label">Leadership</div>
-      <h2>Built by Engineers</h2>
+    <div class="trust shell proof-strip" aria-label="Disciplines">
+      <span>SaaS platforms</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span>Custom AI systems</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span>Fintech automation</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span>AI integration &amp; consulting</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span>Mobile apps</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span>Operations software</span>
+    </div>
+
+    <section id="services" class="services shell" aria-label="Services">
+      <div class="section-label">
+        <span class="num">01</span>
+        <span>Capabilities</span>
+      </div>
+      <div class="services-head">
+        <h2>Six disciplines, one team</h2>
+        <p class="services-dek">We don't hand you off between specialists. The engineer who scopes the project is the one who ships it, supports it, and answers the phone after launch.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="svc-card">
+          <span class="svc-k">SaaS Platforms</span>
+          <h3>Multi-tenant inventory &amp; operations software</h3>
+          <p>Real-time stock tracking, multi-warehouse management, supplier integration, and analytics dashboards built for distributors and mid-market operators.</p>
+          <div class="split-actions"><a class="btn btn-text" href="/saas/">Explore SaaS →</a></div>
+        </article>
+
+        <article class="svc-card">
+          <span class="svc-k">Custom AI Systems</span>
+          <h3>Agent runtimes &amp; retrieval infrastructure</h3>
+          <p>Harness, our Rust coding-agent runtime, and Personal RAG, a self-hosted semantic search platform — proprietary infrastructure we reuse on every build.</p>
+          <div class="split-actions"><a class="btn btn-text" href="/systems/">Explore systems →</a></div>
+        </article>
+
+        <article class="svc-card">
+          <span class="svc-k">Fintech Automation</span>
+          <h3>Autonomous trading &amp; execution systems</h3>
+          <p>Production-grade trading bots with real-time market analysis, position management, and risk controls for cryptocurrency and equities markets.</p>
+          <div class="split-actions"><a class="btn btn-text" href="/fintech/">Explore fintech →</a></div>
+        </article>
+
+        <article class="svc-card">
+          <span class="svc-k">AI Integration</span>
+          <h3>Omnichannel assistants &amp; strategic consulting</h3>
+          <p>Custom AI agents deployed across chat, email, and SMS, plus architecture consulting for teams integrating AI into existing systems.</p>
+          <div class="split-actions"><a class="btn btn-text" href="/ai/">Explore AI →</a></div>
+        </article>
+
+        <article class="svc-card">
+          <span class="svc-k">Mobile Apps</span>
+          <h3>Native iOS applications, App Store shipped</h3>
+          <p>11 production SwiftUI applications spanning productivity, wellness, finance, and professional tools — architecture, submission, and updates handled end to end.</p>
+          <div class="split-actions"><a class="btn btn-text" href="/mobile/">Explore mobile →</a></div>
+        </article>
+
+        <article class="svc-card">
+          <span class="svc-k">Operations Software</span>
+          <h3>Parts counters &amp; lot management for dealerships</h3>
+          <p>Purpose-built desks for parts departments and independent lots — live inventory search, an inbox that drafts itself, and offline-capable sales tools.</p>
+          <div class="split-actions"><a class="btn btn-text" href="/parts/">Explore operations →</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="builds" class="product-split shell" aria-label="Flagship builds">
+      <div class="section-label">
+        <span class="num">02</span>
+        <span>Flagship builds</span>
+      </div>
+      <h2 class="split-title">Proprietary systems already running</h2>
+      <p class="split-dek split-dek-wide">Infrastructure we built once and now reuse on every client engagement — plus two dealership products currently in production. Detail lives on each product page.</p>
+
+      <div class="split-grid split-grid-4">
+        <article class="split-card split-harness" id="harness-card">
+          <div class="split-kicker">Agent platform</div>
+          <h3>NextEleven Harness</h3>
+          <p>Our own agent runtime, written in Rust. Multi-provider models, sandboxed tools, swarm workers, MCP, and recoverable sessions — the reason a custom build reuses infrastructure instead of starting from a blank file.</p>
+          <ul class="split-bullets">
+            <li>Multi-model · recoverable runs</li>
+            <li>Public beta · proprietary</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-solid" href="/harness/">See the details</a>
+            <a class="btn btn-line" href="https://github.com/seanebones-lang/harness" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <article class="split-card split-rag" id="rag-card">
+          <div class="split-kicker">Private knowledge</div>
+          <h3>Private Document Search</h3>
+          <p>Ask plain-language questions against your own contracts, manuals, and internal notes, and get answers with the source attached. Runs entirely on hardware you control.</p>
+          <ul class="split-bullets">
+            <li>Self-hosted · open source</li>
+            <li>Works with local models</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-solid" href="/rag/">See the details</a>
+            <a class="btn btn-line" href="https://github.com/seanebones-lang/personal-RAG" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <article class="split-card split-parts" id="parts-card">
+          <div class="split-kicker">Dealership operations</div>
+          <h3>Parts Inventory System</h3>
+          <p>One desk for the counter and the parts inbox, across every rooftop. Staff search the way customers actually talk and see live stock at every store. Nothing sends until a person approves it.</p>
+          <ul class="split-bullets">
+            <li>30-day pilot · $1,500, credited back</li>
+            <li>$495/mo first rooftop · $195 each after</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-solid" href="/parts/">See the details</a>
+            <a class="btn btn-line" href="/parts/NextEleven_Parts_Rate_Card.pdf" target="_blank" rel="noopener noreferrer">Rate card</a>
+          </div>
+        </article>
+
+        <article class="split-card split-lot" id="lot-card">
+          <div class="split-kicker">Dealership operations</div>
+          <h3>Lot Management</h3>
+          <p>A complete desk for independent dealers that runs on the computer in your office — no internet required, no data leaving the building. VIN inventory, CRM, sales, and printed invoices.</p>
+          <ul class="split-bullets">
+            <li>$495 first machine · installed</li>
+            <li>$195 each machine after · no monthly fee</li>
+          </ul>
+          <div class="split-actions">
+            <a class="btn btn-solid" href="/lot/">See the details</a>
+            <a class="btn btn-line" href="/lot/NextEleven_Lot_Rate_Card.pdf" target="_blank" rel="noopener noreferrer">Rate card</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="founder-block shell" aria-label="Leadership">
+      <div class="section-label">
+        <span class="num">03</span>
+        <span>Leadership</span>
+      </div>
       <div class="founder-card">
         <div class="founder-avatar">
-          <img src="sean-avatar.jpg" alt="Sean McDonnell, Founder & CTO">
+          <img src="sean-avatar.jpg" alt="Sean McDonnell, Founder & CTO" width="120" height="120" />
         </div>
-        <h3>Sean McDonnell</h3>
-        <div class="founder-role">Founder & CTO</div>
-        <p class="founder-bio">Self-taught engineer with 285+ GitHub repositories. Specialized in AI agents, fintech systems, SaaS platforms, and iOS application architecture. Portfolio spans trading bots, enterprise systems, and consumer applications on the App Store.</p>
-        <div class="social-links">
-          <a href="https://github.com/seanebones-lang" target="_blank">GitHub</a>
-          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a href="https://twitter.com/nextelevendev" target="_blank">Twitter</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="services">
-    <div class="section-label">Capabilities</div>
-    <h2>Enterprise Solutions</h2>
-    <p class="section-intro">Production-grade systems designed for enterprise scale, reliability, and performance. From SaaS platforms to autonomous AI agents to fintech infrastructure.</p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>SaaS Platforms</h3>
-        <p><strong>Inventory Parts System</strong> — Real-time stock tracking, multi-warehouse management, supplier integration, and advanced analytics for parts distributors.</p>
-        <a href="/saas/">Explore →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Custom Systems</h3>
-        <p><strong>Harness</strong> — AI coding agent in Rust. <strong>Personal RAG</strong> — Custom knowledge bases with semantic search and LLM integration.</p>
-        <a href="/systems/">Explore →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Fintech Solutions</h3>
-        <p><strong>AK47v7.62</strong> — Auto Kalshi BTC trader. <strong>Market Bot</strong> — Automated Robinhood BTC trading with real-time analysis.</p>
-        <a href="/fintech/">Explore →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>AI Integration</h3>
-        <p>Omnichannel AI assistants (chat, email, SMS). Strategic consulting on AI integration or full system redesign with AI at the core.</p>
-        <a href="/ai/">Explore →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Mobile Apps</h3>
-        <p>11 iOS App Store applications spanning productivity, health, finance, education, and professional tools. All production-ready.</p>
-        <a href="/mobile/">Explore →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Consultation</h3>
-        <p>Expert guidance on technology strategy, system architecture, and AI implementation. From assessment to production deployment.</p>
-        <a href="#contact">Get Started →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proof -->
-  <section id="proof" class="proof">
-    <div class="proof-content">
-      <div class="section-label">Proven Results</div>
-      <h2>Track Record</h2>
-
-      <div class="case-studies">
-        <div class="case-study">
-          <div class="case-study-title">Trading System</div>
-          <p class="case-study-description">Autonomous bot deployed for cryptocurrency markets with real-time analysis and risk controls.</p>
-          <div class="case-study-metric">
-            <span class="metric-value">$2.5M+</span>
-            <span class="metric-label">annual trading volume</span>
-          </div>
-        </div>
-
-        <div class="case-study">
-          <div class="case-study-title">SaaS Platform</div>
-          <p class="case-study-description">Multi-tenant parts inventory system with supplier integration serving distributors.</p>
-          <div class="case-study-metric">
-            <span class="metric-value">50%</span>
-            <span class="metric-label">inventory cost reduction</span>
-          </div>
-        </div>
-
-        <div class="case-study">
-          <div class="case-study-title">Mobile App Suite</div>
-          <p class="case-study-description">11 production iOS applications on the App Store with combined user base.</p>
-          <div class="case-study-metric">
-            <span class="metric-value">50K+</span>
-            <span class="metric-label">combined users</span>
-          </div>
-        </div>
-
-        <div class="case-study">
-          <div class="case-study-title">AI Integration</div>
-          <p class="case-study-description">Custom AI assistant platform with omnichannel deployment for enterprise support.</p>
-          <div class="case-study-metric">
-            <span class="metric-value">70%</span>
-            <span class="metric-label">support efficiency gain</span>
-          </div>
-        </div>
-
-        <div class="case-study">
-          <div class="case-study-title">Coding Agent</div>
-          <p class="case-study-description">Harness — autonomous AI coding agent for code generation and refactoring.</p>
-          <div class="case-study-metric">
-            <span class="metric-value">3x</span>
-            <span class="metric-label">faster feature velocity</span>
-          </div>
-        </div>
-
-        <div class="case-study">
-          <div class="case-study-title">Knowledge System</div>
-          <p class="case-study-description">Personal RAG platform for semantic search and knowledge management.</p>
-          <div class="case-study-metric">
-            <span class="metric-value">95%</span>
-            <span class="metric-label">relevance accuracy</span>
+        <div>
+          <div class="founder-name">Sean McDonnell</div>
+          <div class="founder-role">Founder &amp; CTO</div>
+          <p class="founder-bio">Self-taught engineer with 285+ GitHub repositories. Builds across AI agent infrastructure, fintech systems, SaaS platforms, and native iOS architecture — the same engineer scopes, ships, and supports every project.</p>
+          <div class="founder-links">
+            <a class="btn btn-line" href="https://github.com/seanebones-lang" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn btn-line" href="https://www.linkedin.com/in/mothership-ai" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn btn-line" href="https://x.com/NextElevenDev" target="_blank" rel="noopener noreferrer">X</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="contact-content">
-      <div class="section-label">Next Steps</div>
-      <h2>Start Your Project</h2>
-      <p class="contact-intro">Whether you're exploring a new platform, integrating AI, or optimizing your infrastructure, let's talk about what you're building.</p>
-
-      <div class="form-status success" data-fs-success></div>
-      <div class="form-status error" data-fs-error></div>
-
-      <form id="contact-form" class="contact-form">
-        <input type="hidden" name="_subject" value="New project inquiry from mothership-ai.com">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-        <div class="form-group">
-          <label for="name">Company Name</label>
-          <input type="text" id="name" name="name" data-fs-field required>
-          <span class="field-error" data-fs-error="name"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" data-fs-field required>
-          <span class="field-error" data-fs-error="email"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Project Details</label>
-          <textarea id="message" name="message" data-fs-field required></textarea>
-          <span class="field-error" data-fs-error="message"></span>
-        </div>
-
-        <button type="submit" class="submit-button" data-fs-submit-btn>Send Message</button>
-      </form>
-
-      <p class="contact-email">
-        Or email directly: <a href="mailto:nextelevenstudios@gmail.com">nextelevenstudios@gmail.com</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Services</h3>
-        <ul>
-          <li><a href="/saas/">SaaS Platforms</a></li>
-          <li><a href="/systems/">Custom Systems</a></li>
-          <li><a href="/fintech/">Fintech Solutions</a></li>
-          <li><a href="/ai/">AI Integration</a></li>
-          <li><a href="/mobile/">Mobile Apps</a></li>
-        </ul>
+    <section id="results" class="proof shell" aria-labelledby="results-title">
+      <div class="section-label">
+        <span class="num">04</span>
+        <span>Results</span>
       </div>
-
-      <div class="footer-section">
-        <h3>Company</h3>
-        <ul>
-          <li><a href="#proof">Case Studies</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://github.com/seanebones-lang" target="_blank">GitHub</a></li>
-          <li><a href="https://twitter.com/nextelevendev" target="_blank">Twitter</a></li>
-        </ul>
+      <div class="proof-head">
+        <h2 id="results-title">Track record</h2>
+        <p>A sample from across all six service lines, not just one.</p>
       </div>
+      <ol class="proof-list">
+        <li>
+          <span class="proof-n">01</span>
+          <div>
+            <h3>Fintech — Autonomous Trading System</h3>
+            <p>Bot deployed for cryptocurrency markets with real-time analysis and risk controls, driving <strong>$2.5M+</strong> in annual trading volume.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">02</span>
+          <div>
+            <h3>SaaS — Parts Inventory Platform</h3>
+            <p>Multi-tenant inventory system with supplier integration, cutting carrying costs for distributors by <strong>50%</strong>.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">03</span>
+          <div>
+            <h3>Mobile — 11-App Store Portfolio</h3>
+            <p>Native SwiftUI applications across productivity, wellness, and finance, with a combined base of <strong>50K+</strong> users.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">04</span>
+          <div>
+            <h3>AI Integration — Omnichannel Assistant</h3>
+            <p>Custom AI support platform deployed across chat, email, and SMS, lifting support efficiency by <strong>70%</strong>.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">05</span>
+          <div>
+            <h3>Custom Systems — Harness Coding Agent</h3>
+            <p>Autonomous agent runtime in Rust for code generation and refactoring, running at <strong>3x</strong> feature velocity internally.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">06</span>
+          <div>
+            <h3>Operations Software — Dealership Pilots</h3>
+            <p>Parts counter and lot management desks now running fixed-price 30-day pilots with independent dealers and multi-rooftop groups.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-      <div class="footer-section">
-        <h3>Products</h3>
-        <ul>
-          <li><a href="/mobile/">ImanPRO</a></li>
-          <li><a href="/mobile/">ElevenClean</a></li>
-          <li><a href="/mobile/">If/Then/Reset</a></li>
-          <li><a href="/fintech/">AK47v7.62</a></li>
-        </ul>
+    <section id="process" class="proof shell" aria-labelledby="process-title">
+      <div class="section-label">
+        <span class="num">05</span>
+        <span>Process</span>
       </div>
-    </div>
+      <div class="proof-head">
+        <h2 id="process-title">How an engagement works</h2>
+        <p>Four steps, a fixed price, and a decision date you know before you commit.</p>
+      </div>
+      <ol class="proof-list">
+        <li>
+          <span class="proof-n">01</span>
+          <div>
+            <h3>A 20-minute call</h3>
+            <p>You describe what is slow, manual, or falling through the cracks. We tell you plainly whether we can help. If we are not the right fit, we say so on that call.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">02</span>
+          <div>
+            <h3>Discovery week</h3>
+            <p>We map your systems, agree on what we are measuring, and write down what "working" means in numbers before you commit to a build.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">03</span>
+          <div>
+            <h3>A fixed-price pilot</h3>
+            <p>Real software on your real data, running alongside what you use today. Your team trains on it while it runs, so nothing depends on a launch day going perfectly.</p>
+          </div>
+        </li>
+        <li>
+          <span class="proof-n">04</span>
+          <div>
+            <h3>Go or no-go</h3>
+            <p>On the agreed date you get the numbers and a straight recommendation. Pilot fees credit toward production. If it did not earn its keep, you walk away with no monthly commitment.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-    <div class="footer-bottom">
-      <p>&copy; 2026 NextEleven LLC. Building enterprise technology, one system at a time.</p>
+    <section class="bar-block shell" aria-labelledby="how-title">
+      <div class="section-label">
+        <span class="num">06</span>
+        <span>How we work</span>
+      </div>
+      <h2 id="how-title" class="split-title">Principles that don't change by project type</h2>
+      <ul class="bar-list">
+        <li>
+          <strong>One team, start to finish.</strong>
+          <span>We design it, ship it, watch it run, and fix what breaks. No handoff to a support queue the week after launch.</span>
+        </li>
+        <li>
+          <strong>The system refuses rather than guesses.</strong>
+          <span>If a payment, a trade, or a customer message cannot be verified, the software stops and asks a person. You will never find out later that it invented an answer.</span>
+        </li>
+        <li>
+          <strong>We tell you what is not ready.</strong>
+          <span>Integrations we cannot connect yet stay visibly switched off instead of faked. You always know exactly what you are buying.</span>
+        </li>
+        <li>
+          <strong>Nothing we build is a one-off.</strong>
+          <span>Our agent runtime and retrieval infrastructure are maintained platforms, not throwaway scripts — that's why the second project ships faster than the first, regardless of discipline.</span>
+        </li>
+      </ul>
+      <p class="bar-note">SaaS, fintech, AI integration, mobile, or dealership operations — every engagement runs on the same terms: fixed price, a working pilot, and a go/no-go date you know up front.</p>
+    </section>
+
+    <section id="contact" class="contact shell" aria-labelledby="contact-title">
+      <div class="contact-card">
+        <div class="section-label">
+          <span class="num">07</span>
+          <span>Contact</span>
+        </div>
+        <h2 id="contact-title">Start your project</h2>
+        <p class="contact-sub">NextEleven LLC · Mansfield, TX · Working with clients across the US, remote</p>
+        <p class="email-line">
+          <a href="mailto:nextelevenstudios@gmail.com?subject=Project%20inquiry">nextelevenstudios@gmail.com</a>
+          <span>· we usually reply the same day</span>
+        </p>
+
+        <div class="form-status success" data-fs-success></div>
+        <div class="form-status error" data-fs-error></div>
+
+        <form id="contact-form" class="contact-form">
+          <input type="hidden" name="_subject" value="New project inquiry from mothership-ai.com">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <label for="name">Company name</label>
+            <input type="text" id="name" name="name" data-fs-field required>
+            <span class="field-error" data-fs-error="name"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" data-fs-field required>
+            <span class="field-error" data-fs-error="email"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" data-fs-field required></textarea>
+            <span class="field-error" data-fs-error="message"></span>
+          </div>
+
+          <div class="contact-actions">
+            <button type="submit" class="btn btn-solid" data-fs-submit-btn>Send message</button>
+          </div>
+        </form>
+
+        <div class="contact-actions" style="margin-top: 1.5rem;">
+          <a class="btn btn-line" href="https://www.linkedin.com/in/mothership-ai" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/seanebones-lang" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-ghost" href="https://x.com/NextElevenDev" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+        <p class="fine">The first call costs nothing and takes twenty minutes. Bring your worst bottleneck.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot shell foot-full">
+    <div class="foot-row">
+      <span>© <span id="y"></span> NextEleven LLC</span>
+      <span class="foot-tag">Mansfield, TX · Remote across the US</span>
     </div>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/saas/">SaaS Platforms</a>
+      <a href="/systems/">Custom AI Systems</a>
+      <a href="/fintech/">Fintech</a>
+      <a href="/ai/">AI Integration</a>
+      <a href="/mobile/">Mobile Apps</a>
+      <a href="/parts/">Parts Inventory</a>
+      <a href="/lot/">Lot Management</a>
+      <a href="/harness/">Harness</a>
+      <a href="/rag/">Private RAG</a>
+      <a href="/engineering.html">Engineering notes</a>
+    </nav>
   </footer>
+
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="btn btn-solid" href="#contact">Start a project</a>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var drawer = document.getElementById('drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.hasAttribute('hidden');
+        if (open) {
+          drawer.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close menu');
+          btn.classList.add('open');
+        } else {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        }
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          btn.classList.remove('open');
+        });
+      });
+    })();
+  </script>
 
   <script>
     window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
