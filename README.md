@@ -1,6 +1,6 @@
 # NextEleven web
 
-Static company site for **NextEleven LLC**.
+Static career portfolio and project-evidence site for **Sean McDonnell / NextEleven LLC**.
 
 **Live:** [www.mothership-ai.com](https://www.mothership-ai.com/)  
 **GitHub Pages twin:** [seanebones-lang.github.io/nexteleven-web](https://seanebones-lang.github.io/nexteleven-web/)
@@ -9,11 +9,22 @@ Static company site for **NextEleven LLC**.
 
 | Path | Product |
 |------|---------|
-| `/` | Company / hire-me home (four product cards) |
-| `/harness/` | NextEleven Harness — Rust coding agent |
-| `/rag/` | Personal RAG — local-first private search |
-| `/parts/` | Parts Inventory System + rate card PDF |
-| `/lot/` | Lot Management + rate card PDF |
+| `/` | Career home — skills, evidence, selected work, résumé, contact |
+| `/harness/` | NextEleven Harness — Rust coding-agent POC |
+| `/rag/` | PersonalRAGVault — MIT-licensed private retrieval |
+| `/parts/` | Anonymized confidential dealership-workflow case study |
+| `/saas/` | Backend and workflow implementation evidence |
+| `/ai/` | Applied-AI and RAG evidence |
+| `/mobile/` | Cross-platform project experience |
+| `/fintech/` | Research-engineering evidence with explicit no-edge boundary |
+
+## Public-claim policy
+
+- Public repositories, tests, releases, and documentation are the source of truth for project claims.
+- Confidential client and product identities remain unnamed; public demos use synthetic data.
+- Completed implementation is not presented as verified production adoption or business impact.
+- Do not publish unverified user counts, efficiency percentages, revenue impact, trading volume, win rate, profitability, or customer deployments.
+- Keep the résumé in `downloads/` synchronized with the approved career source of truth.
 
 ## Edit / deploy
 

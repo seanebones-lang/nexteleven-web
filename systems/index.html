@@ -4,199 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#05070c" />
-  <title>Custom AI Systems — NextEleven LLC</title>
-  <meta name="description" content="NextEleven Custom AI Systems: proprietary infrastructure including Harness, a Rust coding agent, and Personal RAG, a private knowledge-search system." />
-  <meta name="author" content="NextEleven LLC" />
+  <title>Developer Tools &amp; Retrieval Systems — Sean McDonnell</title>
+  <meta name="description" content="Public software evidence from Sean McDonnell: a Rust coding-agent proof of concept and an MIT-licensed Python retrieval application with tests, documentation, APIs, and explicit limitations." />
+  <meta name="author" content="Sean McDonnell" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mothership-ai.com/systems/" />
-  <meta property="og:title" content="Custom AI Systems — NextEleven LLC" />
-  <meta property="og:description" content="Purpose-built AI infrastructure: Harness, a Rust coding agent, and Personal RAG, a private knowledge-search system." />
-  <meta property="og:image" content="https://www.mothership-ai.com/images/nexteleven.jpg" />
+  <meta property="og:title" content="Developer Tools &amp; Retrieval Systems — Sean McDonnell" />
+  <meta property="og:description" content="Inspectable Rust and Python project evidence with tests, documentation, APIs, and honest limits." />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://www.mothership-ai.com/systems/" />
   <link rel="icon" type="image/jpeg" href="/images/nexteleven.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/site.css" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
-  <div class="atmosphere" aria-hidden="true">
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-    <div class="grid-fade"></div>
-    <div class="noise"></div>
-  </div>
-
-  <header class="top">
+  <div class="atmosphere" aria-hidden="true"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grid-fade"></div><div class="noise"></div></div>
+  <header class="top evidence-top">
     <div class="shell top-inner">
-      <a class="brand" href="/">
-        <img src="/images/nexteleven.jpg" alt="" width="28" height="28" />
-        <span>NextEleven</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="/#services">Services</a>
-        <a href="/#builds">Flagship builds</a>
-        <a href="/#results">Results</a>
-        <a href="/#opportunities">Opportunities</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-      <a class="btn btn-solid top-cta" href="/#contact">Start a project</a>
-      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span>
-      </button>
-    </div>
-    <div class="drawer" id="drawer" hidden>
-      <a href="/#services">Services</a>
-      <a href="/#builds">Flagship builds</a>
-      <a href="/#results">Results</a>
-      <a href="/#opportunities">Opportunities</a>
-      <a href="/#contact">Contact</a>
-      <a class="btn btn-solid" href="/#contact">Start a project</a>
+      <a class="brand" href="/"><img src="/images/nexteleven.jpg" alt="" width="28" height="28" /><span>NextEleven</span></a>
+      <nav class="nav" aria-label="Primary"><a href="/#skills">Skills</a><a href="/#builds">Selected work</a><a href="/#evidence">Evidence</a><a href="/#contact">Contact</a></nav>
+      <a class="btn btn-solid top-cta" href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">View résumé</a>
     </div>
   </header>
-
   <main id="main">
     <section class="hero hero-tight shell" aria-label="Introduction">
       <div class="hero-copy hero-copy-full">
-        <p class="eyebrow"><span class="pulse"></span> Custom AI Systems</p>
-        <h1>Infrastructure we built once, <em>and now run on.</em></h1>
-        <p class="lede lede-tight">We design and build systems tailored to specific operational needs, integrated with your existing infrastructure. Two of those systems — Harness and Personal RAG — are the foundation every custom engagement builds on.</p>
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="/#contact">Talk about a build</a>
-          <a class="btn btn-ghost" href="/">← Back to services</a>
-        </div>
+        <p class="eyebrow"><span class="pulse"></span> Public engineering evidence</p>
+        <h1>Developer tools and retrieval systems you can <em>inspect.</em></h1>
+        <p class="lede lede-tight">NextEleven Harness demonstrates Rust systems and agent-tooling work. PersonalRAGVault demonstrates Python retrieval, APIs, evaluation, and user-facing documentation. Both are bounded accurately: one is a proprietary public proof of concept; the other is MIT licensed.</p>
+        <div class="hero-actions"><a class="btn btn-solid" href="/#contact">Discuss an opportunity</a><a class="btn btn-ghost" href="/">← Back home</a></div>
       </div>
     </section>
-
-    <section class="services shell" aria-label="Harness">
-      <div class="section-label"><span class="num">01</span><span>Agent Platform</span></div>
-      <div class="services-head">
-        <h2>Harness coding agent</h2>
-        <p class="services-dek">An autonomous coding agent built in Rust for code generation, refactoring, and system analysis — designed for development teams that need reliable code assistance at scale.</p>
-      </div>
+    <section class="services shell" aria-label="Implemented capabilities">
+      <div class="section-label"><span class="num">01</span><span>Implemented capabilities</span></div>
+      <div class="services-head"><h2>Two projects, two different evidence surfaces</h2><p class="services-dek">The public repositories, release material, tests, and documentation are the source of truth.</p></div>
       <div class="services-grid">
-        <article class="svc-card">
-          <span class="svc-k">Generation</span>
-          <h3>AI-powered code generation</h3>
-          <p>Autonomous code generation with full context awareness of your codebase, producing production-ready code at scale.</p>
-        </article>
-        <article class="svc-card">
-          <span class="svc-k">Refactoring</span>
-          <h3>Intelligent refactoring</h3>
-          <p>Automated code improvements, security analysis, and performance optimization across an entire system.</p>
-        </article>
-        <article class="svc-card">
-          <span class="svc-k">Languages</span>
-          <h3>Multi-language support</h3>
-          <p>Support for Python, JavaScript, TypeScript, Rust, Go, Java, and more with a language-agnostic architecture.</p>
-        </article>
-        <article class="svc-card">
-          <span class="svc-k">Deployment</span>
-          <h3>Enterprise integration</h3>
-          <p>Integrates with CI/CD pipelines, version control, and development workflows, self-hosted or cloud-deployed.</p>
-        </article>
-      </div>
-      <div class="hero-actions" style="margin-top:1.5rem;">
-        <a class="btn btn-line" href="/harness/">See the details</a>
+        <article class="svc-card"><span class="svc-k">Harness</span><h3>Rust coding-agent runtime</h3><p>Multi-provider routing, sandboxed repository tools, MCP, SQLite-backed sessions, parallel workers, and HTTP/SSE interfaces.</p></article>
+        <article class="svc-card"><span class="svc-k">Harness</span><h3>Cross-platform verification</h3><p>A 363-test binary suite and an 11-job CI matrix covering Windows, macOS, Linux, tests, lint, build, and release paths.</p></article>
+        <article class="svc-card"><span class="svc-k">Harness</span><h3>Operational documentation</h3><p>Install guidance, security model, limitations, release status, provider behavior, and troubleshooting notes.</p></article>
+        <article class="svc-card"><span class="svc-k">PersonalRAGVault</span><h3>Hybrid retrieval</h3><p>Multi-source ingestion, FTS5 and vector search, reciprocal-rank fusion, reranking, citations, and evaluation.</p></article>
+        <article class="svc-card"><span class="svc-k">PersonalRAGVault</span><h3>Python service surface</h3><p>CLI workflows, FastAPI/SSE access, optional local models, automated tests, and user documentation.</p></article>
+        <article class="svc-card"><span class="svc-k">Support value</span><h3>Debuggable systems</h3><p>Structured errors, reproducible behavior, documented setup, testable boundaries, and interfaces intended to help another person understand what happened.</p></article>
       </div>
     </section>
-
-    <section class="services shell" aria-label="Personal RAG">
-      <div class="section-label"><span class="num">02</span><span>Private Knowledge</span></div>
-      <div class="services-head">
-        <h2>Personal RAG</h2>
-        <p class="services-dek">A knowledge management and semantic search system for personal and enterprise use — build custom knowledge bases and query your data in plain language.</p>
-      </div>
-      <div class="services-grid">
-        <article class="svc-card">
-          <span class="svc-k">Ingestion</span>
-          <h3>Custom knowledge bases</h3>
-          <p>Import documents, files, and data. Index and search across custom knowledge with semantic understanding.</p>
-        </article>
-        <article class="svc-card">
-          <span class="svc-k">Search</span>
-          <h3>Semantic search</h3>
-          <p>Find answers based on meaning, not keywords — natural language queries return contextually relevant results.</p>
-        </article>
-        <article class="svc-card">
-          <span class="svc-k">Integration</span>
-          <h3>RAG integration</h3>
-          <p>Connects to LLMs for AI-powered answers grounded in your actual data and documents.</p>
-        </article>
-      </div>
-      <div class="hero-actions" style="margin-top:1.5rem;">
-        <a class="btn btn-line" href="/rag/">See the details</a>
-      </div>
+    <section class="bar-block shell" aria-labelledby="boundaries-title">
+      <div class="section-label"><span class="num">02</span><span>Evidence boundaries</span></div>
+      <h2 id="boundaries-title" class="split-title">Status without marketing inflation</h2>
+      <ul class="bar-list">
+        <li><strong>Harness is a proof of concept.</strong><span>Version 1.3.0 is a proprietary public POC, not a claim of enterprise adoption or mature production support.</span></li>
+        <li><strong>PersonalRAGVault is open source.</strong><span>The Python application is MIT licensed and may be inspected directly.</span></li>
+        <li><strong>Tests are evidence, not customers.</strong><span>Passing checks demonstrate implemented behavior; they do not prove market adoption or business outcomes.</span></li>
+        <li><strong>Limitations stay visible.</strong><span>Neither project is presented as complete for every enterprise requirement, environment, or support expectation.</span></li>
+      </ul>
     </section>
-
-    <section id="contact" class="contact shell">
-      <div class="contact-card">
-        <h2>Have an operational problem that needs a custom system?</h2>
-        <p class="contact-sub">A short call is the fastest way to find out if this fits what you're trying to build.</p>
-        <div class="contact-actions">
-          <a class="btn btn-solid" href="mailto:nextelevenstudios@gmail.com?subject=Custom%20AI%20systems%20inquiry">Email us</a>
-          <a class="btn btn-line" href="/#contact">Back to contact</a>
-        </div>
-      </div>
-    </section>
+    <section class="contact shell"><div class="contact-card"><h2>Want to discuss the code or the engineering decisions?</h2><p class="contact-sub">I am open to developer support, technical support, implementation, backend, applied-AI, and software engineering roles.</p><div class="contact-actions"><a class="btn btn-solid" href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">View résumé</a><a class="btn btn-line" href="https://github.com/seanebones-lang">View GitHub</a></div></div></section>
   </main>
-
-  <footer class="foot shell foot-full">
-    <div class="foot-row">
-      <span>© <span id="y"></span> NextEleven LLC</span>
-      <span class="foot-tag">Mansfield, TX · Remote across the US</span>
-    </div>
-    <nav class="foot-links" aria-label="Site">
-      <a href="/saas/">SaaS Platforms</a>
-      <a href="/systems/">Custom AI Systems</a>
-      <a href="/fintech/">Fintech</a>
-      <a href="/ai/">AI Integration</a>
-      <a href="/mobile/">Mobile Apps</a>
-      <a href="/parts/">Parts Inventory</a>
-      <a href="/lot/">Lot Management</a>
-      <a href="/harness/">Harness</a>
-      <a href="/rag/">Private RAG</a>
-      <a href="/engineering.html">Engineering notes</a>
-    </nav>
-  </footer>
-
-  <div class="mobile-cta" aria-label="Quick contact">
-    <a class="btn btn-solid" href="/#contact">Start a project</a>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function () {
-      var btn = document.getElementById('menu-btn');
-      var drawer = document.getElementById('drawer');
-      if (!btn || !drawer) return;
-      btn.addEventListener('click', function () {
-        var open = drawer.hasAttribute('hidden');
-        if (open) {
-          drawer.removeAttribute('hidden');
-          btn.setAttribute('aria-expanded', 'true');
-          btn.setAttribute('aria-label', 'Close menu');
-          btn.classList.add('open');
-        } else {
-          drawer.setAttribute('hidden', '');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.setAttribute('aria-label', 'Open menu');
-          btn.classList.remove('open');
-        }
-      });
-      drawer.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          drawer.setAttribute('hidden', '');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.setAttribute('aria-label', 'Open menu');
-          btn.classList.remove('open');
-        });
-      });
-    })();
-  </script>
+  <footer class="foot shell foot-full"><div class="foot-row"><span>© <span id="y"></span> NextEleven LLC</span><span class="foot-tag">Sean McDonnell · Mansfield, TX · Remote across the US</span></div><nav class="foot-links" aria-label="Site"><a href="/">Home</a><a href="/harness/">Harness</a><a href="/rag/">Personal RAG</a><a href="/parts/">Confidential case study</a><a href="https://github.com/seanebones-lang">GitHub</a><a href="https://www.linkedin.com/in/mothership-ai">LinkedIn</a></nav></footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

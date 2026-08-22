@@ -118,6 +118,7 @@ em { font-style: italic; color: var(--accent); }
 }
 .nav a:hover::after { right: 0; }
 .top-cta { margin-left: auto; display: none; }
+.evidence-top .top-cta { display: inline-flex; }
 .menu-btn {
   margin-left: auto; width: 42px; height: 42px; border-radius: 12px;
   border: 1px solid var(--line-strong); background: transparent; color: var(--ink);
