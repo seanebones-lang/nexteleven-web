@@ -590,6 +590,45 @@
       box-shadow: 0 15px 30px rgba(0, 217, 255, 0.2);
     }
 
+    .form-status {
+      font-size: 0.9rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-color);
+      display: none;
+    }
+
+    .form-status:not(:empty) {
+      display: block;
+    }
+
+    .form-status.success {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .form-status.error {
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+
+    .field-error {
+      display: block;
+      color: var(--accent-pink);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .field-error:empty {
+      display: none;
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
     .contact-email {
       font-size: 0.9rem;
       color: var(--text-muted);
@@ -938,23 +977,32 @@
       <h2>Start Your Project</h2>
       <p class="contact-intro">Whether you're exploring a new platform, integrating AI, or optimizing your infrastructure, let's talk about what you're building.</p>
 
-      <form class="contact-form" action="https://formspree.io/f/xyzpqwqr" method="POST">
+      <div class="form-status success" data-fs-success></div>
+      <div class="form-status error" data-fs-error></div>
+
+      <form id="contact-form" class="contact-form">
+        <input type="hidden" name="_subject" value="New project inquiry from mothership-ai.com">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
         <div class="form-group">
           <label for="name">Company Name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" data-fs-field required>
+          <span class="field-error" data-fs-error="name"></span>
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" data-fs-field required>
+          <span class="field-error" data-fs-error="email"></span>
         </div>
 
         <div class="form-group">
           <label for="message">Project Details</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" data-fs-field required></textarea>
+          <span class="field-error" data-fs-error="message"></span>
         </div>
 
-        <button type="submit" class="submit-button">Send Message</button>
+        <button type="submit" class="submit-button" data-fs-submit-btn>Send Message</button>
       </form>
 
       <p class="contact-email">
@@ -1002,5 +1050,11 @@
       <p>&copy; 2026 NextEleven LLC. Building enterprise technology, one system at a time.</p>
     </div>
   </footer>
+
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'mvkpyrko' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
