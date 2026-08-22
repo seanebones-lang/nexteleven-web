@@ -10,6 +10,7 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 | Path | Product |
 |------|---------|
 | `/` | Career home — skills, evidence, selected work, résumé, contact |
+| `/studio/` | NextEleven LLC — scoped contract work kept separate from the recruiter-first homepage |
 | `/harness/` | NextEleven Harness — Rust coding-agent POC |
 | `/rag/` | PersonalRAGVault — MIT-licensed private retrieval |
 | `/parts/` | Anonymized confidential dealership-workflow case study |
@@ -25,6 +26,7 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 - Completed implementation is not presented as verified production adoption or business impact.
 - Do not publish unverified user counts, efficiency percentages, revenue impact, trading volume, win rate, profitability, or customer deployments.
 - Keep the résumé in `downloads/` synchronized with the approved career source of truth.
+- Keep `/` recruiter-first. Contract positioning belongs on `/studio/`; do not mix agency-scale claims into the personal homepage.
 
 ## Edit / deploy
 
