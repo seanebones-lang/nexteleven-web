@@ -704,6 +704,16 @@ em { font-style: italic; color: var(--accent); }
     linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%),
     rgba(10, 15, 26, .78);
 }
+.split-fintech {
+  border-color: rgba(251, 191, 36, .28);
+  background:
+    radial-gradient(500px 200px at 100% 0%, rgba(251,191,36,.14), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%),
+    rgba(10, 15, 26, .78);
+}
+.split-fintech .split-bullets li::before {
+  background: var(--amber);
+}
 .split-harness {
   border-color: rgba(52, 211, 153, .28);
   background:
@@ -967,12 +977,19 @@ em { font-style: italic; color: var(--accent); }
   font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
   color: var(--dim);
 }
-.form-row input, .form-row textarea {
+.form-row input, .form-row textarea, .form-row select {
   width: 100%; background: rgba(5,7,12,.6); border: 1px solid var(--line-strong);
   border-radius: 12px; padding: .85rem 1rem; color: var(--ink); font-family: var(--sans);
   font-size: .98rem; transition: border-color .2s, box-shadow .2s;
 }
-.form-row input:focus, .form-row textarea:focus {
+.form-row select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2393a0b8' stroke-width='1.6'%3E%3Cpath d='M5 7.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center; background-size: 14px;
+  padding-right: 2.5rem;
+}
+.form-row select option { background: #0a0f1a; color: var(--ink); }
+.form-row input:focus, .form-row textarea:focus, .form-row select:focus {
   outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(110,182,255,.15);
 }
 .form-row textarea { resize: vertical; min-height: 120px; }
