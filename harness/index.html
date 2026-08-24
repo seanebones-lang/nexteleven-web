@@ -5,12 +5,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NextEleven Harness — Rust Coding Agent Runtime</title>
-<meta name="description" content="NextEleven Harness is a proprietary public Rust coding-agent proof of concept with provider routing, sandboxed tools, MCP, SQLite-backed sessions, parallel workers, HTTP/SSE interfaces, a 363-test binary suite, and cross-platform CI." />
+<meta name="description" content="NextEleven Harness is a proprietary public Rust coding-agent proof of concept with explicit user-owned routing across 18 built-in provider configurations plus custom compatible endpoints, sandboxed tools, MCP, sessions, a 376-test binary suite, and cross-platform CI." />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mothership-ai.com/harness/" />
 <meta property="og:title" content="NextEleven Harness — Rust Coding Agent Runtime" />
-<meta property="og:description" content="Public Rust coding-agent POC with tools, parallel workers, MCP, sessions, documentation, 363 tests, and cross-platform CI." />
+<meta property="og:description" content="Provider-neutral Rust coding-agent POC with user-selected models and fallback order, sandboxed tools, MCP, sessions, 376 tests, and cross-platform CI." />
 <link rel="canonical" href="https://www.mothership-ai.com/harness/" />
 <style>
 :root{--bg:#070b12;--panel:#111a2b;--panel2:#162033;--line:rgba(120,200,255,.14);--text:#e8eef8;--muted:#93a4bd;--cyan:#3de0ff;--emerald:#3dffa8;--amber:#ffc857;--red:#ff6b6b;--white:#fff;--sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,SF Mono,Menlo,Consolas,monospace;--max:1080px;--r:14px}
@@ -62,7 +62,7 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
 <section class="hero"><div class="wrap">
   <div class="kicker">Rust · multi-provider · terminal-native coding agent</div>
   <h1>A Rust coding-agent <span>proof of concept.</span></h1>
-  <p class="lede">NextEleven Harness edits repositories with sandboxed tools, tracks costs and sessions, runs parallel workers, speaks MCP, and provides local HTTP/SSE interfaces. The public repository is evidence of implemented systems work—not a claim of enterprise adoption or finished production support.</p>
+  <p class="lede">NextEleven Harness edits repositories with sandboxed tools, tracks costs and sessions, runs parallel workers, speaks MCP, and provides local HTTP/SSE interfaces. Users choose the exact provider, model, and fallback order; Harness does not prefer a vendor or silently insert one. The public repository is evidence of implemented systems work—not a claim of enterprise adoption or finished production support.</p>
   <div class="ctas">
     <a class="btn btn-primary" href="https://github.com/seanebones-lang/harness">View on GitHub</a>
     <a class="btn btn-ghost" href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">View Sean's résumé</a>
@@ -70,20 +70,20 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
   </div>
   <div class="meta-row">
     <span class="chip">Public POC · v1.3.0</span>
-    <span class="chip">363-test binary suite</span>
+    <span class="chip">376-test binary suite</span>
     <span class="chip">11-job CI matrix</span>
     <span class="chip">Rust · CLI + TUI + serve</span>
-    <span class="chip">Multi-model · swarm · MCP</span>
+    <span class="chip">18 built-ins + custom endpoints</span>
     <span class="chip">Proprietary · NextEleven LLC</span>
   </div>
 </div></section>
 
 <section id="why"><div class="wrap">
   <h2>Why this exists</h2>
-  <p class="section-lead">Harness explores what a maintainable local agent runtime needs beyond a one-shot demo: bounded tools, provider routing, persistence, documentation, and repeatable checks.</p>
+  <p class="section-lead">Harness explores what a maintainable local agent runtime needs beyond a one-shot demo: bounded tools, user-owned provider routing, persistence, documentation, and repeatable checks.</p>
   <div class="grid grid-3">
     <div class="card"><div class="tag warn">One-off scripts</div><h3>Every project reinvented the agent</h3><p>New glue, new tool schemas, and new crash modes make cost tracking, recovery, and troubleshooting inconsistent.</p></div>
-    <div class="card"><div class="tag warn">Fragile providers</div><h3>One API key failure stops the job</h3><p>Real work needs a router that can fall through providers, keep a session, and resume instead of starting over when a call fails.</p></div>
+    <div class="card"><div class="tag warn">Provider lock-in</div><h3>A tool should not choose your model stack</h3><p>Harness records the route the user selects: one exact primary model followed by explicit fallbacks in the same order. Credential detection never becomes product policy.</p></div>
     <div class="card"><div class="tag warn">Unsupervised tools</div><h3>Agents that write anywhere are a liability</h3><p>Shell, git, and file edits need allowlists, plan mode, and recoverable runs — not “trust me” on a customer machine.</p></div>
   </div>
 </div></section>
@@ -92,11 +92,12 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
   <h2>What Harness does</h2>
   <p class="section-lead">A terminal-native coding agent with the pieces operators actually need after the demo.</p>
   <div class="grid grid-2">
-    <div class="card"><div class="tag live">Working today</div><h3>Models and routing</h3>
+    <div class="card"><div class="tag live">Working today</div><h3>User-owned models and routing</h3>
       <ul>
-        <li>Anthropic, OpenAI-compatible, xAI, Gemini, Bedrock, Ollama, MLX</li>
-        <li>Smart fall-through based on configured keys</li>
-        <li>Streaming chat, cost dashboard, model picker</li>
+        <li>18 alphabetized built-in provider configurations plus custom OpenAI chat-completions-compatible endpoints</li>
+        <li>One explicit model per provider; the first is primary and the rest are fallbacks in the user's exact order</li>
+        <li>No recommended preset, credential-derived ranking, or implicit Ollama fallback</li>
+        <li>Setup, browser setup, and scoped route-management commands use the same saved route</li>
       </ul>
     </div>
     <div class="card"><div class="tag live">Working today</div><h3>Tools on a real repo</h3>
@@ -130,7 +131,7 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
     <div class="card"><div class="tag live">Running now</div><h3>What you get today</h3>
       <ul>
         <li>Interactive TUI and one-shot CLI</li>
-        <li>Multi-provider streaming + tool loop</li>
+        <li>Provider-neutral streaming + tool loop with an exact user-selected route</li>
         <li>Swarm workers, sessions, cost tracking</li>
         <li>Local serve endpoint and MCP path</li>
         <li>Install script + docs in the public repo</li>
@@ -145,7 +146,7 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
       </ul>
     </div>
   </div>
-  <p class="note">License: proprietary · NextEleven LLC. The GitHub repo is for proof and install visibility, not a free software grant.</p>
+  <p class="note">License: proprietary · NextEleven LLC. The GitHub repo is for proof and install visibility, not a free software grant. Custom endpoints must use the supported OpenAI chat-completions-compatible HTTP(S) shape; other protocols require a native adapter.</p>
 </div></section>
 
 <section id="start"><div class="wrap">
@@ -158,6 +159,10 @@ curl -fsSL https://raw.githubusercontent.com/seanebones-lang/harness/main/script
 git clone https://github.com/seanebones-lang/harness.git
 cd harness && cargo build --release
 ./target/release/harness doctor</div>
+  <div class="code" style="margin-top:12px"># choose the exact provider/model route; no default is imposed
+harness setup
+harness route show
+harness route set anthropic:claude-opus-4-7 openai:gpt-5.5 ollama:qwen3-coder:30b</div>
   <div class="ctas" style="margin-top:24px">
     <a class="btn btn-primary" href="https://github.com/seanebones-lang/harness">GitHub · seanebones-lang/harness</a>
     <a class="btn btn-ghost" href="mailto:nextelevenstudios@gmail.com?subject=Custom%20build%20on%20Harness">Custom build inquiry</a>

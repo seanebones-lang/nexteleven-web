@@ -12,7 +12,7 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 | `/` | Career home — skills, evidence, selected work, résumé, contact |
 | `/studio/` | NextEleven LLC — scoped contract work kept separate from the recruiter-first homepage |
 | `/ak47/` | AK47 Founding Freeze — product page, buyer qualification form, and lead-gated buyer information packet |
-| `/harness/` | NextEleven Harness — Rust coding-agent POC |
+| `/harness/` | NextEleven Harness — provider-neutral Rust coding-agent POC with user-owned model routing |
 | `/rag/` | PersonalRAGVault — MIT-licensed private retrieval |
 | `/parts/` | Anonymized confidential dealership-workflow case study |
 | `/saas/` | Backend and workflow implementation evidence |
@@ -27,6 +27,7 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 - Completed implementation is not presented as verified production adoption or business impact.
 - Do not publish unverified user counts, efficiency percentages, revenue impact, trading volume, win rate, profitability, or customer deployments.
 - Keep the résumé in `downloads/` synchronized with the approved career source of truth.
+- Keep every Harness description aligned with the repository routing contract: exact user-selected provider/model order, 18 built-in names plus custom compatible endpoints, no vendor recommendation, no credential-derived priority, and no implicit fallback. Distinguish current `main` evidence from the latest tagged release.
 - Keep `/` recruiter-first. Contract positioning belongs on `/studio/`; do not mix agency-scale claims into the personal homepage.
 - Keep AK47 performance claims off the sales page. Sell automation, documentation, and customer control; never promise profit, income, win rate, activity, uptime, or suitability.
 - The public Telegram channel may be linked as a transparent feed of published pings, fills, wins, losses, running session W/L percentage, and session net. Do not convert its current rolling percentage into a fixed website headline or describe the channel as a complete audited performance record.
