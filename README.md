@@ -11,6 +11,7 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 |------|---------|
 | `/` | Career home — skills, evidence, selected work, résumé, contact |
 | `/studio/` | NextEleven LLC — scoped contract work kept separate from the recruiter-first homepage |
+| `/ak47/` | AK47 Founding Freeze — product page, buyer qualification form, and lead-gated buyer information packet |
 | `/harness/` | NextEleven Harness — Rust coding-agent POC |
 | `/rag/` | PersonalRAGVault — MIT-licensed private retrieval |
 | `/parts/` | Anonymized confidential dealership-workflow case study |
@@ -27,6 +28,8 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 - Do not publish unverified user counts, efficiency percentages, revenue impact, trading volume, win rate, profitability, or customer deployments.
 - Keep the résumé in `downloads/` synchronized with the approved career source of truth.
 - Keep `/` recruiter-first. Contract positioning belongs on `/studio/`; do not mix agency-scale claims into the personal homepage.
+- Keep AK47 performance claims off the sales page. Sell automation, documentation, and customer control; never promise profit, income, win rate, activity, uptime, or suitability.
+- The `/ak47/` form sends to the site's existing Formspree inbox and unlocks only the buyer-information ZIP. Customer source, operating manuals, licenses, and activation materials remain offline until a named release is authorized.
 
 ## Edit / deploy
 
