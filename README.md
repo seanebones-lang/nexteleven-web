@@ -29,6 +29,7 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 - Keep the résumé in `downloads/` synchronized with the approved career source of truth.
 - Keep `/` recruiter-first. Contract positioning belongs on `/studio/`; do not mix agency-scale claims into the personal homepage.
 - Keep AK47 performance claims off the sales page. Sell automation, documentation, and customer control; never promise profit, income, win rate, activity, uptime, or suitability.
+- The public Telegram channel may be linked as a transparent feed of published pings, fills, wins, losses, running session W/L percentage, and session net. Do not convert its current rolling percentage into a fixed website headline or describe the channel as a complete audited performance record.
 - The `/ak47/` form sends to the site's existing Formspree inbox and unlocks only the buyer-information ZIP. Customer source, operating manuals, licenses, and activation materials remain offline until a named release is authorized.
 
 ## Edit / deploy
