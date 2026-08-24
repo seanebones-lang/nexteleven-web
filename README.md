@@ -31,6 +31,7 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 - Keep AK47 performance claims off the sales page. Sell automation, documentation, and customer control; never promise profit, income, win rate, activity, uptime, or suitability.
 - The public Telegram channel may be linked as a transparent feed of published pings, fills, wins, losses, running session W/L percentage, and session net. Do not convert its current rolling percentage into a fixed website headline or describe the channel as a complete audited performance record.
 - The `/ak47/` form sends to the site's existing Formspree inbox and unlocks only the buyer-information ZIP. Customer source, operating manuals, licenses, and activation materials remain offline until a named release is authorized.
+- Keep the final-sale policy conspicuous beside the AK47 price, in the FAQ, and in a required versioned form acknowledgement. The signed order and delivery receipt remain offline customer records; never imply that the preliminary packet-request checkbox alone completes a sale.
 
 ## Edit / deploy
 

@@ -43,8 +43,8 @@
 
   var packetPath = [
     '/downloads/ak47/',
-    '2026-08-24-4f5f617d-6a2d/',
-    'AK47-Founding-Freeze-Buyer-Information-Packet-2026-08-24.zip'
+    '2026-08-24-264cfcc2-5233/',
+    'AK47-Founding-Freeze-Buyer-Information-Packet-2026-08-24-r2.zip'
   ].join('');
 
   function formatSubmissionError(payload) {
@@ -66,7 +66,7 @@
 
     var automaticDownload = document.createElement('a');
     automaticDownload.href = packetPath;
-    automaticDownload.download = 'AK47-Founding-Freeze-Buyer-Information-Packet-2026-08-24.zip';
+    automaticDownload.download = 'AK47-Founding-Freeze-Buyer-Information-Packet-2026-08-24-r2.zip';
     automaticDownload.rel = 'nofollow';
     automaticDownload.style.display = 'none';
     document.body.appendChild(automaticDownload);
