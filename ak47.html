@@ -62,7 +62,7 @@
   </header>
 
   <main id="main">
-    <section class="shell" aria-label="Archive notice"><div class="warning-box"><strong>Archived engineering snapshot:</strong> This dated page is retained as a build log and may not reflect the current runtime. It is not a performance claim or a current product description. See the <a href="/ak47/">AK47 Founding Freeze buyer page</a> for the bounded Release 1 offer, or the <a href="/fintech/">public research summary</a> for engineering context.</div></section>
+    <section class="shell" aria-label="Archive notice"><div class="warning-box"><strong>Historical engineering record:</strong> This page records a dated development checkpoint and may not reflect the current repository, runtime, controls, product terms, or behavior. Nothing here is a current performance claim, availability statement, investment recommendation, authorization to trade, or product offer. See the <a href="/ak47/">current AK47 page</a> or <a href="/fintech/">market-systems research summary</a>.</div></section>
     <div class="log">
       <div class="section-label">
         <span class="num">03</span>
@@ -134,7 +134,7 @@
           <p>Replaced ad-hoc logging with a structured daily digest system that produces consistent, machine-readable summaries at market close.</p>
           
           <ul>
-            <li>Every digest is generated from a single structured run record rather than scraping logs. This guarantees the same data appears in the same order every day.</li>
+            <li>Every digest is generated from a single structured run record rather than scraping logs. The reporting path is designed to produce the same ordered fields from the same record, subject to the documented software version, inputs, and environment.</li>
             <li>Includes cycle count, fill summary with attribution, P&amp;L by window, reconnect/ACK timeout counts, and any safety alerts raised during the period.</li>
             <li>Messages are threaded so each day becomes a single conversation rather than a flood of individual updates.</li>
             <li>High-priority alerts (safety violations, large deviations) are sent to a separate channel with different formatting and immediate delivery.</li>

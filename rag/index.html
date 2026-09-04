@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NextEleven Personal RAG — Private Document Search on Your Machine</title>
-<meta name="description" content="PersonalRAGVault: local-first RAG for your own files. Ingest PDFs, notes, and code; embed on CPU; query in plain language with citations. Optional Ollama. Open source MIT. Nothing leaves your disk." />
+<meta name="description" content="PersonalRAGVault is an MIT-licensed, local-first document retrieval project with source references, optional local-model answers, APIs, tests, and documented limitations." />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mothership-ai.com/rag/" />
@@ -61,8 +61,8 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
 <main>
 <section class="hero"><div class="wrap">
   <div class="kicker">Local-first · private vault · open source MIT</div>
-  <h1>Ask your own files. <span>Nothing leaves the machine.</span></h1>
-  <p class="lede">PersonalRAGVault is local-first document search for contracts, manuals, notes, and code on your disk. Ingest a folder, embed on CPU, store vectors in Chroma, and ask plain-language questions with citations. Optional local answers via Ollama. No cloud account. No training someone else's model on your data.</p>
+  <h1>Search your own files. <span>Inspect the sources.</span></h1>
+  <p class="lede">PersonalRAGVault is a local-first document retrieval project for contracts, manuals, notes, and code stored on hardware the operator controls. It can ingest supported files, create local embeddings, retrieve relevant passages, and return source references. Optional local-model answers are available through Ollama. No NextEleven-hosted cloud account is required for the standard local workflow.</p>
   <div class="ctas">
     <a class="btn btn-primary" href="https://github.com/seanebones-lang/personal-RAG">View on GitHub</a>
     <a class="btn btn-ghost" href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">View Sean's résumé</a>
@@ -80,8 +80,8 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
   <h2>Why it exists</h2>
   <p class="section-lead">Most “AI over your docs” products want an upload. Operators with real contracts and internal notes need the opposite.</p>
   <div class="grid grid-3">
-    <div class="card"><div class="tag warn">Cloud upload</div><h3>Sensitive files leave the building</h3><p>Once a PDF hits someone else's index, you have a new vendor risk and a new place your data can leak. Local vaults remove that step.</p></div>
-    <div class="card"><div class="tag warn">No citations</div><h3>Answers without sources are unusable</h3><p>If you cannot open the page the model used, you cannot trust the answer in a dealership, legal pack, or ops manual.</p></div>
+    <div class="card"><div class="tag warn">Cloud upload</div><h3>Control the storage path</h3><p>A hosted workflow sends files or extracted content to another system. A local workflow can avoid that upload step when external services are not enabled.</p></div>
+    <div class="card"><div class="tag warn">No citations</div><h3>Inspect the sources</h3><p>Source references make an answer easier to verify against the underlying document. Citations do not guarantee that retrieval or generated text is correct.</p></div>
     <div class="card"><div class="tag warn">Heavy stacks</div><h3>Docker + GPU just to try it</h3><p>PersonalRAGVault is a small Python CLI: venv, ingest, query. Optional UI and OCR extras when you want them.</p></div>
   </div>
 </div></section>
@@ -123,11 +123,11 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
 
 <section id="live"><div class="wrap">
   <h2>What's ready, and what isn't</h2>
-  <p class="section-lead">Open source under MIT. Good for personal vaults and private operator installs. Not a hosted multi-tenant SaaS.</p>
+  <p class="section-lead">Open source under MIT and designed for personal vaults and private operator-managed installations. It is not a NextEleven-hosted multi-tenant service.</p>
   <div class="grid grid-2">
     <div class="card"><div class="tag live">Running now</div><h3>What you get today</h3>
       <ul>
-        <li>Full local pipeline on Mac or Linux</li>
+        <li>Documented local ingestion and retrieval paths for supported macOS and Linux environments</li>
         <li>CPU embeddings + Chroma storage</li>
         <li>Retrieval-only mode or local LLM answers</li>
         <li>CLI, optional UI, optional local API</li>
@@ -148,7 +148,7 @@ h2{font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:10px}
 
 <section id="start"><div class="wrap">
   <h2>Get started</h2>
-  <p class="section-lead">Clone, setup, doctor, ingest, query. All on your machine.</p>
+  <p class="section-lead">Clone, set up, inspect, ingest, and query using the documented local workflow.</p>
   <div class="code">git clone https://github.com/seanebones-lang/personal-RAG.git
 cd personal-RAG
 ./scripts/setup.sh --dev
@@ -171,9 +171,9 @@ personalragvault query "find my notes about warranty policy"</div>
 <footer class="footer"><div class="wrap">
   <p><strong>NextEleven LLC</strong> · Personal RAG · local-first private document search</p>
   <p>nextelevenstudios@gmail.com · www.mothership-ai.com · github.com/seanebones-lang/personal-RAG</p>
-  <p style="margin-top:10px;font-size:.82rem">Open source MIT. Local-first by design. Hosted multi-tenant service and enterprise identity features are not claimed.</p>
+  <p style="margin-top:10px;font-size:.82rem">Open source under MIT. The standard local workflow processes documents on the operator’s machine. Data handling changes if external models, APIs, synchronization, remote storage, or hosting are configured. Hosted multi-tenant service and enterprise identity features are not claimed.</p>
   <p style="margin-top:14px;font-size:.82rem">
-    <a href="/">Home</a> · <a href="/#skills">Skills</a> · <a href="/#opportunities">Opportunities</a> · <a href="/systems/">Developer tools</a> · <a href="/ai/">Applied AI</a> · <a href="/parts/">Confidential case study</a> · <a href="/harness/">Harness</a> · <a href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">Résumé</a>
+    <a href="/">Home</a> · <a href="/#work">Work</a> · <a href="/#services">Services</a> · <a href="/#approach">Approach</a> · <a href="/systems/">Developer tools</a> · <a href="/ai/">Applied AI</a> · <a href="/parts/">Confidential case study</a> · <a href="/harness/">Harness</a> · <a href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">Résumé</a>
   </p>
 </div></footer>
 </body>

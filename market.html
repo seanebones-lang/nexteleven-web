@@ -61,7 +61,7 @@
   </header>
 
   <main id="main">
-    <section class="shell" aria-label="Archive notice"><div class="warning-box"><strong>Archived engineering snapshot:</strong> This dated page may not reflect the current gate or repository state. It does not establish a trading edge or authorize live trading. See the <a href="/fintech/">current public research summary</a>.</div></section>
+    <section class="shell" aria-label="Archive notice"><div class="warning-box"><strong>Historical engineering record:</strong> This page records a dated development checkpoint and may not reflect the current repository, runtime, controls, product terms, or behavior. Nothing here is a current performance claim, availability statement, investment recommendation, authorization to trade, or product offer. See the <a href="/fintech/">current market-systems research summary</a>.</div></section>
     <div class="log">
       <div class="section-label">
         <span class="num">04</span>
@@ -80,7 +80,7 @@
           <p>Completed G2.7 gate: every nonempty backtest now emits three deterministic comparators (Cash, Matched-notional buy-and-hold, Periodic DCA) derived from the immutable accounting journal rather than ad-hoc simulation.</p>
           
           <ul>
-            <li><strong>Matched notional rule</strong>: Uses peak gross inventory cost basis capped by starting cash adjusted for entry fees. Guarantees apples-to-apples capital deployment vs. strategy.</li>
+            <li><strong>Matched notional rule</strong>: Uses peak gross inventory cost basis capped by starting cash adjusted for entry fees. It applies a consistent capital-deployment rule to the documented comparison; it does not eliminate model, data, execution, or selection bias.</li>
             <li><strong>Adverse slippage &amp; fee model</strong>: Benchmarks execute at synthetic bar-open for buys and last-close synthetic bid with slippage for sells, exactly matching strategy fill assumptions.</li>
             <li><strong>Risk-adjusted metric</strong>: net P&amp;L / max drawdown (undefined on zero-drawdown runs) plus explicit zero-drawdown status flags. No fabricated Sharpe/Calmar labels.</li>
             <li><strong>Hand-verified three-bar proof</strong>: Manual recalculation of a minimal 3-bar run confirmed journal round-trips, fee application, liquidation-to-flat, and benchmark parity.</li>
