@@ -22,17 +22,15 @@ Static career portfolio and project-evidence site for **Sean McDonnell / NextEle
 
 ## Public-claim policy
 
-- Public repositories, tests, releases, and documentation are the source of truth for project claims.
-- Confidential client and product identities remain unnamed; public demos use synthetic data.
-- Completed implementation is not presented as verified production adoption or business impact.
-- Do not publish unverified user counts, efficiency percentages, revenue impact, trading volume, win rate, profitability, or customer deployments.
-- Keep the résumé in `downloads/` synchronized with the approved career source of truth.
-- Keep every Harness description aligned with the repository routing contract: exact user-selected provider/model order, 18 built-in names plus custom compatible endpoints, no vendor recommendation, no credential-derived priority, and no implicit fallback. Distinguish current `main` evidence from the latest tagged release.
-- Keep `/` recruiter-first. Contract positioning belongs on `/studio/`; do not mix agency-scale claims into the personal homepage.
-- Keep AK47 performance claims off the sales page. Sell automation, documentation, and customer control; never promise profit, income, win rate, activity, uptime, or suitability.
-- The public Telegram channel may be linked as a transparent feed of published pings, fills, wins, losses, running session W/L percentage, and session net. Do not convert its current rolling percentage into a fixed website headline or describe the channel as a complete audited performance record.
-- The `/ak47/` form sends to the site's existing Formspree inbox and unlocks only the buyer-information ZIP. Customer source, operating manuals, licenses, and activation materials remain offline until a named release is authorized.
-- Keep the final-sale policy conspicuous beside the AK47 price, in the FAQ, and in a required versioned form acknowledgement. The signed order and delivery receipt remain offline customer records; never imply that the preliminary packet-request checkbox alone completes a sale.
+The canonical public-claim policy is
+`/Users/nexteleven/Documents/ChatGPT/NextEleven Web Presence Services/docs/PUBLIC-CLAIMS.md`.
+Read it before changing public copy, assistant knowledge, metadata, structured data,
+downloadable sales material, or case-study language. Its enforcement test must pass
+before publication.
+
+AK47 offer, license, refund, event-contract, and performance language is frozen
+pending attorney review. Do not make that copy more promotional or publish commercial
+terms that are not controlled by a written order reviewed by counsel.
 
 ## Edit / deploy
 
