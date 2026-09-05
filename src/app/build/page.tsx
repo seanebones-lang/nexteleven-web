@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { InnerHeader } from "@/components/shell/InnerHeader";
 import { SiteFooter } from "@/components/shell/SiteFooter";
-export const metadata:Metadata={title:"Systems and products",description:"Documented NextEleven work across operational software, retrieval, agent platforms, market tooling, and technical handoff."};
+export const metadata:Metadata={title:"Software, systems, and applied AI",description:"NextEleven builds web presence, business software, backend systems, enterprise-grade applications, and applied AI implementations."};
 const capabilities=[
  {index:"01",title:"Market and signal tooling",problem:"Market systems fail when stale state, incomplete records, and execution assumptions are treated as valid.",shipped:"Infrastructure work includes market-data and signal pipelines, FastAPI services, monitoring, reconciliation, audit trails, and operator-controlled execution paths.",boundary:"No investment result, profit, win rate, activity level, or availability is promised."},
  {index:"02",title:"Parts intelligence",problem:"A parts desk needs an answer grounded in approved inventory and relationship data—not a confident guess.",shipped:"A multi-location dealership workflow was implemented with Python, FastAPI, PostgreSQL / pgvector, Redis, Next.js, hybrid search, inventory, orders, invoices, and human-reviewed external actions.",boundary:"No named client, current deployment, adoption, inventory accuracy, or business outcome is claimed."},
