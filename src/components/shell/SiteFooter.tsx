@@ -1,0 +1,2 @@
+import Link from "next/link";
+export function SiteFooter(){return <footer className="site-footer"><Link className="wordmark" href="/">NEXT<span>ELEVEN</span></Link><p>Owner-operated · Mansfield, Texas</p><nav aria-label="Footer"><Link href="/about">About</Link><Link href="/work">Work</Link><Link href="/build">Build</Link><Link href="/presence">Presence</Link></nav><a href="mailto:nextelevenstudios@gmail.com">nextelevenstudios@gmail.com</a></footer>}

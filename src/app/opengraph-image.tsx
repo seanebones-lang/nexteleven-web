@@ -1,0 +1,1 @@
+import {makeOg,ogSize} from "@/components/metadata/OgCard";export const size=ogSize;export const contentType="image/png";export default function Image(){return makeOg("Four doors. One accountable builder.","Home")}

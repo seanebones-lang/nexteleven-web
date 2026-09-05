@@ -1,59 +1,74 @@
-# NextEleven web
+# NextEleven public site
 
-Static career portfolio and project-evidence site for **Sean McDonnell / NextEleven LLC**.
+Next.js App Router rebuild for NextEleven LLC. Production target: `mothership-ai.com` on Vercel.
 
-**Live:** [www.mothership-ai.com](https://www.mothership-ai.com/)  
-**GitHub Pages twin:** [seanebones-lang.github.io/nexteleven-web](https://seanebones-lang.github.io/nexteleven-web/)
-
-## What’s on the site
-
-| Path | Product |
-|------|---------|
-| `/` | Career home — skills, evidence, selected work, résumé, contact |
-| `/studio/` | NextEleven LLC — scoped contract work kept separate from the recruiter-first homepage |
-| `/ak47/` | AK47 Founding Freeze — product page, buyer qualification form, and lead-gated buyer information packet |
-| `/harness/` | NextEleven Harness — provider-neutral Rust coding-agent POC with user-owned model routing |
-| `/rag/` | PersonalRAGVault — MIT-licensed private retrieval |
-| `/parts/` | Anonymized confidential dealership-workflow case study |
-| `/saas/` | Backend and workflow implementation evidence |
-| `/ai/` | Applied-AI and RAG evidence |
-| `/mobile/` | Cross-platform project experience |
-| `/fintech/` | Research-engineering evidence with explicit no-edge boundary |
-
-## Public-claim policy
-
-The canonical public-claim policy is
-`/Users/nexteleven/Documents/ChatGPT/NextEleven Web Presence Services/docs/PUBLIC-CLAIMS.md`.
-Read it before changing public copy, assistant knowledge, metadata, structured data,
-downloadable sales material, or case-study language. Its enforcement test must pass
-before publication.
-
-AK47 offer, license, refund, event-contract, and performance language is frozen
-pending attorney review. Do not make that copy more promotional or publish commercial
-terms that are not controlled by a written order reviewed by counsel.
-
-## Edit / deploy
+## Local checks
 
 ```bash
-# SoT clone (typical)
-cd ~/Desktop/marketing-sites/nexteleven-web
-
-# edit HTML, then keep SPA-style 404 fallback in sync
-cp index.html 404.html
-
-git add -A && git commit -m "site: …" && git push origin main
-# wait for GitHub Pages status=built, then hard-refresh
+npm install
+npm run dev
+npm run lint
+npm run build
 ```
 
-- Branch: `main`
-- Pages: deploy from root
-- `404.html` must match `index.html` for client routes on Pages
-- Custom domain: `www.mothership-ai.com` (`CNAME` in repo)
+No runtime environment variables are required today. Contact actions use the sourced NextEleven email address. A hosted form provider is **TBD**; do not create provider keys or add empty environment variables until one is approved.
 
-## Related
+## Vercel cutover checklist
 
-- Profile: [seanebones-lang/seanebones-lang](https://github.com/seanebones-lang/seanebones-lang)
-- Harness: [seanebones-lang/harness](https://github.com/seanebones-lang/harness)
-- Personal RAG: [seanebones-lang/personal-RAG](https://github.com/seanebones-lang/personal-RAG)
+Run these in order. Do not change DNS until the imported Vercel project has a successful production deployment.
+
+1. **Push the repository**
+   - Review `git status` and the final diff.
+   - Commit the rebuild.
+   - Run `git push origin main`.
+
+2. **Import into Vercel**
+   - Open the Vercel dashboard.
+   - Click **Add New… → Project**.
+   - Under **Import Git Repository**, select `seanebones-lang/nexteleven-web` and click **Import**.
+   - Set **Framework Preset** to **Next.js**.
+   - Leave **Root Directory** as `./`.
+   - Leave install, build, and output settings at the detected Next.js defaults.
+
+3. **Environment**
+   - Expand **Environment Variables**.
+   - Add none for the current build.
+   - If a contact-form provider is approved later, add only its documented server-side keys to the appropriate Vercel environments. Never commit `.env*` files.
+
+4. **Deploy**
+   - Click **Deploy** and wait for the production deployment to finish.
+   - Open the generated `*.vercel.app` deployment and verify `/`, `/about`, `/work`, `/build`, `/presence`, `/sitemap.xml`, and `/robots.txt`.
+
+5. **Add production domains**
+   - In the new Vercel project, open **Settings → Domains**.
+   - Click **Add** and enter `mothership-ai.com`.
+   - Add `www.mothership-ai.com`, then set `www` to redirect to the apex domain.
+   - Keep `nexteleven-web-presence.vercel.app` and its old Vercel project unchanged as the preview/cutover fallback.
+
+6. **Copy the exact DNS records Vercel requests**
+   - In **Settings → Domains**, open each domain marked invalid or pending.
+   - Copy the A, CNAME, or verification records shown by Vercel exactly. Those values are authoritative; do not substitute remembered defaults.
+   - In the current DNS provider, replace only the records Vercel identifies for the apex and `www` hostnames.
+   - Do not remove unrelated mail or verification records.
+
+7. **Wait for verification**
+   - Return to **Vercel → Project → Settings → Domains**.
+   - Wait until both domains show **Valid Configuration** and HTTPS is active.
+   - Confirm the production deployment is assigned to `mothership-ai.com` before retiring any old route.
+
+8. **Final verification**
+   - Open each public route in a private browser window.
+   - Test the four home panels with mouse, touch, and keyboard.
+   - Test the résumé download and all public repository/example links.
+   - Check the 404 page, page titles, social cards, `/sitemap.xml`, and `/robots.txt`.
+   - Run Lighthouse on mobile for `/` and one content route. Confirm no layout shift and that reduced-motion shows the still hero.
+   - Leave the old `nexteleven-web-presence.vercel.app` project available until DNS has resolved consistently and the new site has passed verification.
+
+## Public-claim boundaries
+
+- App Store references are publication records only.
+- Do not publish downloads, revenue, ratings, adoption, returns, profit, win-rate, or trading-performance claims.
+- JP Transmission language describes documented design and implementation, not acceptance or business results.
+- Private-client identities and outcomes remain withheld.
 
 © NextEleven LLC

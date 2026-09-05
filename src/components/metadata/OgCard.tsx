@@ -1,0 +1,3 @@
+import { ImageResponse } from "next/og";
+export const ogSize={width:1200,height:630};
+export function makeOg(title:string,label:string){return new ImageResponse(<div style={{width:"100%",height:"100%",display:"flex",flexDirection:"column",justifyContent:"space-between",padding:"72px",background:"#090b0f",color:"#f4f6f8",border:"12px solid #1b2129"}}><div style={{display:"flex",justifyContent:"space-between",fontSize:24,letterSpacing:4}}><span>NEXT<span style={{color:"#5b8cff"}}>ELEVEN</span></span><span style={{color:"#adb5c0"}}>{label}</span></div><div style={{display:"flex",alignItems:"flex-end",gap:36}}><div style={{width:8,height:190,background:"#5b8cff"}}/><div style={{fontSize:92,lineHeight:.92,letterSpacing:-6,maxWidth:920}}>{title}</div></div></div>,ogSize)}
