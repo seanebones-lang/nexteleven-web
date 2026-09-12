@@ -1,1 +1,1 @@
-import {makeOg,ogSize} from "@/components/metadata/OgCard";export const size=ogSize;export const contentType="image/png";export default function Image(){return makeOg("What exists. What can be built.","03 / Build")}
+export { alt, contentType, default, size } from "../opengraph-image";
