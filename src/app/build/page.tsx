@@ -1,18 +1,62 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { InnerHeader } from "@/components/shell/InnerHeader";
 import { SiteFooter } from "@/components/shell/SiteFooter";
-export const metadata:Metadata={title:"Software, systems, and applied AI",description:"NextEleven builds web presence, business software, backend systems, enterprise-grade applications, and applied AI implementations."};
-const capabilities=[
- {index:"01",title:"Market and signal tooling",problem:"Market systems fail when stale state, incomplete records, and execution assumptions are treated as valid.",shipped:"Infrastructure work includes market-data and signal pipelines, FastAPI services, monitoring, reconciliation, audit trails, and operator-controlled execution paths.",boundary:"No investment result, profit, win rate, activity level, or availability is promised."},
- {index:"02",title:"Parts intelligence",problem:"A parts desk needs an answer grounded in approved inventory and relationship data—not a confident guess.",shipped:"A multi-location dealership workflow was implemented with Python, FastAPI, PostgreSQL / pgvector, Redis, Next.js, hybrid search, inventory, orders, invoices, and human-reviewed external actions.",boundary:"No named client, current deployment, adoption, inventory accuracy, or business outcome is claimed."},
- {index:"03",title:"Lot, field, and operations software",problem:"Inventory, customer records, documents, and next actions break down when they live across spreadsheets, phones, and memory.",shipped:"Documented lot software covers local inventory, customers, sales records, PDF invoices, scheduling, reports, and backups. Custom operations can start from one bounded workflow.",boundary:"It is not presented as a full DMS replacement, a day-one multi-location cloud system, or an automatic substitute for licensed data feeds."},
- {index:"04",title:"Agent platforms and retrieval",problem:"Useful AI systems need controlled tools, traceable sources, deliberate routing, and honest failure behavior after the demo.",shipped:"Harness is an MIT-licensed Rust work assistant with user-selected provider/model routing, repository tools, resumable sessions, bounded workers, MCP, and terminal and local web interfaces. PersonalRAGVault provides local-first hybrid retrieval, reranking, citations, and evaluation.",boundary:"Harness is maintained for personal use; its acceptance record distinguishes verified workflows from remaining integration checks. PersonalRAGVault is local-first and does not claim hosted enterprise identity or guaranteed answer accuracy."},
- {index:"05",title:"Stabilization and handoff",problem:"Incomplete systems often need investigation and closing work more than another layer of features.",shipped:"Work includes failure reproduction, log and API analysis, cross-platform CI repair, release checks, runbooks, limitation records, and next-owner handoff.",boundary:"A passing check supports the tested path. It does not establish complete correctness, security, or production maturity."}
+import { ProjectContact } from "@/components/shell/ProjectContact";
+
+export const metadata: Metadata = {
+  title: "Software engineering & AI consulting services",
+  description: "Hire Sean McDonnell at NextEleven to build custom software, add practical AI, connect systems, improve existing applications, or launch a business website.",
+  alternates: { canonical: "/build" },
+};
+
+const services = [
+  { title: "Custom business software", copy: "Replace a manual process, scattered spreadsheet, or awkward workaround with a tool designed around the people using it.", examples: "Internal tools, inventory workflows, customer records, dashboards, reporting, and backend services." },
+  { title: "Applied AI consulting & implementation", copy: "Work out where AI can help, then build and evaluate a useful implementation. That can mean finding answers in documents, assisting a workflow, or connecting a model to existing tools.", examples: "Document retrieval, source citations, LLM integrations, tool calling, evaluations, and human review." },
+  { title: "Software repair & improvement", copy: "Bring me an application that is failing, unfinished, or difficult to maintain. I can investigate the problem, make a focused repair, and verify the paths affected by the change.", examples: "API failures, unreliable workflows, broken builds, release problems, tests, and technical handoff." },
+  { title: "APIs & system integrations", copy: "Help existing tools exchange information and support a connected workflow. Define what happens when data is missing, a service fails, or the same request arrives twice.", examples: "REST APIs, database-backed services, imports, automation, and integrations with external services." },
+  { title: "Websites & customer portals", copy: "Give customers a clear way to understand your business, ask for help, or start the next step. Build a site that can grow into a portal or connect to your operation.", examples: "Business websites, bilingual pages, inquiry forms, booking flows, and portal foundations." },
+  { title: "Apple application development", copy: "Build or improve an iPhone or Mac application, address release issues, and work through the details required to publish it.", examples: "Swift, SwiftUI, app workflows, testing, release preparation, and App Store submission work." },
 ] as const;
-const deliveries=[
- {kind:"Client web presence",title:"JP Transmission",copy:"A bilingual web presence with distinct buyer and seller journeys, responsive layouts, and a configured inquiry path. Inventory, ecommerce, and checkout remain separate future scope.",href:"/presence"},
- {kind:"Public engineering proof",title:"NextEleven Harness",copy:"An MIT-licensed Rust work assistant with exact provider/model routing, repository tools, resumable sessions, bounded workers, MCP, and local HTTP/SSE interfaces. Current verification and trust boundaries are documented in the repository.",href:"https://github.com/seanebones-lang/harness"},
- {kind:"Fail-closed lease gate",title:"NextEleven Deadbolt",copy:"Leased tools, blast radius, and a human stop. It does not shut down GPT. Clients are cooperative. mcp-proxy and build-in are enforced.",href:"https://github.com/seanebones-lang/deadbolt"},
- {kind:"Open-source retrieval",title:"PersonalRAGVault",copy:"An MIT-licensed, local-first Python retrieval application with hybrid keyword/vector search, reranking, source citations, FastAPI/SSE access, and formal retrieval evaluation.",href:"https://github.com/seanebones-lang/personal-RAG"}
-] as const;
-export default function BuildPage(){return <><InnerHeader current="build"/><main className="build-main"><section className="build-hero"><p className="section-label">03 · Build</p><h1>What exists. What can be built.</h1><p>Systems work with visible boundaries: what problem it addresses, what has been implemented, and what the evidence does not prove.</p></section><section className="capabilities" aria-label="Capabilities">{capabilities.map(item=><article className="capability" key={item.index}><div className="capability-heading"><span>{item.index}</span><h2>{item.title}</h2></div><div className="capability-body"><div><h3>Problem</h3><p>{item.problem}</p></div><div><h3>What shipped</h3><p>{item.shipped}</p></div><div className="boundary"><h3>Boundary</h3><p>{item.boundary}</p></div></div></article>)}</section><section className="delivery-section"><p className="section-label">Selected delivery</p><h2>Work with a record behind it.</h2><div className="delivery-grid">{deliveries.map(tile=><a key={tile.title} href={tile.href}><small>{tile.kind}</small><h3>{tile.title}</h3><p>{tile.copy}</p><span>Inspect the evidence ↗</span></a>)}</div></section><a className="build-cta" href="mailto:nextelevenstudios@gmail.com?subject=Scoped%20build"><strong>Discuss a build.</strong><span>Start with the broken workflow ↗</span></a></main><SiteFooter/></>}
+
+export default function BuildPage() {
+  return <>
+    <InnerHeader current="build" />
+    <main className="build-main">
+      <section className="build-hero">
+        <p className="section-label">Services · Software engineering & applied AI</p>
+        <h1>Build it.<br />Improve it.</h1>
+        <p>I build custom software and help existing systems work better. You can bring me a business problem, an unfinished application, or a technical brief. We’ll agree on a useful first step and how to verify it.</p>
+        <a className="primary-action" href="#start">Discuss your project <span>↗</span></a>
+      </section>
+      <section className="audience-section" aria-labelledby="audience-title">
+        <p className="section-label">Two ways to start</p>
+        <h2 id="audience-title">Start where you are.</h2>
+        <div className="audience-grid">
+          <article id="business"><p className="section-label">For business owners</p><h3>Start with what needs to work better.</h3><p>You don’t need to choose a programming language or know whether you need AI. Show me the process, the tools you use, and where things get stuck. I’ll help define a practical next step.</p><a href="mailto:nextelevenstudios@gmail.com?subject=Help%20with%20a%20business%20workflow">Describe the problem ↗</a></article>
+          <article id="technical"><p className="section-label">For technical teams</p><h3>Bring me into the implementation.</h3><p>Share the repository, architecture, backlog, or failure you’re investigating. I can work on backend services, integrations, retrieval, developer tools, tests, and release work within an agreed scope.</p><a href="mailto:nextelevenstudios@gmail.com?subject=Software%20engineering%20engagement">Discuss the engineering work ↗</a></article>
+        </div>
+      </section>
+      <section className="services-section" aria-labelledby="services-title">
+        <p className="section-label">What I can help with</p>
+        <h2 id="services-title">What I can build or improve.</h2>
+        <div className="services-grid">{services.map((service, index) => <article className="service-card" key={service.title}>
+          <span className="service-index">{String(index + 1).padStart(2, "0")}</span>
+          <h3>{service.title}</h3><p>{service.copy}</p><p className="service-examples">{service.examples}</p>
+        </article>)}</div>
+        <Link className="secondary-action" href="/work">See examples of my work <span>↗</span></Link>
+      </section>
+      <section className="presence-process">
+        <p className="section-label">How an engagement works</p><h2>Understand. Define. Build. Verify.</h2>
+        <ol>
+          <li><span>01</span><h3>Understand</h3><p>Look at the current process or system, the people using it, and the problem we need to solve.</p></li>
+          <li><span>02</span><h3>Define</h3><p>Agree on the first useful deliverable, what it includes, and how we’ll decide whether it works.</p></li>
+          <li><span>03</span><h3>Build</h3><p>Implement the work in reviewable steps, with decisions and progress you can follow.</p></li>
+          <li><span>04</span><h3>Verify & hand off</h3><p>Check normal use and relevant failure paths. Leave the source, operating instructions, and remaining issues clear.</p></li>
+        </ol>
+      </section>
+      <ProjectContact />
+    </main>
+    <SiteFooter />
+  </>;
+}

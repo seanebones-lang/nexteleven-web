@@ -1,2 +1,2 @@
 import type { MetadataRoute } from "next";
-export default function robots():MetadataRoute.Robots { return { rules:{userAgent:"*",allow:"/"}, sitemap:"https://mothership-ai.com/sitemap.xml", host:"https://mothership-ai.com" }; }
+export default function robots():MetadataRoute.Robots { return { rules:{userAgent:"*",allow:"/"}, sitemap:"https://www.nexteleven.dev/sitemap.xml", host:"https://www.nexteleven.dev" }; }
