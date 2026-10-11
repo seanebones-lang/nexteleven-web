@@ -12,6 +12,7 @@ The primary client website is [www.nexteleven.dev](https://www.nexteleven.dev/):
 
 - `/`: the offering and routes to services, work, Sean’s background, and websites.
 - `/build`: services and starting points for business owners and technical teams.
+- `/deadbolt`: the official product entry point, installation routes, captioned overview and explicit enforcement boundary.
 - `/work`: selected projects, supporting evidence, research status, and a secondary hiring path.
 - `/about`: Sean’s background, approach, technical project experience, and publication record.
 - `/presence`: business websites, customer portal foundations, and the JP Transmission example.
