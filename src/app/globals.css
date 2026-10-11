@@ -31,3 +31,6 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--electric);outline-
 .site-header nav a,.inner-header nav a{padding-block:.75rem}main>section[id]{scroll-margin-top:4.5rem}
 
 @media(max-width:360px){.inner-header nav a[href="/presence"]{display:none}}
+
+/* Official per-product launch links, sized for desktop and narrow cards. */
+.product-hunt-badge{margin-top:1.5rem;max-width:100%}.product-hunt-badge a{display:inline-block;max-width:100%;text-decoration:none}.product-hunt-badge img{display:block;width:250px;max-width:100%;height:auto}.product-hunt-badge span{display:block;margin-top:.6rem;color:var(--muted);font:.72rem var(--font-mono),monospace;letter-spacing:.04em}.product-hunt-badge a:is(:hover,:focus-visible) span{color:var(--electric);text-decoration:underline;text-underline-offset:.25rem}.product-hunt-badge a:focus-visible{outline:2px solid var(--electric);outline-offset:5px}
