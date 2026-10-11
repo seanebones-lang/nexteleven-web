@@ -3,6 +3,9 @@ import { InnerHeader } from "@/components/shell/InnerHeader";
 import { SiteFooter } from "@/components/shell/SiteFooter";
 import styles from "./page.module.css";
 
+const bundleUrl = "https://github.com/seanebones-lang/deadbolt/releases/download/mcpb-v1.1.0/deadbolt-1.1.0.mcpb";
+const installUrl = "https://github.com/seanebones-lang/deadbolt/blob/main/docs/INSTALL.md#local-mcp-bundle-mcpb";
+
 export const metadata: Metadata = {
   title: "DeadBolt — permission before execution",
   description: "Free, open-source permission checks for integrated AI agent tool calls. Install a local MCP bundle, bolt on an HTTP gate, or build admission into a Rust executor.",
@@ -10,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const routes = [
-  { title: "Install in an MCP client", label: "Local bundle · Node.js 20+", body: "Start with read-only integration guidance and packaged-engine checksum checks. Add your private operator configuration to gate tool calls to a trusted downstream stdio server.", href: "https://smithery.ai/servers/seanebones/deadbolt", action: "Install through Smithery" },
+  { title: "Install in an MCP client", label: "Local bundle · Node.js 20+", body: "Download the bundle, verify its checksum, and install it in a compatible client. Start with read-only setup guidance, then add a private operator configuration to gate a trusted downstream stdio server.", href: installUrl, action: "Follow the installation guide" },
   { title: "Build into your executor", label: "Rust · Admission before the effect", body: "Put the permission decision immediately before each external effect. The integration decides what is protected; deny the effect if admission fails or the state is unavailable.", href: "https://github.com/seanebones-lang/deadbolt/blob/main/examples/build_in.rs", action: "Read the Rust example" },
   { title: "Bolt on a local gate", label: "HTTP · Python and Node clients", body: "Connect a trusted executor to the local sidecar. Define explicit tool policy and keep operator controls separate from the agent. Use disposable effects to validate your integration first.", href: "https://github.com/seanebones-lang/deadbolt/blob/main/docs/INTEGRATION.md", action: "Choose an integration" },
   { title: "Keep the operator in control", label: "Pause · Clip · Approve · Kill", body: "Withdraw permission for future routed tool calls, require operator approval for classified irreversible tools, and inspect local decision evidence. Expired leases and unavailable state deny admission.", href: "https://github.com/seanebones-lang/deadbolt/blob/main/docs/TRUST.md", action: "Understand the trust boundary" },
@@ -26,10 +29,11 @@ export default function DeadBoltPage() {
         <h1>Permission before execution.</h1>
         <p className="work-lede">Give your agent tools a permission boundary you can inspect and control. DeadBolt checks policy before integrated tool actions run, with local operator controls to stop further calls when a run needs attention.</p>
         <div className="work-actions">
-          <a className="primary-action" href="https://smithery.ai/servers/seanebones/deadbolt">Install the local bundle <span>↗</span></a>
+          <a className="primary-action" href={bundleUrl}>Download MCP bundle 1.1.0 <span>↓</span></a>
           <a href="#watch">Watch it work <span>↓</span></a>
           <a href="https://github.com/seanebones-lang/deadbolt">Inspect the source <span>↗</span></a>
         </div>
+        <p className={styles.note}>For compatible desktop MCP clients. Bundle <strong>1.1.0</strong> contains stable engine <strong>1.0.3</strong> and needs Node.js 20+, which your client may provide. No Rust build or GitHub sign-in is required. <a href={installUrl}>Verify the checksum and follow the installation steps ↗</a>. Leave configuration blank to try read-only setup guidance; add an explicit private configuration to enable the gate.</p>
       </section>
       <section className="delivery-section" aria-labelledby="routes-title">
         <p className="section-label">Bolt on or build in</p>
@@ -38,6 +42,7 @@ export default function DeadBoltPage() {
           <small>{route.label}</small><h3>{route.title}</h3><p>{route.body}</p><a href={route.href}>{route.action} ↗</a>
         </article>)}</div>
         <p className={styles.note}>The local MCP bundle is version <strong>1.1.0</strong> and contains stable engine <strong>1.0.3</strong>. Its blank-configuration setup mode provides no active protection. Candidate engine <strong>1.1.0-rc.1</strong> separately adds exact-action review and scoped admission credentials; those features are not in this bundle.</p>
+        <div className="work-actions"><a href="https://github.com/seanebones-lang/deadbolt/releases/tag/mcpb-v1.1.0">Release notes and checksums ↗</a><a href="https://smithery.ai/servers/seanebones/deadbolt">Find it on Smithery ↗</a><a href="https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.seanebones-lang%2Fdeadbolt&limit=10">View the MCP Registry record ↗</a></div>
       </section>
       <section className="delivery-section" id="watch" aria-labelledby="watch-title">
         <p className="section-label">Captioned demonstration</p>
