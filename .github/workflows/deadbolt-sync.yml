@@ -1,0 +1,45 @@
+name: Review upstream DeadBolt page updates
+on:
+  schedule:
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deadbolt-source-sync
+  cancel-in-progress: false
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Generate the candidate snapshot
+        run: npm run deadbolt:sync -- --latest
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Validate the snapshot and site
+        run: |
+          npm run deadbolt:check
+          npm run lint
+          npm run build
+      - name: Prepare a reviewable update artifact
+        run: |
+          if git diff --quiet && test -z "$(git ls-files --others --exclude-standard)"; then
+            echo 'The company snapshot matches the current product page.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          mkdir -p deadbolt-update
+          cp -R content/deadbolt deadbolt-update/content
+          cp -R public/deadbolt-assets deadbolt-update/assets
+          echo 'The upstream DeadBolt page changed. Download the deadbolt-update artifact, or run npm run deadbolt:sync -- --latest locally. Review and deploy the update through a normal PR.' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: deadbolt-update
+          path: deadbolt-update/
+          if-no-files-found: ignore
+          retention-days: 14

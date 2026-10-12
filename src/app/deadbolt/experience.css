@@ -1,0 +1,10 @@
+.deadbolt-experience{padding-top:4.5rem;isolation:isolate;line-height:normal;color-scheme:light}
+.deadbolt-experience h1,.deadbolt-experience h2,.deadbolt-experience h3{font-weight:700}
+.deadbolt-experience p{margin-block:1em}
+.deadbolt-experience ol{list-style:decimal;padding-left:40px}
+.deadbolt-experience ul{list-style:disc;padding-left:40px}
+.deadbolt-experience button{font:inherit}
+.deadbolt-experience .skip{position:fixed;z-index:100}
+.deadbolt-experience .wordmark span{color:inherit}
+.deadbolt-experience .path-card a{width:fit-content;max-width:100%}
+@media(max-width:700px){.deadbolt-experience{padding-top:4rem}}
