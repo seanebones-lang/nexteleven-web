@@ -1,15 +1,16 @@
 {
   "repository": "seanebones-lang/deadbolt",
-  "revision": "245ba05961fc9ef3807ec9b3749597baed5167e9",
+  "revision": "2b05a2403d2e86d18b75e99ee7f77f3cc1d3aa10",
   "mirror": "https://seanebones-lang.github.io/deadbolt/",
   "sha256": {
-    "index.html": "5886d1125ee92ec08180e961dbfd812f256bce51d668798eab56e660900bed84",
+    "index.html": "780e305caa841d7e512e0b99139137d56c2c9aef3feac1c0aa87f64f789e6490",
     "assets/site.css": "121c28dbe168ad191f0cf6d688340f91ace5969b13b7cf3b64e458a441a69acb",
     "assets/walkthrough.js": "2211980fe97c3a9af5a101e7baf232f5782b42482ad1ba73249225e4e5cce94c",
     "assets/deadbolt-power-mark.png": "f5df9c3c2215c5e36b722094933474578891ab3f48e700ef55bdb8de87bba08e",
     "assets/media/poster.jpg": "c7a35b88900c139b40c488cbaf77afeb7d8d0a4d7986cc6b13243e1da2441c0b",
     "assets/media/deadbolt-walkthrough-cedar.srt": "c2b9718e778d2bb7330d6f2d372737c12abf3dcd2dc409da436b47ad9954f03f",
     "assets/media/SOURCES.txt": "2bfbe114d711b7cf881c52c7e655db53c1b8032ee49f5fdaca1500e0585aedb7",
-    "assets/editor_setup.py": "b9ac8cdf7ea5da326b6da8fd05ee2a3194683914376567d6981fe2a914a7c3d1"
+    "assets/editor_setup.py": "7dffd60f1dc61057f5069097c284801ae438588f472131d74ea7e4fbc1f141e6",
+    "assets/editor_setup_v2.py": "222a26352db8d9cd28daff5100d34612e8a03bfe7b5e87c3d3d1d5841e1c77c1"
   }
 }
