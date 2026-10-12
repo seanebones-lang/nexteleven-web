@@ -1,9 +1,9 @@
 {
   "repository": "seanebones-lang/deadbolt",
-  "revision": "97bfe6ba5038279d671132c7289577f91ec4b56c",
+  "revision": "c970055488011d43c30bf32cd3751bc73374d4a0",
   "mirror": "https://seanebones-lang.github.io/deadbolt/",
   "sha256": {
-    "index.html": "1f6a586cbeba2169b73f15fe26785a7931e68b8055d341c8e3e5fbcbdeabfc1c",
+    "index.html": "0d989133219d5a130e5c742f95124a171c7411e79d5175f8167aa1d11a116712",
     "assets/site.css": "e23416cc963badcf3fbbf4b4ccb95defedaa2b63454747a5c752594666a6bc9a",
     "assets/walkthrough.js": "2211980fe97c3a9af5a101e7baf232f5782b42482ad1ba73249225e4e5cce94c",
     "assets/deadbolt-power-mark.png": "f5df9c3c2215c5e36b722094933474578891ab3f48e700ef55bdb8de87bba08e",
