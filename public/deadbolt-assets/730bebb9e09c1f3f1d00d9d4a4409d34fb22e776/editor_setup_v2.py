@@ -18,11 +18,12 @@ import stat
 import subprocess
 import tempfile
 import threading
+import time
 from urllib.parse import urlencode
 import uuid
 import zipfile
 
-BUNDLE_SHA256 = "7840d23f116b8a162322a372124718ca374296e3b9ca1d781e99f466d7a6634c"
+BUNDLE_SHA256 = "a0634e69da89c6e2c38bf72b8c1a1b8ed75e30e77df218841692808998c7b95e"
 TARGETS = {("Darwin", "arm64"): "aarch64-apple-darwin",
            ("Darwin", "x86_64"): "x86_64-apple-darwin",
            ("Linux", "x86_64"): "x86_64-unknown-linux-gnu",
@@ -117,8 +118,8 @@ def prepare(bundle, out, node=None):
     binary = root / "native" / target / ("deadbolt.exe" if os.name == "nt" else "deadbolt")
     if os.name != "nt":
         binary.chmod(0o755)
-    export(out, "deadbolt-setup", node, root / "server" / "launcher.cjs")
-    write_json(out / "installation.json", {"bundle_version": "1.1.0", "engine_version": "1.0.3",
+    export(out, "deadbolt-rc2-setup", node, root / "server" / "launcher.cjs")
+    write_json(out / "installation.json", {"bundle_version": "2.0.0-rc.2", "engine_version": "2.0.0-rc.2",
                "bundle_sha256": BUNDLE_SHA256, "node": node, "target": target})
     return {"prepared": str(out), "mode": "read-only setup; no active protection", "profile_modified": False}
 
@@ -140,7 +141,8 @@ def demo_config(directory, node):
     directory.mkdir(mode=0o700)
     fixture = directory / "disposable-server.cjs"
     fixture.write_text(FIXTURE, encoding="utf-8")
-    config = {"version": 1, "agent": "editor-demo-" + uuid.uuid4().hex,
+    config = {"version": 2, "hard_deadline_at": int(time.time()) + 600,
+              "renewal_mode": "activity", "offline_tools": ["demo_write_marker", "demo_publish_marker"], "agent": "editor-demo-" + uuid.uuid4().hex,
               "database": str(directory / "state.db"), "events": str(directory / "events.jsonl"),
               "command": node, "args": [str(fixture), str(directory / "effects.txt")],
               "tools": ["demo_write_marker", "demo_publish_marker"], "destinations": [],
@@ -222,7 +224,9 @@ def verify(out):
                 response = session.rpc("tools/call", {"name": name, "arguments": {}})
                 after = effects.read_text() if effects.exists() else ""
                 if denied:
-                    require(denied in response.get("error", {}).get("message", ""), "Expected denial: " + denied)
+                    require("error" not in response, "Policy denial must be a model-facing tool result")
+                    result = response.get("result", {})
+                    require(result.get("isError") is True and result.get("_meta", {}).get("io.github.seanebones-lang/deadbolt", {}).get("code") == denied, "Expected tool denial: " + denied)
                     require(after == before, "A denied tool body ran")
                 else:
                     require("result" in response, "Expected admitted tool result")
@@ -234,6 +238,10 @@ def verify(out):
             operator(binary, config, "approve")
             call("demo_publish_marker")
             call("demo_publish_marker", "needs_human")
+            operator(binary, config, "pause")
+            call("demo_write_marker", "paused")
+            operator(binary, config, "resume")
+            call("demo_write_marker")
             operator(binary, config, "kill")
             call("demo_write_marker", "killed")
         finally:
@@ -256,7 +264,7 @@ def main():
         command.add_argument("--out", type=Path, required=True)
         if name == "operator":
             command.add_argument("--demo", type=Path, required=True, help="Disposable demo directory created by this script")
-            command.add_argument("action", choices=["status", "approve", "kill"])
+            command.add_argument("action", choices=["status", "approve", "pause", "resume", "kill"])
     args = parser.parse_args()
     out = args.out.expanduser().resolve()
     if args.command == "prepare":
@@ -267,8 +275,8 @@ def main():
         node, launcher, _ = installation(out)
         directory = out / ("demo-" + uuid.uuid4().hex[:12])
         demo_config(directory, node)
-        export(directory, "deadbolt-demo", node, launcher, directory / "operator.json")
-        result = {"demo": str(directory), "mode": "Disposable marker effects; no connected accounts", "lease": "60 seconds idle; use demo again for a fresh run"}
+        export(directory, "deadbolt-rc2-demo", node, launcher, directory / "operator.json")
+        result = {"demo": str(directory), "mode": "Disposable marker effects; no connected accounts", "lease": "60 seconds idle, 10 minutes absolute. Explicit activity mode for this short dummy demo; fresh ordinary roots default to supervisor renewal. Use demo again for a fresh run."}
     else:
         _, _, binary = installation(out)
         directory = args.demo.expanduser().resolve()
