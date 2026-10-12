@@ -1,0 +1,43 @@
+SOURCE AND CLAIM BOUNDARIES — reviewed 2026-10-10 America/Chicago
+
+DeadBolt runtime candidate: 6bbdf109b4ce5e26d56b466179f98ed9686ddbcf
+DeadBolt documentation: 35a2d0dcb488ad8dffa926c9c61f55fd16b1975e
+Harness integration: 5c7716610905fa1ffc62ca4e94ceec3ce6ed3db2
+At recording: published DeadBolt v1.0.3; candidate changes were unmerged/unreleased.
+
+POST-RECORDING RELEASE UPDATE — 2026-10-10
+DeadBolt v1.1.0-rc.1 is now a published prerelease from
+52a2085155b658f3d1dda5a73a8d95a7a1d88fad:
+https://github.com/seanebones-lang/deadbolt/releases/tag/v1.1.0-rc.1
+It integrates the DeadBolt candidate functionality discussed in the videos.
+Stable v1.0.3 remains available. The Harness execution-after-review correction was subsequently merged on
+2026-10-10 America/Chicago (2026-10-11T03:48:12Z), merge commit
+e0aa3c047120ced527ffa935bfa3288f00e4371f:
+https://github.com/seanebones-lang/harness/pull/8
+A merged source change does not establish availability in an installed release.
+The original source pins and narrated recording status above remain historical
+provenance; the video is not a new recording of the published release artifacts.
+
+Primary external guidance:
+https://developers.openai.com/api/docs/guides/agents/guardrails-approvals
+https://genai.owasp.org/llmrisk/llm062025-excessive-agency/
+https://www.rfc-editor.org/info/rfc8785/
+https://developers.openai.com/api/docs/guides/text-to-speech
+
+The engineering need for deterministic execution control is our design judgment informed by the cited guidance. No universal legal requirement or endorsement of DeadBolt is claimed.
+Narration: AI-generated Cedar voice, OpenAI text-to-speech, generated with user-approved existing credential. No secrets are included in this package.
+Harness demo: actual optimized binary and real dispatcher; deterministic synthetic local provider. No model-provider requests made by Harness. Temporary/demo-only local file effects.
+Educational slides and decision visualizations are presentation assets, not a shipped DeadBolt dashboard. Harness screenshot is the actual running product UI.
+Sidecar destination demonstrations check host tokens and local callbacks; they do not prove network enforcement.
+Evidence packages describe tests at pinned source, not arbitrary agent containment, external-effect completion, legal compliance, adoption or certification.
+
+Video accessibility: permanent high-contrast English captions in the website MP4s; script-based caption text aligned to measured word timestamps. Separate SRT and WebVTT available.
+
+LANDING PAGE UPDATE — 2026-10-11 America/Chicago
+MCP bundle 1.1.0 packages stable engine v1.0.3 with read-only setup tools and an
+operator-configured stdio proxy. It does not include prerelease exact-action or
+scoped admission-credential APIs. Four-platform installed acceptance reports
+and macOS ARM64 graphical setup evidence are included in VALIDATION.md and
+validation/ inside the bundle. Catalog listings are discovery surfaces, not
+independent security certification or proof of adoption.
+https://github.com/seanebones-lang/deadbolt/releases/tag/mcpb-v1.1.0
