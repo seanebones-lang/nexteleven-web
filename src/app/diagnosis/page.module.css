@@ -1,0 +1,19 @@
+.main { max-width: 1120px; margin: 0 auto; padding: 56px 28px 80px; }
+.hero { max-width: 850px; padding: 40px 0 64px; }
+.hero h1 { font-size: clamp(2.7rem, 7vw, 5.7rem); line-height: 1.04; letter-spacing: -.055em; margin: 22px 0 28px; }
+.lead { max-width: 740px; font-size: 1.2rem; line-height: 1.8; }
+.price { display: flex; align-items: center; gap: 22px; margin: 32px 0; flex-wrap: wrap; }
+.price strong { font-size: 3rem; letter-spacing: -.04em; }
+.price span { max-width: 230px; line-height: 1.7; }
+.note { max-width: 600px; font-size: .94rem; line-height: 1.7; margin-top: 20px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid article { border: 1px solid #7d7d7d66; border-radius: 18px; padding: 30px; }
+.main h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -.035em; line-height: 1.2; margin: 18px 0 24px; }
+.main li, .grid p, .process p, .proof p, .contact p { line-height: 1.85; }
+.main ul, .main ol { padding-left: 22px; }
+.main li { margin-bottom: 15px; }
+.process, .proof, .contact { padding: 56px 0 24px; max-width: 850px; }
+.proof div { display: flex; flex-wrap: wrap; gap: 20px; }
+.proof a { text-decoration: underline; text-underline-offset: 4px; }
+.contact { border-top: 1px solid #7d7d7d66; margin-top: 40px; }
+@media (max-width: 680px) { .grid { grid-template-columns: 1fr; } .main { padding: 28px 20px 56px; } .hero { padding-top: 20px; } .grid article { padding: 24px; } }

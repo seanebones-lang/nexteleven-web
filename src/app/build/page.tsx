@@ -28,6 +28,7 @@ export default function BuildPage() {
         <h1>Build it.<br />Improve it.</h1>
         <p>I build custom software and help existing systems work better. You can bring me a business problem, an unfinished application, or a technical brief. We’ll agree on a useful first step and how to verify it.</p>
         <a className="primary-action" href="#start">Discuss your project <span>↗</span></a>
+        <p>Have one broken workflow to investigate? <Link href="/diagnosis">Start with a $250 software diagnosis ↗</Link></p>
       </section>
       <section className="audience-section" aria-labelledby="audience-title">
         <p className="section-label">Two ways to start</p>
