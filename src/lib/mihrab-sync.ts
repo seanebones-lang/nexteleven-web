@@ -18,7 +18,7 @@ function permitted(group: unknown,id: unknown): group is string {
   (group==='mushafs' && [4,5].includes(id)) ||
   (group==='tafsirs' && [14,160,164,169].includes(id)) ||
   (group==='word_by_word_transliterations' && id===60) ||
-  (group==='word_by_word_translations' && id<=1000));
+  (group==='word_by_word_translations' && id<=1000000));
 }
 function opaque(x: unknown): x is string { return typeof x==='string' && x.length>0 && x.length<=8192 && /^[\x21-\x7e]+$/.test(x); }
 export function syncInput(value: unknown): Row {
@@ -95,7 +95,7 @@ export function createContentSyncService(config: Config) {
    if(data.resource_group!==group||data.resource_id!==id||data.schema_version!==1||!Number.isSafeInteger(data.sync_sequence)||!Array.isArray(data.records)||!data.records.length||data.records.length>200000)throw new StudyFailure(502,'invalid_sync_snapshot');
    const parts:string[]=[];let records:string[]=[],bytes=2,total=0;const hash=createHash('sha256');
    let language:unknown;
-   for(const raw of data.records){const row=scalarRow(raw);language??=row.language_name;const text=JSON.stringify(row),size=Buffer.byteLength(text)+1;if(size>1800000)throw new StudyFailure(502,'sync_record_too_large');
+   for(const raw of data.records){const row=scalarRow(raw);row.record_type??=({tafsirs:'tafsir',word_by_word_translations:'word_translation',word_by_word_transliterations:'word_transliteration'} as Record<string,string>)[group];language??=row.language_name;const text=JSON.stringify(row),size=Buffer.byteLength(text)+1;if(size>1800000)throw new StudyFailure(502,'sync_record_too_large');
     hash.update(text+'\n');if(bytes+size>1800000){parts.push('['+records.join(',')+']');records=[];bytes=2;}records.push(text);bytes+=size;total+=size;
    }
    if(records.length)parts.push('['+records.join(',')+']');
@@ -109,9 +109,12 @@ export function createContentSyncService(config: Config) {
   const period=Math.floor(now()/60000);if(period!==minute){minute=period;calls=0;}if(active>=4||calls>=120)throw new StudyFailure(429,'sync_busy');active++;calls++;
   try{
    if(input.op==='catalog'){
-    const data=page(await read('/resources/sync?'+new URLSearchParams({resources:catalogFilter,bootstrap:'true',per_page:'100'})));
+    const raw=await read('/resources/sync?'+new URLSearchParams({resources:catalogFilter,bootstrap:'true',per_page:'100'}));
+    const data=raw.sync;
+    if(!object(data)||!Array.isArray(data.mutations)||typeof data.has_more!=='boolean')throw new StudyFailure(502,'invalid_sync_catalog');
     if(data.has_more)throw new StudyFailure(502,'incomplete_sync_catalog');
-    return JSON.stringify({resources:(data.mutations as Row[]).map(x=>`${x.resource_group}:${x.resource_id}`)});
+    const resources=data.mutations.map(x=>{if(!object(x)||!permitted(x.resource_group,x.resource_id))throw new StudyFailure(502,'invalid_sync_catalog_resource');return `${x.resource_group}:${x.resource_id}`;});
+    return JSON.stringify({resources});
    }
    const group=String(input.group),id=Number(input.id);
    if(input.op==='sync'){
