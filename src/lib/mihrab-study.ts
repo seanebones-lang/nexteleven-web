@@ -87,9 +87,10 @@ export function createStudyService(config: { clientId?: string; clientSecret?: s
         if (!response.ok) { await response.body?.cancel(); throw new StudyFailure(502, "provider_content_unavailable"); }
         const data = await boundedJson(response, 8 * 1024 * 1024);
         if (query.field === "changes") {
-          if (!Array.isArray(data.changes) || data.has_more !== false) throw new StudyFailure(502, "invalid_provider_response");
+          const sync = data.sync as Record<string, unknown> | undefined;
+          if (!sync || !Array.isArray(sync.mutations) || sync.has_more !== false) throw new StudyFailure(502, "invalid_provider_response");
           const allowed = new Set(["mushafs:1", "tafsirs:14", "tafsirs:160", "tafsirs:164", "tafsirs:169"]);
-          const resources = data.changes.map(value => {
+          const resources = sync.mutations.map(value => {
             if (!value || typeof value !== "object") throw new StudyFailure(502, "invalid_provider_response");
             const row = value as Record<string, unknown>;
             const key = `${row.resource_group}:${row.resource_id}`;
@@ -130,7 +131,7 @@ export function createStudyService(config: { clientId?: string; clientSecret?: s
         const key = cache.keys().next().value; if (key === undefined) break;
         cacheBytes -= Buffer.byteLength(cache.get(key)!.body); cache.delete(key);
       }
-      cache.set(query.key, { body, until: now() + 86400000 }); cacheBytes += size;
+      if (query.field !== "changes") { cache.set(query.key, { body, until: now() + 86400000 }); cacheBytes += size; }
       return body;
     } finally { active--; inFlight.delete(query.key); }
   };
