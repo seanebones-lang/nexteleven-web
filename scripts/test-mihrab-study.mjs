@@ -56,3 +56,20 @@ test('process budget bounds uncached traffic even across distinct valid queries'
  for(let n=1;n<=60;n++)await service(new URLSearchParams(`kind=words&surah=${n}&lang=en`));
  await assert.rejects(service(new URLSearchParams('kind=words&surah=61&lang=en')),e=>e.status===429);assert.equal(upstream,60);
 });
+
+test('offline availability uses fixed resources and strips all opaque checkpoint/content fields',async()=>{
+ let upstream;
+ const service=createStudyService({...credentials,fetcher:async(url)=>{
+  if(url.includes('/oauth2/'))return token();upstream=url;
+  return Response.json({has_more:false,next_sync_token:'private-checkpoint',changes:[{type:'RESOURCE_CREATE',resource_group:'mushafs',resource_id:1,snapshot_url:'/private',content:'must-not-return'}]});
+ }});
+ assert.deepEqual(JSON.parse(await service(new URLSearchParams('kind=offline-policy'))),{offline_sync_resources:['mushafs:1']});
+ assert.match(upstream,/resources\/sync\?bootstrap=true/);
+ assert.throws(()=>studyQuery(new URLSearchParams('kind=offline-policy&surah=1')),e=>e.status===400);
+});
+test('offline availability fails closed on partial or foreign results',async()=>{
+ for(const data of [{has_more:true,changes:[]},{has_more:false,changes:[{type:'RESOURCE_CREATE',resource_group:'translations',resource_id:19}]}]){
+  const service=createStudyService({...credentials,fetcher:async(url)=>url.includes('/oauth2/')?token():Response.json(data)});
+  await assert.rejects(service(new URLSearchParams('kind=offline-policy')),e=>e.status===502);
+ }
+});
