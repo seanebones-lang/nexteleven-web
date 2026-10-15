@@ -61,15 +61,21 @@ test('offline availability uses fixed resources and strips all opaque checkpoint
  let upstream;
  const service=createStudyService({...credentials,fetcher:async(url)=>{
   if(url.includes('/oauth2/'))return token();upstream=url;
-  return Response.json({has_more:false,next_sync_token:'private-checkpoint',changes:[{type:'RESOURCE_CREATE',resource_group:'mushafs',resource_id:1,snapshot_url:'/private',content:'must-not-return'}]});
+  return Response.json({sync:{has_more:false,next_sync_token:'private-checkpoint',mutations:[{type:'RESOURCE_CREATE',resource_group:'mushafs',resource_id:1,snapshot_url:'/private',data:null}]}});
  }});
  assert.deepEqual(JSON.parse(await service(new URLSearchParams('kind=offline-policy'))),{offline_sync_resources:['mushafs:1']});
  assert.match(upstream,/resources\/sync\?bootstrap=true/);
  assert.throws(()=>studyQuery(new URLSearchParams('kind=offline-policy&surah=1')),e=>e.status===400);
 });
 test('offline availability fails closed on partial or foreign results',async()=>{
- for(const data of [{has_more:true,changes:[]},{has_more:false,changes:[{type:'RESOURCE_CREATE',resource_group:'translations',resource_id:19}]}]){
+ for(const data of [{sync:{has_more:true,mutations:[]}},{sync:{has_more:false,mutations:[{type:'RESOURCE_CREATE',resource_group:'translations',resource_id:19}]}}]){
   const service=createStudyService({...credentials,fetcher:async(url)=>url.includes('/oauth2/')?token():Response.json(data)});
   await assert.rejects(service(new URLSearchParams('kind=offline-policy')),e=>e.status===502);
  }
+});
+
+test('offline availability rechecks instead of retaining a potentially outdated publication list',async()=>{
+ let calls=0;const service=createStudyService({...credentials,fetcher:async(url)=>{calls++;return url.includes('/oauth2/')?token():Response.json({sync:{has_more:false,mutations:[]}})}});
+ for(let n=0;n<2;n++)assert.deepEqual(JSON.parse(await service(new URLSearchParams('kind=offline-policy'))),{offline_sync_resources:[]});
+ assert.equal(calls,3);
 });
