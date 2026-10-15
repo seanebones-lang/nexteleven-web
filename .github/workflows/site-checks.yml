@@ -15,7 +15,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: node --experimental-strip-types --test scripts/test-mihrab-study.mjs
+      - run: node --experimental-strip-types --test scripts/test-mihrab-study.mjs scripts/test-mihrab-sync.mjs
       - run: npm run deadbolt:check
       - run: npm run lint
       - run: npm run build
