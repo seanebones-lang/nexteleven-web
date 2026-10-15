@@ -3,7 +3,7 @@ import { StudyFailure } from './mihrab-study.ts';
 type Row = Record<string, unknown>;
 type Config = {clientId?: string; clientSecret?: string; fetcher?: typeof fetch; now?: () => number};
 const base = 'https://apis.quran.foundation/content/api/v4';
-const catalogFilter = 'mushafs:4,5;tafsirs:14,160,164,169;word_by_word_translations:*;word_by_word_transliterations:60';
+const catalogFilter = 'mushafs:5;tafsirs:14,160,164,169;word_by_word_translations:59,99,100,104,555;word_by_word_transliterations:60';
 const fields = new Set(['id','record_type','resource_id','resource_content_id','word_id','verse_id','source_verse_id','verse_key','chapter_id','chapter_number','verse_number','position','position_in_verse','position_in_line','position_in_page','page_number','line_number','char_type_id','char_type_name','text','language_id','language_name','priority','updated_at','mushaf_id','name','description','pages_count','lines_per_page','default_font_name','mapping_mode','first_verse_id','last_verse_id','first_word_id','last_word_id','verses_count','group_verse_key_from','group_verse_key_to','group_verses_count','start_verse_id','end_verse_id']);
 function object(x: unknown): x is Row { return !!x && typeof x === 'object' && !Array.isArray(x); }
 function positive(x: unknown): x is number { return Number.isSafeInteger(x) && Number(x)>0; }
@@ -15,10 +15,10 @@ function scalarRow(x: unknown): Row {
 }
 function permitted(group: unknown,id: unknown): group is string {
  return typeof group==='string' && positive(id) && (
-  (group==='mushafs' && [4,5].includes(id)) ||
+  (group==='mushafs' && id===5) ||
   (group==='tafsirs' && [14,160,164,169].includes(id)) ||
   (group==='word_by_word_transliterations' && id===60) ||
-  (group==='word_by_word_translations' && id<=1000000));
+  (group==='word_by_word_translations' && [59,99,100,104,555].includes(id)));
 }
 function opaque(x: unknown): x is string { return typeof x==='string' && x.length>0 && x.length<=8192 && /^[\x21-\x7e]+$/.test(x); }
 export function syncInput(value: unknown): Row {
