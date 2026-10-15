@@ -4,12 +4,16 @@ export class StudyFailure extends Error {
   constructor(status: number, message: string) { super(message); this.status = status; }
 }
 type Fetcher = typeof fetch;
-type Query = { key: string; path: string; field: "verses" | "tafsirs" };
+type Query = { key: string; path: string; field: "verses" | "tafsirs" | "changes" };
 const languages = new Set(["en", "ur", "id", "tr", "bn"]);
 const editions = new Set(["169", "14", "160", "164"]);
 export function studyQuery(params: URLSearchParams): Query {
   if ([...params.keys()].some(k => !["kind", "surah", "lang", "edition"].includes(k)) ||
       [...params.keys()].some(k => params.getAll(k).length !== 1)) throw new StudyFailure(400, "invalid_query");
+  if (params.get("kind") === "offline-policy") {
+    if ([...params.keys()].some(k => k !== "kind")) throw new StudyFailure(400, "invalid_query");
+    return { key: "offline-policy", field: "changes", path: "/resources/sync?bootstrap=true&resources=mushafs%3A1%3Btafsirs%3A14%2C160%2C164%2C169&per_page=100" };
+  }
   const surah = params.get("surah") ?? "";
   if (!/^[1-9]\d{0,2}$/.test(surah) || Number(surah) > 114) throw new StudyFailure(400, "invalid_surah");
   if (params.get("kind") === "words") {
@@ -82,6 +86,20 @@ export function createStudyService(config: { clientId?: string; clientSecret?: s
         if (response.status === 401 && attempt === 0) { token = undefined; await response.body?.cancel(); continue; }
         if (!response.ok) { await response.body?.cancel(); throw new StudyFailure(502, "provider_content_unavailable"); }
         const data = await boundedJson(response, 8 * 1024 * 1024);
+        if (query.field === "changes") {
+          if (!Array.isArray(data.changes) || data.has_more !== false) throw new StudyFailure(502, "invalid_provider_response");
+          const allowed = new Set(["mushafs:1", "tafsirs:14", "tafsirs:160", "tafsirs:164", "tafsirs:169"]);
+          const resources = data.changes.map(value => {
+            if (!value || typeof value !== "object") throw new StudyFailure(502, "invalid_provider_response");
+            const row = value as Record<string, unknown>;
+            const key = `${row.resource_group}:${row.resource_id}`;
+            if (!allowed.has(key) || row.type !== "RESOURCE_CREATE") throw new StudyFailure(502, "invalid_provider_response");
+            return key;
+          });
+          // Only public availability is returned. Sync tokens, cursors, snapshots
+          // and provider credentials must never appear in this diagnostic output.
+          return JSON.stringify({ offline_sync_resources: [...new Set(resources)].sort() });
+        }
         if (!Array.isArray(data[query.field]) || !(data[query.field] as unknown[]).length) throw new StudyFailure(502, "invalid_provider_response");
         const pagination = data.pagination as Record<string, unknown> | undefined;
         if (pagination?.next_page) throw new StudyFailure(502, "incomplete_provider_response");
