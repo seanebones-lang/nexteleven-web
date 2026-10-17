@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-17",
+  "brand_assets": "Generated with the built-in image tool using NextEleven existing monogram; sized for Google Play; same studio identity used here.",
+  "app_icons": "Owned NextEleven icons exported from current public Google Play developer page with browser pageAssets.",
+  "gameplay": "Actual Android build5 emulator input; edited at1x with original game music.",
+  "apps": {
+    "circuit-breaker": "https://play.google.com/store/apps/details?id=dev.nexteleven.circuitbreaker",
+    "steady": "https://play.google.com/store/apps/details?id=dev.nexteleven.steady",
+    "note-to-self": "https://play.google.com/store/apps/details?id=dev.nexteleven.nts"
+  },
+  "status": "Only the three verified public Android releases are presented as downloadable; other platforms use the existing Apple developer listing."
+}

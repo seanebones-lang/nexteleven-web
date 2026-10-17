@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/work", "/build", "/presence", "/deadbolt", "/diagnosis"];
+  const routes = ["", "/about", "/work", "/build", "/presence", "/deadbolt", "/diagnosis", "/apps"];
   return [
     ...routes.map((route) => ({
       url: `https://www.nexteleven.dev${route}`,
