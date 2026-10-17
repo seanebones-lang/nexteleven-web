@@ -10,6 +10,7 @@ The primary client website is [www.nexteleven.dev](https://www.nexteleven.dev/):
 
 ## Pages
 
+- `/apps`: consumer app showcase with official Google Play downloads, Circuit Breaker gameplay, Apple developer listing, and per-app support/privacy links.
 - `/`: the offering and routes to services, work, Sean’s background, and websites.
 - `/build`: services and starting points for business owners and technical teams.
 - `/diagnosis`: the $250 software diagnosis offer, scope, deliverables, fit check and email intake. Payment follows an agreed scope through an existing provider; this page does not take payments.
