@@ -6,7 +6,10 @@
   "apps": {
     "circuit-breaker": "https://play.google.com/store/apps/details?id=dev.nexteleven.circuitbreaker",
     "steady": "https://play.google.com/store/apps/details?id=dev.nexteleven.steady",
-    "note-to-self": "https://play.google.com/store/apps/details?id=dev.nexteleven.nts"
+    "note-to-self": "https://play.google.com/store/apps/details?id=dev.nexteleven.nts",
+    "wordledger": "https://play.google.com/store/apps/details?id=dev.nexteleven.wordledger"
   },
-  "status": "Only the three verified public Android releases are presented as downloadable; other platforms use the existing Apple developer listing."
+  "status": "The four Android apps shown have verified public Google Play listings; Apple apps use the existing Apple developer listing.",
+  "updated_at": "2026-10-19",
+  "wordledger_icon": "Owned NextEleven final Android Play icon, copied unchanged from the WordLedger release artwork."
 }
