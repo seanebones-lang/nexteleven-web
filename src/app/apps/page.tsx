@@ -5,13 +5,14 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Apps for everyday life & clever play",
-  description: "Discover WordLedger, Circuit Breaker, Steady, and Note to Self from NextEleven. Explore the apps, watch real gameplay, and find official downloads and support.",
+  description: "Discover Mihrab, WordLedger, Circuit Breaker, Steady, and Note to Self from NextEleven. Explore the apps, watch real gameplay, and find official downloads and support.",
   alternates: { canonical: "/apps" },
   openGraph: { title: "NextEleven Apps", description: "Small steps. Fresh ideas. Clever play.", url: "/apps", images: [{ url: "/apps-assets/next-eleven-header.jpg", width: 4096, height: 2304, alt: "NextEleven" }] },
 };
 
 const play = "https://play.google.com/store/apps/details?id=";
 const apps = [
+  { name: "Mihrab: Quran & Prayer Times", short: "Mihrab", category: "A calm space for daily worship", description: "Read the Qur’an with translation, listen to recitation, and keep prayer times close. Make room for study and worship without ads or distractions.", features: ["Qur’an, translation and tafsir", "Prayer times, reminders and Qibla", "Bookmarks and offline reading"], icon: "mihrab.png", id: "dev.nexteleven.mihrab", policy: "mihrab", price: "Every feature is free. No ads, purchases or subscriptions.", tone: styles.mihrab },
   { name: "WordLedger: Daily Vocabulary", short: "WordLedger", category: "Words worth remembering", description: "Discover a word, make it your own, and practice remembering it. Build a personal vocabulary library that stays on your device.", features: ["Daily words and recall practice", "Pronunciation and Home Screen widgets", "Free JSON backup for Android and iPhone"], icon: "wordledger.png", id: "dev.nexteleven.wordledger", policy: "wordledger", price: "Free download. Optional one-time Plus for study decks and printable kits. No ads or subscription.", tone: styles.words },
   { name: "Steady: One Small Step", short: "Steady", category: "A little room to begin", description: "Break a task into a smaller beginning, take a gentle breathing pause, and move at your own pace.", features: ["Small, manageable tasks", "Guided breathing", "Gentle check-ins"], icon: "steady.webp", id: "dev.nexteleven.steady", policy: "steady", price: "Free download. Optional Plus features.", tone: styles.steady },
   { name: "Note to Self: Capture & Keep", short: "Note to Self", category: "Keep the thought", description: "Capture an idea before it slips away. Write a note, find it again, and share it in the format you need.", features: ["Quick text notes", "Optional voice capture", "Text and PDF export"], icon: "note-to-self.webp", id: "dev.nexteleven.nts", policy: "note-to-self", price: "Free download. Optional Plus features.", tone: styles.notes },

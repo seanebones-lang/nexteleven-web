@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-17",
+  "checked_at": "2026-10-19",
   "brand_assets": "Generated with the built-in image tool using NextEleven existing monogram; sized for Google Play; same studio identity used here.",
   "app_icons": "Owned NextEleven icons exported from current public Google Play developer page with browser pageAssets.",
   "gameplay": "Actual Android build5 emulator input; edited at1x with original game music.",
@@ -7,9 +7,11 @@
     "circuit-breaker": "https://play.google.com/store/apps/details?id=dev.nexteleven.circuitbreaker",
     "steady": "https://play.google.com/store/apps/details?id=dev.nexteleven.steady",
     "note-to-self": "https://play.google.com/store/apps/details?id=dev.nexteleven.nts",
-    "wordledger": "https://play.google.com/store/apps/details?id=dev.nexteleven.wordledger"
+    "wordledger": "https://play.google.com/store/apps/details?id=dev.nexteleven.wordledger",
+    "mihrab": "https://play.google.com/store/apps/details?id=dev.nexteleven.mihrab"
   },
-  "status": "The four Android apps shown have verified public Google Play listings; Apple apps use the existing Apple developer listing.",
+  "status": "The five Android apps shown have verified public Google Play listings; Apple apps use the existing Apple developer listing.",
   "updated_at": "2026-10-19",
-  "wordledger_icon": "Owned NextEleven final Android Play icon, copied unchanged from the WordLedger release artwork."
+  "wordledger_icon": "Owned NextEleven final Android Play icon, copied unchanged from the WordLedger release artwork.",
+  "mihrab_icon": "Owned NextEleven final Android Play icon, copied unchanged from the Mihrab release artwork."
 }
