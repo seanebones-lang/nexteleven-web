@@ -8,10 +8,31 @@
     "steady": "https://play.google.com/store/apps/details?id=dev.nexteleven.steady",
     "note-to-self": "https://play.google.com/store/apps/details?id=dev.nexteleven.nts",
     "wordledger": "https://play.google.com/store/apps/details?id=dev.nexteleven.wordledger",
-    "mihrab": "https://play.google.com/store/apps/details?id=dev.nexteleven.mihrab"
+    "mihrab": "https://play.google.com/store/apps/details?id=dev.nexteleven.mihrab",
+    "tattoo-artist-helper": "https://play.google.com/store/apps/details?id=dev.nexteleven.tattoohelper",
+    "thriftflip": "https://play.google.com/store/apps/details?id=dev.nexteleven.thriftflip"
   },
-  "status": "The five Android apps shown have verified public Google Play listings; Apple apps use the existing Apple developer listing.",
-  "updated_at": "2026-10-19",
+  "status": "The Android apps shown have verified public Google Play listings; publication does not establish usage or revenue. Apple links identify the existing Apple listings.",
+  "updated_at": "2026-10-20",
   "wordledger_icon": "Owned NextEleven final Android Play icon, copied unchanged from the WordLedger release artwork.",
-  "mihrab_icon": "Owned NextEleven final Android Play icon, copied unchanged from the Mihrab release artwork."
+  "mihrab_icon": "Owned NextEleven final Android Play icon, copied unchanged from the Mihrab release artwork.",
+  "thriftflip": {
+    "checked_at": "2026-10-20",
+    "status": "Public Google Play listing shows Install and availability for the signed-in device.",
+    "features": "Free up to 20 active items; optional one-time Plus for higher capacity, haul allocation, photos and PDF/CSV reports; no ads or subscription.",
+    "icon": "Owned final Android Play artwork, copied unchanged from the ThriftFlip release design. Visually matched to the public listing.",
+    "icon_sha256": "3bd204810724dca4bec7ebf210585ced0af8e4a686a2dd95672e1fcaf3090db1",
+    "support": "https://www.nexteleven.dev/thriftflip/android-support.html",
+    "privacy": "https://www.nexteleven.dev/thriftflip/android-privacy.html"
+  },
+  "catalog_order": [
+    "ThriftFlip",
+    "Tattoo Artist Helper",
+    "WordLedger",
+    "Note to Self",
+    "Steady",
+    "Mihrab",
+    "Circuit Breaker"
+  ],
+  "catalog_order_reason": "Lead with current practical work tools, followed by vocabulary, notes, wellbeing and worship; preserve the Circuit Breaker gameplay feature after the app grid. This is an editorial order, not a popularity or revenue ranking."
 }
