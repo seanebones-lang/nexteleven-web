@@ -2,7 +2,7 @@
   "checked_at": "2026-10-20",
   "brand_assets": "Generated with the built-in image tool using NextEleven existing monogram; sized for Google Play; same studio identity used here.",
   "app_icons": "Owned NextEleven icons exported from current public Google Play developer page with browser pageAssets.",
-  "gameplay": "Actual Android build5 emulator input; edited at1x with original game music.",
+  "gameplay": "Featured video: two complete FAILSAFE Android QA solutions at original speed with explanatory captions and the project-owned score. Earlier base-campaign footage retained as an unused asset.",
   "apps": {
     "circuit-breaker": "https://play.google.com/store/apps/details?id=dev.nexteleven.circuitbreaker",
     "steady": "https://play.google.com/store/apps/details?id=dev.nexteleven.steady",
@@ -116,5 +116,22 @@
       "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f8/a9/c6/f8a9c654-7e1c-d404-ebd0-f2b6a1ef9c38/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png"
     }
   },
-  "curioround_android": "Public Play URL returned Not Found; Play Console independently shows Internal testing and Changes in review on October20. No public Android download button."
+  "curioround_android": "Public Play URL returned Not Found; Play Console independently shows Internal testing and Changes in review on October20. No public Android download button.",
+  "failsafe_gameplay": {
+    "source": "CircuitBreaker-FAILSAFE-Two-Full-Solutions.mp4",
+    "source_sha256": "32cd8b17e45471b177f26375274ed509832b70080e3664761647de3ae524d76d",
+    "web_file": "circuit-breaker-failsafe-solutions.mp4",
+    "web_sha256": "7eb3ff8c71877d44904178f774214c44129f32f861beefd9690a29d832ede35a",
+    "web_bytes": 6399705,
+    "seconds": 202.21675,
+    "dimensions": "720x1280",
+    "puzzles": [
+      "KEYHOLDER F3-12",
+      "MIRAGE F4-12"
+    ],
+    "processing": "H.264/AAC web transcode with fast-start metadata; complete original-speed solutions preserved. Source carries burned-in captions; matching WebVTT included.",
+    "poster": "Unchanged owned Preview-Keyholder.jpg from the full-solutions release package.",
+    "capture": "Disposable CircuitBreaker_API36_QA; no personal account, ads, purchases or paid APIs.",
+    "audio": "Original project-owned score added to silent Android screen capture."
+  }
 }

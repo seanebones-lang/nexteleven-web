@@ -26,13 +26,13 @@ function AppCard({app, platform}: {app: AppCardData; platform: Platform}) {
 function CircuitFeature() {
   return <article className={styles.featured} aria-labelledby="circuit-title">
     <div className={styles.featuredCopy}><div className={styles.appIdentity}><Image src="/apps-assets/circuit-breaker.webp" width={88} height={88} alt="" /><p className={styles.eyebrow}>Featured · Circuit Breaker</p></div>
-      <h3 id="circuit-title">Circuit Breaker:<br/><span>Kill Switch</span></h3><p>One circuit. A spreading threat. Route the kill signal, then take on FAILSAFE: 60 more puzzles and five new sectors.</p>
+      <h3 id="circuit-title">Circuit Breaker:<br/><span>Kill Switch</span></h3><p>Shut down rogue machines before corruption takes the grid. FAILSAFE adds 60 puzzles across five sectors: reroute to standby cores, keep the heartbeat live, connect paired keys and avoid decoys.</p>
       <ul><li>60 original campaign puzzles, free</li><li>FAILSAFE: try the first three levels free</li><li>Daily Breach and endless Containment</li></ul>
       <a className={styles.cyanButton} href={`${play}dev.nexteleven.circuitbreaker`} aria-label="Get Circuit Breaker on Google Play">Get it on Google Play <span aria-hidden="true">↗</span></a>
       <p className={styles.price}>Free download with ads. Optional one-time FAILSAFE expansion includes Remove Ads. More optional packs and fresh challenges are planned every month.</p>
       <div className={styles.policyLinks}><a href="/circuit-breaker/support.html">Support</a><a href="/circuit-breaker/privacy.html">Privacy</a></div>
     </div>
-    <figure className={styles.gameplay}><video controls playsInline preload="none" poster="/apps-assets/circuit-breaker-poster.jpg" aria-label="Circuit Breaker original campaign Android gameplay"><source src="/apps-assets/circuit-breaker-gameplay.mp4" type="video/mp4"/>Your browser does not support embedded video. <a href="https://www.youtube.com/shorts/46yaKVMx-Fc">Watch the gameplay on YouTube.</a></video><figcaption>Original campaign · Real Android gameplay · 27 seconds<br/><a href="https://www.youtube.com/shorts/46yaKVMx-Fc">Watch on YouTube ↗</a></figcaption></figure>
+    <figure className={styles.gameplay}><video controls playsInline preload="none" poster="/apps-assets/circuit-breaker-failsafe-poster.jpg" aria-label="Circuit Breaker FAILSAFE: two complete KEYHOLDER and MIRAGE puzzle solutions"><source src="/apps-assets/circuit-breaker-failsafe-solutions.mp4" type="video/mp4"/><track kind="captions" src="/apps-assets/circuit-breaker-failsafe.vtt" srcLang="en" label="English gameplay explanations"/>Your browser does not support embedded video. <a href="/apps-assets/circuit-breaker-failsafe-solutions.mp4">Watch the full FAILSAFE footage.</a></video><figcaption>FAILSAFE · Two complete sector-finale solutions · 3:22<br/>KEYHOLDER F3-12 → MIRAGE F4-12. Original-speed Android preview footage with explanatory captions and the game’s original score.<br/><a href="/apps-assets/circuit-breaker-failsafe-solutions.mp4">Open the full video ↗</a></figcaption></figure>
   </article>;
 }
 export default function AppShowcase({platform = "all"}: {platform?: Platform}) {
