@@ -10,7 +10,10 @@ The primary client website is [www.nexteleven.dev](https://www.nexteleven.dev/):
 
 ## Pages
 
-- `/apps`: consumer app showcase with official Google Play downloads, Circuit Breaker gameplay, Apple developer listing, and per-app support/privacy links.
+- `/apps`: consumer app showcase, with Circuit Breaker featured first, then Mihrab, CurioRound and WordLedger. Published dual-platform apps have both download buttons.
+- `/apps/android`: the Google Play collection, with the same design and a link to the Apple collection.
+- `/apps/apple`: all 13 verified public Apple listings, with official icons and App Store downloads, plus Google Play links where publicly available.
+- `src/lib/app-catalog.ts` is the shared card source. `public/apps-assets/SOURCES.json` records public source verification. Keep platform pricing and availability distinct.
 - `/`: the offering and routes to services, work, Sean’s background, and websites.
 - `/build`: services and starting points for business owners and technical teams.
 - `/diagnosis`: the $250 software diagnosis offer, scope, deliverables, fit check and email intake. Payment follows an agreed scope through an existing provider; this page does not take payments.

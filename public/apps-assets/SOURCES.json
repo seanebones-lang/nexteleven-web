@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-19",
+  "checked_at": "2026-10-20",
   "brand_assets": "Generated with the built-in image tool using NextEleven existing monogram; sized for Google Play; same studio identity used here.",
   "app_icons": "Owned NextEleven icons exported from current public Google Play developer page with browser pageAssets.",
   "gameplay": "Actual Android build5 emulator input; edited at1x with original game music.",
@@ -26,13 +26,95 @@
     "privacy": "https://www.nexteleven.dev/thriftflip/android-privacy.html"
   },
   "catalog_order": [
+    "Circuit Breaker",
+    "Mihrab",
+    "CurioRound",
+    "WordLedger",
     "ThriftFlip",
     "Tattoo Artist Helper",
-    "WordLedger",
     "Note to Self",
-    "Steady",
-    "Mihrab",
-    "Circuit Breaker"
+    "Steady"
   ],
-  "catalog_order_reason": "Lead with current practical work tools, followed by vocabulary, notes, wellbeing and worship; preserve the Circuit Breaker gameplay feature after the app grid. This is an editorial order, not a popularity or revenue ranking."
+  "catalog_order_reason": "Explicit order requested by Sean. Circuit Breaker featured first; platform-specific pages include only verified public downloads.",
+  "apple_catalog": {
+    "6760983163": {
+      "name": "Note to Self: Capture & Keep",
+      "version": "1.1.0",
+      "url": "https://apps.apple.com/us/app/note-to-self-capture-keep/id6760983163",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/94/f2/be/94f2be86-b552-c95c-47ec-72b74cb92324/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    "6755074789": {
+      "name": "If Then Reset Mental Wellness",
+      "version": "2.3",
+      "url": "https://apps.apple.com/us/app/if-then-reset-mental-wellness/id6755074789",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a3/9a/ee/a39aee37-f655-e719-c80e-4463e00188df/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    "6756839962": {
+      "name": "ShopAssistPro",
+      "version": "1.0",
+      "url": "https://apps.apple.com/us/app/shopassistpro/id6756839962",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/31/89/9c/31899ce4-e9e6-2357-3c67-6e3a714be1cd/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    "6753762161": {
+      "name": "Tattoo Artist Helper",
+      "version": "2.0.0",
+      "url": "https://apps.apple.com/us/app/tattoo-artist-helper/id6753762161",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/40/4a/9c404ac9-2cc2-2cf5-d8de-58183dd8f4fc/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg"
+    },
+    "6757375263": {
+      "name": "WordLedger: Daily Vocabulary",
+      "version": "2.1.0",
+      "url": "https://apps.apple.com/us/app/wordledger-daily-vocabulary/id6757375263",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/24/c8/7224c817-0990-1fe6-e3a3-26106d01c6ae/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    "6753828995": {
+      "name": "ThriftFlip: Reseller Ledger",
+      "version": "3.0.0",
+      "url": "https://apps.apple.com/us/app/thriftflip-reseller-ledger/id6753828995",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7c/6e/a4/7c6ea40a-864d-3fd4-0fca-e46f37c4c3fb/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    "6756255735": {
+      "name": "Habits by NextEleven",
+      "version": "1.0",
+      "url": "https://apps.apple.com/us/app/habits-by-nexteleven/id6756255735",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ba/91/43/ba9143eb-732e-c417-dc91-c67dc4042113/AppIcon-0-0-1x_U007emarketing-0-3-P3-85-220.png/512x512bb.jpg"
+    },
+    "6755539958": {
+      "name": "Scanner App by NextEleven",
+      "version": "1.4",
+      "url": "https://apps.apple.com/us/app/scanner-app-by-nexteleven/id6755539958",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bc/31/08/bc310839-7b62-8c5f-b8d8-b9ea788d8754/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg"
+    },
+    "6757112328": {
+      "name": "ImanLinkPRO",
+      "version": "2.0",
+      "url": "https://apps.apple.com/us/app/imanlinkpro/id6757112328",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/57/64/5d/57645d95-fb32-c7d2-570e-e5bca76b6207/AppIcon-0-0-1x_U007emarketing-0-1-P3-85-220.png/512x512bb.jpg"
+    },
+    "6757017277": {
+      "name": "DreamWeavePRO",
+      "version": "1.0",
+      "url": "https://apps.apple.com/us/app/dreamweavepro/id6757017277",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/df/c9/d7/dfc9d718-f607-4510-21a7-7c97101662b1/AppIcon-0-0-1x_U007epad-0-1-P3-85-220.png/512x512bb.jpg"
+    },
+    "6753739815": {
+      "name": "ImanLink",
+      "version": "1.0",
+      "url": "https://apps.apple.com/us/app/imanlink/id6753739815",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/95/f9/f3/95f9f387-a69a-1ad4-5435-5bfdd78595c0/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    "6760620146": {
+      "name": "CurioRound: Daily Trivia",
+      "version": "2.0",
+      "url": "https://apps.apple.com/us/app/curioround-daily-trivia/id6760620146",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ab/70/d8/ab70d8de-01cf-4885-4975-3a1e47b39357/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    "6777162376": {
+      "name": "ElevenClean: Developer Cleanup",
+      "version": "1.2.0",
+      "url": "https://apps.apple.com/us/app/elevenclean-developer-cleanup/id6777162376",
+      "icon_source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f8/a9/c6/f8a9c654-7e1c-d404-ebd0-f2b6a1ef9c38/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png"
+    }
+  },
+  "curioround_android": "Public Play URL returned Not Found; Play Console independently shows Internal testing and Changes in review on October20. No public Android download button."
 }
