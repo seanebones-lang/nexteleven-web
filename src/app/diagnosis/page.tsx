@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/diagnosis" },
 };
 
-const email = "mailto:nextelevenstudios@gmail.com?" + Object.entries({
+const email = "mailto:hello@nexteleven.dev?" + Object.entries({
   subject: "Software diagnosis — project fit",
   body: "What should happen:\n\nWhat happens instead:\n\nTechnology or public project link:\n\nHow I reproduce the issue:\n\nMy deadline:\n\nPlease check whether this fits the $250 diagnosis.\n",
 }).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join("&");
@@ -46,7 +46,7 @@ export default function DiagnosisPage() {
         <li><strong>Get the findings.</strong> You receive the diagnosis and repair plan. Implementation, deployment, ongoing support, hosting, and API charges are separate and require an agreed quote.</li>
       </ol><p>The fee covers the investigation and written findings. A repair or a confirmed root cause is not guaranteed within the time limit. If access blocks progress, I’ll document that clearly. Any applicable tax is shown on the invoice before payment.</p></section>
       <section className={styles.proof}><p className="section-label">Examples of my work</p><h2>Inspect the work before you hire.</h2><p>I build and maintain software across business workflows, applied AI, and developer tools. You can inspect the source and documented limits of my public projects.</p><div><Link href="/work">Selected software and client work ↗</Link><Link href="/deadbolt">DeadBolt: local agent execution gate ↗</Link><a href="https://github.com/seanebones-lang/personal-RAG">PersonalRAGVault source ↗</a></div></section>
-      <section className={styles.contact}><h2>What’s getting in the way?</h2><p>A plain-language description is enough to begin.</p><a className="primary-action" href={email}>Email Sean about the issue <span aria-hidden="true">↗</span></a><p>nextelevenstudios@gmail.com · DFW and remote engagements</p></section>
+      <section className={styles.contact}><h2>What’s getting in the way?</h2><p>A plain-language description is enough to begin.</p><a className="primary-action" href={email}>Email Sean about the issue <span aria-hidden="true">↗</span></a><p>hello@nexteleven.dev · DFW and remote engagements</p></section>
     </main>
     <SiteFooter />
   </>;

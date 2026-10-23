@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 const services = [
+  { title: "Security engineering & ongoing care", copy: "Find exposure across websites, applications, cloud access and AI workflows. Agree on practical fixes, test the changes, and keep a clear recovery path.", examples: "Security checkups, application and API reviews, AI tool permissions, hardening, release verification and ongoing maintenance." },
   { title: "Custom business software", copy: "Replace a manual process, scattered spreadsheet, or awkward workaround with a tool designed around the people using it.", examples: "Internal tools, inventory workflows, customer records, dashboards, reporting, and backend services." },
   { title: "Applied AI consulting & implementation", copy: "Work out where AI can help, then build and evaluate a useful implementation. That can mean finding answers in documents, assisting a workflow, or connecting a model to existing tools.", examples: "Document retrieval, source citations, LLM integrations, tool calling, evaluations, and human review." },
   { title: "Software repair & improvement", copy: "Bring me an application that is failing, unfinished, or difficult to maintain. I can investigate the problem, make a focused repair, and verify the paths affected by the change.", examples: "API failures, unreliable workflows, broken builds, release problems, tests, and technical handoff." },
@@ -30,12 +31,16 @@ export default function BuildPage() {
         <a className="primary-action" href="#start">Discuss your project <span>↗</span></a>
         <p>Have one broken workflow to investigate? <Link href="/diagnosis">Start with a $250 software diagnosis ↗</Link></p>
       </section>
+      <section className="security-service-banner" aria-labelledby="security-service-title">
+        <div><p className="section-label">Security is part of the work</p><h2 id="security-service-title">Keep your business moving.</h2><p>Security reviews, tested fixes and ongoing care for websites, software and connected AI tools.</p></div>
+        <Link className="primary-action" href="/security">Explore security services <span aria-hidden="true">↗</span></Link>
+      </section>
       <section className="audience-section" aria-labelledby="audience-title">
         <p className="section-label">Two ways to start</p>
         <h2 id="audience-title">Start where you are.</h2>
         <div className="audience-grid">
-          <article id="business"><p className="section-label">For business owners</p><h3>Start with what needs to work better.</h3><p>You don’t need to choose a programming language or know whether you need AI. Show me the process, the tools you use, and where things get stuck. I’ll help define a practical next step.</p><a href="mailto:nextelevenstudios@gmail.com?subject=Help%20with%20a%20business%20workflow">Describe the problem ↗</a></article>
-          <article id="technical"><p className="section-label">For technical teams</p><h3>Bring me into the implementation.</h3><p>Share the repository, architecture, backlog, or failure you’re investigating. I can work on backend services, integrations, retrieval, developer tools, tests, and release work within an agreed scope.</p><a href="mailto:nextelevenstudios@gmail.com?subject=Software%20engineering%20engagement">Discuss the engineering work ↗</a></article>
+          <article id="business"><p className="section-label">For business owners</p><h3>Start with what needs to work better.</h3><p>You don’t need to choose a programming language or know whether you need AI. Show me the process, the tools you use, and where things get stuck. I’ll help define a practical next step.</p><a href="mailto:hello@nexteleven.dev?subject=Help%20with%20a%20business%20workflow">Describe the problem ↗</a></article>
+          <article id="technical"><p className="section-label">For technical teams</p><h3>Bring me into the implementation.</h3><p>Share the repository, architecture, backlog, or failure you’re investigating. I can work on backend services, integrations, retrieval, developer tools, tests, and release work within an agreed scope.</p><a href="mailto:hello@nexteleven.dev?subject=Software%20engineering%20engagement">Discuss the engineering work ↗</a></article>
         </div>
       </section>
       <section className="services-section" aria-labelledby="services-title">

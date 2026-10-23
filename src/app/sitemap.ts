@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/work", "/build", "/presence", "/deadbolt", "/diagnosis", "/apps", "/apps/apple", "/apps/android"];
+  const routes = ["", "/about", "/work", "/build", "/presence", "/security", "/security/pricing", "/deadbolt", "/diagnosis", "/apps", "/apps/apple", "/apps/android"];
   return [
     ...routes.map((route) => ({
       url: `https://www.nexteleven.dev${route}`,
-      lastModified: new Date(route.startsWith("/apps") ? "2026-10-20" : "2026-10-12"),
+      lastModified: new Date(route.startsWith("/security") || route === "/build" ? "2026-10-23" : route.startsWith("/apps") ? "2026-10-20" : "2026-10-12"),
       changeFrequency: "monthly" as const,
       priority: route === "" ? 1 : 0.8,
     })),

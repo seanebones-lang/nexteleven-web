@@ -33,4 +33,18 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--electric);outline-
 @media(max-width:360px){.inner-header nav a[href="/presence"]{display:none}}
 
 /* Official per-product launch links, sized for desktop and narrow cards. */
+.mobile-primary{display:none}.site-footer nav{flex-wrap:wrap}
+.security-service-banner{display:flex;align-items:center;justify-content:space-between;gap:3rem;padding:3rem clamp(1.25rem,6vw,6.5rem);border-bottom:1px solid var(--line);background:#111c2d}.security-service-banner h2{font-size:clamp(2rem,3vw,3rem);letter-spacing:-.05em;margin:.75rem 0}.security-service-banner p:not(.section-label){color:var(--muted);max-width:55ch;line-height:1.65}.security-service-banner>a{flex-shrink:0}
+@media(max-width:900px){
+ .site-header .desktop-primary,.inner-header .desktop-primary{display:none}
+ .mobile-primary{display:block;position:relative}
+ .mobile-primary summary{display:flex;gap:1rem;align-items:center;justify-content:space-between;min-height:44px;min-width:90px;cursor:pointer;padding:.5rem .75rem;border:1px solid var(--line);font:.85rem var(--font-mono),monospace;list-style:none}
+ .mobile-primary summary::-webkit-details-marker{display:none}.mobile-primary summary span{color:var(--electric)}.mobile-primary[open] summary span{transform:rotate(45deg)}
+ .site-header .mobile-primary nav,.inner-header .mobile-primary nav{position:absolute;right:0;top:calc(100% + .75rem);width:min(22rem,calc(100vw - 2rem));display:grid;gap:0;padding:.5rem;background:#111923;border:1px solid #46556c;box-shadow:0 16px 45px #0007}
+ .site-header .mobile-primary nav a,.inner-header .mobile-primary nav a{display:block;min-height:48px;padding:1rem;font-size:.9rem;letter-spacing:.02em;text-transform:none;border-bottom:1px solid var(--line)}
+ .site-header .mobile-primary nav a:last-child,.inner-header .mobile-primary nav a:last-child{border-bottom:0}
+ .inner-header .mobile-primary nav a[href="/presence"]{display:block}
+ .mobile-primary nav a:hover{background:#5b8cff12}
+ .security-service-banner{flex-direction:column;align-items:flex-start;gap:1rem}
+}
 .product-hunt-badge{margin-top:1.5rem;max-width:100%}.product-hunt-badge a{display:inline-block;max-width:100%;text-decoration:none}.product-hunt-badge img{display:block;width:250px;max-width:100%;height:auto}.product-hunt-badge span{display:block;margin-top:.6rem;color:var(--muted);font:.72rem var(--font-mono),monospace;letter-spacing:.04em}.product-hunt-badge a:is(:hover,:focus-visible) span{color:var(--electric);text-decoration:underline;text-underline-offset:.25rem}.product-hunt-badge a:focus-visible{outline:2px solid var(--electric);outline-offset:5px}
