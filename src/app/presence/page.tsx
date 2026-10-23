@@ -17,7 +17,7 @@ const process = [
 ] as const;
 const service = {
   "@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://www.nexteleven.dev/presence#service",
-  name: "NextEleven Websites & Customer Portals", url: "https://www.nexteleven.dev/presence", email: "nextelevenstudios@gmail.com",
+  name: "NextEleven Websites & Customer Portals", url: "https://www.nexteleven.dev/presence", email: "hello@nexteleven.dev",
   telephone: "833-925-6048", areaServed: "United States", parentOrganization: { "@id": "https://www.nexteleven.dev/#organization" },
   address: { "@type": "PostalAddress", addressLocality: "Mansfield", addressRegion: "TX", addressCountry: "US" },
 };

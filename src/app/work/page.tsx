@@ -58,7 +58,7 @@ export default function WorkPage() {
       <ProjectContact />
       <section className="consulting-section">
         <p className="section-label">For hiring teams</p>
-        <details className="hiring-details"><summary>Employment and longer-term engineering roles</summary><p>I’m also open to software engineering, applied AI, backend, integration, implementation, and developer tooling roles. I’m based in Mansfield, Texas, available remotely in the United States, and do not require sponsorship.</p><div className="work-actions"><a href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">Download résumé ↓</a><a href="mailto:nextelevenstudios@gmail.com?subject=Engineering%20role">Discuss a role ↗</a></div></details>
+        <details className="hiring-details"><summary>Employment and longer-term engineering roles</summary><p>I’m also open to software engineering, applied AI, backend, integration, implementation, and developer tooling roles. I’m based in Mansfield, Texas, available remotely in the United States, and do not require sponsorship.</p><div className="work-actions"><a href="/downloads/Sean-McDonnell-Technical-Support-Implementation-Engineer-Resume.pdf">Download résumé ↓</a><a href="mailto:hello@nexteleven.dev?subject=Engineering%20role">Discuss a role ↗</a></div></details>
       </section>
     </main>
     <SiteFooter />

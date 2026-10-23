@@ -18,7 +18,7 @@ const skills = [
 const person = {
   "@context": "https://schema.org", "@type": "Person", "@id": "https://www.nexteleven.dev/about#sean-mcdonnell",
   name: "Sean McDonnell", jobTitle: "Software Engineer & Applied AI Consultant", url: "https://www.nexteleven.dev/about",
-  email: "nextelevenstudios@gmail.com", sameAs: ["https://github.com/seanebones-lang", "https://www.linkedin.com/in/mothership-ai"],
+  email: "hello@nexteleven.dev", sameAs: ["https://github.com/seanebones-lang", "https://www.linkedin.com/in/mothership-ai"],
   address: { "@type": "PostalAddress", addressLocality: "Mansfield", addressRegion: "TX", addressCountry: "US" },
   worksFor: { "@id": "https://www.nexteleven.dev/#organization" },
 };
