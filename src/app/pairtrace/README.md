@@ -52,3 +52,14 @@ Prepared from `origin/main` at `ab3f082a36c28c1a4626353e73b457e383dbe01b` on loc
 Read-only hosting check found Vercel project `nexteleven-public` under `nexteleven`, project ID `prj_eRR9evc9qiKi6LPlqkKCytToY9xe`. The canonical domain's pre-change production deployment was `dpl_CqwWdnQ83SmbGoiUwTZ4dKaVQx4v` (`nexteleven-public-ehel7d2s8-nexteleven.vercel.app`). These are release references, not a deployment of this patch.
 
 No push or deployment was performed during preparation. Before release, recheck repository-local Git/commit identity, the authorized GitHub/Vercel owner connection, and the existing project/domain. Verify staging content and promotion separately. After publication, confirm the exact three canonical URLs before supplying them to the app as live legal links. A rollback can revert the isolated pages commit; preserve the pre-change production deployment as the domain rollback anchor.
+
+## First production release checkpoint
+
+Verified 2026-10-24T14:46:23+00:00.
+
+- Pages source commit: `9f5a02535c46b48003dd74ab7e6f983e77fc2acc`; GitHub associates both author and committer with `seanebones-lang`. Repository-local identity was corrected to the verified owner; global Git settings were not changed.
+- Production-target staged deployment: `dpl_5XoadjnXRH7A67PamtBoX3ysDd7w`, https://nexteleven-public-omzhbimue-nexteleven.vercel.app. The actual Vercel Node 24 / Next 16.4.1 build completed successfully and authenticated output inspection included all three Pairtrace route families.
+- Staging used `--prod --skip-domain`; canonical custom domains stayed on the rollback deployment until promotion. Vercel assigned a generated project alias. Anonymous staging returned SSO redirects/noindex, so no anonymous page-content success was claimed. No automation-bypass credential was created.
+- The CLI link operation temporarily appended a duplicate `.vercel` ignore entry; this explains the staged `gitDirty=1` metadata. That entry was removed, with no runtime source or dependency change. The subsequent clean GitHub/main release is the final source-synchronization gate.
+- The exact Ready deployment was promoted. Public canonical Privacy, Terms and Support each returned 200, the expected title/canonical, no noindex, and existing security headers. Existing Routelle privacy was byte-identical to its baseline; Security and Security pricing retained identical rendered text and links.
+- Immutable pre-change rollback anchor remains `dpl_CqwWdnQ83SmbGoiUwTZ4dKaVQx4v`, https://nexteleven-public-ehel7d2s8-nexteleven.vercel.app. Promote that exact deployment through the existing project if rollback is required.
