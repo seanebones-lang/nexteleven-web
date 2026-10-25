@@ -7,7 +7,7 @@ import { ProductHuntBadge } from "@/components/ProductHuntBadge";
 
 export const metadata: Metadata = {
   title: "Selected software, AI & client work",
-  description: "Inspect Sean McDonnell’s client website work, open-source retrieval and developer tools, private software experience, and 13 applications published through NextEleven.",
+  description: "Inspect Sean McDonnell’s client website work, open-source retrieval and developer tools, private software experience, and apps published on Apple’s App Store and Google Play.",
   alternates: { canonical: "/work" },
 };
 
@@ -16,12 +16,13 @@ const projects = [
   { kind: "Open source · MIT", title: "PersonalRAGVault", problem: "Find useful information in a collection of documents and show where the answer came from.", work: "A local-first Python retrieval application combining keyword and vector search, reranking, source citations, APIs, and retrieval evaluation.", scope: "Demonstrates document ingestion, retrieval, backend APIs, and evaluation work.", href: "https://github.com/seanebones-lang/personal-RAG", action: "Inspect the repository", productHunt: "personalragvault" },
   { kind: "Open source · MIT", title: "Harness", problem: "Keep an AI assistant’s tools, model choices, and ongoing work manageable across projects.", work: "A Rust work assistant with exact provider/model routing, repository tools, resumable sessions, bounded workers, MCP, and terminal and local web interfaces.", scope: "Maintained for personal use. The acceptance record documents verified workflows and remaining checks.", href: "https://github.com/seanebones-lang/harness", action: "Inspect the repository", productHunt: "harness" },
   { kind: "Open source · Apache 2.0", title: "DeadBolt", problem: "Give an operator a way to withdraw an agent’s permission to start further tool actions.", work: "A lease-based authorization gate for integrated executors, with command-line controls, an MCP proxy, and documented integration examples.", scope: "Enforcement depends on the integration. It does not cancel an action that is already running.", href: "/deadbolt", action: "Explore DeadBolt", productHunt: "deadbolt" },
-  { kind: "Published applications", title: "Apps on Apple and Google Play", problem: "Turn focused application ideas into software that can be published and maintained.", work: "13 applications published on Apple’s App Store through NextEleven, plus Android releases including Steady, Note to Self, and Circuit Breaker on Google Play.", scope: "This is a publication record; it does not establish usage or business results.", href: "/apps", action: "Explore the apps" },
+  { kind: "Published applications", title: "Apps on Apple and Google Play", problem: "Turn focused application ideas into software that can be published and maintained.", work: "13 published Apple listings and nine published Google Play listings, including Routelle, CurioRound, WordLedger, ThriftFlip and Tattoo Artist Helper. Some apps are available on both stores.", scope: "This is a publication record; it does not establish usage or business results.", href: "/apps", action: "Explore the apps" },
   { kind: "Confidential client work", title: "Two substantial software systems", problem: "Build software around private business requirements and operating workflows.", work: "Two substantial software systems completed for private clients. I can discuss architecture, implementation choices, and verification without disclosing confidential client information.", scope: "Client identities and business outcomes are withheld.", href: null, action: null },
 ] as const;
 
 const proof = [
   { value: "13", label: "applications published through NextEleven", boundary: "Apple’s App Store publication record.", href: "https://apps.apple.com/us/developer/nexteleven-llc/id1839832497" },
+  { value: "9", label: "applications published on Google Play", boundary: "Google Play publication record.", href: "https://play.google.com/store/apps/dev?id=7608447669826597882" },
   { value: "2", label: "substantial private-client software systems completed", boundary: "Confidential client work.", href: null },
   { value: "MIT", label: "open-source Rust work assistant: Harness", boundary: "Documented personal-use acceptance checks.", href: "https://github.com/seanebones-lang/harness/blob/main/docs/PERSONAL_USE.md" },
   { value: "CI", label: "cross-platform build, lint, and test evidence", boundary: "Current runs show the tested source and scope.", href: "https://github.com/seanebones-lang/harness/actions/workflows/ci.yml" },
