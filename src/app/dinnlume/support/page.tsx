@@ -49,6 +49,7 @@ export default function DinnlumeSupport() {
     <details><summary>Can I rely on Vegan, Vegetarian or allergy exclusions?</summary>
       <p>These controls filter recipe declarations and ingredients; changing the dietary choice keeps your exclusions. Saved favorites remain readable with conflict warnings when your preferences change. A recipe with no declared allergens is not an allergy-safe claim.</p>
       <p>Always read actual package ingredients, possible traces and preparation directions. Recipe metadata and product databases can be incomplete, and text matching can miss synonyms. Dinnlume does not verify medical, allergy, cross-contact or dietary suitability.</p>
+      <p>Dinnlume is not a medical device. It does not diagnose, treat, cure or prevent medical conditions. Consult a qualified healthcare professional for medical advice or treatment.</p>
     </details>
     <details><summary>Will a cooking timer alert me with the phone locked?</summary>
       <p>The app saves your cooking step and timer. In Settings, Cooking reminders shows notification and alarm access. On supported Android versions, timely background reminders may need Alarms & reminders access as well as notifications.</p>
