@@ -1,0 +1,375 @@
+{
+  "checked_at_utc": "2026-10-25T16:18:48.294638+00:00",
+  "sources": [
+    {
+      "source": "google:dev.nexteleven.circuitbreaker",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.circuitbreaker&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.circuitbreaker&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.mihrab",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.mihrab&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.mihrab&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.wordledger",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.wordledger&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.wordledger&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.thriftflip",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.thriftflip&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.thriftflip&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.tattoohelper",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.tattoohelper&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.tattoohelper&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.nts",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.nts&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.nts&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.steady",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.steady&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.steady&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.facts",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.facts&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.facts&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.routelle",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.routelle&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/details?id=dev.nexteleven.routelle&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "google:dev.nexteleven.pairtrace",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.pairtrace&hl=en_US&gl=US",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "source": "google:dev.nexteleven.dinnlume",
+      "url": "https://play.google.com/store/apps/details?id=dev.nexteleven.dinnlume&hl=en_US&gl=US",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "source": "apple:catalog",
+      "url": "https://itunes.apple.com/lookup?id=1839832497&entity=software&country=us&limit=200",
+      "final_url": "https://itunes.apple.com/lookup?id=1839832497&entity=software&country=us&limit=200",
+      "status": 200,
+      "title": null,
+      "apps": [
+        {
+          "id": 6760983163,
+          "name": "Note to Self: Capture & Keep",
+          "version": "1.1.0",
+          "url": "https://apps.apple.com/us/app/note-to-self-capture-keep/id6760983163?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/94/f2/be/94f2be86-b552-c95c-47ec-72b74cb92324/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6757375263,
+          "name": "WordLedger: Daily Vocabulary",
+          "version": "2.1.0",
+          "url": "https://apps.apple.com/us/app/wordledger-daily-vocabulary/id6757375263?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/24/c8/7224c817-0990-1fe6-e3a3-26106d01c6ae/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6756839962,
+          "name": "ShopAssistPro",
+          "version": "1.0",
+          "url": "https://apps.apple.com/us/app/shopassistpro/id6756839962?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/31/89/9c/31899ce4-e9e6-2357-3c67-6e3a714be1cd/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6755074789,
+          "name": "If Then Reset Mental Wellness",
+          "version": "2.3",
+          "url": "https://apps.apple.com/us/app/if-then-reset-mental-wellness/id6755074789?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a3/9a/ee/a39aee37-f655-e719-c80e-4463e00188df/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6760620146,
+          "name": "CurioRound: Daily Trivia",
+          "version": "2.0",
+          "url": "https://apps.apple.com/us/app/curioround-daily-trivia/id6760620146?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ab/70/d8/ab70d8de-01cf-4885-4975-3a1e47b39357/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6753762161,
+          "name": "Tattoo Artist Helper",
+          "version": "2.0.0",
+          "url": "https://apps.apple.com/us/app/tattoo-artist-helper/id6753762161?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/40/4a/9c404ac9-2cc2-2cf5-d8de-58183dd8f4fc/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6753828995,
+          "name": "ThriftFlip: Reseller Ledger",
+          "version": "3.0.0",
+          "url": "https://apps.apple.com/us/app/thriftflip-reseller-ledger/id6753828995?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7c/6e/a4/7c6ea40a-864d-3fd4-0fca-e46f37c4c3fb/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6756255735,
+          "name": "Routelle: Habits & Routines",
+          "version": "2.0",
+          "url": "https://apps.apple.com/us/app/routelle-habits-routines/id6756255735?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2b/c9/2b/2bc92baa-b62d-926e-dcc0-9de723c28644/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6755539958,
+          "name": "Scanner App by NextEleven",
+          "version": "1.4",
+          "url": "https://apps.apple.com/us/app/scanner-app-by-nexteleven/id6755539958?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bc/31/08/bc310839-7b62-8c5f-b8d8-b9ea788d8754/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6757112328,
+          "name": "ImanLinkPRO",
+          "version": "2.0",
+          "url": "https://apps.apple.com/us/app/imanlinkpro/id6757112328?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/57/64/5d/57645d95-fb32-c7d2-570e-e5bca76b6207/AppIcon-0-0-1x_U007emarketing-0-1-P3-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6757017277,
+          "name": "DreamWeavePRO",
+          "version": "1.0",
+          "url": "https://apps.apple.com/us/app/dreamweavepro/id6757017277?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/df/c9/d7/dfc9d718-f607-4510-21a7-7c97101662b1/AppIcon-0-0-1x_U007epad-0-1-P3-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6753739815,
+          "name": "ImanLink",
+          "version": "1.0",
+          "url": "https://apps.apple.com/us/app/imanlink/id6753739815?uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/95/f9/f3/95f9f387-a69a-1ad4-5435-5bfdd78595c0/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+        },
+        {
+          "id": 6777162376,
+          "name": "ElevenClean: Developer Cleanup",
+          "version": "1.2.0",
+          "url": "https://apps.apple.com/us/app/elevenclean-developer-cleanup/id6777162376?mt=12&uo=4",
+          "seller": "Sean McDonnell",
+          "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f8/a9/c6/f8a9c654-7e1c-d404-ebd0-f2b6a1ef9c38/AppIcon-0-0-85-220-0-5-0-2x.png/512x512bb.png"
+        }
+      ]
+    },
+    {
+      "source": "google:developer",
+      "url": "https://play.google.com/store/apps/dev?id=7608447669826597882&hl=en_US&gl=US",
+      "final_url": "https://play.google.com/store/apps/dev?id=7608447669826597882&hl=en_US&gl=US",
+      "status": 200,
+      "title": null
+    },
+    {
+      "source": "site:android",
+      "url": "https://www.nexteleven.dev/apps/android",
+      "final_url": "https://www.nexteleven.dev/apps/android",
+      "status": 200,
+      "title": "Android apps on Google Play \u2014 NextEleven"
+    }
+  ],
+  "google_rendered_metadata": [
+    {
+      "file": "google-dev.nexteleven.wordledger.txt",
+      "h1": "WordLedger: Daily Vocabulary",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "WordLedger: Daily Vocabulary - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/LDd_EScFtYjg5eXNTh2Np7TZkDO6VZfO26vUmD1gjfCWE7HVuOUP8NycKgoqGkP3vlH1eP5OliB5V7PsQ0Sr=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-developer.txt",
+      "h1": "NextElevenAdditional Information",
+      "developer_links": [],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "Android Apps by NextEleven on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/Xej7MUwvcQ0LQ09LpLitBwMzmIUlsivlfnHYEjZrK-gUkwARcGl_Z2sQ9RuK1FgrGw"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.thriftflip.txt",
+      "h1": "ThriftFlip: Reseller Ledger",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "ThriftFlip: Reseller Ledger - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/muCW9MolFoo9-u09d4rysjMTbiLPGJ2Wy17KGbovjzV-MP2oxJgp8zsHxlHpClA0a2KkWqWm5AD-98Q-6cxZG7A=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.nts.txt",
+      "h1": "Note to Self: Capture & Keep",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "Note to Self: Capture & Keep - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/d3UV8IdCcrUFnaDT5FlUjb-98oMKMVBjPk2H1RLSxh_D9BnfCKOX9lsC7ktPvAMx3he9LKUXMl3zDb4aMKNIDcg=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.tattoohelper.txt",
+      "h1": "Tattoo Artist Helper",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "Tattoo Artist Helper - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/K9YwO2jGtBU8zNgT2SkKw8RH8X5rQHXN77ADIkqUVCx15KWDx228RhkhI2ZpvifeA4SVe8j1lmaT47NH-qDRWw=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.facts.txt",
+      "h1": "CurioRound: Daily Trivia",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "CurioRound: Daily Trivia - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/BJp48XmMxnMO7FM7XdAb_SGp1ysBczBo2Cg-wjA-l0poeVtn5FPYznTg6wfRBBk5L6iqSEtOpV8SziUnbkBR_Q=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.circuitbreaker.txt",
+      "h1": "Circuit Breaker: Kill Switch",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "Circuit Breaker: Kill Switch - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/s-TejbRW_FAFp4MhW8eVR-FxtTHZzsr0EGT_A08nmBWrMaDn6OQv4L4DwKZv66K5iKh551Ht2pYLKH6Iw7C_=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.routelle.txt",
+      "h1": "Routelle: Habits & Routines",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "Routelle: Habits & Routines - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/eytzzX6oJT9taPxmSp4rpCsvOBm-XUjYTzFjxtd10OcqiuuxGV8xei3Uho7FsILoiSuj0SrsEpFEGffIHBjKJiU=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.steady.txt",
+      "h1": "Steady: One Small Step",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "Steady: One Small Step - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/eRXwvlURM9CxzZLfARrHF1BL5l4JzO90kc8QPLtvADeDa4BIxVer4WTzmFGNXNap0_q5URy1jHmwjO3SCqQr7w=s0-br30"
+        }
+      ]
+    },
+    {
+      "file": "google-dev.nexteleven.mihrab.txt",
+      "h1": "Mihrab: Quran & Prayer Times",
+      "developer_links": [
+        "/store/apps/dev?id=7608447669826597882"
+      ],
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "Mihrab: Quran & Prayer Times - Apps on Google Play"
+        },
+        {
+          "property": "og:image",
+          "content": "https://play-lh.googleusercontent.com/5CBMALvZnDiRExvniikSsricEKd5tx35innzBTlSLw-BWSur2U75IYs0NmBpdvW8QSCOH5VMh7jKDHoAqqB-fg=s0-br30"
+        }
+      ]
+    }
+  ]
+}
