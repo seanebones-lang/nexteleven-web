@@ -1,10 +1,13 @@
 export function ProjectContact() {
-  const email = "mailto:hello@nexteleven.dev?subject=Let%E2%80%99s%20discuss%20a%20project&body=What%20I%E2%80%99m%20trying%20to%20do%3A%0A%0AWhat%E2%80%99s%20getting%20in%20the%20way%3A%0A%0AExisting%20website%2C%20software%2C%20or%20tools%3A%0A";
+  const email = "mailto:hello@nexteleven.dev?" + Object.entries({
+    subject: "Engineering project — fit and scope",
+    body: "The result we need:\n\nExisting software or a public project link:\n\nWhat needs building or changing:\n\nConstraints and target date:\n\nBudget range, if known:\n\nPlease keep passwords, API keys and private customer records out of this first message.\n",
+  }).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join("&");
   return <section className="contact-strip" id="start" aria-labelledby="contact-title">
-    <p className="section-label">Work with me</p>
-    <h2 id="contact-title">Tell me what you’re trying to do.</h2>
-    <p className="contact-copy">A plain-language description is enough to start. Tell me what needs to work, what’s getting in the way, and what you already have. I’ll help turn that into a clear next step.</p>
-    <div><a className="primary-action" href={email}>Email Sean <span>↗</span></a><a href="https://www.linkedin.com/in/mothership-ai">Connect on LinkedIn <span>↗</span></a></div>
-    <p className="contact-address">hello@nexteleven.dev · DFW and remote engagements</p>
+    <p className="section-label">Work with NextEleven</p>
+    <h2 id="contact-title">Bring us the difficult part.</h2>
+    <p className="contact-copy">A new platform, a system that needs connecting, or a failure that is holding up the next release. Tell us the result you need, what you already have and your constraints. We’ll turn that into a defined engineering scope.</p>
+    <div><a className="primary-action" href={email}>Discuss your project <span>↗</span></a><a href="https://www.linkedin.com/in/nextelevendev/">Connect on LinkedIn <span>↗</span></a></div>
+    <p className="contact-address">hello@nexteleven.dev · Sean McDonnell, owner · Texas and remote engagements</p>
   </section>;
 }
