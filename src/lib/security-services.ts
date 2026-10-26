@@ -40,7 +40,7 @@ export const securityPlans = [
       "An agreed application or workflow boundary and threat model.",
       "Source-backed review of the relevant identity, data and permission paths.",
       "Controlled validation of findings using safe test data and accounts.",
-      "For AI workflows: untrusted content, tool permissions, sensitive data and approval boundaries.",
+      "For AI workflows: instruction origins, configuration/endpoint changes, child-tool credential reach and approval boundaries.",
       "A technical report and an owner-friendly summary with a remediation plan.",
     ],
     boundary: "The quote defines review depth and test coverage. Remediation, retesting beyond the agreed scope and formal penetration testing are separate engagements.",
@@ -64,6 +64,14 @@ export const securityPlans = [
 
 export const securityFaqs = [
   {
+    question: "Does patching my server fix every affected app?",
+    answer: "Not always. Some applications ship their own runtime or certificate bundle. We establish the deployed version and affected path before recommending an update. For affected builds, rebuilding and redistributing the app can be necessary; changing the host alone may leave installed copies unchanged.",
+  },
+  {
+    question: "Will an agent security gate protect every action on a machine?",
+    answer: "Only actions routed through its enforcement boundary are covered. We inspect actual integration points, approvals and revocation behavior, and keep child-process credentials, operating-system access and network isolation explicit. No model instruction or single tool is a substitute for that review.",
+  },
+  {
     question: "Is this useful if my website is small?",
     answer: "Yes. A small site can still control your domain, route customer inquiries and connect to email or other services. The review follows what your business actually uses, so the work stays proportionate.",
   },
@@ -77,7 +85,7 @@ export const securityFaqs = [
   },
   {
     question: "Do you use AI in the work?",
-    answer: "Yes. AI-assisted research, code review and testing support the engineering process. Findings are checked against source or behavior, and a passing scanner score is not treated as proof of security. Any use of external AI services with private code or data is agreed with you first.",
+    answer: "Yes. NextEleven is an AI-led software company, with Sean McDonnell responsible for customer scope and commitments. AI agents support research, implementation and testing. Findings are checked against source or behavior; a passing scanner score is not proof of security. Any external AI use involving private code or data is agreed with you first.",
   },
   {
     question: "What if I need penetration testing or compliance work?",

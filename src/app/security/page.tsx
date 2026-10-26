@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { title: "Websites & business systems", text: "Review frameworks, plugins, forms and hosting configuration. Find stale software and unsafe settings, then plan fixes around the way customers use your site.", tags: "Public websites · CMS · Customer portals" },
+  { title: "Websites & business systems", text: "Match deployed frameworks, plugins and embedded dependencies to relevant advisories. Check whether untrusted inputs reach the affected path, then plan fixes around the way customers use your site.", tags: "Public websites · CMS · Customer portals" },
   { title: "Applications & APIs", text: "Trace identity, permissions and sensitive data through the code. Examine access controls, tenant boundaries, sessions, inputs and relevant failure paths.", tags: "Source review · Threat modeling · Controlled tests" },
-  { title: "AI agents & integrations", text: "Examine what happens when untrusted content reaches a model with tools. Review data exposure, prompt injection, tool permissions and approval boundaries.", tags: "Agents · Retrieval · Connected tools" },
-  { title: "Cloud & developer access", text: "Review account privileges, repository integrations, secrets handling and release permissions. Reduce unnecessary access while preserving the services you rely on.", tags: "Cloud accounts · GitHub · Delivery pipelines" },
-  { title: "Devices & recovery", text: "Review selected workstation permissions, startup services, encryption and backups. Define what needs recovering and verify the agreed recovery path.", tags: "Workstations · Backups · Restore exercises" },
+  { title: "AI agents & integrations", text: "Trace untrusted instructions, configuration and endpoint changes, tool permissions and approvals. Check what an agent and its child tools can access, and where independent enforcement actually applies.", tags: "Agents · Retrieval · Connected tools" },
+  { title: "Cloud & developer access", text: "Review GitHub workflow changes, repository integrations, token reach and release permissions. Reduce unnecessary credential exposure while preserving the services you rely on.", tags: "Cloud accounts · GitHub · Delivery pipelines" },
+  { title: "Devices & recovery", text: "Review selected workstation permissions, developer-tool trust stores, startup services, encryption and backups. Define what needs recovering and verify the agreed recovery path.", tags: "Workstations · Backups · Restore exercises" },
   { title: "Ongoing security care", text: "Keep an agreed review and maintenance schedule. Turn supported alerts into clear decisions, approved updates and a record of what changed.", tags: "Scheduled reviews · Maintenance · Owner reports" },
 ] as const;
 
@@ -80,7 +80,7 @@ export default function SecurityPage() {
           <article><span className={styles.evidenceIndex}>01 / Ownership</span><h3>Hosting does not maintain your application.</h3><p>Even managed hosting leaves responsibilities with the owner. Vercel assigns customers responsibility for application code, access and integrations. Someone still needs to do that work.</p><a href="https://vercel.com/docs/security/shared-responsibility">See the responsibility split <span aria-hidden="true">↗</span></a></article>
           <article><span className={styles.evidenceIndex}>02 / New connections</span><h3>AI tools add permissions to protect.</h3><p>OWASP identifies prompt injection as a risk when untrusted content changes a model’s behavior. The stakes grow when that model can use tools or access private information.</p><a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">Read OWASP’s guidance <span aria-hidden="true">↗</span></a></article>
         </div>
-        <div className={styles.businessNote}><span aria-hidden="true">↳</span><p><strong>A small business still has something to protect.</strong> Your domain, customer inquiries, staff accounts, source code and ability to keep operating all matter. Security belongs in the operating budget.</p></div>
+        <div className={styles.businessNote}><span aria-hidden="true">↳</span><p><strong>A current advisory is a reason to verify exposure.</strong> We match the actual deployed software, credential reach and trust stores to the report. A dependency name or a successful browser connection alone does not establish whether your system is affected.</p></div>
       </section>
 
       <section className={styles.section} id="coverage" aria-labelledby="coverage-title">
@@ -95,8 +95,9 @@ export default function SecurityPage() {
       </section>
 
       <section className={styles.section} aria-labelledby="pricing-title">
-        <div className={styles.sectionIntro}><p className="section-label">Clear starting points</p><h2 id="pricing-title">Choose the next useful step.</h2><p>Start with a checkup, act on known findings or scope a deeper review. Ongoing care keeps the agreed basics current.</p></div>
+        <div className={styles.sectionIntro}><p className="section-label">Clear starting points</p><h2 id="pricing-title">Choose the next useful step.</h2><p>Start with a $495 checkup, act on known findings or scope a deeper review. For one broken workflow, our $250 software diagnosis is a smaller starting point.</p></div>
         <SecurityPlanCards />
+        <p className={styles.pricingFoot}><Link href="/diagnosis">One broken build, API or software workflow? See the $250 diagnosis ↗</Link></p>
         <div className={styles.pricingFoot}><p>Prices in USD. Scope, access, delivery dates and final fees are confirmed before invoicing. Hosting and third-party charges are separate.</p><Link href="/security/pricing">Compare the full scope <span aria-hidden="true">↗</span></Link></div>
       </section>
 

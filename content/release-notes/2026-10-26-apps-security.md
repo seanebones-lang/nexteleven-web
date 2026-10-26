@@ -1,0 +1,9 @@
+# October 26 apps and security-services refresh
+
+The public US store catalog was checked against official Apple lookup/developer records and full Google Play listings. Avenrest3.0 and ImanLink2.0.1 are public; Pairtrace, Dinnlume and Vellomere have official Install controls and free/InStock offers. Removed the retired Scanner card. Retained current public ShopAssistPro and DreamWeavePRO identities, with explicit pending Aislevar/Dusklilt update notes. Removed brittle total counts and used official developer-account links. Updated current public icons and customer-support contact.
+
+Security copy now explicitly covers instruction origins, configuration/endpoint changes, child-tool credential reach, GitHub/release permissions and embedded runtime/trust-store remediation. It does not claim any customer is affected by current advisories or that one gate protects direct/OS/network actions outside its boundary. NextEleven's AI-led delivery model, private-data approval and limitations are explicit. Existing prices, assessment hours, quotes, consent and no-guarantee boundaries are preserved. A link connects the smaller existing$250 diagnosis offer to the security page.
+
+Checks: independent source/copy review; ESLint passed; optimized Next16.4.1 build/TypeScript passed after using a plain anchor for stored static HTML support URLs. Official storefront checks cover US availability, not worldwide availability, installations, sales, billing or runtime feature acceptance. Provider deployment/visual/public checks are recorded separately in private operating receipts. No app store records or client sites were changed for this refresh.
+
+Before production, retain rollback deployment dpl_4BQ7PU6bcpWJYLqtTNUtSByaVcs5. Stage without changing custom domains; accept modern browser layouts, verify hosting build, then promote and check canonical public content/links. Git push is not publication.
