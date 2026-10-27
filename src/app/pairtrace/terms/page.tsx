@@ -12,7 +12,7 @@ export default function PairtraceTerms() {
   return <article>
     <p className={styles.label}>PAIRTRACE / PLANS & TERMS</p>
     <h1>A clear plan for the work you do.</h1>
-    <p className={styles.notice}>Pairtrace is being prepared for release. Intended U.S. Plus prices are $9.99 per month or $69.99 per year. A purchase is available only when the installed app presents a live store offer. Google Play shows the actual localized price, currency, billing period and final confirmation before charging you. This website does not start a payment.</p>
+    <p className={styles.notice}>Pairtrace is available on Google Play. Check the listing for availability in your region. Intended U.S. Plus prices are $9.99 per month or $69.99 per year. A purchase is available only when the installed app presents a live store offer. Google Play shows the actual localized price, currency, billing period and final confirmation before charging you. This website does not start a payment.</p>
 
     <h2>Free tools and optional Plus</h2>
     <p>The free allowance includes one real job with up to 25 cables, alongside the fictional sample job. The core workflow includes on-device label recognition, manual entry, observations, review and handover tools. Plus allows additional jobs and larger cable schedules within the app’s technical limits. No advertising is included.</p>
