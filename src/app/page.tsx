@@ -1,8 +1,2 @@
-import type { Metadata } from "next";
-import { HomePanels } from "@/components/home/HomePanels";
-export const metadata: Metadata = {
-  title: "NextEleven | AI-Led Software Engineering",
-  description: "NextEleven designs, builds, integrates and improves complex software across backend systems, APIs, web, mobile, cloud and AI. Accountable ownership, coordinated AI-led delivery.",
-  alternates: { canonical: "/" },
-};
-export default function HomePage() { return <HomePanels />; }
+import { CompanyHeader, CompanyFooter, ProductIndex, OtherWork, Arrow } from '@/components/company/CompanySite';
+export default function HomePage(){return <div className="company-v2"><CompanyHeader/><main><section className="co-intro"><h1>Serious software.<br/><span>Clear purpose.</span></h1><div><p>We build systems that help agents do useful work, help developers understand their tools, and help businesses solve difficult software problems.</p><a className="co-button" href="mailto:hello@nexteleven.dev">Discuss your project <Arrow/></a><a className="co-textlink" href="/build">Explore engineering services</a></div></section><section className="co-work"><div className="co-section-title"><h2>See what the work makes possible.</h2><p>Start with the problem. Explore the system. Inspect the engineering.</p></div><ProductIndex/></section><section className="co-services"><h2>Have a different problem?<br/>That’s where we start.</h2><div><p>Custom software. API integrations. Application rescue. Web and mobile products. We work from the problem through implementation, testing and handoff.</p><a href="/build">Find the right service <Arrow/></a><p className="co-accountability">NextEleven is an AI-led software company founded by Sean McDonnell, with human ownership of the work.</p></div></section><OtherWork/></main><CompanyFooter/></div>}

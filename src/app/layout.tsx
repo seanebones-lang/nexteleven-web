@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./company-v2.css";
 const sans = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 export const metadata: Metadata = { metadataBase: new URL("https://www.nexteleven.dev"), title: { default: "NextEleven — Sean McDonnell", template: "%s — NextEleven" }, description: "Software engineering and applied AI consulting from Sean McDonnell at NextEleven. Custom software, integrations, application improvements, and business websites." };
