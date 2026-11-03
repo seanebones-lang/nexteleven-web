@@ -1,80 +1,331 @@
-%PDF-1.4
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%PDF-1.3
+%âãÏÓ
 1 0 obj
 <<
-/F1 2 0 R /F2 3 0 R /F3 4 0 R
+/PageMode /UseNone
+/Pages 2 0 R
+/Type /Catalog
 >>
 endobj
 2 0 obj
 <<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+/Count 1
+/Kids [ 3 0 R ]
+/Type /Pages
 >>
 endobj
 3 0 obj
 <<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+/Contents 4 0 R
+/MediaBox [ 0 0 612 792 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
 >>
 endobj
 4 0 obj
 <<
-/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+/Length 9816
 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 45.6 731.6 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 3 Tm /F2 19 Tf 22 TL 172.259 0 Td (SEAN McDONNELL) Tj T* -172.259 0 Td ET
+Q
+Q
+q
+1 0 0 1 45.6 718.1 cm
+q
+BT 1 0 0 1 0 2.3 Tm 11.5 TL /F2 9.2 Tf .176471 .372549 .545098 rg (Technical Support & Implementation Engineer | Python \267 TypeScript \267 APIs \267 Applied AI) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 695.1 cm
+q
+BT 1 0 0 1 0 12.8 Tm 10.5 TL /F1 8.2 Tf .286275 .32549 .384314 rg (Mansfield, Texas \267 Remote \(United States\) \267 U.S. citizen \267 No sponsorship required) Tj  T* (833-925-6048 \267 nextelevenstudios@gmail.com \267 github.com/seanebones-lang \267 linkedin.com/in/mothership-ai) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 675.1 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 1.8 Tm /F2 9.2 Tf 11 TL (PROFESSIONAL SUMMARY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 618.1 cm
+q
+.109804 .14902 .2 rg
+BT 1 0 0 1 0 44.75 Tm /F1 8.25 Tf 10.6 TL (Hands-on software engineer and client-service professional combining Python and TypeScript troubleshooting, API integration, applied-AI) Tj T* (systems, technical documentation, and 27 years of high-trust customer work. Portfolio includes 12 applications published on Apple\222s App Store) Tj T* (through NextEleven, a completed bilingual web-presence delivery for JP Transmission Recycling, and completed confidential-client systems.) Tj T* (Recent public proof includes a Rust coding agent with a 376-test binary suite and an 11-job cross-platform CI matrix. Seeking remote technical) Tj T* (support, developer support, implementation, integration, or customer-engineering roles.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 600.1 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 1.8 Tm /F2 9.2 Tf 11 TL (SUPPORT AND TECHNICAL SKILLS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 574.9 cm
+q
+BT 1 0 0 1 0 12.95 Tm 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (Troubleshooting and support:) Tj /F1 8.25 Tf ( Failure reproduction \267 log and error analysis \267 root-cause isolation \267 API debugging \267 technical documentation \267) Tj T* (runbooks \267 human-review and escalation workflows) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 560.3 cm
+q
+BT 1 0 0 1 0 2.35 Tm 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (Languages:) Tj /F1 8.25 Tf ( Python \267 TypeScript/JavaScript \267 Rust \267 Kotlin \267 Swift \267 SQL \267 Bash) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 545.7 cm
+q
+BT 1 0 0 1 0 2.35 Tm -0.11343 Tw 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (APIs, backend, and data:) Tj /F1 8.25 Tf ( FastAPI \267 REST APIs \267 PostgreSQL/pgvector \267 SQLite \267 Redis \267 Docker \267 Git \267 GitHub Actions \267 automated testing \267 CI) Tj T* 0 Tw ET
+Q
+Q
+q
+1 0 0 1 45.6 531.1 cm
+q
+BT 1 0 0 1 0 2.35 Tm 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (AI and integrations:) Tj /F1 8.25 Tf ( LLM APIs \267 tool calling \267 MCP \267 embeddings \267 RAG ingestion and retrieval \267 source citations \267 multi-provider integrations) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 516.5 cm
+q
+BT 1 0 0 1 0 2.35 Tm 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (Interfaces:) Tj /F1 8.25 Tf ( React \267 Next.js \267 Jetpack Compose \267 SwiftUI \267 HTTP/SSE \267 responsive web interfaces \267 operator dashboards) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 498.5 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 1.8 Tm /F2 9.2 Tf 11 TL (RELEVANT EXPERIENCE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 482.5 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 2 Tm /F2 9 Tf 11 TL (Software Engineer \227 Independent Projects, NextEleven LLC) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 471.7 cm
+q
+.286275 .32549 .384314 rg
+BT 1 0 0 1 0 1.75 Tm /F3 8.05 Tf 9.8 TL (September 2025\226Present \267 Mansfield, Texas / Remote) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 447.5 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+BT 1 0 0 1 10 12.95 Tm 1.5 0 Td 10.6 TL /F1 8.25 Tf .109804 .14902 .2 rg (Built and published ) Tj /F2 8.25 Tf (12 applications on Apple\222s App Store through NextEleven) Tj /F1 8.25 Tf ( across productivity, utilities, lifestyle, commerce,) Tj T* -1.5 0 Td (wellness, and specialized operator workflows.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 413.1 cm
+q
+BT 1 0 0 1 2 23.55 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+BT 1 0 0 1 10 23.55 Tm 1.5 0 Td 10.6 TL /F1 8.25 Tf .109804 .14902 .2 rg (Designed and built a complete modern, bilingual web presence for ) Tj /F2 8.25 Tf (JP Transmission Recycling) Tj /F1 8.25 Tf (: buyer and seller paths, responsive) Tj T* -1.5 0 Td (presentation, routed inquiry flow, Ask JP assistance, and a solid foundation for a separately scoped future e-commerce, inventory, and) Tj T* (checkout phase.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 389.3 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+.109804 .14902 .2 rg
+BT 1 0 0 1 10 12.95 Tm /F1 8.25 Tf 10.6 TL 1.5 0 Td (Diagnosed and repaired Windows-specific CI failures in a Rust coding agent, correcting timeout and path-handling behavior without) Tj T* -1.5 0 Td (weakening release gates; the current GitHub Actions matrix passed all 11 jobs, including Windows build, release, lint, and test checks.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 365.5 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+BT 1 0 0 1 10 12.95 Tm 1.5 0 Td 10.6 TL /F1 8.25 Tf .109804 .14902 .2 rg (Built NextEleven Harness, an MIT-licensed work assistant with exact provider/model routing, sandboxed tools, MCP, SQLite-backed) Tj T* -1.5 0 Td (sessions, parallel workers, security documentation, HTTP/SSE interfaces, and a ) Tj /F2 8.25 Tf (376-test) Tj /F1 8.25 Tf ( binary suite.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 341.7 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+.109804 .14902 .2 rg
+BT 1 0 0 1 10 12.95 Tm /F1 8.25 Tf 10.6 TL 1.5 0 Td (Developed PersonalRAGVault, an MIT-licensed Python application with document ingestion, hybrid keyword/vector retrieval, reranking,) Tj T* -1.5 0 Td (citations, FastAPI/SSE access, retrieval evaluation, automated tests, and user documentation.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 325.7 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 2 Tm /F2 9 Tf 11 TL (Independent Software Consultant \227 Confidential Client Engagement) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 314.9 cm
+q
+.286275 .32549 .384314 rg
+BT 1 0 0 1 0 1.75 Tm /F3 8.05 Tf 9.8 TL (2025 \267 Remote) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 290.7 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+.109804 .14902 .2 rg
+BT 1 0 0 1 10 12.95 Tm /F1 8.25 Tf 10.6 TL 1.5 0 Td (Completed private-client contract work spanning two substantial software systems, translating leadership requirements into architecture,) Tj T* -1.5 0 Td (tested software, demonstrations, and technical specifications.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 266.9 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+.109804 .14902 .2 rg
+BT 1 0 0 1 10 12.95 Tm /F1 8.25 Tf 10.6 TL 1.5 0 Td (Designed and built a multi-location dealership parts and inventory system with Python, FastAPI, PostgreSQL/pgvector, Redis, and Next.js,) Tj T* -1.5 0 Td (including search, order and invoice workflows, operator dashboards, and fail-closed external integrations.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 243.1 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+.109804 .14902 .2 rg
+BT 1 0 0 1 10 12.95 Tm /F1 8.25 Tf 10.6 TL 1.5 0 Td (Implemented a second multi-component applied-AI system across Kotlin/Jetpack Compose and Python/FastAPI, integrating retrieval,) Tj T* -1.5 0 Td (workflow orchestration, multi-device services, and explicit human-review and escalation paths.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 227.1 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 2 Tm /F2 9 Tf 11 TL (Independent Tattoo Artist and Shop Owner) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 216.3 cm
+q
+.286275 .32549 .384314 rg
+BT 1 0 0 1 0 1.75 Tm /F3 8.05 Tf 9.8 TL (January 1998\226August 2025 \267 Texas \267 Spookshow Tattoo owner, 2006\2262014) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 192.1 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+.109804 .14902 .2 rg
+BT 1 0 0 1 10 12.95 Tm /F1 8.25 Tf 10.6 TL 1.5 0 Td -0.075232 Tw (Managed a high-trust client practice through consultation, requirements discovery, expectation setting, design iteration, scheduling, delivery,) Tj T* 0 Tw -1.5 0 Td (aftercare, and long-term relationships.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 168.3 cm
+q
+BT 1 0 0 1 2 12.95 Tm /F1 10 Tf 12 TL .109804 .14902 .2 rg (\177) Tj ET
+.109804 .14902 .2 rg
+BT 1 0 0 1 10 12.95 Tm /F1 8.25 Tf 10.6 TL 1.5 0 Td -0.11 Tw (Operated Spookshow Tattoo from 2006\2262014, handling customer intake, difficult conversations, shop standards, day-to-day operations, and) Tj T* 0 Tw -1.5 0 Td (time-sensitive client needs.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 150.3 cm
+q
+.07451 .133333 .219608 rg
+BT 1 0 0 1 0 1.8 Tm /F2 9.2 Tf 11 TL (SELECTED DELIVERY EVIDENCE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 125.1 cm
+q
+BT 1 0 0 1 0 12.95 Tm 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (Web presence:) Tj /F1 8.25 Tf ( JP Transmission Recycling \227 complete modern bilingual public foundation with clear buyer/seller paths, inquiry routing, and) Tj T* (future commerce intentionally deferred to a separate scope.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 89.3 cm
+q
+BT 1 0 0 1 0 23.55 Tm 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (Applied AI and developer tooling:) Tj /F1 8.25 Tf ( NextEleven Harness \227 Rust terminal agent with user-owned provider/model routing, MCP, sandboxed) Tj T* (repository tools, local interfaces, and 376 tests. PersonalRAGVault \227 local-first Python retrieval application with citations and formal) Tj T* (evaluation.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 45.6 64.1 cm
+q
+BT 1 0 0 1 0 12.95 Tm 10.6 TL /F2 8.25 Tf .109804 .14902 .2 rg (Client systems:) Tj /F1 8.25 Tf ( Confidential dealership workflow system and applied-AI workflow system \227 identities and commercial outcomes withheld;) Tj T* (completed engineering and delivery work described above.) Tj T* ET
+Q
+Q
+ 
+
+endstream
 endobj
 5 0 obj
 <<
-/Contents 9 0 R /MediaBox [ 0 0 612 792 ] /Parent 8 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
+/F1 6 0 R
+/F2 7 0 R
+/F3 8 0 R
 >>
 endobj
 6 0 obj
 <<
-/PageMode /UseNone /Pages 8 0 R /Type /Catalog
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 7 0 obj
 <<
-/Author (Sean McDonnell) /CreationDate (D:20260904074102-05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260904074102-05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (\(unspecified\)) /Title (Sean McDonnell \204 Technical Support & Implementation Engineer Resume) /Trapped /False
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 8 0 obj
 <<
-/Count 1 /Kids [ 5 0 R ] /Type /Pages
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 9 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 3809
+/Author (Sean McDonnell)
+/CreationDate (D\07220260904074102\05505\04700\047)
+/Creator (\050unspecified\051)
+/Keywords ()
+/ModDate (D\07220260904074102\05505\04700\047)
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Subject (\050unspecified\051)
+/Title (Sean McDonnell \204 Technical Support \046 Implementation Engineer Resume)
+/Trapped /False
 >>
-stream
-Gb!#^>Beg[&q801^sa?KO!oq9c"^V:Q.8@'mAQ>6DU6E46p_MqMI6J5NqVh#herLXU22l,2L.iVUWC(JF89G1Rt6"=_dD;ML3pph?Es*/I-(ZM[:0'-4(,+)2I!lkl]kg>3>cp0Cu"dT)=DLXgD^ZX53r&nqSTmq58j,HR,5Qo>(3l,T<7fh3ahr?Q4<t"fH1@S?oZ!i<Q*1KZccQr'4/Ac]q&G9s1hYWg$53R4*_++r/SNf`UPUm^(][?e"CKcp&4<?[\N4;?)q/\+--V9Lts-X_nh"KLP'#R6=R:-PmDSj%!g'_H($4RZ%'"R5)mNf,T4q(9%Y]Jb!ZN[rlZ(4CkjM_K$fsf%]NQb>,I_bq/S2K`O@[`V23dc][WubPL3pnW/2U<0<?Y:;AGg0'WM9PUL63;.Sc3,`LuZ1X<okg0cMS$W5DZq'/*n,'75uNp>P@D+u@<IKMo[7pqbd7f3NQ&-o:Z@;.t*QQq::ePVtUk1+iLJV&#1nKJY^$kkDb^0_@iJ_1d4^&YCfjM[,B3/<?S^s4ZnON4Ye;]*Gc"gZ<5Iq:l7ILp]j.nRA)+h>LG&pEGcWI6o:DOE`/>rZ7CX-6-)6r0u@2SS`03n9m(_g#DGe0=0b\rq?'VRP!FQgg&_7fs:DcM-V3Rl4'up@+#Feq6PJSK.d(6GIH?Jg9#^(L,OP+PK8!!Q;O.<O__d$M)sF#+n1_,Se:fbL4Z7*D1jVD-ZBHgX^r\bbQ=@-64KHQ<r"clAuAU_V`Fr[-Bh,>[Dd?FEJIWaLt=G(0U^R_%a1mILfBaC6.)sL"ClTd>T9OuCaZ\R0@RJR=GRKqLZjdkhfm`T;709+<7j'eo10]j3Hilu/nS2m$)Q;UT9,\^7skSo^sH.*<bYD;QL1?jG/nJ$\sW^B6m3N-*Q%PS!_qDhnihr=QYKqs!fKJkQ4H;(fLBTKB#.LddB]+iL5:u]&B<9Zf%AM^Th73uK$KP"T(;t5/CU^H_V91gWXt>/@#R]TcL.c&<(%5U>C,iPiIDmGn]4'GAe6u]ONcbk:b)NAJ4]4)>-h$UA%XY\0VI:/l(%-dVWF^.>7,@G955:#Q(*dTFQok/eK72\;RiL5,Yo%Xk7e@Z;!C6K"JOXC!CYb0M!4NG<B)Vg/J`9n<p]DNMQLL>f=1?#`T;%0lg*ZqKc#gTh+;ZkSICFh3\!cj)2V&gN9Y@#44ZKI'n<SWe:[RUrIVDC,BgHp%&,kkjhmoSj^&^+.gfu3+,haK1_>jr+jZ-Ud\rNThkEZ$`&cdnAXP&ULdufuo"E>4[8Qb<qR_.$'2OMk.3>#k#4K1U-pfktH8I3#*VE67)f+jX>4e7^FDceHZ<qZu4b(?kGeMPZOL!bm;]4TGI:#1\9lYISqmH=l1H2o]c1!amN+O+2mIpjY(6;gq-#nJG>P%>j,a$8"&^P\XAkY[CG+-[AWu@+&.$JMUJ3)lXp-FAQKU%.R/;acVPt8JafW]V]=.*&q?KZ*I)7id_YONV&bpgV/#-,HrXU7=SoR4PbTS"oeY:mi2jkO%:Q@0ZKEIE76ZUq#.C*&Gr9'Vo1_L3$n[>66YQJCZo="M'3%?%Nj"gY%N5kN\6N64#8!sfIA)/#S^R7-:9&'4_G7(a9dq'-HZDdf%op=($&2M]DFi*kSL.YHQ<L#?l;Q3))CM?9Z6W.i4&!ai-4X2XmT3@b`'YZ)-eOc#u8e8=Jg;pF5'\Hl'><a8-Hq@=nhV>ahkrU4@MZhKfq.lR;!@Wj]&h+hT7HX?n_\9Cd:>d$17rMiCQLrbt.P=VJTALcRFXZdpC&`6(g!fTlYj;[u-Sp?I95IF5-(]3]Mch`)Wp*)4[RM"72$[TW#,*!G)knL(@ed@o`I6`^LK5h!BK4ElIh."^!bI2N;i;MSp>q*WC[<;Cn"i`a7`B/g-h\$Pdk;(>!&0K#'&KAc(3dXIM?_EVL3K7j21N)Fn.r4s5bRPYZB4.*p'_$T'_8<NG/3:]e_3[L93Hh^)MJ%toNm[>5<sMDK6I8;G>gY:CW\WAHY6KHj+nl0lk]_g>`'`'As+cB4KTY"W6rqR?F&tf-fj5hiJmP#[FB/uqioSMBq'&aem]@S9je6@S$nRFB.F31AqD$5P36)>%&n-<BMP<eClUA,[Q_7\@pXCs;LgVtJ@@\W'b""!-8=h2k@oK0+/rPt3XWdtI&)gt[P%R/jKic(n>6&_`rP:*e0t2*L_KuR)dN(9@"V(Eg8HUL?Wd&CHA*ZG9eAr[?HR8JG5o#97_OGS7,HsCC&cq0e%>,*.-M0,68"0sHdaTsJFD6`!933mZ(M"VW#iK'.LMrIdXMp2a8.$^9=*UMq&ig5cCR\c6"1'RR6[h?_!"6lQ#r:]X^>p1blt*7NED321]p\+!>okS!BOt$_Fir5`6]h'gX6oP\GM?T>58o">=h%N-??9E52Th44fMtDclq'-pJ*<[qe1B5KU*P<)PQ^<B1.,kFcaMa9k$"f]`(`PjYVPuZVdR0/V:8@pCQ4g=i,K)fKR[g%WmJ7b"FQ-grH*]iZ(WE6.7<uX.Os3GL,r1Mi7jb`n/L)@mj2M&8O:91YT"%<^nBS+cs\[;]:#ib3)q4<#j&/P=DXOH9+rD(GDGPqCQ1`-0+MqmFC$dZ'c3cm6'A-c7T9,afQjC]Q)r;V(g>]8.6W+?j`Kd`_("/s%U5Q7TZp\,eJs#IWN<GHMI92Q&M2*WB*6,Cen.Wml=Na5Tu_a0D2Xp52=^GGjH:p&I<b\c]n8oFqaL.a)W`+u4TH#S'G(!fe!,P78V!#p`0Q,D;'CnM<9C;)WbLg>*_LO-L*q3a8Nmb7F)l:9Q*F";Y/;:N5tI9U$.ac&aAqXnF1OLWOm*MFY%j3MT!D\6].LN%7\b\EfQZ>=7[iOemT:4',SE3l/;nT[PI`b?6(&'u\:ilT;3`(]9gb,))j31M(+jTk:Q>V7#kB&H6_f63@Wt8IpPPtpRMo_G"VDXqc*AEP*76U@YKmg7r&8;dq;6o+Wm`\23Ntas7>:btm&Pg!lZf4%3icqkgr/XYl)938judoq3O1E-j_JG4BVKX'9AhBUX>5GiKi!o9B-tUN8`:i_M<^DN5!'alrBm'TK(0XP]N\%IMJ$<\lr%K[2lo]rSP%Sia$f,,@Jj!U&:B*kn:i;NnJZm4\Y'PPA\KI*IOl#;A&`(PoB%'@:e7c\g(#1lNTf2kk79a0]0?V9>KhFWpi[MH".G+q5qArjJ\QZrjm#H17>9Z#%N*'WbSU4h]hBOnKo-A:3Wqqu.Yg&01.R!BRj]/38-rr3GXm$agiXuJ<C#3!D(R74"tt_>Zk.t$Q#&`ooq&`.Q\CN-gYhI[0#$'UduNRm8)Drf9W-W@@CX^"If_s@dB[2^N[^*(ckjQpEe=],DirXZ>>phs6h*[B+EBJ+iWh,8*r[[)5ZP'rEX&qRScNu")3%i.Zm7t+XWA<[7k\4tUc,iV9inYOFu?n'^Rs?\a_(#)=7*=o5Bu_m'Ya3)m>ouFVeNO:ikWTsj<rEPg+]L>3,?DKb76jX2!lVWkGM7PElM&NSb4^20sE+I27=2FR6>JLd70"Qd+UCV[;h6Hp9](NEFMig]D_]GPNnK.h!n9bb"H"r'ParAo=j%KeW*l_2b5,B[8Ui*Qon"&d>RD'mEVc(rHJGo:tMOTCIK1<j=Yo4C87nS/R%mOe*1DLYB_(d+_&i@*a??kmH=!fa7:p\pU)79@tWEWN'6r:Gb:T*dQj!l:AV[Cn#],Tae*6!EF`'FDd-GVF_Ea?rZVH\QPP=bn.VsgQ$+@3IQEK/Wue6hg@$^qr6g78P#.0*/_<tsegO`u9upZ>%it2o<<~>endstream
 endobj
 xref
 0 10
 0000000000 65535 f 
-0000000061 00000 n 
-0000000112 00000 n 
-0000000219 00000 n 
+0000000015 00000 n 
+0000000083 00000 n 
+0000000142 00000 n 
 0000000331 00000 n 
-0000000446 00000 n 
-0000000639 00000 n 
-0000000707 00000 n 
-0000001045 00000 n 
-0000001104 00000 n 
+0000010199 00000 n 
+0000010250 00000 n 
+0000010357 00000 n 
+0000010469 00000 n 
+0000010584 00000 n 
 trailer
 <<
-/ID 
-[<faddc4d6f4885e2543b31f23edbfc94a><faddc4d6f4885e2543b31f23edbfc94a>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 7 0 R
-/Root 6 0 R
 /Size 10
+/Root 1 0 R
+/Info 9 0 R
+/ID [ (\372\335\304\326\364\210\136\045C\263\037\043\355\277\311J) (\372\335\304\326\364\210\136\045C\263\037\043\355\277\311J) ]
 >>
 startxref
-5004
+10961
 %%EOF

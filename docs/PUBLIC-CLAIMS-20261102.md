@@ -1,0 +1,9 @@
+# Public claims reconciliation — 2 November 2026
+
+- Company redesign production: dpl_D2qsi6JNnxKgsyFrv3khtWZ7qzsF, www.nexteleven.dev, source876ddce. Public homepage contains the new content.
+- Apple lookup: https://itunes.apple.com/lookup?id=1839832497&entity=software&country=us&limit=200 returned12 software entries. Avenrest6755074789 remains among them; the former If Then Reset name is not listed. Existing catalog already has12 Apple identities. Corrected stale13 wording in static index/mobile pages and README.
+- Google Play: all12 exact US package-detail URLs returned200 with matching app titles and NextEleven developer text: dev.nexteleven.mihrab, facts, wordledger, thriftflip, tattoohelper, nts, steady, routelle, dinnlume, pairtrace, vellomere, circuitbreaker. Public availability does not prove installation on a device, downloads or purchase behavior. Keep12 catalog listings; no evidence supports reducing it to Circuit Breaker alone.
+- GitHub Harness license endpoint reports MIT. Current profile README already calls Harness MIT; stale coming-soon app wording is being replaced with the measured counts.
+- Hosted resume had a proprietary Harness description. Both PDF copies corrected to MIT-licensed, text-extracted and visually rendered. Other career claims left unchanged. Newer October27 career text sources did not contain this proprietary wording.
+- agent-marketplace repository is already archived. Its historical README still makes old production claims; no unarchive, rewrite or repository deletion performed. Current profile and reviewed company portfolio do not link that archive as an active service. Preserved archive as retired historical work.
+- mothership-ai.com is GitHub Pages for nexteleven-web main at repository root. Its static index requires the same count correction; deployment differs from the Next.js Vercel site.

@@ -12,7 +12,7 @@ The primary client website is [www.nexteleven.dev](https://www.nexteleven.dev/):
 
 - `/apps`: consumer app showcase, with Circuit Breaker featured first, then Mihrab, CurioRound and WordLedger. Published dual-platform apps have both download buttons.
 - `/apps/android`: the Google Play collection, with the same design and a link to the Apple collection.
-- `/apps/apple`: all 13 verified public Apple listings, with official icons and App Store downloads, plus Google Play links where publicly available.
+- `/apps/apple`: 12 current public Apple listings, with official icons and App Store downloads, plus Google Play links where publicly available.
 - `src/lib/app-catalog.ts` is the shared card source. `public/apps-assets/SOURCES.json` records public source verification. Keep platform pricing and availability distinct.
 - `/`: the offering and routes to services, work, Sean’s background, and websites.
 - `/build`: services and starting points for business owners and technical teams.
@@ -35,6 +35,6 @@ No runtime environment variables are required. Contact links open the visitor’
 
 ## Public claims
 
-Use current repositories, deployed examples, and source records to support project descriptions. Distinguish completed work, publication, open-source implementation, and experimental projects from usage or business results. The current publication wording is “13 applications published on Apple’s App Store through NextEleven.” Private-client identities and outcomes remain confidential.
+Use current repositories, deployed examples, and source records to support project descriptions. Distinguish completed work, publication, open-source implementation, and experimental projects from usage or business results. The current publication wording is “12 applications published on Apple’s App Store through NextEleven.” Private-client identities and outcomes remain confidential.
 
 Maintain canonical URLs, structured data, robots, and sitemap against `https://www.nexteleven.dev`. Check desktop and phone layouts, navigation, contact links, project links, and the published pages when changing the site.
