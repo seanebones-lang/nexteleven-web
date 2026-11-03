@@ -1,10 +1,10 @@
 ---
 template: doc
 theme: blueprint
-title: Inside Witness
+title: Inside Premisory
 subtitle: Preserve the path from sources to claims.
 ---
-Preserve the path from sources to claims.
+Built as Witness. Preserve the path from sources to claims.
 
 ## A The main path
 
