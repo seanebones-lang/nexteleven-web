@@ -6,5 +6,8 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
 ];
-const nextConfig: NextConfig = { reactStrictMode: true, typedRoutes: true, poweredByHeader: false, async headers(){ return [{ source: "/(.*)", headers: securityHeaders }, { source: "/explainers/:path*", headers: [{key: "X-Frame-Options", value: "SAMEORIGIN"}] }]; } };
+const nextConfig: NextConfig = { reactStrictMode: true, typedRoutes: true, poweredByHeader: false, async headers(){ return [{ source: "/(.*)", headers: securityHeaders }, { source: "/explainers/:path*", headers: [{key: "X-Frame-Options", value: "SAMEORIGIN"}] }]; }, async redirects(){ return [
+  { source: "/apps/apple", destination: "/apps#apple", permanent: true },
+  { source: "/apps/android", destination: "/apps#android", permanent: true },
+]; } };
 export default nextConfig;

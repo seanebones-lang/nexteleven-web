@@ -1,17 +1,32 @@
 import type { MetadataRoute } from "next";
+import { portfolio } from "@/lib/portfolio";
+
+const UPDATED = new Date("2026-11-05");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/work", "/build", "/presence", "/security", "/security/pricing", "/deadbolt", "/diagnosis", "/apps", "/apps/apple", "/apps/android"];
+  const routes = ["", "/about", "/work", "/build", "/presence", "/security", "/security/pricing", "/deadbolt", "/diagnosis", "/apps"];
   return [
     ...routes.map((route) => ({
       url: `https://www.nexteleven.dev${route}`,
-      lastModified: new Date(route.startsWith("/security") || route === "/build" ? "2026-10-23" : route.startsWith("/apps") ? "2026-10-20" : "2026-10-12"),
+      lastModified: UPDATED,
       changeFrequency: "monthly" as const,
       priority: route === "" ? 1 : 0.8,
     })),
+    ...portfolio.map((product) => ({
+      url: `https://www.nexteleven.dev/work/${product.slug}`,
+      lastModified: UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...portfolio.map((product) => ({
+      url: `https://www.nexteleven.dev/explainers/${product.slug}.html`,
+      lastModified: UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.4,
+    })),
     ...["index.html", "support.html", "privacy.html"].map((page) => ({
       url: `https://www.nexteleven.dev/elevenclean/${page}`,
-      lastModified: new Date("2026-10-17"),
+      lastModified: UPDATED,
       changeFrequency: "monthly" as const,
       priority: page === "index.html" ? 0.7 : 0.3,
     })),

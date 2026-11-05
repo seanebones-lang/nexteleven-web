@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { InnerHeader } from "@/components/shell/InnerHeader";
-import { SiteFooter } from "@/components/shell/SiteFooter";
+import { CompanyHeader, CompanyFooter } from "@/components/company/CompanySite";
 import { ProjectContact } from "@/components/shell/ProjectContact";
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ const services = [
 ] as const;
 
 const questions = [
-  ["Can you take on a substantial project?", "Yes. Bring the product goal, existing system and constraints. We can scope a new build, integration, modernization or repair engagement with defined deliverables and acceptance checks. The $250 diagnosis is a focused entry point for one issue; larger engineering work receives its own scope and quote."],
+  ["Can you take on a substantial project?", "Yes. Bring the product goal, existing system and constraints. We can scope a new build, integration, modernization or repair engagement with defined deliverables and acceptance checks. The $499 AI Spend-Leak Review is the focused entry point for AI and agent-stack concerns; larger engineering work receives its own scope and quote."],
   ["How does the AI-led team work?", "Sean McDonnell owns customer scope and commitments. Our AI coordinator directs specialist agents across architecture, implementation, design, security and testing, and reviews the results. Any external AI use involving private code or data is agreed with you first."],
   ["What is agreed before work starts?", "We confirm the systems, deliverables, access, acceptance checks, fees and delivery plan. Hosting, licenses and model or other provider usage are separate costs. Ongoing maintenance and support hours are defined separately. Production changes require an agreed release and recovery plan."],
   ["What will the handoff include?", "The agreed source and configuration, verification results, operating instructions and remaining issues. We distinguish a successful build from an installed test or a live release. Store approval, model accuracy, universal security and commercial results are not guaranteed by an engineering engagement."],
@@ -31,14 +30,14 @@ const questions = [
 
 export default function BuildPage() {
   return <>
-    <InnerHeader current="build" />
+    <CompanyHeader />
     <main className="build-main">
       <section className="build-hero">
         <p className="section-label">AI-led software engineering</p>
         <h1>Complex software.<br />Clear delivery.</h1>
         <p>Bring us the system you need to build, connect, repair or release. We work across architecture, backend services, data, AI and native applications—from a focused technical investigation to a defined product build or modernization.</p>
         <div className="work-actions"><a className="primary-action" href="#start">Discuss the engineering work <span>↗</span></a><Link href="/work">Inspect our work ↗</Link></div>
-        <p className="build-diagnosis">One broken workflow? <Link href="/diagnosis">Start with the $250 software diagnosis ↗</Link></p>
+        <p className="build-diagnosis">Running AI agents or connected tools? <Link href="/diagnosis">Start with the $499 AI Spend-Leak Review ↗</Link></p>
       </section>
       <section className="audience-section" aria-labelledby="audience-title">
         <p className="section-label">Your problem. A coordinated engineering effort.</p>
@@ -80,6 +79,6 @@ export default function BuildPage() {
       </section>
       <ProjectContact />
     </main>
-    <SiteFooter />
+    <CompanyFooter />
   </>;
 }

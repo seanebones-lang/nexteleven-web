@@ -1,68 +1,57 @@
 export function securityEmail(subject = "Security review — project fit") {
   const body = "Business or project:\n\nPublic website, if available:\n\nWhat you want reviewed or improved:\n\nAny current problems or deadlines:\n\nPlease confirm scope, price and availability before starting.\n\nPlease do not include passwords, API keys or private customer records.\n";
-  return "mailto:hello@nexteleven.dev?" + Object.entries({ subject, body }).map(([key, value]) => key + "=" + encodeURIComponent(value)).join("&");
+  return "mailto:hello@nexteleven.tech?" + Object.entries({ subject, body }).map(([key, value]) => key + "=" + encodeURIComponent(value)).join("&");
 }
 
 export const securityPlans = [
   {
-    id: "checkup", name: "Security Checkup", price: "$495", cadence: "one time",
-    label: "A clear place to start", from: false,
-    summary: "Understand the exposure around one business website and leave with a prioritized plan.",
+    id: "spend-leak-review", name: "AI Spend-Leak Review", price: "$499", cadence: "flat · findings in 48 hours",
+    label: "Start here", from: false,
+    summary: "A focused review of your AI and agent stack: where keys are exposed, where spend is uncapped, and where agents hold more permission than they need.",
     includes: [
-      "One website, its source repository when available, and one hosting account.",
-      "Up to four hours reviewing software versions, public configuration, access permissions and recovery readiness.",
-      "Safe, non-destructive checks within your written authorization.",
-      "Written findings with evidence, priorities, open questions and recommended next steps.",
+      "Exposed-key check across the agreed repositories and configuration.",
+      "AI spend review: caps, billing exposure and the calls that can run away with the bill.",
+      "Tool-permission inventory: what each agent and child tool can actually reach.",
+      "Written findings with evidence and a ranked fix list, delivered within 48 hours.",
       "One follow-up conversation about the findings.",
     ],
-    boundary: "Assessment and recommendations. Code repairs, account changes, deployment and recovery exercises are quoted separately.",
-    action: "Start with a checkup",
+    boundary: "Review and recommendations only. This is not a penetration test, and it does not change your live systems. Fixes are the next step, quoted below.",
+    action: "Book the review",
   },
   {
-    id: "hardening", name: "Fix & Harden", price: "$1,250", cadence: "per engagement",
-    label: "Turn findings into action", from: true,
-    summary: "Resolve agreed security issues and verify the changes through a controlled release.",
+    id: "deadbolt-install", name: "DeadBolt Install", price: "$1,749", cadence: "one time",
+    label: "Put the gate in place", from: false,
+    summary: "We install and configure DeadBolt — NextEleven's open-source permission gate — in front of your agents, so protected actions are admitted or refused before they run.",
     includes: [
-      "A written scope naming the issues, systems and acceptance checks.",
-      "Dependency repairs, configuration changes or access cleanup as agreed.",
-      "Testing on a separate copy or staging environment where available.",
-      "An approved deployment plan with a recovery or rollback path.",
-      "Verification results, remaining risks and operating notes.",
+      "DeadBolt installed and configured for the agreed agent stack.",
+      "A permission policy shaped to your tools: who may start what, and what needs a human yes.",
+      "Spend and destination context wired into the policy checks you choose.",
+      "Verification: admitted and refused actions demonstrated against the agreed scenarios.",
+      "Operating notes so your team can adjust policy without us.",
     ],
-    boundary: "Final price follows the findings and access review. The starting price is not an unlimited repair package.",
-    action: "Discuss the fixes",
+    boundary: "Scoped to the agreed stack and tools. New integrations, custom policy engines and changes to your applications are quoted separately.",
+    action: "Scope an install",
   },
   {
-    id: "application", name: "Application & AI Review", price: "$2,500", cadence: "per review",
-    label: "For systems that do more", from: true,
-    summary: "A focused security engineering review of an application, API or connected AI workflow.",
+    id: "deadbolt-watch", name: "DeadBolt Watch", price: "$299", cadence: "per month",
+    label: "Keep it watched", from: false,
+    summary: "Managed DeadBolt after install: we keep the gate running and send a weekly evidence report of what was admitted, refused and changed.",
     includes: [
-      "An agreed application or workflow boundary and threat model.",
-      "Source-backed review of the relevant identity, data and permission paths.",
-      "Controlled validation of findings using safe test data and accounts.",
-      "For AI workflows: instruction origins, configuration/endpoint changes, child-tool credential reach and approval boundaries.",
-      "A technical report and an owner-friendly summary with a remediation plan.",
+      "Managed DeadBolt deployment for one agent stack.",
+      "A weekly Witness evidence report: decisions, refusals and policy changes, kept separate from interpretation.",
+      "Ongoing permission and spend checks against the agreed policy.",
+      "A monthly summary of what needs a decision from you.",
     ],
-    boundary: "The quote defines review depth and test coverage. Remediation, retesting beyond the agreed scope and formal penetration testing are separate engagements.",
-    action: "Scope a deeper review",
-  },
-  {
-    id: "care", name: "Security Care", price: "$249", cadence: "per month",
-    label: "Keep the basics current", from: true,
-    summary: "Scheduled care for one website after its initial review and required fixes.",
-    includes: [
-      "Monthly dependency, configuration and account-access review.",
-      "Setup of supported dependency and availability alerts.",
-      "Up to one hour of approved routine maintenance each month.",
-      "A monthly summary of checks, changes and items needing a decision.",
-      "A documented process for approving and scheduling larger fixes.",
-    ],
-    boundary: "Initial checkup and remediation are separate. Unused maintenance time does not roll over. Alert handling and support hours are agreed in writing; this plan does not include continuous monitoring or 24/7 incident response.",
-    action: "Discuss ongoing care",
+    boundary: "Per deployment. Watch follows an install; it does not include new integrations or 24/7 incident response. Pilot cohort — availability is confirmed before enrollment.",
+    action: "Discuss Watch",
   },
 ] as const;
 
 export const securityFaqs = [
+  {
+    question: "What does the AI Spend-Leak Review actually look at?",
+    answer: "Three things: keys or credentials exposed where they should not be, AI spend with no effective cap, and agents or tools holding more permission than the job needs. You receive written findings with evidence and a ranked fix list within 48 hours. It is a review, not a penetration test.",
+  },
   {
     question: "Does patching my server fix every affected app?",
     answer: "Not always. Some applications ship their own runtime or certificate bundle. We establish the deployed version and affected path before recommending an update. For affected builds, rebuilding and redistributing the app can be necessary; changing the host alone may leave installed copies unchanged.",
