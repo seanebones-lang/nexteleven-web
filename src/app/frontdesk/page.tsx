@@ -634,6 +634,16 @@ export default function FrontDeskPage() {
               </p>
             </details>
             <details className={styles.faqItem}>
+              <summary>What if I want to answer my own phone?</summary>
+              <p className={styles.faqAnswer}>
+                Then you do. FirstRing only answers the calls you route to it: every call, only
+                the ones you&rsquo;d otherwise miss, or after hours when you&rsquo;re closed.
+                Plenty of shops answer their own phone all day and let FirstRing catch the
+                overflow and the nights. The schedule lives in the forwarding setup, and we
+                configure it with you at setup.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
               <summary>Do I have to learn an app or a dashboard?</summary>
               <p className={styles.faqAnswer}>
                 No. FirstRing is a managed service — we set it up, tune it, and keep it running.
