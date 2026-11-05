@@ -24,3 +24,14 @@ In both calls the caller dictated his real personal cell number and the
 front desk read it back. Those seconds are MUTED in these recordings, and
 the transcripts on the page show the number masked (817-•••-9898). The
 unredacted masters are kept off this repo.
+
+Why these files are not committed directly
+------------------------------------------
+The push route used for this repo cannot carry binary files, so the
+recordings are committed as base64 text under assets/
+(firstring-demo-call.mp3.b64, firstring-demo-call-2.mp3.b64 — or numbered
+.partN files if a single file is ever too large to push). The npm
+`prebuild` step (scripts/materialize-audio.mjs) decodes them into this
+folder on every build, locally and on Vercel. A future cleanup with a
+credentialed git client can replace the base64 assets and this script
+with direct binary commits of the two MP3s.

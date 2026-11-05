@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node scripts/dev.mjs",
+    "prebuild": "node scripts/materialize-audio.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
