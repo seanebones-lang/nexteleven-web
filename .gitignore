@@ -6,3 +6,6 @@ node_modules/
 
 # FirstRing demo recordings are materialized at build time from assets/*.b64
 public/audio/*.mp3
+
+# FirstRing share image is materialized at build time from assets/*.b64
+public/og/*.png
