@@ -83,6 +83,26 @@ export default function FrontDeskPage() {
               .
             </p>
           </div>
+          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+            <p className={styles.audioLabel}>Demo call 2 · The Tesla test (demo shop)</p>
+            <audio
+              className={styles.audio}
+              controls
+              preload="metadata"
+              src="/audio/firstring-demo-call-2.mp3"
+            >
+              Your browser does not support audio playback. Call the demo line instead: (817)
+              546-5305.
+            </audio>
+            <p className={styles.audioNote}>
+              Same line, a harder customer: a joke callback number, and an oil change for a car
+              with no engine. The written-out call is below, under &ldquo;It also catches
+              nonsense.&rdquo;
+            </p>
+          </div>
+          <p className={styles.audioNote} style={{ marginTop: "1rem" }}>
+            Callback numbers are muted in these recordings for privacy.
+          </p>
         </div>
       </section>
 
@@ -242,6 +262,112 @@ export default function FrontDeskPage() {
               <li className={styles.turn}>
                 <span className={styles.turnWho}>Front desk</span>
                 <span className={styles.turnText}>You&rsquo;re welcome, Sean. Goodbye.</span>
+              </li>
+            </ol>
+          </div>
+
+          <h3 className={styles.sectionTitle} style={{ fontSize: "1.7rem", marginTop: "2.8rem" }}>
+            It also catches nonsense.
+          </h3>
+          <p className={styles.sectionLede}>
+            One more real call, same demo line — this time the caller was testing it. An oil
+            change for a Tesla, and a callback number that was not a number at all. The front desk
+            caught both, stayed polite, and did not make a fake booking.
+          </p>
+          <div className={styles.panelRaised}>
+            <p className={styles.audioLabel}>Call summary · what happened</p>
+            <p className={styles.summaryText}>
+              A caller asked for an oil change on a Tesla and tried a joke callback number. The
+              front desk rejected the number, then explained — politely — that Teslas don&rsquo;t
+              have engines or oil changes, and offered a real inspection instead. No fake booking
+              was made.
+            </p>
+          </div>
+
+          {/*
+            Transcript 2: the published version of the second real demo call
+            (source of truth:
+            ~/workspace/income-rescue/firstring-demo-call-2-transcript.md).
+            The caller's callback number is MASKED on purpose — it is a personal
+            cell number and must never be rendered in full on this page.
+            Retell's own summary of this call is NOT used here; it prints the
+            number in full.
+          */}
+          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+            <p className={styles.audioLabel}>The full call, word for word</p>
+            <ol className={styles.transcript}>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Thanks for calling Premier Auto Care, this is the front desk — how can I help
+                  you?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>Yeah. I need an oil change for a Tesla.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>We can take a look at it. Can I get your name?</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>Steve.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Steve, what&rsquo;s the best callback number for you?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>One nine hundred hot stuff.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  I&rsquo;ll need a real callback number to book it, Steve. What&rsquo;s the best
+                  number?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>817-•••-9898</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Got it, Steve — 817-•••-9898. What year, make, and model is your Tesla?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>
+                  It&rsquo;s a twenty twenty three but I&rsquo;m having problems. I can&rsquo;t
+                  find the engine in it.
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  A 2023 Tesla doesn&rsquo;t have a gasoline engine — it&rsquo;s electric. Tesla
+                  vehicles don&rsquo;t need conventional oil changes. We can still help with
+                  maintenance or inspect any concern — what&rsquo;s been going on with it?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>
+                  Let me call you back. I didn&rsquo;t know that they didn&rsquo;t have engines.
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  No problem, Steve. Take care, and feel free to call us back anytime.
+                </span>
               </li>
             </ol>
           </div>
