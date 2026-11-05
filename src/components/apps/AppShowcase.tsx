@@ -1,57 +1,74 @@
 import Image from "next/image";
-import Link from "next/link";
-import { apps, type AppCardData } from "@/lib/app-catalog";
+import { apps, appGroups, type AppCardData } from "@/lib/app-catalog";
+import { CompanyHeader, CompanyFooter } from "@/components/company/CompanySite";
 import styles from "@/app/apps/page.module.css";
 
-type Platform = "all" | "apple" | "android";
 const play = "https://play.google.com/store/apps/details?id=";
 const appleStore = "https://apps.apple.com/us/developer/sean-mcdonnell/id1839832497";
 const googleStore = "https://play.google.com/store/apps/dev?id=7608447669826597882";
-function StoreButtons({app, platform}: {app: AppCardData; platform: Platform}) {
-  const android = app.android !== false;
-  const apple = <a className={styles.secondaryButton} href={`https://apps.apple.com/us/app/id${app.appleId}`} aria-label={`Get ${app.short} on the App Store`}>View on the App Store <span aria-hidden="true">↗</span></a>;
-  const google = <a className={styles.darkButton} href={`${play}${app.id}`} aria-label={`Get ${app.short} on Google Play`}>Get it on Google Play <span aria-hidden="true">↗</span></a>;
-  return <div className={styles.storeButtons}>{platform === "apple" ? <>{app.appleId && apple}{android && google}</> : <>{android && google}{app.appleId && apple}</>}</div>;
+
+function appleUrl(app: AppCardData) {
+  const slug = app.name.toLowerCase().replace(/:/g, "").replace(/&/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `https://apps.apple.com/us/app/${slug}/id${app.appleId}`;
 }
-function AppCard({app, platform}: {app: AppCardData; platform: Platform}) {
-  const appleThrift = platform === "apple" && app.short === "ThriftFlip";
-  const support = platform === "apple" && app.short === "ThriftFlip" ? "/thriftflip/support.html" : platform === "apple" && app.short === "Note to Self" ? "/note-to-self/ios-support.html" : (platform === "apple" && app.appleSupportUrl ? app.appleSupportUrl : app.supportUrl) || (app.policy ? `/${app.policy}/support.html` : "mailto:hello@nexteleven.dev");
-  const privacy = platform === "apple" && app.short === "ThriftFlip" ? "/thriftflip/privacy.html" : platform === "apple" && app.short === "Note to Self" ? "/note-to-self/ios-privacy.html" : (platform === "apple" && app.applePrivacyUrl ? app.applePrivacyUrl : app.privacyUrl) || (app.policy ? `/${app.policy}/privacy.html` : undefined);
-  const features = appleThrift ? ["Offline inventory, buying costs, sales and returns", "Haul allocation, photos and PDF/CSV reports", "Recoverable import of supported older records"] : app.short === "ThriftFlip" && platform === "all" ? ["Android: 20 active items free, with sale and return histories", "Buying tools and checked inventory backups", "Android Plus / paid Apple app: hauls, photos and reports"] : platform === "apple" && app.appleFeatures ? app.appleFeatures : app.features;
+function platformBadge(app: AppCardData) {
+  const android = app.android !== false;
+  if (app.appleId && android) return "iPhone · Android";
+  if (app.appleId) return app.short === "ElevenClean" ? "Mac" : "iPhone · iPad";
+  return "Android";
+}
+function StoreButtons({ app }: { app: AppCardData }) {
+  const android = app.android !== false;
+  return <div className={styles.storeButtons}>
+    {android && <a className={styles.darkButton} href={`${play}${app.id}`} aria-label={`Get ${app.short} on Google Play`}>Get it on Google Play <span aria-hidden="true">↗</span></a>}
+    {app.appleId && <a className={styles.secondaryButton} href={appleUrl(app)} aria-label={`Get ${app.short} on the App Store`}>View on the App Store <span aria-hidden="true">↗</span></a>}
+  </div>;
+}
+function AppCard({ app }: { app: AppCardData }) {
+  const support = app.supportUrl || (app.policy ? `/${app.policy}/support.html` : undefined);
+  const privacy = app.privacyUrl || (app.policy ? `/${app.policy}/privacy.html` : undefined);
   return <article className={`${styles.appCard} ${styles[app.tone]}`} aria-label={app.name}>
     <div className={styles.appIdentity}><Image src={`/apps-assets/${app.icon}`} width={80} height={80} alt="" /><p className={styles.eyebrow}>{app.category}</p></div>
-    <h3>{app.short}</h3><p>{app.description}</p><ul>{features.map(feature => <li key={feature}>{feature}</li>)}</ul>
-    {app.releaseNote && <p className={styles.price}>{app.releaseNote}{app.releaseUrl && <> <a href={app.releaseUrl}>Explore the update ↗</a></>}</p>}
-    <StoreButtons app={app} platform={platform}/><p className={styles.price}>{platform === "apple" && app.applePrice ? app.applePrice : app.price}</p>
-    <div className={styles.policyLinks}><a href={support}>Support</a>{privacy && <a href={privacy}>Privacy</a>}</div>
+    <h3>{app.name}</h3>
+    <p className={styles.eyebrow}>{platformBadge(app)}</p>
+    <p>{app.description}</p>
+    <ul>{app.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
+    <StoreButtons app={app} />
+    <p className={styles.price}>{app.price}</p>
+    <div className={styles.policyLinks}>
+      {app.supportLinks ? app.supportLinks.map(link => <a key={link.href} href={link.href}>{link.label}</a>) : <>{support && <a href={support}>Support</a>}{privacy && <a href={privacy}>Privacy</a>}</>}
+    </div>
   </article>;
 }
 function CircuitFeature() {
   return <article className={styles.featured} aria-labelledby="circuit-title">
-    <div className={styles.featuredCopy}><div className={styles.appIdentity}><Image src="/apps-assets/circuit-breaker.webp" width={88} height={88} alt="" /><p className={styles.eyebrow}>Featured · Circuit Breaker</p></div>
-      <h3 id="circuit-title">Circuit Breaker:<br/><span>Kill Switch</span></h3><p>Shut down rogue machines before corruption takes the grid. FAILSAFE adds 60 puzzles across five sectors: reroute to standby cores, keep the heartbeat live, connect paired keys and avoid decoys.</p>
+    <div className={styles.featuredCopy}><div className={styles.appIdentity}><Image src="/apps-assets/circuit-breaker.webp" width={88} height={88} alt="" /><p className={styles.eyebrow}>Featured · Circuit Breaker · Android</p></div>
+      <h3 id="circuit-title">Circuit Breaker:<br /><span>Kill Switch</span></h3><p>Shut down rogue machines before corruption takes the grid. FAILSAFE adds 60 puzzles across five sectors: reroute to standby cores, keep the heartbeat live, connect paired keys and avoid decoys.</p>
       <ul><li>60 original campaign puzzles, free</li><li>FAILSAFE: try the first three levels free</li><li>Daily Breach and endless Containment</li></ul>
       <a className={styles.cyanButton} href={`${play}dev.nexteleven.circuitbreaker`} aria-label="Get Circuit Breaker on Google Play">Get it on Google Play <span aria-hidden="true">↗</span></a>
       <p className={styles.price}>Free download with ads. Optional one-time FAILSAFE expansion includes Remove Ads. More optional packs and fresh challenges are planned every month.</p>
       <div className={styles.policyLinks}><a href="/circuit-breaker/support.html">Support</a><a href="/circuit-breaker/privacy.html">Privacy</a></div>
     </div>
-    <figure className={styles.gameplay}><video controls playsInline preload="none" poster="/apps-assets/circuit-breaker-failsafe-poster.jpg" aria-label="Circuit Breaker FAILSAFE: two complete KEYHOLDER and MIRAGE puzzle solutions"><source src="/apps-assets/circuit-breaker-failsafe-solutions.mp4" type="video/mp4"/><track kind="captions" src="/apps-assets/circuit-breaker-failsafe.vtt" srcLang="en" label="English gameplay explanations"/>Your browser does not support embedded video. <a href="/apps-assets/circuit-breaker-failsafe-solutions.mp4">Watch the full FAILSAFE footage.</a></video><figcaption>FAILSAFE · Two complete sector-finale solutions · 3:22<br/>KEYHOLDER F3-12 → MIRAGE F4-12. Original-speed Android preview footage with explanatory captions and the game’s original score.<br/><a href="/apps-assets/circuit-breaker-failsafe-solutions.mp4">Open the full video ↗</a></figcaption></figure>
+    <figure className={styles.gameplay}><video controls playsInline preload="none" poster="/apps-assets/circuit-breaker-failsafe-poster.jpg" aria-label="Circuit Breaker FAILSAFE: two complete KEYHOLDER and MIRAGE puzzle solutions"><source src="/apps-assets/circuit-breaker-failsafe-solutions.mp4" type="video/mp4" /><track kind="captions" src="/apps-assets/circuit-breaker-failsafe.vtt" srcLang="en" label="English gameplay explanations" />Your browser does not support embedded video. <a href="/apps-assets/circuit-breaker-failsafe-solutions.mp4">Watch the full FAILSAFE footage.</a></video><figcaption>FAILSAFE · Two complete sector-finale solutions · 3:22<br />KEYHOLDER F3-12 → MIRAGE F4-12. Original-speed Android preview footage with explanatory captions and the game’s original score.<br /><a href="/apps-assets/circuit-breaker-failsafe-solutions.mp4">Open the full video ↗</a></figcaption></figure>
   </article>;
 }
-export default function AppShowcase({platform = "all"}: {platform?: Platform}) {
-  const apple = platform === "apple";
-  const visible = apps.filter(app => apple ? !!app.appleId : platform === "android" ? app.android !== false : true);
+export default function AppShowcase() {
+  const byId = new Map(apps.map(app => [app.id, app]));
   return <div className={styles.page}>
     <a className={styles.skip} href="#apps">Skip to the apps</a>
-    <header className={styles.header}><Link href="/apps" className={styles.brand}><Image src="/apps-assets/next-eleven-mark.png" width={44} height={44} alt=""/>NextEleven</Link><nav aria-label="Apps navigation"><Link href="/apps">All apps</Link><Link href="/apps/android" aria-current={platform === "android" ? "page" : undefined}>Android</Link><Link href="/apps/apple" aria-current={apple ? "page" : undefined}>Apple</Link><a href="#support">Support</a></nav></header>
+    <CompanyHeader />
     <main>
-      <section className={styles.hero} aria-labelledby="apps-title"><div className={styles.heroArt} aria-hidden="true"/><div className={styles.heroCopy}><p className={styles.eyebrow}>Independently built in Texas · {apple ? "iPhone, iPad & Mac" : platform === "android" ? "On Google Play" : "Apple & Android"}</p><h1 id="apps-title">Small steps.<br/>Fresh ideas.<br/><span>Clever play.</span></h1><p>{apple ? "Thoughtful apps for iPhone, iPad and Mac. Find something for your studio, your next idea, or a little downtime." : "Thoughtful apps for the things you want to do—and a little room to enjoy yourself along the way."}</p><a className={styles.lightButton} href="#apps">Explore {apple ? "our Apple apps" : "the apps"} <span aria-hidden="true">↓</span></a></div><div className={styles.heroMark}><Image src="/apps-assets/next-eleven-mark.png" width={280} height={280} alt="NextEleven monogram" priority/><p>Useful by design.<br/>Made with care.</p></div></section>
-      <section id="apps" className={styles.catalog} aria-labelledby="catalog-title"><div className={styles.sectionHeading}><p className={styles.eyebrow}>{apple ? "On the App Store" : platform === "android" ? "On Google Play" : "Explore NextEleven"}</p><h2 id="catalog-title">Something for your day.<br/>Something for your downtime.</h2><div className={styles.storeButtons}>{platform !== "android" && <a className={styles.secondaryButton} href={appleStore}>Published apps on Apple ↗</a>}{!apple && <a className={styles.secondaryButton} href={googleStore}>Published apps on Google Play ↗</a>}</div></div>
-        {!apple && <CircuitFeature/>}
-        <div className={styles.appGrid}>{visible.map(app => <AppCard key={app.id} app={app} platform={platform}/>)}</div>
+      <section className={styles.hero} aria-labelledby="apps-title"><div className={styles.heroArt} aria-hidden="true" /><div className={styles.heroCopy}><p className={styles.eyebrow}>NextEleven LLC · App Store &amp; Google Play</p><h1 id="apps-title">Published apps.<br /><span>Working software, in people’s hands.</span></h1><p>NextEleven’s published catalog: eighteen applications live on the App Store and Google Play — tools for work, faith, learning and downtime. Every app below links to its official store page, its support page and its privacy policy.</p><div className={styles.storeButtons}><a className={styles.lightButton} id="apple" href={appleStore}>Published apps on Apple ↗</a><a className={styles.lightButton} id="android" href={googleStore}>Published apps on Google Play ↗</a></div></div><div className={styles.heroMark}><Image src="/apps-assets/next-eleven-mark.png" width={280} height={280} alt="NextEleven monogram" priority /><p>Built in Mansfield, Texas.<br />hello@nexteleven.dev · 833-925-6048</p></div></section>
+      <section id="apps" className={styles.catalog} aria-labelledby="catalog-title">
+        <div className={styles.sectionHeading}><p className={styles.eyebrow}>The full catalog</p><h2 id="catalog-title">Grouped by what<br />they’re for.</h2></div>
+        <CircuitFeature />
+        {appGroups.map(group => <section key={group.id} aria-labelledby={`group-${group.id}`}>
+          <h3 id={`group-${group.id}`}>{group.title}</h3>
+          <div className={styles.appGrid}>{group.appIds.map(id => byId.get(id)).filter((app): app is AppCardData => !!app).map(app => <AppCard key={app.id} app={app} />)}</div>
+        </section>)}
       </section>
-      <section className={styles.apple} aria-labelledby="other-platform-title"><div><p className={styles.eyebrow}>On your other devices</p><h2 id="other-platform-title">Looking for our {apple ? "Google Play" : "Apple"} apps?</h2><p>{apple ? "Explore our Android collection, including Circuit Breaker, Mihrab and the apps available on both platforms." : "Explore our dedicated collection for iPhone, iPad and Mac, with app details and direct downloads."} Availability, pricing and features can differ by platform.</p></div><Link className={styles.darkButton} href={apple ? "/apps/android" : "/apps/apple"}>Explore {apple ? "Android" : "Apple"} apps <span aria-hidden="true">↗</span></Link></section>
-      <section id="support" className={styles.support} aria-labelledby="support-title"><p className={styles.eyebrow}>Built by NextEleven</p><h2 id="support-title">A question, an idea,<br/>or something to fix?</h2><p>NextEleven is an AI-led software company founded by Sean McDonnell. Tell us which app you’re using, your device, and what happened. Please leave passwords and private notes out of your message.</p><a href="mailto:hello@nexteleven.dev?subject=NextEleven%20app%20support">hello@nexteleven.dev ↗</a></section>
-    </main><footer className={styles.footer}><span>NextEleven LLC · Mansfield, Texas</span><nav aria-label="Footer"><Link href="/apps/android">Android apps</Link><Link href="/apps/apple">Apple apps</Link><Link href="/">Software & consulting</Link><Link href="/about">About Sean</Link></nav></footer>
+      <section id="support" className={styles.support} aria-labelledby="support-title"><p className={styles.eyebrow}>Built by NextEleven</p><h2 id="support-title">A question, an idea,<br />or something to fix?</h2><p>NextEleven is an AI-led software company founded by Sean McDonnell. Tell us which app you’re using, your device, and what happened. Please leave passwords and private notes out of your message.</p><a href="mailto:hello@nexteleven.dev?subject=NextEleven%20app%20support">hello@nexteleven.dev ↗</a><p>833-925-6048</p></section>
+    </main>
+    <CompanyFooter />
   </div>;
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { InnerHeader } from "@/components/shell/InnerHeader";
-import { SiteFooter } from "@/components/shell/SiteFooter";
+import { CompanyHeader, CompanyFooter } from "@/components/company/CompanySite";
 import { SecurityContact } from "@/components/security/SecurityContact";
 import { SecurityPlanCards } from "@/components/security/SecurityPlanCards";
 import { securityEmail, securityFaqs } from "@/lib/security-services";
@@ -46,7 +45,7 @@ const service = {
 export default function SecurityPage() {
   return <>
     <a className="skip-link" href="#security-content">Skip to security services</a>
-    <InnerHeader current="security" />
+    <CompanyHeader />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(service).replace(/</g, "\\u003c") }} />
     <main className={styles.main} id="security-content">
       <section className={styles.hero} aria-labelledby="security-title">
@@ -95,9 +94,9 @@ export default function SecurityPage() {
       </section>
 
       <section className={styles.section} aria-labelledby="pricing-title">
-        <div className={styles.sectionIntro}><p className="section-label">Clear starting points</p><h2 id="pricing-title">Choose the next useful step.</h2><p>Start with a $495 checkup, act on known findings or scope a deeper review. For one broken workflow, our $250 software diagnosis is a smaller starting point.</p></div>
+        <div className={styles.sectionIntro}><p className="section-label">Clear starting points</p><h2 id="pricing-title">Choose the next useful step.</h2><p>Start with the $499 AI Spend-Leak Review. Put DeadBolt in front of your agents. Then keep it watched. One clear price at each step.</p></div>
         <SecurityPlanCards />
-        <p className={styles.pricingFoot}><Link href="/diagnosis">One broken build, API or software workflow? See the $250 diagnosis ↗</Link></p>
+        <p className={styles.pricingFoot}><Link href="/diagnosis">What the review covers, in detail: the $499 AI Spend-Leak Review ↗</Link></p>
         <div className={styles.pricingFoot}><p>Prices in USD. Scope, access, delivery dates and final fees are confirmed before invoicing. Hosting and third-party charges are separate.</p><Link href="/security/pricing">Compare the full scope <span aria-hidden="true">↗</span></Link></div>
       </section>
 
@@ -107,6 +106,6 @@ export default function SecurityPage() {
       </section>
       <SecurityContact />
     </main>
-    <SiteFooter />
+    <CompanyFooter />
   </>;
 }
