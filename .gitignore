@@ -3,3 +3,6 @@ node_modules/
 .vercel/
 *.tsbuildinfo
 .vercel
+
+# FirstRing demo recordings are materialized at build time from assets/*.b64
+public/audio/*.mp3
