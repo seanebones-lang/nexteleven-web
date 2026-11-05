@@ -388,7 +388,8 @@ export default function FrontDeskPage() {
               <h3 className={styles.stepTitle}>A customer calls your shop number</h3>
               <p className={styles.stepText}>
                 Day, night, weekend, or while every bay is full — the call comes in the way it
-                always has.
+                always has. Your number doesn&rsquo;t change: the number on your sign is the
+                number your customers keep dialing.
               </p>
             </div>
             <ArrowIcon />
@@ -492,37 +493,54 @@ export default function FrontDeskPage() {
           <p className={styles.kicker}>006 / Pricing</p>
           <h2 className={styles.sectionTitle}>Plain pricing. No quote form.</h2>
           <p className={styles.sectionLede}>
-            Two numbers get you live, and one keeps it running. That is the whole price list.
+            Two ways to run it — Standard, or Premier with the extras built in — plus one
+            one-time setup. That is the whole price list.
           </p>
           <div className={styles.priceGrid}>
             <div className={styles.priceCard}>
-              <p className={styles.priceName}>Getting set up</p>
+              <p className={styles.priceName}>Standard</p>
               <div className={styles.priceRow}>
-                <span className={styles.priceWhat}>Setup, bundled with a website build</span>
-                <span className={styles.priceAmount}>$299</span>
-              </div>
-              <div className={styles.priceRow}>
-                <span className={styles.priceWhat}>Setup on its own</span>
-                <span className={styles.priceAmount}>$499</span>
-              </div>
-              <p className={styles.priceNote}>
-                We build your front desk around your shop — your name, your hours, your services,
-                your booking rules — then test-call it with you before it goes live.
-              </p>
-            </div>
-            <div className={styles.priceCardFeatured}>
-              <p className={styles.priceName}>Keeping it running</p>
-              <div className={styles.priceRow}>
-                <span className={styles.priceWhat}>Managed service, per month</span>
+                <span className={styles.priceWhat}>Managed front desk, per month</span>
                 <span className={styles.priceAmount}>
                   $179<small>/mo</small>
                 </span>
               </div>
+              <div className={styles.priceRow}>
+                <span className={styles.priceWhat}>Add text summaries</span>
+                <span className={styles.priceAmount}>
+                  +$19.99<small>/mo</small>
+                </span>
+              </div>
               <p className={styles.priceNote}>
-                We set it up, tune it, and keep it running — answering, booking, and summarizing
-                your calls around the clock.
+                Your managed front desk, run for you around the clock. Call minutes are included
+                — one flat price, no per-minute billing. And after every call, a plain written
+                summary lands in your email: who called, what they need, what got booked.
               </p>
             </div>
+            <div className={styles.priceCardFeatured}>
+              <p className={styles.priceName}>Premier</p>
+              <div className={styles.priceRow}>
+                <span className={styles.priceWhat}>Everything in Standard, per month</span>
+                <span className={styles.priceAmount}>
+                  $229<small>/mo</small>
+                </span>
+              </div>
+              <p className={styles.priceNote}>
+                Everything in Standard, plus the extras built in: text summaries included,
+                branded caller ID — your shop&rsquo;s name shows when your front desk calls out
+                — and a verified phone number, registered so its calls aren&rsquo;t flagged as
+                spam.
+              </p>
+            </div>
+          </div>
+          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+            <p className={styles.audioLabel}>One-time setup</p>
+            <p className={styles.summaryText} style={{ fontSize: "1.02rem" }}>
+              One-time setup: <strong>$299</strong> bundled with a website build ·{" "}
+              <strong>$499</strong> standalone. We build your front desk around your shop — your
+              name, your hours, your services, your booking rules — then test-call it with you
+              before it goes live.
+            </p>
           </div>
           <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
             <p className={styles.audioLabel}>The bundle most shops start with</p>
@@ -539,33 +557,33 @@ export default function FrontDeskPage() {
       <section className={styles.section} id="extras">
         <div className={styles.wrap}>
           <p className={styles.kicker}>007 / Extras</p>
-          <h2 className={styles.sectionTitle}>Available add-ons.</h2>
+          <h2 className={styles.sectionTitle}>The Premier extras.</h2>
           <p className={styles.sectionLede}>
-            When you are ready for more than the basics, these bolt onto any FirstRing setup. Ask
-            us about them when we talk.
+            These three come together in Premier at $229/mo. The first one — text-message
+            summaries — can also be added to Standard on its own, for $19.99/mo.
           </p>
           <ul className={styles.extras}>
             <li className={styles.extra}>
-              <p className={styles.extraTag}>Add-on</p>
+              <p className={styles.extraTag}>Premier · or +$19.99/mo on Standard</p>
               <p className={styles.extraTitle}>Text-message call summaries</p>
               <p className={styles.extraText}>
                 Every call summary lands on your phone as a text, the moment the call ends.
               </p>
             </li>
             <li className={styles.extra}>
-              <p className={styles.extraTag}>Add-on</p>
-              <p className={styles.extraTitle}>Branded calls</p>
+              <p className={styles.extraTag}>Premier</p>
+              <p className={styles.extraTitle}>Branded caller ID</p>
               <p className={styles.extraText}>
-                Your shop&rsquo;s name and number presented your way, so customers know exactly
-                who is answering.
+                When your front desk calls a customer back, your shop&rsquo;s name shows on
+                their caller ID — not an unknown number.
               </p>
             </li>
             <li className={styles.extra}>
-              <p className={styles.extraTag}>Add-on</p>
+              <p className={styles.extraTag}>Premier</p>
               <p className={styles.extraTitle}>Verified phone number</p>
               <p className={styles.extraText}>
-                A verified number for your front desk, so your calls carry your shop&rsquo;s
-                identity with the carriers.
+                Your front desk&rsquo;s number is registered and verified, so its calls
+                aren&rsquo;t flagged as spam.
               </p>
             </li>
           </ul>
@@ -599,17 +617,19 @@ export default function FrontDeskPage() {
             <details className={styles.faqItem}>
               <summary>What do I actually get after a call?</summary>
               <p className={styles.faqAnswer}>
-                A short written summary: who called, what they need, and what was booked — like
-                the real one shown above. If you add text-message summaries, it lands on your
-                phone as a text after every call.
+                A short written summary by email: who called, what they need, and what was booked
+                — like the real one shown above. Want that summary as a text the moment the call
+                ends? Add text-message summaries for $19.99/mo, or take Premier at $229/mo, where
+                they&rsquo;re included.
               </p>
             </details>
             <details className={styles.faqItem}>
-              <summary>Do I need a new phone number?</summary>
+              <summary>Do I have to change my phone number?</summary>
               <p className={styles.faqAnswer}>
-                Not necessarily. FirstRing can answer on a number we set up for your shop, or your
-                existing shop line can be forwarded to it. We will walk through which fits your
-                shop when we set you up.
+                No. The number on your sign, your trucks, and your Google listing stays yours. We
+                either forward it to your FirstRing line — every call, only the calls you&rsquo;d
+                otherwise miss, or after hours only — or connect it directly. Your customers dial
+                the same number they always have; we just answer it.
               </p>
             </details>
             <details className={styles.faqItem}>
