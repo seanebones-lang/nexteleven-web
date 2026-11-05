@@ -5,6 +5,28 @@ export const metadata: Metadata = {
   title: "FirstRing — Your phone, answered on the first ring",
   description:
     "FirstRing is an AI front desk for local shops from NextEleven Studios. It answers your phone 24/7 in your shop's name, books appointments, takes messages, and sends you a summary of every call.",
+  openGraph: {
+    title: "FirstRing — Your phone, answered on the first ring. Every time.",
+    description:
+      "An AI front desk for local businesses, built and managed by NextEleven Studios. Answers 24/7, books appointments, never invents a price. Call the live demo: (817) 546-5305.",
+    url: "/frontdesk",
+    type: "website",
+    images: [
+      {
+        url: "/og/firstring-og.png",
+        width: 1200,
+        height: 630,
+        alt: "FirstRing — Amy, the AI front desk receptionist",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FirstRing — Your phone, answered on the first ring. Every time.",
+    description:
+      "An AI front desk for local businesses, built and managed by NextEleven Studios. Answers 24/7, books appointments, never invents a price. Call the live demo: (817) 546-5305.",
+    images: ["/og/firstring-og.png"],
+  },
 };
 
 const DEMO_TEL = "tel:+18175465305";
