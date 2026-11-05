@@ -1,0 +1,530 @@
+import type { Metadata } from "next";
+import styles from "./frontdesk.module.css";
+
+export const metadata: Metadata = {
+  title: "FirstRing — Your phone, answered on the first ring",
+  description:
+    "FirstRing is an AI front desk for local shops from NextEleven Studios. It answers your phone 24/7 in your shop's name, books appointments, takes messages, and sends you a summary of every call.",
+};
+
+const DEMO_TEL = "tel:+18175465305";
+
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">
+      <path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg className={styles.stepArrow} viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false">
+      <path d="M3 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export default function FrontDeskPage() {
+  return (
+    <>
+      {/* ---------- 1 · Hero ---------- */}
+      <section className={styles.hero}>
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>FirstRing · AI front desk for local shops</p>
+          <h1 className={styles.heroTitle}>
+            Your phone, answered on the <em>first ring</em>. Every time.
+          </h1>
+          <p className={styles.heroLede}>
+            FirstRing is an AI front desk for your shop. It answers your phone around the clock in
+            your shop&rsquo;s name, books appointments, takes messages — and sends you a plain
+            summary of every call. No app to install. No login to learn. We run it for you.
+          </p>
+          <div className={styles.ctaRow}>
+            <a className={styles.ctaPrimary} href={DEMO_TEL}>
+              Hear it yourself: (817) 546-5305
+            </a>
+            <a className={styles.ctaGhost} href="#listen">
+              Listen to a real call first
+            </a>
+          </div>
+          <p className={styles.heroNote}>
+            That number is our live demo line. Call it, book an oil change, ask it what a brake job
+            costs — that voice is what your customers would hear.
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- 2 · Listen ---------- */}
+      <section className={styles.section} id="listen">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>002 / Listen</p>
+          <h2 className={styles.sectionTitle}>A real call to our demo line.</h2>
+          <p className={styles.sectionLede}>
+            This is not a script read by an actor. It is a recording of an actual call to the demo
+            line above — a customer booking an oil change and asking about a brake job.
+          </p>
+          <div className={styles.panel}>
+            <p className={styles.audioLabel}>Demo call · Premier Auto Care (demo shop)</p>
+            <audio
+              className={styles.audio}
+              controls
+              preload="metadata"
+              src="/audio/firstring-demo-call.mp3"
+            >
+              Your browser does not support audio playback. Call the demo line instead: (817)
+              546-5305.
+            </audio>
+            <p className={styles.audioNote}>
+              Prefer to drive the conversation yourself? The demo line is live right now at{" "}
+              <a href={DEMO_TEL} style={{ color: "var(--accent-light)" }}>
+                (817) 546-5305
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 3 · Read the call ---------- */}
+      <section className={styles.section} id="read">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>003 / Read the call</p>
+          <h2 className={styles.sectionTitle}>What the owner got after that call.</h2>
+          <p className={styles.sectionLede}>
+            After every call, FirstRing writes a short summary — who called, what they need, what
+            got booked. Here is the exact summary from the call above, and the full call written
+            out underneath it.
+          </p>
+          <div className={styles.callGrid}>
+            <div className={styles.panelRaised}>
+              <p className={styles.audioLabel}>Call summary · sent to the owner</p>
+              <p className={styles.summaryText}>
+                Sean scheduled an oil change for his 2019 Ford F-150 for Friday at noon, after
+                changing his initial requested time. He also asked about brake job pricing and was
+                advised to request a brake check at the appointment.
+              </p>
+            </div>
+            <div className={styles.panel}>
+              <p className={styles.audioLabel}>What to listen for</p>
+              <ul className={styles.beats}>
+                <li>
+                  <span className={styles.beatWho}>Booking</span>
+                  <span>
+                    It collects the name, callback number, and vehicle — and reads the number back
+                    to confirm it.
+                  </span>
+                </li>
+                <li>
+                  <span className={styles.beatWho}>Hours</span>
+                  <span>
+                    Friday at 3 PM is outside the demo shop&rsquo;s hours, so it says so and
+                    rebooks the caller for Friday at noon instead.
+                  </span>
+                </li>
+                <li>
+                  <span className={styles.beatWho}>Pricing</span>
+                  <span>
+                    Asked for a brake-job price, it does not invent one — it offers a diagnostic
+                    and an exact number from the shop before any work starts.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/*
+            Transcript: the published version of the real demo call (source of
+            truth: ~/workspace/income-rescue/firstring-demo-call-transcript.md).
+            The caller's callback number is MASKED on purpose — it is a personal
+            cell number and must never be rendered in full on this page.
+          */}
+          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+            <p className={styles.audioLabel}>The full call, word for word</p>
+            <ol className={styles.transcript}>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Thanks for calling Premier Auto Care, this is the front desk — how can I help
+                  you?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>
+                  Yeah. I&rsquo;d like to schedule an oil change for a twenty nineteen F-150.
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>May I have your name?</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>Sean.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Sean, got it. What&rsquo;s the best callback number for you?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>817-•••-9898</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Thanks. That&rsquo;s 817-•••-9898. What model is the 2019 Ford?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>It&rsquo;s an F-150.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  What day and time would you prefer for the oil change?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>Friday at three.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Friday at 3 PM is outside our hours — we&rsquo;re open until 2 PM Saturdays and
+                  6 PM weekdays.
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>Okay. Noon.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  You&rsquo;re booked for Friday at noon. The shop will confirm by text. Thanks,
+                  Sean — see you then.
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>
+                  Wait. Hold on. Hold on. How much is it for a brake job?
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Pricing depends on what the tech finds — I can book you a diagnostic and
+                  they&rsquo;ll call you with an exact number before any work starts.
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>Is there anything else I should know?</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>
+                  Bring the F-150 in Friday at noon, and the team will take care of the oil
+                  change. If you want the brakes checked too, mention it when you arrive.
+                </span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWhoCaller}>Caller</span>
+                <span className={styles.turnText}>Okay. Thank you very much.</span>
+              </li>
+              <li className={styles.turn}>
+                <span className={styles.turnWho}>Front desk</span>
+                <span className={styles.turnText}>You&rsquo;re welcome, Sean. Goodbye.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 4 · How it works ---------- */}
+      <section className={styles.section} id="how">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>004 / How it works</p>
+          <h2 className={styles.sectionTitle}>Three steps. None of them are yours.</h2>
+          <p className={styles.sectionLede}>
+            You keep working the shop. FirstRing handles the phone.
+          </p>
+          <div className={styles.steps}>
+            <div className={styles.step}>
+              <p className={styles.stepNum}>STEP 01</p>
+              <h3 className={styles.stepTitle}>A customer calls your shop number</h3>
+              <p className={styles.stepText}>
+                Day, night, weekend, or while every bay is full — the call comes in the way it
+                always has.
+              </p>
+            </div>
+            <ArrowIcon />
+            <div className={styles.step}>
+              <p className={styles.stepNum}>STEP 02</p>
+              <h3 className={styles.stepTitle}>FirstRing answers, books, takes messages</h3>
+              <p className={styles.stepText}>
+                It greets the caller in your shop&rsquo;s name, books the job with read-backs, and
+                takes a clean message when it cannot book.
+              </p>
+            </div>
+            <ArrowIcon />
+            <div className={styles.step}>
+              <p className={styles.stepNum}>STEP 03</p>
+              <h3 className={styles.stepTitle}>You get a summary of every call</h3>
+              <p className={styles.stepText}>
+                Who called, what they need, what was booked — in plain English, after every call.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 5 · What it does ---------- */}
+      <section className={styles.section} id="does">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>005 / What it does</p>
+          <h2 className={styles.sectionTitle}>A front desk that never misses.</h2>
+          <p className={styles.sectionLede}>
+            Built for shops first — the places where the phone rings while everyone&rsquo;s hands
+            are busy.
+          </p>
+          <ul className={styles.caps}>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Answers 24/7, in your shop&rsquo;s name</p>
+                <p className={styles.capText}>
+                  Nights, weekends, lunch rush — every call gets a professional answer, not a
+                  voicemail box.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Books appointments, with read-backs</p>
+                <p className={styles.capText}>
+                  Name, phone, vehicle, what it needs, and the time — confirmed back to the caller
+                  before the call ends.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Never guesses at repair prices</p>
+                <p className={styles.capText}>
+                  Price questions go to you, not to a made-up number. On the demo call it suggested
+                  a brake check instead of quoting a brake job.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Takes a message when it can&rsquo;t book</p>
+                <p className={styles.capText}>
+                  If a call cannot turn into an appointment, the caller leaves a real message —
+                  nobody hits a dead end.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>A summary after every call</p>
+                <p className={styles.capText}>
+                  Who called, what they need, what got booked — written out plainly, like the
+                  summary above.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Managed for you, start to finish</p>
+                <p className={styles.capText}>
+                  We set it up, tune it, and keep it running. There is no app for you to learn and
+                  no dashboard you have to check.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* ---------- 6 · Pricing ---------- */}
+      <section className={styles.section} id="pricing">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>006 / Pricing</p>
+          <h2 className={styles.sectionTitle}>Plain pricing. No quote form.</h2>
+          <p className={styles.sectionLede}>
+            Two numbers get you live, and one keeps it running. That is the whole price list.
+          </p>
+          <div className={styles.priceGrid}>
+            <div className={styles.priceCard}>
+              <p className={styles.priceName}>Getting set up</p>
+              <div className={styles.priceRow}>
+                <span className={styles.priceWhat}>Setup, bundled with a website build</span>
+                <span className={styles.priceAmount}>$299</span>
+              </div>
+              <div className={styles.priceRow}>
+                <span className={styles.priceWhat}>Setup on its own</span>
+                <span className={styles.priceAmount}>$499</span>
+              </div>
+              <p className={styles.priceNote}>
+                We build your front desk around your shop — your name, your hours, your services,
+                your booking rules — then test-call it with you before it goes live.
+              </p>
+            </div>
+            <div className={styles.priceCardFeatured}>
+              <p className={styles.priceName}>Keeping it running</p>
+              <div className={styles.priceRow}>
+                <span className={styles.priceWhat}>Managed service, per month</span>
+                <span className={styles.priceAmount}>
+                  $179<small>/mo</small>
+                </span>
+              </div>
+              <p className={styles.priceNote}>
+                We set it up, tune it, and keep it running — answering, booking, and summarizing
+                your calls around the clock.
+              </p>
+            </div>
+          </div>
+          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+            <p className={styles.audioLabel}>The bundle most shops start with</p>
+            <p className={styles.summaryText} style={{ fontSize: "1.02rem" }}>
+              A website from <strong>$999</strong> with a care plan at <strong>$99/mo</strong> —
+              add FirstRing setup for <strong>$299</strong> instead of $499, and your new site and
+              your new front desk go live together.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 7 · Extras ---------- */}
+      <section className={styles.section} id="extras">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>007 / Extras</p>
+          <h2 className={styles.sectionTitle}>Available add-ons.</h2>
+          <p className={styles.sectionLede}>
+            When you are ready for more than the basics, these bolt onto any FirstRing setup. Ask
+            us about them when we talk.
+          </p>
+          <ul className={styles.extras}>
+            <li className={styles.extra}>
+              <p className={styles.extraTag}>Add-on</p>
+              <p className={styles.extraTitle}>Text-message call summaries</p>
+              <p className={styles.extraText}>
+                Every call summary lands on your phone as a text, the moment the call ends.
+              </p>
+            </li>
+            <li className={styles.extra}>
+              <p className={styles.extraTag}>Add-on</p>
+              <p className={styles.extraTitle}>Branded calls</p>
+              <p className={styles.extraText}>
+                Your shop&rsquo;s name and number presented your way, so customers know exactly
+                who is answering.
+              </p>
+            </li>
+            <li className={styles.extra}>
+              <p className={styles.extraTag}>Add-on</p>
+              <p className={styles.extraTitle}>Verified phone number</p>
+              <p className={styles.extraText}>
+                A verified number for your front desk, so your calls carry your shop&rsquo;s
+                identity with the carriers.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* ---------- 8 · FAQ ---------- */}
+      <section className={styles.section} id="faq">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>008 / Questions</p>
+          <h2 className={styles.sectionTitle}>Asked by shop owners.</h2>
+          <p className={styles.sectionLede}>Straight answers, same as the front desk gives.</p>
+          <div className={styles.faqList}>
+            <details className={styles.faqItem}>
+              <summary>What happens when it can&rsquo;t help a caller?</summary>
+              <p className={styles.faqAnswer}>
+                It takes a message — the caller&rsquo;s name, number, and what they need — and that
+                message comes to you with the call summary. Nobody reaches a dead end, and no
+                caller is left talking to a voicemail box.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>Does it quote repair prices?</summary>
+              <p className={styles.faqAnswer}>
+                No. FirstRing never guesses at prices. When a caller asks what a job costs, it
+                sends that question to you — on our demo call, it advised the caller to request a
+                brake check at the appointment so the shop could inspect the vehicle and price the
+                work itself.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>What do I actually get after a call?</summary>
+              <p className={styles.faqAnswer}>
+                A short written summary: who called, what they need, and what was booked — like
+                the real one shown above. If you add text-message summaries, it lands on your
+                phone as a text after every call.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>Do I need a new phone number?</summary>
+              <p className={styles.faqAnswer}>
+                Not necessarily. FirstRing can answer on a number we set up for your shop, or your
+                existing shop line can be forwarded to it. We will walk through which fits your
+                shop when we set you up.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>Do I have to learn an app or a dashboard?</summary>
+              <p className={styles.faqAnswer}>
+                No. FirstRing is a managed service — we set it up, tune it, and keep it running.
+                Your part is reading the call summaries and doing the work that gets booked.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>How fast can it go live?</summary>
+              <p className={styles.faqAnswer}>
+                We set it up for you; most shops are live within a few business days. We build it
+                around your shop&rsquo;s name, hours, and services, and test-call it with you
+                before your customers ever hear it.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 9 · Final CTA ---------- */}
+      <section className={styles.finalCta}>
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>009 / Try it</p>
+          <h2 className={styles.finalTitle}>Do not take our word for it. Call it.</h2>
+          <p className={styles.finalText}>
+            The demo line is live. Book an oil change, change your mind about the time, ask it for
+            a price it should not quote — then imagine that voice answering your shop&rsquo;s phone
+            tonight.
+          </p>
+          <div className={styles.ctaRow}>
+            <a className={styles.ctaPrimary} href={DEMO_TEL}>
+              Call (817) 546-5305
+            </a>
+            <a className={styles.ctaGhost} href="mailto:hello@nexteleven.dev">
+              hello@nexteleven.dev
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
