@@ -55,11 +55,29 @@ export default function FrontDeskPage() {
         </div>
       </section>
 
+      {/* ---------- Who it's for ---------- */}
+      <section className={styles.whoStrip} aria-label="Who FirstRing is for">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>Who it&rsquo;s for</p>
+          <p className={styles.whoTrades}>
+            Auto shops · HVAC · Plumbing · Electrical · Salons &amp; barbers · Clinics · Towing ·
+            Contractors · Any business that runs on phone calls
+          </p>
+          <p className={styles.whoLine}>
+            If your business lives on its phone, FirstRing answers it.
+          </p>
+        </div>
+      </section>
+
       {/* ---------- 2 · Listen ---------- */}
       <section className={styles.section} id="listen">
         <div className={styles.wrap}>
           <p className={styles.kicker}>002 / Listen</p>
           <h2 className={styles.sectionTitle}>A real call to our demo line.</h2>
+          <p className={styles.sectionLede}>
+            Our demo answers as an auto shop — that&rsquo;s the line we could call live. Yours
+            answers as your business: your name, your services, your rules.
+          </p>
           <p className={styles.sectionLede}>
             This is not a script read by an actor. It is a recording of an actual call to the demo
             line above — a customer booking an oil change and asking about a brake job.
