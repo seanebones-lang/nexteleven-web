@@ -718,6 +718,30 @@
   color: var(--accent-light);
 }
 
+/* ---------- who it's for strip ---------- */
+
+.whoStrip {
+  padding: 2.6rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.whoTrades {
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.9;
+  color: var(--accent-light);
+  margin: 0 0 0.9rem;
+}
+
+.whoLine {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 0;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
