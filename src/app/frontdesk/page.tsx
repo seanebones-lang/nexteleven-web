@@ -537,7 +537,8 @@ export default function FrontDeskPage() {
             <p className={styles.audioLabel}>One-time setup</p>
             <p className={styles.summaryText} style={{ fontSize: "1.02rem" }}>
               One-time setup: <strong>$299</strong> bundled with a website build ·{" "}
-              <strong>$499</strong> standalone. We build your front desk around your shop — your
+              <strong>$499</strong> standalone · <strong>free</strong> on our $99/mo website care plan.
+              We build your front desk around your shop — your
               name, your hours, your services, your booking rules — then test-call it with you
               before it goes live.
             </p>
@@ -545,7 +546,7 @@ export default function FrontDeskPage() {
           <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
             <p className={styles.audioLabel}>The bundle most shops start with</p>
             <p className={styles.summaryText} style={{ fontSize: "1.02rem" }}>
-              A website from <strong>$999</strong> with a care plan at <strong>$99/mo</strong> —
+              A website from <strong>$999</strong> —
               add FirstRing setup for <strong>$299</strong> instead of $499, and your new site and
               your new front desk go live together.
             </p>
