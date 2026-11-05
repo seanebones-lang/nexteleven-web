@@ -74,6 +74,21 @@ export default function FrontDeskPage() {
             That number is our live demo line. Call it, book an oil change, ask it what a brake job
             costs — that voice is what your customers would hear.
           </p>
+          <figure className={styles.heroVideoWrap}>
+            <video
+              className={styles.heroVideo}
+              controls
+              preload="metadata"
+              poster="/video/firstring-explainer-poster.jpg"
+              src="/video/firstring-explainer.mp4"
+            >
+              Your browser does not support video playback. Call the demo line instead: (817)
+              546-5305.
+            </video>
+            <figcaption className={styles.heroVideoCaption}>
+              Watch: how FirstRing answers, books, and reports back — 2 minutes.
+            </figcaption>
+          </figure>
         </div>
       </section>
 

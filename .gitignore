@@ -9,3 +9,7 @@ public/audio/*.mp3
 
 # FirstRing share image is materialized at build time from assets/*.b64
 public/og/*.png
+
+# FirstRing explainer video + poster are materialized at build time from assets/*.b64
+public/video/*.mp4
+public/video/*.jpg
