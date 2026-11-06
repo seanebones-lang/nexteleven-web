@@ -119,6 +119,10 @@ export default function FrontDeskPage() {
             This is not a script read by an actor. It is a recording of an actual call to the demo
             line above — a customer booking an oil change and asking about a brake job.
           </p>
+          <p className={styles.sectionLede}>
+            The voice you&rsquo;ll hear is <strong>Amy</strong> — the same voice your callers
+            would hear, answering in your shop&rsquo;s name.
+          </p>
           <div className={styles.panel}>
             <p className={styles.audioLabel}>Demo call · Premier Auto Care (demo shop)</p>
             <audio
@@ -584,7 +588,9 @@ export default function FrontDeskPage() {
                 Everything in Standard, plus the extras built in: text summaries included,
                 branded caller ID — your shop&rsquo;s name shows when your front desk calls out
                 — and a verified phone number, registered so its calls aren&rsquo;t flagged as
-                spam.
+                spam. That last one matters more than it sounds: a verified number is far less
+                likely to show up as &ldquo;Spam Risk&rdquo; on a customer&rsquo;s phone, so
+                they actually see the call — and call back.
               </p>
             </div>
           </div>
@@ -598,6 +604,9 @@ export default function FrontDeskPage() {
               before it goes live.
             </p>
           </div>
+          <p className={styles.roiLine}>
+            One recovered $400 brake job covers two months of FirstRing.
+          </p>
           <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
             <p className={styles.audioLabel}>The bundle most shops start with</p>
             <p className={styles.summaryText} style={{ fontSize: "1.02rem" }}>
@@ -706,6 +715,33 @@ export default function FrontDeskPage() {
               </p>
             </details>
             <details className={styles.faqItem}>
+              <summary>Are calls recorded?</summary>
+              <p className={styles.faqAnswer}>
+                Yes. Calls are recorded and transcribed so you get an accurate summary of every
+                call — who called, what they need, what got booked. And callers hear it up front:
+                the greeting lets them know the call may be recorded.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>What happens to my callers&rsquo; information?</summary>
+              <p className={styles.faqAnswer}>
+                It goes to you — the summary and the full transcript of every call are yours, kept
+                for you as the owner. We don&rsquo;t sell caller data, and we don&rsquo;t use it
+                for anything else. Questions about a recording or a transcript? Email{" "}
+                <a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a> and we&rsquo;ll
+                pull it up.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>What if it misunderstands a caller?</summary>
+              <p className={styles.faqAnswer}>
+                It&rsquo;s built to ask a clarifying question — or take a message — rather than
+                guess. It never invents prices, availability, or details it doesn&rsquo;t have.
+                And because you see the full transcript of every call, nothing hides: if a call
+                went sideways, you can read exactly what was said.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
               <summary>How fast can it go live?</summary>
               <p className={styles.faqAnswer}>
                 We set it up for you; most shops are live within a few business days. We build it
@@ -717,10 +753,61 @@ export default function FrontDeskPage() {
         </div>
       </section>
 
-      {/* ---------- 9 · Final CTA ---------- */}
+      {/* ---------- 9 · Sample weekly report ---------- */}
+      <section className={styles.section} id="report">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>009 / The weekly report</p>
+          <h2 className={styles.sectionTitle}>Every Monday, the week in one page.</h2>
+          <p className={styles.sectionLede}>
+            On top of the summary you get after every call, FirstRing rolls the week up into one
+            short report — calls answered, what got booked, what needs you. Here&rsquo;s the
+            format, with made-up numbers:
+          </p>
+          <div className={styles.panelRaised}>
+            <p className={styles.audioLabel}>Sample weekly report · illustrative numbers</p>
+            <div className={styles.reportGrid}>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>38</span>
+                <span className={styles.reportWhat}>Calls answered</span>
+              </div>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>11</span>
+                <span className={styles.reportWhat}>Appointments booked</span>
+              </div>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>9</span>
+                <span className={styles.reportWhat}>Messages taken</span>
+              </div>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>2</span>
+                <span className={styles.reportWhat}>Flagged urgent</span>
+              </div>
+            </div>
+            <ul className={styles.reportLines}>
+              <li>
+                <strong>Booked:</strong> 6 oil changes · 2 brake checks · 2 diagnostics · 1
+                inspection
+              </li>
+              <li>
+                <strong>Urgent:</strong> Tuesday 9:14 AM — caller with a smoking engine; details
+                and callback number sent to you immediately.
+              </li>
+              <li>
+                <strong>After hours:</strong> 13 of the 38 calls came in while you were closed.
+              </li>
+            </ul>
+            <p className={styles.audioNote}>
+              Sample report — the format is real, the numbers are made up. Yours arrives every
+              Monday, with your shop&rsquo;s real week in it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- 10 · Final CTA ---------- */}
       <section className={styles.finalCta}>
         <div className={styles.wrap}>
-          <p className={styles.kicker}>009 / Try it</p>
+          <p className={styles.kicker}>010 / Try it</p>
           <h2 className={styles.finalTitle}>Do not take our word for it. Call it.</h2>
           <p className={styles.finalText}>
             The demo line is live. Book an oil change, change your mind about the time, ask it for
