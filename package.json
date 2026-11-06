@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node scripts/dev.mjs",
-    "prebuild": "node scripts/materialize-audio.mjs && node scripts/materialize-og-image.mjs && node scripts/materialize-video.mjs",
+    "prebuild": "node scripts/materialize-audio.mjs && node scripts/materialize-og-image.mjs && node scripts/materialize-video.mjs && node scripts/materialize-deadbolt-assets.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",

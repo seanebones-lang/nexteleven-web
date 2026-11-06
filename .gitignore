@@ -13,3 +13,7 @@ public/og/*.png
 # FirstRing explainer video + poster are materialized at build time from assets/*.b64
 public/video/*.mp4
 public/video/*.jpg
+
+# DeadBolt snapshot binaries are materialized at build time from assets/*.b64
+public/deadbolt-assets/*/deadbolt-power-mark.png
+public/deadbolt-assets/*/media/poster.jpg
