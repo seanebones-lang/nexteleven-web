@@ -890,3 +890,59 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ---------- intake form (STAGED — ships with the form) ---------- */
+
+.intakeForm {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.8rem;
+  max-width: 52rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin-bottom: 1.4rem;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.formField span {
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.formField input {
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 0.9rem;
+}
+
+.formField input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.honeypot {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
