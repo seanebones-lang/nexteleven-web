@@ -5,7 +5,7 @@ import { ProjectContact } from "@/components/shell/ProjectContact";
 
 export const metadata: Metadata = {
   title: "Complex software, backend systems & AI engineering",
-  description: "AI-led engineering across architecture, backend systems, APIs, AI agents, retrieval, iOS, Android, cloud delivery, security and software modernization. Defined scope, tested delivery.",
+  description: "AI-led engineering across architecture, backend systems, APIs, AI agents, retrieval, iOS, Android, cloud delivery, security, software modernization, and FirstRing managed AI front desk. Defined scope, tested delivery.",
   alternates: { canonical: "/build" },
 };
 
@@ -37,7 +37,51 @@ export default function BuildPage() {
         <h1>Complex software.<br />Clear delivery.</h1>
         <p>Bring us the system you need to build, connect, repair or release. We work across architecture, backend services, data, AI and native applications—from a focused technical investigation to a defined product build or modernization.</p>
         <div className="work-actions"><a className="primary-action" href="#start">Discuss the engineering work <span>↗</span></a><Link href="/work">Inspect our work ↗</Link></div>
+        <p className="build-feature-teaser">Featured managed service: <a href="#firstring-feature">FirstRing AI Front Desk ↗</a></p>
         <p className="build-diagnosis">Running AI agents or connected tools? <Link href="/diagnosis">Start with the $499 AI Spend-Leak Review ↗</Link></p>
+      </section>
+      
+      <section className="firstring-feature" id="firstring-feature" aria-labelledby="firstring-feature-title">
+        <div className="firstring-feature-copy">
+          <p className="section-label">Featured service / FirstRing AI Front Desk</p>
+          <h2 id="firstring-feature-title">Keep working. <span>We&rsquo;ll answer the phone.</span></h2>
+          <p className="firstring-feature-lede">
+            When the phone rings while everyone is busy, FirstRing answers in your business&rsquo;s
+            name. It handles incoming calls you route to it, takes messages, helps book
+            appointments, and sends you a clear summary after every call.
+          </p>
+          <ul className="firstring-feature-benefits">
+            <li><span aria-hidden="true">✓</span> Answers around the clock</li>
+            <li><span aria-hidden="true">✓</span> Keep your current business number</li>
+            <li><span aria-hidden="true">✓</span> Set up and managed by NextEleven</li>
+          </ul>
+          <div className="firstring-feature-actions">
+            <Link className="firstring-feature-primary" href="/frontdesk">Explore FirstRing &amp; pricing <span aria-hidden="true">↗</span></Link>
+            <a className="firstring-feature-secondary" href="tel:+18175465305">Call Amy&rsquo;s live demo <span aria-hidden="true">↗</span></a>
+          </div>
+          <p className="firstring-feature-price">From <strong>$179/month</strong> plus one-time setup. Standard and Premier options available.</p>
+        </div>
+        <div className="firstring-feature-showcase" aria-label="FirstRing demonstration call and example summary">
+          <div className="firstring-showcase-header">
+            <span className="firstring-showcase-identity"><span aria-hidden="true" className="firstring-showcase-mark">F</span> FIRST<span>RING</span></span>
+            <span className="firstring-showcase-label">REAL DEMO CALL</span>
+          </div>
+          <div className="firstring-showcase-intro">
+            <p className="firstring-showcase-eyebrow">Meet Amy · AI receptionist</p>
+            <h3>Hear how she handles a caller.</h3>
+            <p>A real recording from our auto-shop demo, including a changed appointment time and a question about repair pricing.</p>
+          </div>
+          <audio controls preload="none" src="/audio/firstring-demo-call.mp3" aria-label="Play real FirstRing demonstration call">
+            Your browser does not support audio playback. You can call (817) 546-5305 to try FirstRing instead.
+          </audio>
+          <div className="firstring-showcase-summary">
+            <p className="firstring-showcase-eyebrow">Example owner-facing summary · demo</p>
+            <strong>Oil change · Friday at noon</strong>
+            <p>2019 Ford F-150. Caller changed the requested time and asked about brake pricing. Amy captured the appointment details without inventing a repair quote.</p>
+            <div className="firstring-showcase-status"><span>✓ Request captured</span><span>✓ No guessed prices</span></div>
+          </div>
+          <p className="firstring-showcase-note">Demo recording with callback numbers masked for privacy.</p>
+        </div>
       </section>
       <section className="audience-section" aria-labelledby="audience-title">
         <p className="section-label">Your problem. A coordinated engineering effort.</p>
