@@ -1,0 +1,13 @@
+# GitGuardian configuration - format version 2.
+# Reference: https://docs.gitguardian.com/internal-repositories-monitoring/ggshield/configuration
+version: 2
+secret:
+  # Scoped ignore for exactly one value: the Web3Forms public access key used
+  # by the /frontdesk intake form (src/app/frontdesk/page.tsx). This key is
+  # public by design per Web3Forms vendor docs - it is an alias for the
+  # recipient inbox, is meant to live in client-side code, and is visible in
+  # the live page HTML. Authorized by Sean McDonnell on 2026-11-06.
+  # This file ignores no other secret, no path, and no detector.
+  ignored_matches:
+    - name: Web3Forms public access key - frontdesk intake form
+      match: c5d08d8b-c027-4d2b-bca5-518fb8b9a61f

@@ -824,6 +824,72 @@ export default function FrontDeskPage() {
           </div>
         </div>
       </section>
+
+      {/* ---------- 11 · Get set up (intake form) ---------- */}
+      <section className={styles.section} id="setup">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>011 / Get set up</p>
+          <h2 className={styles.sectionTitle}>Ready when you are.</h2>
+          <p className={styles.sectionLede}>
+            Tell us where to reach you and we&rsquo;ll call to set up your front desk — your
+            name, your hours, your services, your booking rules. Most shops are live within a
+            few business days.
+          </p>
+          <form
+            className={styles.intakeForm}
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            {/* Web3Forms access key is public by design (it is an alias for the recipient inbox).
+                Get it by registering hello@nexteleven.dev at web3forms.com — the key arrives by email (hello@ forwards to the company inbox).
+                Replace WEB3FORMS_ACCESS_KEY below with that key before shipping. */}
+            <input type="hidden" name="access_key" value="c5d08d8b-c027-4d2b-bca5-518fb8b9a61f" />
+            <input type="hidden" name="subject" value="FirstRing — new setup request from nexteleven.dev/frontdesk" />
+            <input type="hidden" name="from_name" value="nexteleven.dev/frontdesk" />
+            <input type="checkbox" name="botcheck" className={styles.honeypot} tabIndex={-1} autoComplete="off" aria-hidden="true" />
+            <div className={styles.formGrid}>
+              <label className={styles.formField}>
+                <span>Your name</span>
+                <input type="text" name="name" required autoComplete="name" />
+              </label>
+              <label className={styles.formField}>
+                <span>Business name</span>
+                <input type="text" name="business" required autoComplete="organization" />
+              </label>
+              <label className={styles.formField}>
+                <span>Business phone</span>
+                <input type="tel" name="phone" required autoComplete="tel" />
+              </label>
+              <label className={styles.formField}>
+                <span>Email</span>
+                <input type="email" name="email" required autoComplete="email" />
+              </label>
+              <label className={styles.formField}>
+                <span>Best time to reach you</span>
+                <input type="text" name="best_time" required placeholder="e.g. Weekday mornings" />
+              </label>
+              <label className={styles.formField}>
+                <span>Anything we should know? (optional)</span>
+                <input type="text" name="notes" />
+              </label>
+            </div>
+            <button type="submit" className={styles.ctaPrimary} style={{ border: "none", cursor: "pointer" }}>
+              Request my setup call
+            </button>
+            <p className={styles.audioNote}>
+              Rather talk first? The demo line is live at{" "}
+              <a href={DEMO_TEL} style={{ color: "var(--accent-light)" }}>
+                (817) 546-5305
+              </a>{" "}
+              — or email us at{" "}
+              <a href="mailto:hello@nexteleven.dev" style={{ color: "var(--accent-light)" }}>
+                hello@nexteleven.dev
+              </a>
+              .
+            </p>
+          </form>
+        </div>
+      </section>
     </>
   );
 }
