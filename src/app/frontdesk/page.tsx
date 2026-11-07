@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import styles from "./frontdesk.module.css";
 
 export const metadata: Metadata = {
-  title: "FirstRing — Your phone, answered on the first ring",
+  title: "FirstRing — Never miss the calls that matter",
   description:
     "FirstRing is an AI front desk for local shops from NextEleven Studios. It answers your phone 24/7 in your shop's name, books appointments, takes messages, and sends you a summary of every call.",
   openGraph: {
-    title: "FirstRing — Your phone, answered on the first ring. Every time.",
+    title: "FirstRing — Your calls answered, your business moving.",
     description:
       "An AI front desk for local businesses, built and managed by NextEleven Studios. Answers 24/7, books appointments, never invents a price. Call the live demo: (817) 546-5305.",
     url: "/frontdesk",
@@ -51,125 +51,204 @@ export default function FrontDeskPage() {
   return (
     <>
       {/* ---------- 1 · Hero ---------- */}
-      <section className={styles.hero}>
+
+      <section className={styles.hero} id="top">
         <div className={styles.wrap}>
-          <p className={styles.kicker}>FirstRing · AI front desk for local shops</p>
-          <h1 className={styles.heroTitle}>
-            Your phone, answered on the <em>first ring</em>. Every time.
-          </h1>
-          <p className={styles.heroLede}>
-            FirstRing is an AI front desk for your shop. It answers your phone around the clock in
-            your shop&rsquo;s name, books appointments, takes messages — and sends you a plain
-            summary of every call. No app to install. No login to learn. We run it for you.
-          </p>
-          <div className={styles.ctaRow}>
-            <a className={styles.ctaPrimary} href={DEMO_TEL}>
-              Hear it yourself: (817) 546-5305
-            </a>
-            <a className={styles.ctaGhost} href="#listen">
-              Listen to a real call first
-            </a>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroCopy}>
+              <p className={styles.kicker}>YOUR BUSINESS. ALWAYS ANSWERED.</p>
+              <h1 className={styles.heroTitle}>Keep working. <em>We&rsquo;ll answer the phone.</em></h1>
+              <p className={styles.heroLede}>
+                FirstRing answers calls in your business&rsquo;s name, books appointments, takes
+                messages, and sends you the details. Day or night, while you focus on the work.
+              </p>
+              <div className={styles.ctaRow}>
+                <a className={styles.ctaPrimary} href="#setup">Get FirstRing for my business</a>
+                <a className={styles.ctaGhost} href={DEMO_TEL}>Call the live demo</a>
+              </div>
+              <p className={styles.heroNote}>
+                Starting at <strong>$179/month</strong>, plus one-time setup. No app to install,
+                no dashboard to learn. NextEleven sets it up and manages it for you.
+              </p>
+              <div className={styles.heroProof} aria-label="FirstRing essentials">
+                <span><CheckIcon /> 24/7 coverage</span>
+                <span><CheckIcon /> Your existing number</span>
+                <span><CheckIcon /> Managed setup</span>
+              </div>
+            </div>
+            <aside className={styles.liveDemoCard} aria-label="Real FirstRing demo call">
+              <div className={styles.liveDemoTop}>
+                <span className={styles.avatarCircle} aria-hidden="true">A</span>
+                <div>
+                  <p className={styles.demoTitle}>Meet Amy, your front desk</p>
+                  <p className={styles.demoSubtitle}>Premier Auto Care · demonstration shop</p>
+                </div>
+                <span className={styles.demoLive}>REAL CALL</span>
+              </div>
+              <p className={styles.demoIntro}>
+                Hear Amy handle an appointment, a schedule change, and a price question.
+                No actors. This is an actual call to our demonstration line.
+              </p>
+              <audio className={styles.audio} controls preload="metadata" src="/audio/firstring-demo-call.mp3">
+                Your browser does not support audio playback. Call (817) 546-5305 instead.
+              </audio>
+              <div className={styles.demoReceipt}>
+                <div className={styles.receiptHeading}>
+                  <span>WHAT THE OWNER RECEIVES</span>
+                  <span className={styles.receiptStatus}><CheckIcon /> Call summarized</span>
+                </div>
+                <p className={styles.receiptTitle}>Oil change appointment · Friday, noon</p>
+                <p className={styles.receiptText}>
+                  Caller scheduled an oil change for a 2019 Ford F-150, changed the requested
+                  time, and asked about brake pricing. The front desk advised a brake check
+                  instead of guessing at a repair price.
+                </p>
+                <div className={styles.receiptFooter}>
+                  <span><CheckIcon /> Appointment recorded</span>
+                  <span><CheckIcon /> Price not invented</span>
+                </div>
+              </div>
+              <a className={styles.demoSecondaryLink} href="#listen">
+                Hear another test call and watch the explainer →
+              </a>
+              <p className={styles.demoPrivacy}>Demo recording; callback numbers have been masked for privacy.</p>
+            </aside>
           </div>
-          <p className={styles.heroNote}>
-            That number is our live demo line. Call it, book an oil change, ask it what a brake job
-            costs — that voice is what your customers would hear.
-          </p>
-          <figure className={styles.heroVideoWrap}>
-            <video
-              className={styles.heroVideo}
-              controls
-              preload="metadata"
-              poster="/video/firstring-explainer-poster.jpg"
-              src="/video/firstring-explainer.mp4"
-            >
-              Your browser does not support video playback. Call the demo line instead: (817)
-              546-5305.
-            </video>
-            <figcaption className={styles.heroVideoCaption}>
-              Watch: how FirstRing answers, books, and reports back — 2 minutes.
-            </figcaption>
-          </figure>
         </div>
       </section>
 
-      {/* ---------- Who it's for ---------- */}
-      <section className={styles.whoStrip} aria-label="Who FirstRing is for">
+
+      <section className={`${styles.whoStrip} ${styles.lightSection}`} aria-label="Businesses FirstRing helps">
         <div className={styles.wrap}>
-          <p className={styles.kicker}>Who it&rsquo;s for</p>
-          <p className={styles.whoTrades}>
-            Auto shops · HVAC · Plumbing · Electrical · Salons &amp; barbers · Clinics · Towing ·
-            Contractors · Any business that runs on phone calls
+          <p className={styles.kicker}>BUILT FOR THE BUSINESSES THAT KEEP MOVING</p>
+          <h2 className={styles.sectionTitle}>You take care of the work. We catch the calls.</h2>
+          <p className={styles.sectionLede}>
+            Whether you are under a hood, on a job site, or serving someone in the chair,
+            a ringing phone should not mean lost business.
           </p>
-          <p className={styles.whoLine}>
-            If your business lives on its phone, FirstRing answers it.
-          </p>
+          <div className={styles.industryGrid}>
+            <div className={styles.industryCard}><span>01</span><strong>Auto repair</strong><p>Keep the bays moving while appointments come in.</p></div>
+            <div className={styles.industryCard}><span>02</span><strong>Home services</strong><p>Answer new inquiries when your crew is on a job.</p></div>
+            <div className={styles.industryCard}><span>03</span><strong>Salons &amp; barbers</strong><p>Take booking requests without interrupting a client.</p></div>
+            <div className={styles.industryCard}><span>04</span><strong>Local service shops</strong><p>Catch after-hours questions and send the details to your team.</p></div>
+          </div>
         </div>
       </section>
 
-      {/* ---------- 2 · Listen ---------- */}
+      <section className={`${styles.section} ${styles.lightSection}`} id="does">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>005 / What it does</p>
+          <h2 className={styles.sectionTitle}>Your phone is covered, even when you are busy.</h2>
+          <p className={styles.sectionLede}>
+            Built for shops first — the places where the phone rings while everyone&rsquo;s hands
+            are busy.
+          </p>
+          <ul className={styles.caps}>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Answers 24/7, in your shop&rsquo;s name</p>
+                <p className={styles.capText}>
+                  Nights, weekends, lunch rush — every call gets a professional answer, not a
+                  voicemail box.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Books appointments, with read-backs</p>
+                <p className={styles.capText}>
+                  Name, phone, vehicle, what it needs, and the time — confirmed back to the caller
+                  before the call ends.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Never guesses at repair prices</p>
+                <p className={styles.capText}>
+                  Price questions go to you, not to a made-up number. On the demo call it suggested
+                  a brake check instead of quoting a brake job.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Takes a message when it can&rsquo;t book</p>
+                <p className={styles.capText}>
+                  If a call cannot turn into an appointment, the caller leaves a real message —
+                  nobody hits a dead end.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>A summary after every call</p>
+                <p className={styles.capText}>
+                  Who called, what they need, what got booked — written out plainly, like the
+                  summary above.
+                </p>
+              </div>
+            </li>
+            <li className={styles.cap}>
+              <span className={styles.capCheck}><CheckIcon /></span>
+              <div>
+                <p className={styles.capTitle}>Managed for you, start to finish</p>
+                <p className={styles.capText}>
+                  We set it up, tune it, and keep it running. There is no app for you to learn and
+                  no dashboard you have to check.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
       <section className={styles.section} id="listen">
         <div className={styles.wrap}>
-          <p className={styles.kicker}>002 / Listen</p>
-          <h2 className={styles.sectionTitle}>A real call to our demo line.</h2>
+          <p className={styles.kicker}>HEAR IT FOR YOURSELF</p>
+          <h2 className={styles.sectionTitle}>Not a scripted voiceover. Real calls.</h2>
           <p className={styles.sectionLede}>
-            Our demo answers as an auto shop — that&rsquo;s the line we could call live. Yours
-            answers as your business: your name, your services, your rules.
+            Call <a className={styles.inlineLink} href={DEMO_TEL}>(817) 546-5305</a> and test Amy
+            yourself, or listen to what happened when someone asked for an oil change on a Tesla.
           </p>
-          <p className={styles.sectionLede}>
-            This is not a script read by an actor. It is a recording of an actual call to the demo
-            line above — a customer booking an oil change and asking about a brake job.
-          </p>
-          <p className={styles.sectionLede}>
-            The voice you&rsquo;ll hear is <strong>Amy</strong> — the same voice your callers
-            would hear, answering in your shop&rsquo;s name.
-          </p>
-          <div className={styles.panel}>
-            <p className={styles.audioLabel}>Demo call · Premier Auto Care (demo shop)</p>
-            <audio
-              className={styles.audio}
-              controls
-              preload="metadata"
-              src="/audio/firstring-demo-call.mp3"
-            >
-              Your browser does not support audio playback. Call the demo line instead: (817)
-              546-5305.
-            </audio>
-            <p className={styles.audioNote}>
-              Prefer to drive the conversation yourself? The demo line is live right now at{" "}
-              <a href={DEMO_TEL} style={{ color: "var(--accent-light)" }}>
-                (817) 546-5305
-              </a>
-              .
-            </p>
+          <div className={styles.proofGrid}>
+            <div className={styles.panel}>
+              <p className={styles.audioLabel}>Real demo call 02 · The Tesla test</p>
+              <h3 className={styles.proofCardTitle}>A harder caller. No made-up booking.</h3>
+              <p className={styles.proofCardText}>
+                Amy catches a joke callback number, explains why a Tesla does not need a
+                conventional oil change, and handles the conversation politely.
+              </p>
+              <audio className={styles.audio} controls preload="metadata" src="/audio/firstring-demo-call-2.mp3">
+                Your browser does not support audio playback. Call the live demonstration line instead.
+              </audio>
+            </div>
+            <div className={styles.panel}>
+              <p className={styles.audioLabel}>Two-minute walkthrough</p>
+              <h3 className={styles.proofCardTitle}>See how FirstRing works.</h3>
+              <video className={styles.heroVideo} controls preload="metadata"
+                poster="/video/firstring-explainer-poster.jpg" src="/video/firstring-explainer.mp4">
+                Your browser does not support video playback. Call the demonstration line instead.
+              </video>
+            </div>
           </div>
-          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
-            <p className={styles.audioLabel}>Demo call 2 · The Tesla test (demo shop)</p>
-            <audio
-              className={styles.audio}
-              controls
-              preload="metadata"
-              src="/audio/firstring-demo-call-2.mp3"
-            >
-              Your browser does not support audio playback. Call the demo line instead: (817)
-              546-5305.
-            </audio>
-            <p className={styles.audioNote}>
-              Same line, a harder customer: a joke callback number, and an oil change for a car
-              with no engine. The written-out call is below, under &ldquo;It also catches
-              nonsense.&rdquo;
-            </p>
-          </div>
-          <p className={styles.audioNote} style={{ marginTop: "1rem" }}>
-            Callback numbers are muted in these recordings for privacy.
+          <p className={styles.audioNote}>
+            These are recordings of our demonstration line, not paid actors. Callback numbers are masked for privacy.
+            Your FirstRing greets callers with your business name, hours, and booking rules.
           </p>
         </div>
       </section>
 
-      {/* ---------- 3 · Read the call ---------- */}
-      <section className={styles.section} id="read">
+      <section className={`${styles.section} ${styles.lightSection}`} id="read">
         <div className={styles.wrap}>
           <p className={styles.kicker}>003 / Read the call</p>
-          <h2 className={styles.sectionTitle}>What the owner got after that call.</h2>
+          <h2 className={styles.sectionTitle}>Hear the conversation. See what your team gets.</h2>
           <p className={styles.sectionLede}>
             After every call, FirstRing writes a short summary — who called, what they need, what
             got booked. Here is the exact summary from the call above, and the full call written
@@ -218,7 +297,9 @@ export default function FrontDeskPage() {
             The caller's callback number is MASKED on purpose — it is a personal
             cell number and must never be rendered in full on this page.
           */}
-          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+          <details className={styles.transcriptDetails}>
+            <summary>Read the full call transcript</summary>
+            <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
             <p className={styles.audioLabel}>The full call, word for word</p>
             <ol className={styles.transcript}>
               <li className={styles.turn}>
@@ -324,6 +405,7 @@ export default function FrontDeskPage() {
               </li>
             </ol>
           </div>
+          </details>
 
           <h3 className={styles.sectionTitle} style={{ fontSize: "1.7rem", marginTop: "2.8rem" }}>
             It also catches nonsense.
@@ -352,7 +434,9 @@ export default function FrontDeskPage() {
             Retell's own summary of this call is NOT used here; it prints the
             number in full.
           */}
-          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+          <details className={styles.transcriptDetails}>
+            <summary>Read the full call transcript</summary>
+            <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
             <p className={styles.audioLabel}>The full call, word for word</p>
             <ol className={styles.transcript}>
               <li className={styles.turn}>
@@ -430,14 +514,14 @@ export default function FrontDeskPage() {
               </li>
             </ol>
           </div>
+          </details>
         </div>
       </section>
 
-      {/* ---------- 4 · How it works ---------- */}
-      <section className={styles.section} id="how">
+      <section className={`${styles.section} ${styles.lightSection}`} id="how">
         <div className={styles.wrap}>
           <p className={styles.kicker}>004 / How it works</p>
-          <h2 className={styles.sectionTitle}>Three steps. None of them are yours.</h2>
+          <h2 className={styles.sectionTitle}>Three steps. No new software to learn.</h2>
           <p className={styles.sectionLede}>
             You keep working the shop. FirstRing handles the phone.
           </p>
@@ -472,153 +556,58 @@ export default function FrontDeskPage() {
         </div>
       </section>
 
-      {/* ---------- 5 · What it does ---------- */}
-      <section className={styles.section} id="does">
-        <div className={styles.wrap}>
-          <p className={styles.kicker}>005 / What it does</p>
-          <h2 className={styles.sectionTitle}>A front desk that never misses.</h2>
-          <p className={styles.sectionLede}>
-            Built for shops first — the places where the phone rings while everyone&rsquo;s hands
-            are busy.
-          </p>
-          <ul className={styles.caps}>
-            <li className={styles.cap}>
-              <span className={styles.capCheck}><CheckIcon /></span>
-              <div>
-                <p className={styles.capTitle}>Answers 24/7, in your shop&rsquo;s name</p>
-                <p className={styles.capText}>
-                  Nights, weekends, lunch rush — every call gets a professional answer, not a
-                  voicemail box.
-                </p>
-              </div>
-            </li>
-            <li className={styles.cap}>
-              <span className={styles.capCheck}><CheckIcon /></span>
-              <div>
-                <p className={styles.capTitle}>Books appointments, with read-backs</p>
-                <p className={styles.capText}>
-                  Name, phone, vehicle, what it needs, and the time — confirmed back to the caller
-                  before the call ends.
-                </p>
-              </div>
-            </li>
-            <li className={styles.cap}>
-              <span className={styles.capCheck}><CheckIcon /></span>
-              <div>
-                <p className={styles.capTitle}>Never guesses at repair prices</p>
-                <p className={styles.capText}>
-                  Price questions go to you, not to a made-up number. On the demo call it suggested
-                  a brake check instead of quoting a brake job.
-                </p>
-              </div>
-            </li>
-            <li className={styles.cap}>
-              <span className={styles.capCheck}><CheckIcon /></span>
-              <div>
-                <p className={styles.capTitle}>Takes a message when it can&rsquo;t book</p>
-                <p className={styles.capText}>
-                  If a call cannot turn into an appointment, the caller leaves a real message —
-                  nobody hits a dead end.
-                </p>
-              </div>
-            </li>
-            <li className={styles.cap}>
-              <span className={styles.capCheck}><CheckIcon /></span>
-              <div>
-                <p className={styles.capTitle}>A summary after every call</p>
-                <p className={styles.capText}>
-                  Who called, what they need, what got booked — written out plainly, like the
-                  summary above.
-                </p>
-              </div>
-            </li>
-            <li className={styles.cap}>
-              <span className={styles.capCheck}><CheckIcon /></span>
-              <div>
-                <p className={styles.capTitle}>Managed for you, start to finish</p>
-                <p className={styles.capText}>
-                  We set it up, tune it, and keep it running. There is no app for you to learn and
-                  no dashboard you have to check.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      {/* ---------- 6 · Pricing ---------- */}
-      <section className={styles.section} id="pricing">
+      <section className={`${styles.section} ${styles.lightSection}`} id="pricing">
         <div className={styles.wrap}>
-          <p className={styles.kicker}>006 / Pricing</p>
-          <h2 className={styles.sectionTitle}>Plain pricing. No quote form.</h2>
-          <p className={styles.sectionLede}>
-            Two ways to run it — Standard, or Premier with the extras built in — plus one
-            one-time setup. That is the whole price list.
-          </p>
+          <p className={styles.kicker}>SIMPLE, TRANSPARENT PRICING</p>
+          <h2 className={styles.sectionTitle}>A real front desk, without the overhead.</h2>
+          <p className={styles.sectionLede}>Choose the level of service that fits your shop. Both plans are managed by NextEleven, and call minutes are included.</p>
           <div className={styles.priceGrid}>
-            <div className={styles.priceCard}>
-              <p className={styles.priceName}>Standard</p>
-              <div className={styles.priceRow}>
-                <span className={styles.priceWhat}>Managed front desk, per month</span>
-                <span className={styles.priceAmount}>
-                  $179<small>/mo</small>
-                </span>
-              </div>
-              <div className={styles.priceRow}>
-                <span className={styles.priceWhat}>Add text summaries</span>
-                <span className={styles.priceAmount}>
-                  +$19.99<small>/mo</small>
-                </span>
-              </div>
-              <p className={styles.priceNote}>
-                Your managed front desk, run for you around the clock. Call minutes are included
-                — one flat price, no per-minute billing. And after every call, a plain written
-                summary lands in your email: who called, what they need, what got booked.
-              </p>
+            <article className={styles.priceCard}>
+              <p className={styles.priceName}>STANDARD</p>
+              <p className={styles.priceBig}>$179<span>/month</span></p>
+              <p className={styles.planIntro}>Everything you need to stop sending customers to voicemail.</p>
+              <ul className={styles.planFeatures}>
+                <li><CheckIcon /> 24/7 calls answered in your business name</li>
+                <li><CheckIcon /> Appointment booking and messages</li>
+                <li><CheckIcon /> Email summaries after every call</li>
+                <li><CheckIcon /> Weekly call report</li>
+                <li><CheckIcon /> Managed setup and ongoing support</li>
+              </ul>
+              <p className={styles.planFootnote}>Optional text summaries: +$19.99/month.</p>
+              <a className={styles.planCta} href="#setup">Choose Standard →</a>
+            </article>
+            <article className={styles.priceCardFeatured}>
+              <p className={styles.priceName}>PREMIER · MORE WAYS TO STAY IN THE LOOP</p>
+              <p className={styles.priceBig}>$229<span>/month</span></p>
+              <p className={styles.planIntro}>Everything in Standard, plus the extras for a more connected front desk.</p>
+              <ul className={styles.planFeatures}>
+                <li><CheckIcon /> Everything included in Standard</li>
+                <li><CheckIcon /> Text-message call summaries included</li>
+                <li><CheckIcon /> Branded outbound caller ID, where supported</li>
+                <li><CheckIcon /> Phone number registration and verification support</li>
+                <li><CheckIcon /> Setup and ongoing management by NextEleven</li>
+              </ul>
+              <p className={styles.planFootnote}>Caller ID display and spam labels depend on carriers and cannot be guaranteed.</p>
+              <a className={styles.planCta} href="#setup">Choose Premier →</a>
+            </article>
+          </div>
+          <div className={styles.setupFees}>
+            <div>
+              <p className={styles.audioLabel}>ONE-TIME SETUP</p>
+              <h3>Configured for your business, not a generic script.</h3>
+              <p>We set up your name, hours, services, and booking rules, then test the front desk with you.</p>
             </div>
-            <div className={styles.priceCardFeatured}>
-              <p className={styles.priceName}>Premier</p>
-              <div className={styles.priceRow}>
-                <span className={styles.priceWhat}>Everything in Standard, per month</span>
-                <span className={styles.priceAmount}>
-                  $229<small>/mo</small>
-                </span>
-              </div>
-              <p className={styles.priceNote}>
-                Everything in Standard, plus the extras built in: text summaries included,
-                branded caller ID — your shop&rsquo;s name shows when your front desk calls out
-                — and a verified phone number, registered so its calls aren&rsquo;t flagged as
-                spam. That last one matters more than it sounds: a verified number is far less
-                likely to show up as &ldquo;Spam Risk&rdquo; on a customer&rsquo;s phone, so
-                they actually see the call — and call back.
-              </p>
+            <div className={styles.setupFeeOptions}>
+              <p><strong>$499</strong> standalone setup</p>
+              <p><strong>$299</strong> with a website build (websites from $999)</p>
+              <p><strong>Free</strong> with the $99/month website care plan</p>
             </div>
           </div>
-          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
-            <p className={styles.audioLabel}>One-time setup</p>
-            <p className={styles.summaryText} style={{ fontSize: "1.02rem" }}>
-              One-time setup: <strong>$299</strong> bundled with a website build ·{" "}
-              <strong>$499</strong> standalone · <strong>free</strong> on our $99/mo website care plan.
-              We build your front desk around your shop — your
-              name, your hours, your services, your booking rules — then test-call it with you
-              before it goes live.
-            </p>
-          </div>
-          <p className={styles.roiLine}>
-            One recovered $400 brake job covers two months of FirstRing.
-          </p>
-          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
-            <p className={styles.audioLabel}>The bundle most shops start with</p>
-            <p className={styles.summaryText} style={{ fontSize: "1.02rem" }}>
-              A website from <strong>$999</strong> —
-              add FirstRing setup for <strong>$299</strong> instead of $499, and your new site and
-              your new front desk go live together.
-            </p>
-          </div>
+          <p className={styles.pricingNote}>No per-minute billing on these plans. Need to keep answering some calls yourself? We can set up forwarding for missed calls or after hours.</p>
         </div>
       </section>
 
-      {/* ---------- 7 · Extras ---------- */}
       <section className={styles.section} id="extras">
         <div className={styles.wrap}>
           <p className={styles.kicker}>007 / Extras</p>
@@ -639,24 +628,71 @@ export default function FrontDeskPage() {
               <p className={styles.extraTag}>Premier</p>
               <p className={styles.extraTitle}>Branded caller ID</p>
               <p className={styles.extraText}>
-                When your front desk calls a customer back, your shop&rsquo;s name shows on
-                their caller ID — not an unknown number.
+                We configure branded outbound caller ID where carriers support it, helping customers recognize your business.
               </p>
             </li>
             <li className={styles.extra}>
               <p className={styles.extraTag}>Premier</p>
               <p className={styles.extraTitle}>Verified phone number</p>
               <p className={styles.extraText}>
-                Your front desk&rsquo;s number is registered and verified, so its calls
-                aren&rsquo;t flagged as spam.
+                We help register and verify the number to reduce spam-labeling risk. Carrier labeling can vary.
               </p>
             </li>
           </ul>
         </div>
       </section>
 
-      {/* ---------- 8 · FAQ ---------- */}
-      <section className={styles.section} id="faq">
+      <section className={styles.section} id="report">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>009 / The weekly report</p>
+          <h2 className={styles.sectionTitle}>Know exactly what happened while you were working.</h2>
+          <p className={styles.sectionLede}>
+            On top of the summary you get after every call, FirstRing rolls the week up into one
+            short report — calls answered, what got booked, what needs you. Here&rsquo;s the
+            format, with made-up numbers:
+          </p>
+          <div className={styles.panelRaised}>
+            <p className={styles.audioLabel}>Sample weekly report · illustrative numbers</p>
+            <div className={styles.reportGrid}>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>38</span>
+                <span className={styles.reportWhat}>Calls answered</span>
+              </div>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>11</span>
+                <span className={styles.reportWhat}>Appointments booked</span>
+              </div>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>9</span>
+                <span className={styles.reportWhat}>Messages taken</span>
+              </div>
+              <div className={styles.reportStat}>
+                <span className={styles.reportNum}>2</span>
+                <span className={styles.reportWhat}>Flagged urgent</span>
+              </div>
+            </div>
+            <ul className={styles.reportLines}>
+              <li>
+                <strong>Booked:</strong> 6 oil changes · 2 brake checks · 2 diagnostics · 1
+                inspection
+              </li>
+              <li>
+                <strong>Urgent:</strong> Tuesday 9:14 AM — caller with a smoking engine; details
+                and callback number sent to you immediately.
+              </li>
+              <li>
+                <strong>After hours:</strong> 13 of the 38 calls came in while you were closed.
+              </li>
+            </ul>
+            <p className={styles.audioNote}>
+              Sample report — the format is real, the numbers are made up. Yours arrives every
+              Monday, with your shop&rsquo;s real week in it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.lightSection}`} id="faq">
         <div className={styles.wrap}>
           <p className={styles.kicker}>008 / Questions</p>
           <h2 className={styles.sectionTitle}>Asked by shop owners.</h2>
@@ -753,83 +789,10 @@ export default function FrontDeskPage() {
         </div>
       </section>
 
-      {/* ---------- 9 · Sample weekly report ---------- */}
-      <section className={styles.section} id="report">
-        <div className={styles.wrap}>
-          <p className={styles.kicker}>009 / The weekly report</p>
-          <h2 className={styles.sectionTitle}>Every Monday, the week in one page.</h2>
-          <p className={styles.sectionLede}>
-            On top of the summary you get after every call, FirstRing rolls the week up into one
-            short report — calls answered, what got booked, what needs you. Here&rsquo;s the
-            format, with made-up numbers:
-          </p>
-          <div className={styles.panelRaised}>
-            <p className={styles.audioLabel}>Sample weekly report · illustrative numbers</p>
-            <div className={styles.reportGrid}>
-              <div className={styles.reportStat}>
-                <span className={styles.reportNum}>38</span>
-                <span className={styles.reportWhat}>Calls answered</span>
-              </div>
-              <div className={styles.reportStat}>
-                <span className={styles.reportNum}>11</span>
-                <span className={styles.reportWhat}>Appointments booked</span>
-              </div>
-              <div className={styles.reportStat}>
-                <span className={styles.reportNum}>9</span>
-                <span className={styles.reportWhat}>Messages taken</span>
-              </div>
-              <div className={styles.reportStat}>
-                <span className={styles.reportNum}>2</span>
-                <span className={styles.reportWhat}>Flagged urgent</span>
-              </div>
-            </div>
-            <ul className={styles.reportLines}>
-              <li>
-                <strong>Booked:</strong> 6 oil changes · 2 brake checks · 2 diagnostics · 1
-                inspection
-              </li>
-              <li>
-                <strong>Urgent:</strong> Tuesday 9:14 AM — caller with a smoking engine; details
-                and callback number sent to you immediately.
-              </li>
-              <li>
-                <strong>After hours:</strong> 13 of the 38 calls came in while you were closed.
-              </li>
-            </ul>
-            <p className={styles.audioNote}>
-              Sample report — the format is real, the numbers are made up. Yours arrives every
-              Monday, with your shop&rsquo;s real week in it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- 10 · Final CTA ---------- */}
-      <section className={styles.finalCta}>
-        <div className={styles.wrap}>
-          <p className={styles.kicker}>010 / Try it</p>
-          <h2 className={styles.finalTitle}>Do not take our word for it. Call it.</h2>
-          <p className={styles.finalText}>
-            The demo line is live. Book an oil change, change your mind about the time, ask it for
-            a price it should not quote — then imagine that voice answering your shop&rsquo;s phone
-            tonight.
-          </p>
-          <div className={styles.ctaRow}>
-            <a className={styles.ctaPrimary} href={DEMO_TEL}>
-              Call (817) 546-5305
-            </a>
-            <a className={styles.ctaGhost} href="mailto:hello@nexteleven.dev">
-              hello@nexteleven.dev
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- 11 · Get set up (intake form) ---------- */}
-      <section className={styles.section} id="setup">
+      <section className={`${styles.section} ${styles.lightSection}`} id="setup">
         <div className={styles.wrap}>
           <p className={styles.kicker}>011 / Get set up</p>
-          <h2 className={styles.sectionTitle}>Ready when you are.</h2>
+          <h2 className={styles.sectionTitle}>Put FirstRing to work for you.</h2>
           <p className={styles.sectionLede}>
             Tell us where to reach you and we&rsquo;ll call to set up your front desk — your
             name, your hours, your services, your booking rules. Most shops are live within a
@@ -865,14 +828,22 @@ export default function FrontDeskPage() {
                 <input type="email" name="email" required autoComplete="email" />
               </label>
               <label className={styles.formField}>
-                <span>Best time to reach you</span>
-                <input type="text" name="best_time" required placeholder="e.g. Weekday mornings" />
+                <span>Best time to reach you (optional)</span>
+                <input type="text" name="best_time" placeholder="e.g. Weekday mornings" />
               </label>
               <label className={styles.formField}>
                 <span>Anything we should know? (optional)</span>
                 <input type="text" name="notes" />
               </label>
             </div>
+            <label className={styles.formField} style={{ marginBottom: "1.4rem" }}>
+              <span>Which plan are you considering?</span>
+              <select name="preferred_plan" defaultValue="not_sure">
+                <option value="not_sure">Not sure yet — help me choose</option>
+                <option value="standard">Standard · $179/month</option>
+                <option value="premier">Premier · $229/month</option>
+              </select>
+            </label>
             <button type="submit" className={styles.ctaPrimary} style={{ border: "none", cursor: "pointer" }}>
               Request my setup call
             </button>
@@ -888,6 +859,27 @@ export default function FrontDeskPage() {
               .
             </p>
           </form>
+        </div>
+      </section>
+
+      <section className={styles.finalCta}>
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>010 / Try it</p>
+          <h2 className={styles.finalTitle}>Hear it for yourself. Then make it yours.</h2>
+          <p className={styles.finalText}>
+            The demo line is live. Book an oil change, change your mind about the time, ask it for
+            a price it should not quote — then imagine that voice answering your shop&rsquo;s phone
+            tonight.
+          </p>
+          <div className={styles.ctaRow}>
+            <a className={styles.ctaPrimary} href={DEMO_TEL}>
+              Call (817) 546-5305
+            </a>
+            <a className={styles.ctaGhost} href="#setup">Get started</a>
+            <a className={styles.demoSecondaryLink} href="mailto:hello@nexteleven.dev">
+              hello@nexteleven.dev
+            </a>
+          </div>
         </div>
       </section>
     </>

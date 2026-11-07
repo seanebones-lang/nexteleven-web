@@ -946,3 +946,137 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* FirstRing 2026 buyer-first refresh. Keep existing tokens for dark sections. */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(9, 29, 48, 0.94);
+}
+.nav .navCta {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-family: inherit;
+  font-weight: 650;
+  letter-spacing: 0;
+  padding: 0.64rem 1.1rem;
+}
+.nav .navCta:hover { background: #155eef; color: #fff; border-color: #91bcff; }
+.section, .whoStrip, .hero { scroll-margin-top: 94px; }
+.hero {
+  padding: clamp(3.6rem, 7vw, 6rem) 0 clamp(3.8rem, 7vw, 5.8rem);
+  background: radial-gradient(55rem 33rem at 98% 5%, rgba(36,123,255,0.2), transparent 64%), linear-gradient(160deg, #091d30 8%, #0b2d50 75%, #091d30);
+}
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.heroCopy { min-width: 0; }
+.heroTitle { max-width: 13ch; font-size: clamp(2.7rem, 5.4vw, 5rem); line-height: 1.04; letter-spacing: -0.047em; margin-bottom: 1.45rem; }
+.heroTitle em { color: #a8cbff; }
+.heroLede { max-width: 37rem; font-size: clamp(1.1rem, 1.7vw, 1.28rem); line-height: 1.65; }
+.heroProof { border-top: 1px solid var(--line); padding-top: 1.35rem; margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 0.7rem 1.25rem; }
+.heroProof span { display: inline-flex; gap: 0.38rem; align-items: center; color: #d9e6f8; font-size: 0.88rem; }
+.heroProof svg, .receiptStatus svg, .receiptFooter svg { width: 15px; height: 15px; color: #91bcff; flex: none; }
+.liveDemoCard { border: 1px solid rgba(156,188,226,0.3); border-radius: 22px; padding: clamp(1.25rem, 2.3vw, 2rem); background: linear-gradient(155deg, #143856, #0c2138); box-shadow: 0 28px 65px rgba(0,0,0,0.27); min-width: 0; }
+.liveDemoTop { display: flex; align-items: center; gap: 0.75rem; }
+.avatarCircle { background: #155eef; color: white; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border-radius: 15px; font-size: 1.45rem; font-weight: 750; flex: none; }
+.demoTitle { font-size: 1.02rem; font-weight: 700; color: white; margin: 0; }
+.demoSubtitle { font-size: 0.78rem; color: #b4cbe3; margin: 0.2rem 0 0; }
+.demoLive { margin-left: auto; font-size: 0.63rem; color: #c7e0ff; border: 1px solid #42739d; padding: 0.32rem 0.55rem; border-radius: 999px; white-space: nowrap; letter-spacing: 0.07em; font-weight: 700; }
+.demoIntro { color: #cbd8e9; line-height: 1.58; font-size: 0.94rem; margin: 1.4rem 0 1rem; }
+.liveDemoCard .audio { color-scheme: dark; min-height: 54px; }
+.demoReceipt { background: #f5f8fc; color: #142b43; border-radius: 14px; padding: clamp(1rem, 2vw, 1.5rem); margin-top: 1.3rem; }
+.receiptHeading { display: flex; gap: 0.6rem; justify-content: space-between; align-items: center; flex-wrap: wrap; color: #65758a; font-size: 0.65rem; font-weight: 750; letter-spacing: 0.08em; }
+.receiptStatus { display: inline-flex; align-items: center; gap: 0.3rem; color: #155eef; letter-spacing: 0; }
+.receiptStatus svg { color: #155eef; }
+.receiptTitle { font-size: 1.07rem; font-weight: 740; line-height: 1.4; margin: 1.25rem 0 0.45rem; }
+.receiptText { color: #3e5266; line-height: 1.6; font-size: 0.88rem; margin: 0; }
+.receiptFooter { display: flex; gap: 0.55rem 1rem; flex-wrap: wrap; border-top: 1px solid #d7e0eb; margin-top: 1rem; padding-top: 0.8rem; font-size: 0.75rem; color: #2d5a91; }
+.receiptFooter span { display: inline-flex; gap: 0.35rem; align-items: center; }
+.receiptFooter svg { color: #155eef; }
+.demoSecondaryLink { color: #a8ceff; text-decoration: underline; text-underline-offset: 4px; font-weight: 620; font-size: 0.9rem; display: inline-block; margin-top: 1.25rem; }
+.demoSecondaryLink:hover { color: #fff; }
+.demoPrivacy { font-size: 0.73rem; color: #a6bad1; line-height: 1.5; margin: 0.8rem 0 0; }
+.lightSection {
+  --ink: #ffffff;
+  --panel: #fff;
+  --panel-raised: #eaf2ff;
+  --line: #d8e1ec;
+  --text: #152a40;
+  --muted: #586c80;
+  --muted-strong: #40576d;
+  --accent: #155eef;
+  --accent-light: #155eef;
+  background: #f5f7fb;
+  color: var(--text);
+}
+.lightSection .kicker { color: #155eef; }
+.lightSection .panel, .lightSection .step, .lightSection .cap, .lightSection .priceCard, .lightSection .faqItem, .lightSection .intakeForm { box-shadow: 0 10px 30px rgba(17,40,65,0.04); }
+.lightSection .ctaPrimary, .lightSection .planCta { color: #fff; }
+.whoStrip { padding: 4.3rem 0 4.6rem; }
+.whoStrip .sectionLede { margin-bottom: 1.8rem; }
+.industryGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.85rem; }
+.industryCard { padding: 1.3rem; border: 1px solid var(--line); border-radius: 15px; background: white; min-width: 0; }
+.industryCard span { display: block; font-family: var(--font-mono),monospace; color: #155eef; font-size: 0.7rem; margin-bottom: 1.4rem; }
+.industryCard strong { display: block; color: #162d45; font-size: 1.05rem; margin-bottom: 0.55rem; }
+.industryCard p { color: #526479; line-height: 1.55; margin: 0; font-size: 0.9rem; }
+.proofGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: stretch; }
+.proofCardTitle { font-size: 1.3rem; line-height: 1.25; margin: 0 0 0.75rem; }
+.proofCardText { color: var(--muted-strong); line-height: 1.6; margin: 0 0 1.4rem; }
+.inlineLink { color: var(--accent-light); text-decoration: underline; text-underline-offset: 3px; }
+.transcriptDetails { border: 1px solid var(--line); background: var(--panel); border-radius: 14px; margin-top: 1.25rem; overflow: hidden; }
+.transcriptDetails > summary { padding: 1.1rem 1.5rem; font-weight: 650; color: var(--text); cursor: pointer; }
+.transcriptDetails > summary:hover { color: var(--accent-light); }
+.transcriptDetails .panel { border: 0; box-shadow: none; margin: 0 !important; border-radius: 0; border-top: 1px solid var(--line); }
+.priceGrid { gap: 1.25rem; }
+.priceCard, .priceCardFeatured { padding: clamp(1.6rem, 3vw, 2.25rem); }
+.priceCardFeatured { background: #eaf2ff; box-shadow: 0 14px 44px rgba(21,94,239,0.11); }
+.priceBig { font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -0.05em; font-weight: 760; margin: 0 0 1rem; }
+.priceBig span { font-size: 0.95rem; font-weight: 520; letter-spacing: 0; color: var(--muted); margin-left: 0.5rem; }
+.planIntro { color: var(--muted-strong); font-size: 1rem; line-height: 1.55; margin: 0 0 1.5rem; }
+.planFeatures { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.85rem; }
+.planFeatures li { display: flex; align-items: start; gap: 0.65rem; color: var(--text); line-height: 1.45; font-size: 0.94rem; }
+.planFeatures svg { color: #155eef; width: 17px; height: 17px; flex: none; margin-top: 0.15rem; }
+.planFootnote { color: var(--muted); line-height: 1.5; font-size: 0.85rem; margin: 1.25rem 0 0; }
+.planCta { display: block; text-align: center; text-decoration: none; background: #155eef; padding: 0.85rem 1.1rem; border-radius: 11px; font-weight: 670; margin-top: auto; }
+.priceCard > .planCta, .priceCardFeatured > .planCta { margin-top: 1.55rem; }
+.planCta:hover { background: #1049bd; }
+.setupFees { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: center; border: 1px solid var(--line); border-radius: 16px; padding: 1.7rem; margin-top: 1.4rem; background: white; }
+.setupFees h3 { margin: 0 0 0.7rem; font-size: 1.2rem; }
+.setupFees p { color: var(--muted-strong); line-height: 1.6; margin: 0.45rem 0; }
+.setupFeeOptions { border-left: 1px solid var(--line); padding-left: 1.5rem; }
+.setupFeeOptions strong { font-size: 1.1rem; color: var(--text); }
+.pricingNote { margin: 1.1rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.formField select { width: 100%; background: var(--ink); border: 1px solid var(--line); border-radius: 10px; color: var(--text); font: inherit; font-size: 1rem; padding: 0.75rem 0.9rem; }
+.formField select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible, audio:focus-visible, video:focus-visible { outline: 3px solid #79aefc; outline-offset: 3px; }
+@media (max-width: 1040px) {
+  .heroGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .heroTitle { max-width: 15ch; }
+  .liveDemoCard { max-width: 45rem; }
+  .industryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 740px) {
+  .proofGrid, .setupFees { grid-template-columns: 1fr; }
+  .setupFeeOptions { border-left: none; border-top: 1px solid var(--line); padding: 1.2rem 0 0; }
+  .headerInner { gap: 0.75rem; }
+  .nav { gap: 0.65rem 0.9rem; }
+  .nav a { font-size: 0.83rem; }
+  .hero { padding: 3rem 0 3.5rem; }
+  .heroTitle { font-size: clamp(2.75rem, 9vw, 4rem); }
+  .liveDemoTop { flex-wrap: wrap; }
+}
+@media (max-width: 460px) {
+  .industryGrid { grid-template-columns: 1fr; }
+  .ctaRow { align-items: stretch; }
+  .hero .ctaRow a { justify-content: center; text-align: center; width: 100%; }
+  .headerInner { padding: 0.75rem 1rem; }
+  .nav a[href="#faq"], .nav a[href="#how"] { display: none; }
+  .nav .navCta { padding: 0.55rem 0.85rem; }
+  .demoLive { margin-left: 0; }
+  .liveDemoCard { padding: 1.15rem; }
+  .receiptHeading { align-items: flex-start; }
+}
