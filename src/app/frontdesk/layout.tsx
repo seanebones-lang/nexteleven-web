@@ -32,11 +32,12 @@ export default function FrontDeskLayout({ children }: { children: ReactNode }) {
             </span>
           </a>
           <nav className={styles.nav} aria-label="FirstRing sections">
-            <a href="#listen">Listen</a>
+            <a href="#listen">Hear a call</a>
             <a href="#how">How it works</a>
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
-            <a className={styles.navCta} href="tel:+18175465305">Call the demo</a>
+            <a href="tel:+18175465305">Live demo</a>
+            <a className={styles.navCta} href="#setup">Get started</a>
           </nav>
         </div>
       </header>
