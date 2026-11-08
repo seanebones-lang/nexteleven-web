@@ -1,1 +1,506 @@
-__STDIN_FILE__
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReferredByAI — When a customer asks AI who to call, does it say your name?</title>
+<meta name="description" content="Find out whether AI recommends your business, who it recommends instead, and what you can do to improve your chances. The ReferredByAI Audit: $499 fixed. By NextEleven Studios, Mansfield, TX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Design system matched to nexteleven.dev (globals.css tokens & shell):
+     night/graphite surfaces, aluminum ink, electric accent, Geist + Geist Mono,
+     fixed inner-header, square corners, 1px line grids, site-footer. */
+  :root{
+    --night:#090b0f;
+    --graphite:#11151c;
+    --gunmetal:#1b2129;
+    --ink:#f4f6f8;
+    --muted:#adb5c0;
+    --line:#303945;
+    --electric:#5b8cff;
+    --sodium:#c58b45;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --mono:"Geist Mono",ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--night);scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--night);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--electric);outline-offset:3px}
+  .wrap{max-width:72rem;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+  .skip{position:fixed;z-index:100;left:1rem;top:1rem;padding:.75rem 1rem;background:var(--ink);color:var(--night);transform:translateY(-250%);text-decoration:none}
+  .skip:focus{transform:translateY(0)}
+  section[id]{scroll-margin-top:5.5rem}
+
+  /* header — the site's inner-header */
+  header.site{
+    position:fixed;z-index:30;inset:0 0 auto;height:4.5rem;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 clamp(1.25rem,4vw,4.5rem);
+    background:color-mix(in srgb,var(--night) 84%,transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .wordmark{font-family:var(--mono);font-size:.82rem;letter-spacing:.2em;text-decoration:none;color:var(--ink);white-space:nowrap}
+  .wordmark span{color:var(--electric)}
+  nav.main{display:flex;gap:clamp(.8rem,2vw,2rem);align-items:center}
+  nav.main a{color:var(--muted);font:.75rem var(--mono);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;padding-block:.75rem}
+  nav.main a:hover{color:var(--ink)}
+  nav.main a.nav-contact{color:var(--electric)}
+  @media (max-width:900px){nav.main a:not(.nav-contact){display:none}}
+
+  /* buttons — the site's primary / secondary actions */
+  .btn{
+    display:inline-flex;align-items:center;gap:2rem;
+    padding:1rem 1.2rem;border:1px solid var(--electric);
+    background:color-mix(in srgb,var(--electric) 9%,transparent);
+    color:var(--ink);text-decoration:none;
+    font:.8rem var(--mono);letter-spacing:.08em;text-transform:uppercase;line-height:1.2;
+    transition:border-color .28s var(--ease),background .28s var(--ease);
+  }
+  .btn::after{content:"↗";color:var(--electric)}
+  .btn:hover{background:color-mix(in srgb,var(--electric) 16%,transparent)}
+  .btn.ghost{background:transparent;border-color:var(--line)}
+  .btn.ghost::after{content:"→"}
+  .btn.ghost:hover{border-color:var(--electric);color:var(--electric)}
+
+  /* hero */
+  .hero{
+    padding:calc(4.5rem + clamp(3rem,7vw,6rem)) 0 clamp(3.5rem,7vw,6rem);
+    border-bottom:1px solid var(--line);position:relative;overflow:clip;isolation:isolate;
+  }
+  .hero:before{content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      radial-gradient(circle at 78% 8%,color-mix(in srgb,var(--sodium) 13%,transparent),transparent 26%),
+      repeating-linear-gradient(90deg,transparent 0,transparent calc(8.333vw - 1px),color-mix(in srgb,var(--line) 20%,transparent) calc(8.333vw - 1px),color-mix(in srgb,var(--line) 20%,transparent) 8.333vw);
+  }
+  .path-label{
+    display:inline-block;padding:.5rem .75rem;border:1px solid var(--line);
+    color:var(--ink);font:.72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 2rem;
+  }
+  .path-label span{color:var(--electric);margin-right:.7rem}
+  .eyebrow{
+    font:.78rem var(--mono);letter-spacing:.18em;text-transform:uppercase;
+    color:var(--electric);margin:0 0 1.1rem;
+  }
+  h1{font-size:clamp(2.9rem,6.4vw,5.4rem);line-height:.95;margin:0 0 1.4rem;font-weight:620;letter-spacing:-.06em;max-width:15ch;text-wrap:balance}
+  .sub{font-size:clamp(1.08rem,1.5vw,1.35rem);color:var(--muted);max-width:45rem;margin:0 0 1.8rem;line-height:1.55}
+  .anchor{
+    font:.85rem var(--mono);color:var(--ink);
+    border:1px solid var(--line);background:var(--graphite);
+    padding:.8rem 1.1rem;display:inline-block;margin:0 0 2rem;
+  }
+  .anchor b{color:var(--electric);font-weight:500}
+  .cta-row{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+  .cta-note{color:var(--muted);font-size:.92rem}
+  .jump-links{display:flex;flex-wrap:wrap;gap:.65rem;margin:2.8rem 0 0}
+  .jump-links a{
+    display:inline-flex;align-items:center;min-height:44px;padding:.7rem .9rem;
+    border:1px solid var(--line);color:var(--ink);
+    font:.76rem/1.4 var(--mono);text-decoration:none;
+  }
+  .jump-links a:hover{border-color:var(--electric);color:var(--electric);background:var(--graphite)}
+
+  /* sections */
+  section{padding:clamp(4rem,8vw,7rem) 0;border-bottom:1px solid var(--line)}
+  .kicker{font:.78rem var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--electric);margin:0 0 .8rem}
+  h2{font-size:clamp(2.1rem,4.6vw,3.7rem);line-height:1;margin:0 0 1.2rem;font-weight:620;letter-spacing:-.05em;max-width:20ch;text-wrap:balance}
+  h3{font-size:1.25rem;margin:0 0 .45rem;font-weight:650;letter-spacing:-.02em}
+  p{margin:0 0 1rem}
+  .lede{color:var(--muted);font-size:clamp(1.05rem,1.4vw,1.28rem);max-width:46rem;line-height:1.6}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+  @media (max-width:760px){.cols{grid-template-columns:1fr}}
+
+  /* steps — the site's 1px line grid */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.2rem}
+  @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--night);padding:clamp(1.4rem,2.5vw,2.2rem)}
+  .step .n{font:.72rem var(--mono);color:var(--electric);letter-spacing:.1em;text-transform:uppercase}
+  .step h3{margin:.9rem 0 .5rem}
+  .step p{color:var(--muted);font-size:.97rem;margin:0;line-height:1.65}
+
+  /* includes */
+  .inc{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media (max-width:760px){.inc{grid-template-columns:1fr}}
+  .inc li{background:var(--night);padding:clamp(1.4rem,2.5vw,2.2rem)}
+  .inc .t{font-weight:650;font-size:1.12rem;display:block;margin-bottom:.4rem;letter-spacing:-.01em}
+  .inc .t::before{content:"▸ ";color:var(--electric)}
+  .inc p{color:var(--muted);font-size:.97rem;margin:0;line-height:1.65}
+  .keep{margin-top:1.4rem;color:var(--muted)}
+  .keep b{color:var(--ink)}
+
+  /* scoreboard */
+  .board{background:var(--graphite);border:1px solid var(--line);padding:clamp(1.5rem,3vw,2.4rem);margin-top:2.2rem}
+  .board-head{display:flex;align-items:baseline;gap:1.2rem;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:1.1rem;margin-bottom:1.3rem}
+  .big-score{font-family:var(--mono);font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:500;color:var(--ink);line-height:1;letter-spacing:-.03em}
+  .big-score span{color:var(--electric)}
+  .board-label{font:.72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .bar-row{display:grid;grid-template-columns:9.5rem 1fr 4.5rem;gap:.9rem;align-items:center;margin:.55rem 0}
+  .bar-row .nm{color:var(--muted);font-size:.95rem}
+  .bar-track{background:var(--gunmetal);height:.85rem;overflow:hidden}
+  .bar-fill{background:var(--electric);height:100%}
+  .bar-row .vl{font-family:var(--mono);font-size:.9rem;text-align:right;color:var(--ink)}
+  .lb{margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1.1rem}
+  .lb-row{display:flex;justify-content:space-between;gap:1rem;padding:.45rem .6rem;border-bottom:1px dashed color-mix(in srgb,var(--line) 70%,transparent);font-size:.98rem}
+  .lb-row:last-child{border-bottom:none}
+  .lb-row .who{color:var(--muted)}
+  .lb-row .you{color:var(--ink);font-weight:650}
+  .lb-row:has(.you){background:color-mix(in srgb,var(--electric) 7%,transparent)}
+  .lb-row .sc{font-family:var(--mono)}
+  .caption{color:var(--muted);font-size:.88rem;margin-top:1rem}
+
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.2rem}
+  @media (max-width:760px){.price-grid{grid-template-columns:1fr}}
+  .card{background:var(--night);padding:clamp(1.6rem,3vw,2.6rem)}
+  .card.hot{background:color-mix(in srgb,var(--electric) 5%,var(--night))}
+  .card .plan{font:.78rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--electric);margin:0 0 .6rem}
+  .card .price{font-size:2.6rem;font-weight:620;line-height:1;margin:0 0 .4rem;letter-spacing:-.04em}
+  .card .price small{font-size:1rem;font-weight:400;color:var(--muted);letter-spacing:0}
+  .card ul{margin:1.1rem 0;padding-left:1.15rem;color:var(--muted)}
+  .card ul li{margin:.4rem 0}
+  .card ul li b{color:var(--ink);font-weight:600}
+  .credit{background:color-mix(in srgb,var(--electric) 8%,transparent);border:1px solid var(--electric);padding:1.1rem 1.3rem;margin-top:1.4rem;color:var(--ink)}
+  .credit b{color:var(--electric)}
+  .scope{margin-top:1.4rem;background:var(--graphite);border:1px solid var(--line);padding:clamp(1.4rem,2.5vw,2.2rem)}
+  .scope h3{margin-bottom:.6rem}
+  .scope ul{margin:.4rem 0;padding-left:1.15rem;color:var(--muted)}
+  .scope li{margin:.35rem 0}
+  .scope li b{color:var(--ink);font-weight:600}
+  .scope p{color:var(--muted);margin:.6rem 0 0}
+
+  /* limits */
+  .limits .box{border-left:3px solid var(--electric);padding:.2rem 0 .2rem 1.4rem;max-width:48rem}
+  .limits p{color:var(--muted)}
+  .limits p b{color:var(--ink)}
+
+  /* faq */
+  details{border:1px solid var(--line);background:var(--graphite);margin:.7rem 0}
+  details[open ]{border-color:color-mix(in srgb,var(--electric) 55%,var(--line))}
+  summary{cursor:pointer;padding:1.05rem 1.25rem;font-weight:650;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";float:right;color:var(--electric);font-family:var(--mono)}
+  details[open ] summary::after{content:"–"}
+  details .a{padding:0 1.25rem 1.15rem;color:var(--muted)}
+  details .a p{margin:0}
+
+  /* final cta */
+  .final{padding:clamp(4rem,8vw,7rem) 0;border-bottom:1px solid var(--line)}
+  .final h2{max-width:26ch}
+  .final a:not(.btn){color:var(--electric);text-underline-offset:.3rem}
+
+  /* pre-footer (this page's own contact + fine print) */
+  .prefine{padding:2.6rem 0 0;color:var(--muted);font-size:.95rem}
+  .prefine .fbrand{color:var(--ink);font-weight:650}
+  .prefine p{margin:.3rem 0}
+  .prefine a{color:var(--electric);text-underline-offset:.25rem}
+  .small{font-size:.85rem;color:var(--muted)}
+
+  /* footer — the site's site-footer */
+  footer.site-footer{
+    display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;
+    padding:3rem clamp(1.25rem,6vw,6.5rem);
+    border-top:1px solid var(--line);color:var(--muted);font-size:.78rem;
+    max-width:none;
+  }
+  footer.site-footer .wrap{display:contents}
+  footer.site-footer p{margin:0}
+  footer.site-footer nav{display:flex;gap:1rem;flex-wrap:wrap}
+  footer.site-footer a{text-underline-offset:.25rem}
+  @media (max-width:700px){
+    h1{font-size:clamp(2.6rem,13vw,3.6rem)}
+    header.site{height:4rem;padding:0 1rem}
+    .hero{padding-top:calc(4rem + 3rem)}
+    footer.site-footer{grid-template-columns:1fr;padding-inline:1rem}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <a class="wordmark" href="/">NEXT<span>ELEVEN</span></a>
+  <nav class="main" aria-label="Main">
+    <a href="/build">Services</a>
+    <a href="/security">Security</a>
+    <a href="/work">Work</a>
+    <a href="/about">About</a>
+    <a href="/presence">Websites</a>
+    <a class="nav-contact" href="mailto:hello@nexteleven.dev?subject=Audit">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <p class="path-label"><span>◆</span>ReferredByAI</p>
+    <p class="eyebrow">AI visibility intelligence for local shops, by NextEleven Studios</p>
+    <h1>When a customer asks AI who to call, does it say your name?</h1>
+    <p class="sub">Find out whether AI recommends your business, who it recommends instead, and what you can do to improve your chances.</p>
+    <p class="anchor">The ReferredByAI Audit — <b>$499 fixed</b> · credited in full toward management if you start within 30 days</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:hello@nexteleven.dev?subject=Audit">Email us — say “audit”</a>
+      <a class="btn ghost" href="tel:+18339256048">Call 833-925-6048</a>
+      <span class="cta-note">One short conversation, then your report follows.</span>
+    </div>
+    <nav class="jump-links" aria-label="On this page">
+      <a href="#how">How it works</a>
+      <a href="#audit">The audit</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:hello@nexteleven.dev?subject=Audit">Get your AI Score</a>
+    </nav>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section aria-labelledby="problem-h">
+  <div class="wrap">
+    <p class="kicker">The problem</p>
+    <h2 id="problem-h">The AI answers with names. Either yours is one of them, or a competitor’s is.</h2>
+    <p class="lede">More customers now skip the search page and ask ChatGPT, the AI answer at the top of Google, or Perplexity: “who’s a good shop near me?” The AI doesn’t hand them a list of links — it names businesses. Most shop owners have never seen whether their shop is one of the names, or who got picked instead. That’s what we measure, and then fix.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2 id="how-h">Ask. Measure. Fix. Re-measure.</h2>
+    <p class="lede">One check, run the same way every time — so a score this month means the same thing next month.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="n">STEP 1</span>
+        <h3>Ask</h3>
+        <p>We put the 8 questions your customers actually ask — best shop in town, brake repair, transmission work, oil change, A/C repair, open Saturday, shop with good reviews, price questions — to ChatGPT, Google’s AI, and Perplexity. 23 real AI answers, collected live.</p>
+      </div>
+      <div class="step">
+        <span class="n">STEP 2</span>
+        <h3>Measure</h3>
+        <p>Your AI Score: named in how many of the 23 answers, per engine — next to the leaderboard of who beat you, why they won, and your fix list in priority order. Every answer is in the back of the report as receipts.</p>
+      </div>
+      <div class="step">
+        <span class="n">STEP 3</span>
+        <h3>Fix</h3>
+        <p>On the managed plan, we do the work the audit points at: the website pages and leftovers, the listings made to match everywhere, and a steady review engine that asks every customer for an honest review, the same way every time.</p>
+      </div>
+      <div class="step">
+        <span class="n">STEP 4</span>
+        <h3>Re-measure</h3>
+        <p>Every month we re-run the same 8 questions on all three AIs and send your new score next to last month’s. You watch the number move, in writing — a scoreboard, not a sales pitch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THE AUDIT CONTAINS -->
+<section id="audit" aria-labelledby="audit-h">
+  <div class="wrap">
+    <p class="kicker">The audit</p>
+    <h2 id="audit-h">What the audit contains</h2>
+    <p class="lede">A written report, built from one live run of the 8-question check across Google’s AI, ChatGPT, and Perplexity.</p>
+    <ul class="inc">
+      <li>
+        <span class="t">Your AI Score, per engine</span>
+        <p>How many of the 23 answers name your shop on ChatGPT, on Google’s AI, and on Perplexity — because the three don’t agree, and the fix differs by engine.</p>
+      </li>
+      <li>
+        <span class="t">The leaderboard</span>
+        <p>Every shop the AIs named instead of you, and how often. You see exactly who is getting the customers the AI sends out.</p>
+      </li>
+      <li>
+        <span class="t">Why the winners win</span>
+        <p>No engine publishes a formula, so the report shows the pattern in the answers, engine by engine. Perplexity said of its own first pick: “the strongest combination of rating and review volume.” The AIs also cite shops’ own service pages again and again.</p>
+      </li>
+      <li>
+        <span class="t">Your fix list, in priority order</span>
+        <p>The specific things hurting your score — a placeholder phone number still sitting in a website footer, listings that don’t match from site to site, the service pages the AIs look for and can’t find — ranked by what moves the needle first.</p>
+      </li>
+      <li>
+        <span class="t">The full receipts</span>
+        <p>Every one of the 23 answers, question by question, in the appendix. Nothing in the front of the report that you can’t check in the back.</p>
+      </li>
+      <li>
+        <span class="t">A dated baseline</span>
+        <p>Your score is a measurement from the day the check ran — a starting line to measure against, not a permanent ranking. The managed plan re-runs the identical check monthly so change is real change, not noise.</p>
+      </li>
+    </ul>
+    <p class="keep">The report is <b>yours to keep</b> whether you hire us again or not.</p>
+
+    <!-- SAMPLE SCOREBOARD — illustrative numbers only; no real shop's data -->
+    <div class="board" role="img" aria-label="Sample scoreboard: a shop with an AI Score of 4 of 23 — ChatGPT 1 of 8, Google AI 1 of 7, Perplexity 2 of 8 — behind three higher-scoring unnamed shops on the leaderboard.">
+      <div class="board-head">
+        <div>
+          <div class="board-label">Sample scoreboard</div>
+          <div class="big-score">AI Score: <span>4 of 23</span></div>
+        </div>
+        <div class="board-label">One shop · 8 questions · 3 AIs · 23 answers</div>
+      </div>
+      <div class="bar-row"><span class="nm">ChatGPT</span><div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div><span class="vl">1 / 8</span></div>
+      <div class="bar-row"><span class="nm">Google AI</span><div class="bar-track"><div class="bar-fill" style="width:14.3%"></div></div><span class="vl">1 / 7</span></div>
+      <div class="bar-row"><span class="nm">Perplexity</span><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><span class="vl">2 / 8</span></div>
+      <div class="lb">
+        <div class="lb-row"><span class="who">Top-named shop in this market</span><span class="sc">11 of 23</span></div>
+        <div class="lb-row"><span class="who">Second</span><span class="sc">9 of 23</span></div>
+        <div class="lb-row"><span class="who">Third</span><span class="sc">7 of 23</span></div>
+        <div class="lb-row"><span class="who you">The shop in this scoreboard</span><span class="sc">4 of 23</span></div>
+      </div>
+      <p class="caption">Sample scoreboard — the numbers are illustrative, and no shop is named: a client’s real score is their business, and yours would be too. Your audit shows your actual answers, with the full receipts in the appendix.</p>
+    </div>
+
+    <!-- OUR OWN AUDIT — real numbers: nexteleven.dev, measured Nov 8, 2026 -->
+    <h3 style="margin-top:2.8rem;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.03em">A real one — ours.</h3>
+    <p style="color:var(--muted);max-width:46rem">Before we sold a single audit, we ran our own on ourselves. On November 8, 2026, we put the same 8 questions to Google’s AI, ChatGPT, and Perplexity for our own studio site, nexteleven.dev — and scored <b style="color:var(--ink)">0 of 24</b>. Not named once, not named first once, not cited as a source once. Our developer site, nexteleven.tech, came back the same: 0 of 24. We’re fixing what the audit found, and the re-measure is scheduled for December 8, 2026. We’ll publish it here whether it flatters us or not.</p>
+    <div class="board" role="img" aria-label="Our own audit scoreboard: NextEleven Studios scored 0 of 24 on November 8, 2026 — Google AI 0 of 8, ChatGPT 0 of 8, Perplexity 0 of 8. The category leader, Bless Web Designs, scored 6 of 24.">
+      <div class="board-head">
+        <div>
+          <div class="board-label">Our own audit · nexteleven.dev</div>
+          <div class="big-score">AI Score: <span>0 of 24</span></div>
+        </div>
+        <div class="board-label">Nov 8, 2026 · 8 questions · 3 AIs · 24 answers</div>
+      </div>
+      <div class="bar-row"><span class="nm">ChatGPT</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="vl">0 / 8</span></div>
+      <div class="bar-row"><span class="nm">Google AI</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="vl">0 / 8</span></div>
+      <div class="bar-row"><span class="nm">Perplexity</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="vl">0 / 8</span></div>
+      <div class="lb">
+        <div class="lb-row"><span class="who">Category leader in our market — Bless Web Designs</span><span class="sc">6 of 24</span></div>
+        <div class="lb-row"><span class="who you">NextEleven Studios — us</span><span class="sc">0 of 24</span></div>
+      </div>
+      <p class="caption">This one is real — our own audit, run on our own site, every answer collected live. <a href="/referredbyai/sample-audit-nexteleven-dev.pdf" style="color:var(--electric);text-underline-offset:.25rem">Read the full sample audit (PDF)</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" aria-labelledby="pricing-h">
+  <div class="wrap">
+    <p class="kicker">Pricing</p>
+    <h2 id="pricing-h">Fixed prices, set before we start</h2>
+    <div class="price-grid">
+      <div class="card">
+        <p class="plan">The ReferredByAI Audit</p>
+        <p class="price">$499 <small>fixed, one time</small></p>
+        <ul>
+          <li><b>Your AI Score</b> on all three engines</li>
+          <li>The <b>competitor leaderboard</b> — who gets named instead of you</li>
+          <li><b>Why the winners win</b>, engine by engine</li>
+          <li>Your <b>fix list, in priority order</b></li>
+          <li><b>Every answer in the appendix</b> as receipts</li>
+        </ul>
+        <p style="color:var(--muted)">A written report, yours to keep whether you hire us again or not.</p>
+      </div>
+      <div class="card hot">
+        <p class="plan">ReferredByAI Management</p>
+        <p class="price">$299 <small>/month</small></p>
+        <ul>
+          <li>The <b>fixes, done for you</b> — pages, website leftovers, corrections</li>
+          <li><b>Listings made to match</b> — same name, hours, and phone across Google, Yelp, the review sites, and Facebook</li>
+          <li>A <b>review engine</b> — a simple, steady way of asking every customer for an honest review</li>
+          <li>The <b>same 8-question check re-run monthly</b>, with your scoreboard next to last month’s</li>
+        </ul>
+      </div>
+    </div>
+    <div class="credit">
+      <b>The audit never costs you twice:</b> start Management within 30 days of your audit and the full $499 is credited toward the plan — every dollar of it comes off. The credit takes $299 off your first month and the remaining $200 off your second, so the whole $499 is used.
+    </div>
+    <div class="scope">
+      <h3>What a month of Management covers — in plain words</h3>
+      <ul>
+        <li>Up to <b>4 fixes or corrections per month</b> from your audit’s own fix list, worked in priority order — listing corrections, page copy, and updates to pages we manage.</li>
+        <li>Name, address, phone, and hours corrections across your listings, <b>each verified after the change</b>.</li>
+        <li>The review engine, run with you: review requests sent to your customers, and reply drafts prepared for your approval.</li>
+        <li>A monthly re-run of the same check on all three AIs, with the scoreboard sent in the same format as your audit.</li>
+      </ul>
+      <p>Bigger work — a new or rebuilt website, new pages beyond the monthly set, paid tools or paid listings — is scoped and priced separately <b>before</b> we start. Nothing beyond the plan is ever billed as a surprise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST LIMITS -->
+<section class="limits" aria-labelledby="limits-h">
+  <div class="wrap">
+    <p class="kicker">Honest limits</p>
+    <h2 id="limits-h">Read this part before you spend anything</h2>
+    <div class="box">
+      <p><b>Nobody can guarantee the AI names your shop</b> — and you should run from anyone who promises it. When Google changed the model behind its AI answers in January 2026, roughly 42% of the sources it had been citing were replaced. The ground moves under everyone’s feet.</p>
+      <p>Scores are <b>baselines</b>: one run, on one day, of the questions your customers ask. A single score isn’t a stable ranking — it’s the starting line the monthly scoreboard measures against.</p>
+      <p>What we sell is the work the evidence says matters, and a monthly scoreboard that shows you plainly whether it’s working. <b>If it stops working, the scoreboard will tell you before we could spin you.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <p class="kicker">Questions</p>
+    <h2 id="faq-h">Straight answers</h2>
+
+    <details>
+      <summary>Can you guarantee the AI will name us?</summary>
+      <div class="a"><p>No. And run from anyone who does. When Google changed the model behind its AI answers in January 2026, about 42% of the sources it had been citing got replaced overnight. Nobody controls that — not us, not the expensive agencies. What we can do is the work the evidence points to, and show you a monthly scoreboard so you can see whether it’s paying off.</p></div>
+    </details>
+
+    <details>
+      <summary>How do the AIs decide who to name?</summary>
+      <div class="a"><p>No engine publishes a formula. In the answers themselves, the pattern is plain: rating combined with review count, and what your own website and listings say. Perplexity described its own first pick as “the strongest combination of rating and review volume,” and in our Mansfield run the most-named shop had 4.9 stars and 808 reviews, while the AIs kept citing shops’ own service pages. That’s why the managed plan is fixes, listings, and reviews — not tricks.</p></div>
+    </details>
+
+    <details>
+      <summary>Why 23 answers?</summary>
+      <div class="a"><p>Eight questions your customers ask, put to three AIs. Google’s AI doesn’t answer every question, so a full run produces 23 answers. Same 8 questions every month, so your scoreboard compares like with like.</p></div>
+    </details>
+
+    <details>
+      <summary>Do I need a new website for this?</summary>
+      <div class="a"><p>Not necessarily. Some fixes are website fixes — one shop in our test still had a placeholder phone number in its own footer, on the very page the AI was reading. Some are listings and reviews. The audit tells you which ones you actually need before you spend on any of them.</p></div>
+    </details>
+
+    <details>
+      <summary>What do you need from me?</summary>
+      <div class="a"><p>One short conversation — your shop’s name, services, hours, and where you’re listed. We do the asking, the checking, and the writing.</p></div>
+    </details>
+
+    <details>
+      <summary>Can I just do this myself?</summary>
+      <div class="a"><p>You can ask the AIs the questions yourself, and you should — it’s your score. What you’re paying for is the fix work and the steady monthly discipline: listings matched, pages written, reviews asked for at the right moment, and someone accountable for the number. That’s Sean, here in Mansfield, with his name and phone number on the report.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final">
+  <div class="wrap">
+    <p class="kicker">Start here</p>
+    <h2>Get your AI Score.</h2>
+    <p class="lede" style="margin-bottom:1.6rem">Email <a href="mailto:hello@nexteleven.dev?subject=Audit">hello@nexteleven.dev</a> or call <a href="tel:+18339256048">833-925-6048</a> and say “audit.” $499 fixed — and every dollar of it comes off the managed plan if you start within 30 days.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:hello@nexteleven.dev?subject=Audit">Email us — say “audit”</a>
+      <a class="btn ghost" href="tel:+18339256048">Call 833-925-6048</a>
+    </div>
+    <div class="prefine">
+      <p class="fbrand">ReferredByAI — AI visibility intelligence for local shops, by NextEleven Studios.</p>
+      <p>Sean McDonnell · NextEleven Studios · Mansfield, TX · <a href="tel:+18339256048">833-925-6048</a> · <a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a></p>
+      <p class="small">Scores shown are baseline measurements from a single run of live AI answers on the day of the check. AI answers change as the models behind them change; no placement is promised or implied. The sample scoreboard figures on this page are illustrative; the scoreboard labeled “Our own audit” shows our real measured results from November 8, 2026.</p>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <a class="wordmark" href="/">NEXT<span>ELEVEN</span></a>
+  <p>AI-led software engineering · Mansfield, Texas · Remote</p>
+  <nav aria-label="Footer"><a href="/build">Services</a><a href="/security">Security</a><a href="/apps">Apps</a><a href="/work">Work</a><a href="/about">About</a><a href="/presence">Websites</a></nav>
+  <a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a>
+</footer>
+
+</body>
+</html>
