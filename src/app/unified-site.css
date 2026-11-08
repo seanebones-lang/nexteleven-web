@@ -1,0 +1,103 @@
+/*
+ * NextEleven unified brand layer.
+ * Deliberately scoped to the company shell and shared components: product
+ * interfaces keep their own layouts, but share the same navigation, rhythm,
+ * typography and cobalt/navy/slate palette.
+ */
+:root {
+  --ne-ink: #142338;
+  --ne-navy: #0b2036;
+  --ne-blue: #155eef;
+  --ne-bg: #f4f5f7;
+  --ne-surface: #e6ebf2;
+  --ne-line: #c8d0db;
+  --ne-muted: #4d5b6e;
+  --ne-page: min(1180px, 90vw);
+}
+html { scroll-snap-type: none; scroll-padding-top: 5rem; }
+body::after { display: none; }
+:focus-visible { outline: 3px solid #155eef; outline-offset: 3px; }
+.co-header {
+  position: relative; z-index: 40; width: 100%; min-height: 82px;
+  background: var(--ne-bg); color: var(--ne-ink);
+  padding: 16px max(5vw, calc((100vw - 1440px)/2));
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 2rem; border-bottom: 1px solid var(--ne-line);
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+.co-header a { text-decoration: none; color: inherit; }
+.co-header .co-brand {
+  display: block; flex: none; font-size: 27px; font-weight: 750;
+  line-height: 1.05; letter-spacing: -.05em; white-space: nowrap;
+}
+.co-header .co-brand .co-eleven { display: inline; color: var(--ne-blue); font: inherit; letter-spacing: inherit; }
+.co-header .co-brand .co-tagline {
+  display: block; font-size: 10px; line-height: 1.5; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--ne-muted); margin-top: .3rem; font-weight: 550;
+}
+.co-header .co-desktop-nav { display: flex; align-items: center; justify-content: flex-end; gap: clamp(12px, 1.8vw, 26px); font-size: 13px; font-weight: 600; }
+.co-header .co-desktop-nav > a:not(.co-contact), .co-mobile-menu nav > a:not(.co-contact) { position: relative; transition: color .2s ease; }
+.co-header .co-desktop-nav > a:not(.co-contact):hover, .co-mobile-menu nav > a:not(.co-contact):hover { color: var(--ne-blue); }
+.co-header .co-contact {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 16px; background: var(--ne-blue); color: white;
+  font-size: 13px; line-height: 1.25; border: 1px solid var(--ne-blue);
+  border-radius: 4px; font-weight: 650; white-space: nowrap;
+}
+.co-header .co-contact:hover { background: #1049bd; }
+.co-mobile-menu { display: none; }
+.co-footer {
+  background: var(--ne-navy); color: #f4f6fa;
+  padding: clamp(3rem, 6vw, 6rem) 5vw 1.5rem;
+  border-top: 4px solid var(--ne-blue);
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+.co-footer .co-footer-top, .co-footer .co-footer-bottom, .co-footer > nav { max-width: 1380px; margin-left: auto; margin-right: auto; }
+.co-footer .co-footer-top { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
+.co-footer .co-footer-top h2 { margin: .5rem 0 1rem; max-width: 13ch; font-size: clamp(2.2rem, 4.5vw, 4.4rem); line-height: 1.04; font-weight: 550; letter-spacing: -.045em; color: #fff; }
+.co-footer .co-footer-top p:not(.co-footer-eyebrow) { max-width: 48ch; margin: 0; color: #c0cde0; line-height: 1.65; font-size: 1rem; }
+.co-footer .co-footer-eyebrow { font: 12px var(--font-mono), monospace; text-transform: uppercase; letter-spacing: .14em; color: #96bbff; }
+.co-footer .co-footer-cta { flex: none; display: inline-flex; gap: 1.5rem; align-items: center; padding: 1rem 1.3rem; background: var(--ne-blue); color: #fff; text-decoration: none; font-weight: 650; font-size: 14px; border-radius: 4px; }
+.co-footer .co-footer-cta:hover { background: #1049bd; }
+.co-footer > nav { display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; margin-top: clamp(2.5rem, 5vw, 4rem); padding: 1.5rem 0; border-top: 1px solid #41556d; border-bottom: 1px solid #41556d; font-size: 13px; }
+.co-footer > nav a { color: #e5eef9; text-decoration: none; }
+.co-footer > nav a:hover, .co-footer-bottom a:hover { color: #a3c4ff; text-decoration: underline; }
+.co-footer .co-footer-bottom { display: flex; align-items: start; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; font-size: 12px; line-height: 1.5; color: #bdcadb; }
+.co-footer-bottom a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+/* Shared hierarchy across the original dark engineering and newer light company pages. */
+:is(.build-main,.presence-main) h1 { font-weight: 600; letter-spacing: -.055em; }
+:is(.build-main,.presence-main) h2 { letter-spacing: -.04em; }
+:is(.build-main,.presence-main) :is(.primary-action, .secondary-action) { border-radius: 4px; }
+:is(.build-main,.presence-main) .primary-action,
+.primary-action { border-color: var(--ne-blue); }
+.company-v2 .co-button { background: var(--ne-blue); border-radius: 4px; font-weight: 650; }
+.company-v2 .co-project { transition: background .18s ease; }
+.company-v2 .co-project:not(:first-child):hover { background: #e6ebf2; }
+.company-v2 .co-project:first-child { background: var(--ne-navy); }
+/* The former red/purple/teal product title accents do not belong to the company palette. */
+.co-project-deadbolt .co-product-name, .co-project-witness .co-product-name,
+.co-project-evidencelens .co-product-name { color: var(--ne-blue); }
+@media (max-width: 1050px) {
+  .co-header .co-desktop-nav { display: none; }
+  .co-mobile-menu { display: block; margin-left: auto; }
+  .co-mobile-menu summary { cursor: pointer; list-style: none; padding: .65rem 1rem; border: 1px solid var(--ne-line); border-radius: 4px; font-weight: 650; font-size: 14px; }
+  .co-mobile-menu summary::-webkit-details-marker { display: none; }
+  .co-mobile-menu summary span { color: var(--ne-blue); margin-left: 1rem; }
+  .co-mobile-menu nav {
+    position: absolute; z-index: 50; top: calc(100% - 1px); left: 0; right: 0;
+    display: grid; width: 100%; max-width: none; gap: 0; padding: 1rem 5vw;
+    border: 1px solid var(--ne-line); border-top: 0; background: var(--ne-bg);
+    box-shadow: 0 20px 30px rgba(11,32,54,.16); color: var(--ne-ink);
+  }
+  .co-mobile-menu nav a { display: block; padding: .85rem .5rem; font-size: 15px; }
+  .co-mobile-menu nav .co-contact { margin-top: .7rem; width: max-content; padding: .85rem 1.3rem; color: #fff; }
+}
+@media (max-width: 720px) {
+  .co-header { min-height: 72px; padding: 13px 5vw; }
+  .co-header .co-brand { font-size: 24px; }
+  .co-footer .co-footer-top { display: block; }
+  .co-footer .co-footer-cta { margin-top: 2rem; }
+  .co-footer > nav { gap: 1rem 1.2rem; }
+  .co-footer .co-footer-bottom { display: grid; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .company-v2 .co-project { transition: none; } }
