@@ -22,7 +22,7 @@ export default function DeadBoltPage() {
       <p className="section-label">Work with NextEleven</p>
       <h2 id="deadbolt-services-title">DeadBolt is free. The work around it is what we sell.</h2>
       <p className="contact-copy">DeadBolt itself is open source under Apache-2.0, with no license fee. NextEleven earns its living on the services around it: a $499 AI Spend-Leak Review of your agent stack, a $1,749 DeadBolt install, and DeadBolt Watch at $299/mo.</p>
-      <div><a className="primary-action" href="/security/pricing">See the services &amp; pricing <span>↗</span></a><a href="mailto:hello@nexteleven.tech">hello@nexteleven.tech</a></div>
+      <div><a className="primary-action" href="/security/pricing">See the services &amp; pricing <span>↗</span></a><a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a></div>
     </section>
     <CompanyFooter />
   </>;
