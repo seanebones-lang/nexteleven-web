@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { portfolio } from "@/lib/portfolio";
 
-const UPDATED = new Date("2026-11-05");
+const UPDATED = new Date("2026-11-08");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/work", "/build", "/presence", "/security", "/security/pricing", "/deadbolt", "/diagnosis", "/apps"];
+  const routes = ["", "/about", "/work", "/build", "/presence", "/security", "/security/pricing", "/deadbolt", "/diagnosis", "/apps", "/frontdesk", "/referredbyai", "/answers"];
   return [
     ...routes.map((route) => ({
       url: `https://www.nexteleven.dev${route}`,
