@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Viewport } from "next";
 import styles from "./frontdesk.module.css";
+import { CompanyHeader, CompanyFooter } from "@/components/company/CompanySite";
 
 export const viewport: Viewport = { colorScheme: "dark", themeColor: "#091d30" };
 
@@ -21,6 +22,7 @@ export function FirstRingMark({ size = 40 }: { size?: number }) {
 export default function FrontDeskLayout({ children }: { children: ReactNode }) {
   return (
     <div className={styles.shell}>
+      <CompanyHeader />
       <a className={styles.skip} href="#frontdesk-content">Skip to content</a>
       <header className={styles.header}>
         <div className={styles.headerInner}>
@@ -59,6 +61,7 @@ export default function FrontDeskLayout({ children }: { children: ReactNode }) {
           </p>
         </div>
       </footer>
+      <CompanyFooter />
     </div>
   );
 }
