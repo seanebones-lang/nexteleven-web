@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
-export const viewport: Viewport = { colorScheme: "light dark", themeColor: "#f4f5f7" };
+export const viewport: Viewport = { colorScheme: "dark", themeColor: "#0b1018" };
 
 const structuredData = {
   "@context": "https://schema.org",
