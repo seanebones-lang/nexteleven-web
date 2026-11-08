@@ -10,7 +10,7 @@
   --text: #f3f6fc;
   --muted: #a7b6cb;
   --muted-strong: #c4d1e2;
-  --accent: #8ab4ff;
+  --accent: #155eef;
   --accent-light: #8ab4ff;
   background: var(--ink);
   color: var(--text);
@@ -1003,7 +1003,7 @@
 .lightSection {
   --ink: #0b1018; --panel: #121d2b; --panel-raised: #17273a;
   --line: #314159; --text: #f3f6fc; --muted: #a7b6cb;
-  --muted-strong: #c4d1e2; --accent: #8ab4ff; --accent-light: #8ab4ff;
+  --muted-strong: #c4d1e2; --accent: #155eef; --accent-light: #8ab4ff;
   background: #101a29; color: var(--text);
 }
 .lightSection .kicker { color: #8ab4ff; }
