@@ -101,3 +101,22 @@ body::after { display: none; }
   .co-footer .co-footer-bottom { display: grid; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .company-v2 .co-project { transition: none; } }
+
+/* Answer-first landing page: same surfaces, spacing and conversion language. */
+.ne-answers { background: var(--ne-bg); color: var(--ne-ink); }
+.ne-answers-hero { max-width: 1380px; margin: auto; padding: clamp(4rem,8vw,8rem) 5vw clamp(3rem,6vw,5rem); }
+.ne-eyebrow { margin: 0 0 1rem; font: 12px var(--font-mono), monospace; color: var(--ne-blue); text-transform: uppercase; letter-spacing: .16em; }
+.ne-answers-hero h1 { max-width: 14ch; font-size: clamp(3rem,6.5vw,6rem); line-height: 1.02; letter-spacing: -.055em; font-weight: 550; }
+.ne-answers-hero > p:last-child { max-width: 58ch; margin-top: 1.5rem; font-size: clamp(1.05rem,1.5vw,1.3rem); line-height: 1.65; color: var(--ne-muted); }
+.ne-answers-list { max-width: 1380px; margin: auto; padding: 0 5vw 5rem; }
+.ne-answer { display: grid; grid-template-columns: 4rem minmax(0,1fr); gap: 3rem; padding: clamp(2rem,4vw,3.5rem) 0; border-top: 1px solid var(--ne-line); }
+.ne-answer-index { color: var(--ne-blue); font: 12px var(--font-mono), monospace; }
+.ne-answer h2 { max-width: 29ch; margin: 0 0 1rem; font-size: clamp(1.6rem,2.6vw,2.6rem); font-weight: 550; line-height: 1.14; letter-spacing: -.03em; }
+.ne-answer p { max-width: 74ch; margin: 0; line-height: 1.7; font-size: 1.05rem; color: var(--ne-muted); }
+.ne-answer a { display: inline-block; margin-top: 1.5rem; padding-bottom: .25rem; border-bottom: 1px solid var(--ne-blue); color: var(--ne-ink); font-weight: 650; text-decoration: none; }
+.ne-answer a span { color: var(--ne-blue); }
+.ne-answers-contact { padding: 4.5rem 5vw; background: var(--ne-surface); }
+.ne-answers-contact h2 { max-width: 1380px; margin: auto; font-size: clamp(2rem,4vw,4rem); font-weight: 550; letter-spacing: -.04em; }
+.ne-answers-contact p { max-width: 1380px; margin: 1rem auto; line-height: 1.65; }
+.ne-answers-contact .co-button { margin-top: 1.2rem; }
+@media(max-width:700px) { .ne-answer { grid-template-columns: 1fr; gap: .75rem; } }
