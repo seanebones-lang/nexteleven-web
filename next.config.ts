@@ -9,5 +9,8 @@ const securityHeaders = [
 const nextConfig: NextConfig = { reactStrictMode: true, typedRoutes: true, poweredByHeader: false, async headers(){ return [{ source: "/(.*)", headers: securityHeaders }, { source: "/explainers/:path*", headers: [{key: "X-Frame-Options", value: "SAMEORIGIN"}] }]; }, async redirects(){ return [
   { source: "/apps/apple", destination: "/apps#apple", permanent: true },
   { source: "/apps/android", destination: "/apps#android", permanent: true },
+  { source: "/services", destination: "/build", permanent: true },
+  { source: "/websites", destination: "/presence", permanent: true },
+  { source: "/contact", destination: "/build#start", permanent: true },
 ]; } };
 export default nextConfig;
