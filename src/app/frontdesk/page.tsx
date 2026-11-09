@@ -76,8 +76,8 @@ export default function FrontDeskPage() {
                 messages, and sends you the details. Day or night, while you focus on the work.
               </p>
               <div className={styles.ctaRow}>
-                <a className={styles.ctaPrimary} href="#setup">Get FirstRing for my business</a>
-                <a className={styles.ctaGhost} href={DEMO_TEL}>Call the live demo</a>
+                <a className={styles.ctaPrimary} href={DEMO_TEL}>Try Amy — call the live demo</a>
+                <a className={styles.ctaGhost} href="#setup">Request a setup call</a>
               </div>
               <p className={styles.heroNote}>
                 Starting at <strong>$179/month</strong>, plus one-time setup. No app to install,
@@ -124,6 +124,10 @@ export default function FrontDeskPage() {
               <a className={styles.demoSecondaryLink} href="#listen">
                 Hear another test call and watch the explainer →
               </a>
+              <p className={styles.demoPrivacy}>
+                Tried the demo? <a href="#setup">Request a setup call for your business.</a>
+                {" "}The demo tests the receptionist; use the form below to contact NextEleven.
+              </p>
               <p className={styles.demoPrivacy}>Demo recording; callback numbers have been masked for privacy.</p>
             </aside>
           </div>
@@ -805,11 +809,11 @@ export default function FrontDeskPage() {
       <section className={`${styles.section} ${styles.lightSection}`} id="setup">
         <div className={styles.wrap}>
           <p className={styles.kicker}>011 / Get set up</p>
-          <h2 className={styles.sectionTitle}>Put FirstRing to work for you.</h2>
+          <h2 className={styles.sectionTitle}>Try FirstRing for your business.</h2>
           <p className={styles.sectionLede}>
-            Tell us where to reach you and we&rsquo;ll call to set up your front desk — your
-            name, your hours, your services, your booking rules. Most shops are live within a
-            few business days.
+            Tried Amy? Tell us where to reach you and what your business needs.
+            We&rsquo;ll discuss your calls, booking rules, pricing, and setup before you decide.
+            This is a consultation request, not a purchase.
           </p>
           <form
             className={styles.intakeForm}
@@ -888,7 +892,7 @@ export default function FrontDeskPage() {
             <a className={styles.ctaPrimary} href={DEMO_TEL}>
               Call (817) 546-5305
             </a>
-            <a className={styles.ctaGhost} href="#setup">Get started</a>
+            <a className={styles.ctaGhost} href="#setup">Request a setup call</a>
             <a className={styles.demoSecondaryLink} href="mailto:hello@nexteleven.dev">
               hello@nexteleven.dev
             </a>
