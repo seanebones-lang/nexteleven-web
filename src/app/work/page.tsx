@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { CompanyHeader, CompanyFooter, ProductIndex, OtherWork } from '@/components/company/CompanySite';
-export const metadata={title:'Work — systems with a clear purpose',description:'Explore Mothership, DeadBolt, Witness, Harness, EvidenceLens and APOLLO. Plain-language examples and visual architecture.'};
+export const metadata: Metadata={title:'Work — Verified Software, AI Agents and Security Projects',description:'Explore NextEleven engineering work: DeadBolt agent permissions, Witness evidence provenance, Harness agent runtime, Mothership and published business software.',alternates:{canonical:'/work'}};
 export default function WorkPage(){return <div className="company-v2"><CompanyHeader/><main><section className="co-work-intro"><h1>The work.<br/><span>And what it’s for.</span></h1><p>Tools for agents. Controls for operators. Evidence for reviewers. Explore the problem each system addresses, then look under the hood.</p></section><section className="co-work"><ProductIndex/></section><OtherWork/></main><CompanyFooter/></div>}
