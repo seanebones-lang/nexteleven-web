@@ -1,0 +1,31 @@
+name: Live discovery audit (nexteleven.dev only)
+on:
+  workflow_dispatch:
+    inputs:
+      notify_indexnow:
+        description: "Notify IndexNow of changed URLs after approved production deployment"
+        type: boolean
+        required: true
+        default: false
+      changed_paths:
+        description: "Space-separated paths already deployed, e.g. / /build /presence"
+        type: string
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Read-only production crawl audit
+        run: node scripts/audit-live-discovery.mjs
+      - name: Notify IndexNow after approval
+        if: ${{ inputs.notify_indexnow == true }}
+        env:
+          INDEXNOW_PATHS: ${{ inputs.changed_paths }}
+        run: node scripts/submit-indexnow.mjs --confirm-production
