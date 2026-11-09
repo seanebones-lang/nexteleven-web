@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "FirstRing — Never miss the calls that matter",
   description:
     "FirstRing is an AI front desk for local shops from NextEleven Studios. It answers your phone 24/7 in your shop's name, books appointments, takes messages, and sends you a summary of every call.",
+  alternates: { canonical: "/frontdesk" },
   openGraph: {
     title: "FirstRing — Your calls answered, your business moving.",
     description:
@@ -29,6 +30,17 @@ export const metadata: Metadata = {
   },
 };
 
+const firstRingService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.nexteleven.dev/frontdesk#service",
+  name: "FirstRing — Managed AI Front Desk",
+  description: "NextEleven's managed AI phone answering and appointment workflow service for local businesses.",
+  provider: { "@id": "https://www.nexteleven.dev/#organization" },
+  areaServed: [{ "@type": "AdministrativeArea", name: "Dallas–Fort Worth" }, { "@type": "Country", name: "United States" }],
+  offers: { "@type": "Offer", price: "179", priceCurrency: "USD", url: "https://www.nexteleven.dev/frontdesk", description: "Starting monthly service price; setup fee applies." },
+};
+
 const DEMO_TEL = "tel:+18175465305";
 
 function CheckIcon() {
@@ -50,6 +62,7 @@ function ArrowIcon() {
 export default function FrontDeskPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(firstRingService).replace(/</g, "\\u003c") }} />
       {/* ---------- 1 · Hero ---------- */}
 
       <section className={styles.hero} id="top">

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Viewport } from "next";
 import styles from "./frontdesk.module.css";
+import { CompanyHeader, CompanyFooter } from "@/components/company/CompanySite";
 
 export const viewport: Viewport = { colorScheme: "dark", themeColor: "#091d30" };
 
@@ -19,46 +20,24 @@ export function FirstRingMark({ size = 40 }: { size?: number }) {
 }
 
 export default function FrontDeskLayout({ children }: { children: ReactNode }) {
-  return (
-    <div className={styles.shell}>
-      <a className={styles.skip} href="#frontdesk-content">Skip to content</a>
-      <header className={styles.header}>
-        <div className={styles.headerInner}>
-          <a href="/frontdesk" className={styles.brand} aria-label="FirstRing — home">
-            <FirstRingMark size={38} />
-            <span className={styles.brandText}>
-              FirstRing
-              <small>BY NEXTELEVEN STUDIOS</small>
-            </span>
-          </a>
-          <nav className={styles.nav} aria-label="FirstRing sections">
-            <a href="#listen">Hear a call</a>
-            <a href="#how">How it works</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-            <a href="tel:+18175465305">Live demo</a>
-            <a className={styles.navCta} href="#setup">Get started</a>
-          </nav>
-        </div>
-      </header>
-      <main id="frontdesk-content">{children}</main>
-      <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <div className={styles.footerBrand}>
-            <FirstRingMark size={30} />
-            <p>
-              <strong>FirstRing</strong> by NextEleven Studios
-            </p>
-          </div>
-          <p className={styles.footerLinks}>
-            <a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a>
-            <span aria-hidden="true">·</span>
-            <a href="tel:+18339256048">833-925-6048</a>
-            <span aria-hidden="true">·</span>
-            <a href="https://nexteleven.dev">nexteleven.dev</a>
-          </p>
-        </div>
-      </footer>
+  return <div className={styles.shell}>
+    <a className={styles.skip} href="#frontdesk-content">Skip to FirstRing content</a>
+    <CompanyHeader />
+    <div className={styles.productBar} aria-label="FirstRing product links">
+      <a href="/frontdesk" className={styles.brand} aria-label="FirstRing overview">
+        <FirstRingMark size={30} />
+        <span className={styles.brandText}>FirstRing<small>BY NEXTELEVEN</small></span>
+      </a>
+      <nav aria-label="FirstRing on-page navigation">
+        <a href="#listen">Hear a call</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">Questions</a>
+        <a href="tel:+18175465305">Live demo</a>
+        <a className={styles.productCta} href="#setup">Get started</a>
+      </nav>
     </div>
-  );
+    <main id="frontdesk-content">{children}</main>
+    <CompanyFooter />
+  </div>;
 }

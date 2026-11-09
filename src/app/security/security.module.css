@@ -1,11 +1,11 @@
 .main {
-  padding-top: 4.5rem;
+  padding-top: 0;
   --gutter: clamp(1.25rem, 6vw, 6.5rem);
 }
 .main :is(h1, h2, h3, p) { text-wrap: pretty; }
 .main h1, .main h2 { letter-spacing: -.06em; }
-.main h1 { font-size: clamp(3.5rem, 6.4vw, 6.8rem); line-height: .98; margin: 1.5rem 0; font-weight: 600; }
-.main h2 { font-size: clamp(2.6rem, 4.3vw, 4.6rem); line-height: 1.03; margin: 1rem 0 1.5rem; font-weight: 550; }
+.main h1 { font-size: clamp(3rem, 6vw, 5.6rem); line-height: .98; margin: 1.5rem 0; font-weight: 600; }
+.main h2 { font-size: clamp(2rem, 3.5vw, 3.7rem); line-height: 1.03; margin: 1rem 0 1.5rem; font-weight: 550; }
 .main h3 { font-size: clamp(1.3rem, 1.8vw, 1.65rem); letter-spacing: -.025em; line-height: 1.25; }
 .main em { color: var(--electric); font-style: normal; }
 .main p { line-height: 1.65; color: var(--muted); }

@@ -18,5 +18,8 @@ jobs:
       - run: node --experimental-strip-types --test scripts/test-mihrab-study.mjs scripts/test-mihrab-sync.mjs
       - run: node scripts/materialize-deadbolt-assets.mjs
       - run: npm run deadbolt:check
+      - run: node --test scripts/test-discovery.mjs
+      - run: node --check scripts/audit-live-discovery.mjs
+      - run: node --check scripts/submit-indexnow.mjs
       - run: npm run lint
       - run: npm run build

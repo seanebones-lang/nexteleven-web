@@ -1,0 +1,131 @@
+/* NextEleven brand primitives.
+ * One site-wide dark canvas, one header/footer and one typography hierarchy.
+ * Product pages may use layout variations, but not competing brand themes. */
+:root {
+  --night: #0b1018; --graphite: #121c2a; --gunmetal: #1a2839;
+  --aluminum: #f3f6fc; --muted: #a7b6cb; --line: #314159;
+  --electric: #8ab4ff; --sodium: #66809c;
+  --ne-bg: #0b1018; --ne-panel: #121d2b; --ne-raised: #17273a;
+  --ne-ink: #f3f6fc; --ne-muted: #a7b6cb; --ne-line: #314159;
+  --ne-blue: #8ab4ff; --ne-action: #155eef; --ne-navy: #101a29;
+  --ne-page: min(1380px,90vw);
+}
+html { background: var(--ne-bg); scroll-snap-type: none; scroll-padding-top: 4.5rem; }
+body { background: var(--ne-bg); color: var(--ne-ink); }
+body::after { display: none; }
+:focus-visible { outline: 3px solid var(--ne-blue); outline-offset: 3px; }
+::selection { background: #386db2; color: #fff; }
+/* Shared navigation — actually used by every primary marketing route. */
+.co-header {
+  position: relative; z-index: 40; width: 100%; min-height: 84px;
+  background: #0e1826; color: var(--ne-ink); border-bottom: 1px solid var(--ne-line);
+  padding: 16px 5vw; display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; font-family: var(--font-sans),system-ui,sans-serif;
+}
+.co-header a { color: inherit; text-decoration: none; }
+.co-header .co-brand {
+  display: block; white-space: nowrap; line-height: 1.05;
+  letter-spacing: -.055em; font-size: 27px; font-weight: 750; flex: none;
+}
+.co-header .co-brand .co-eleven { display: inline; font: inherit; letter-spacing: inherit; color: var(--ne-blue); }
+.co-header .co-brand .co-tagline { display: block; margin-top: .4rem; color: var(--ne-muted); font-size: 10px; font-weight: 600; letter-spacing: .09em; line-height: 1.5; text-transform: uppercase; }
+.co-header .co-desktop-nav { display: flex; align-items: center; gap: clamp(.8rem,1.8vw,1.7rem); font-size: .82rem; font-weight: 650; }
+.co-header .co-desktop-nav > a:not(.co-contact):hover,.co-mobile-menu nav > a:not(.co-contact):hover { color: var(--ne-blue); }
+.co-header .co-contact,.co-mobile-menu nav .co-contact {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: .8rem 1rem; background: var(--ne-action); border: 1px solid #4386ff;
+  border-radius: 4px; color: #fff !important; font-weight: 650; white-space: nowrap;
+}
+.co-header .co-contact:hover { background: #2672f2; }
+.co-mobile-menu { display: none; }
+/* One footer — no shadow nav or competing product footers. */
+.co-footer {
+  background: #0e1826; color: var(--ne-ink); border-top: 2px solid #357ff1;
+  padding: clamp(3rem,6vw,6rem) 5vw 1.5rem; font-family: var(--font-sans),system-ui,sans-serif;
+}
+.co-footer .co-footer-top,.co-footer .co-footer-bottom,.co-footer > nav { max-width: 1380px; margin-inline: auto; }
+.co-footer .co-footer-top { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
+.co-footer .co-footer-top h2 { color: #fff; font-size: clamp(2.3rem,4.5vw,4.4rem); font-weight: 580; line-height: 1.05; letter-spacing: -.05em; max-width: 14ch; margin: .5rem 0 1rem; }
+.co-footer .co-footer-top p:not(.co-footer-eyebrow) { max-width: 53ch; color: var(--ne-muted); line-height: 1.65; margin: 0; }
+.co-footer .co-footer-eyebrow { color: var(--ne-blue); text-transform: uppercase; letter-spacing: .14em; font: .73rem var(--font-mono),monospace; }
+.co-footer .co-footer-cta { display: inline-flex; gap: 1.5rem; align-items: center; background: var(--ne-action); color: white; border-radius: 4px; padding: 1rem 1.2rem; font-size: .9rem; font-weight: 650; text-decoration: none; flex: none; }
+.co-footer > nav { display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; margin-top: clamp(2.5rem,5vw,4rem); padding: 1.5rem 0; border-block: 1px solid var(--ne-line); font-size: .84rem; }
+.co-footer > nav a { color: #e0e9f8; text-decoration: none; }
+.co-footer > nav a:hover { color: var(--ne-blue); text-decoration: underline; }
+.co-footer .co-footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; font-size: .77rem; color: var(--ne-muted); line-height: 1.5; }
+.co-footer-bottom a { color: inherit; text-underline-offset: 3px; }
+/* Shared inner layouts from older dark pages must start under a normal-flow header,
+   not leave the 4.5rem gap that was reserved for a fixed header. */
+.build-main,.presence-main { padding-top: 0; }
+:is(.build-main,.presence-main) h1 { letter-spacing: -.055em; font-weight: 600; }
+:is(.build-main,.presence-main) h2 { letter-spacing: -.04em; }
+:is(.build-main,.presence-main) .primary-action,.primary-action { border-color: #518cf1; }
+:is(.build-main,.presence-main) :is(.primary-action,.secondary-action) { border-radius: 4px; }
+.company-v2 .co-project:not(:first-child):hover { background: var(--ne-panel); }
+.company-v2 .co-project:first-child { background: #14253b; }
+.co-project-deadbolt .co-product-name,.co-project-witness .co-product-name,.co-project-evidencelens .co-product-name { color: var(--ne-blue); }
+.company-v2 .co-button { background: var(--ne-action); border-radius: 4px; font-weight: 650; }
+/* Directory and answer pages obey the same color and spacing system. */
+.ne-service-directory,.ne-answers,.ne-presence-faq { background: var(--ne-bg); color: var(--ne-ink); }
+.ne-service-directory { padding: clamp(3rem,6vw,6rem) 5vw; border-top: 1px solid var(--ne-line); }
+.ne-eyebrow { color: var(--ne-blue); font: .75rem var(--font-mono),monospace; letter-spacing: .14em; text-transform: uppercase; }
+.ne-service-directory > h2 { max-width: 1380px; margin: .65rem auto 2.5rem; font-size: clamp(2.2rem,4vw,4rem); font-weight: 580; line-height: 1.08; letter-spacing: -.045em; }
+.ne-service-directory > .ne-eyebrow { max-width: 1380px; margin-inline: auto; }
+.ne-service-grid { max-width: 1380px; margin: auto; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1px; border: 1px solid var(--ne-line); background: var(--ne-line); }
+.ne-service-grid a { display: flex; flex-direction: column; min-height: 280px; padding: clamp(1.5rem,3vw,2.7rem); background: var(--ne-panel); color: var(--ne-ink); text-decoration: none; }
+.ne-service-grid a:hover { background: var(--ne-raised); }
+.ne-service-grid a > span { color: var(--ne-blue); font: .75rem var(--font-mono),monospace; letter-spacing: .1em; text-transform: uppercase; }
+.ne-service-grid h3 { font-size: clamp(1.4rem,2.2vw,2rem); margin: 1rem 0; font-weight: 600; letter-spacing: -.03em; }
+.ne-service-grid p { max-width: 50ch; color: var(--ne-muted); font-size: 1rem; line-height: 1.65; margin: 0 0 1.5rem; }
+.ne-service-grid strong { margin-top: auto; color: var(--ne-blue); font-size: .88rem; }
+.ne-service-answers { max-width: 1380px; margin: 1.5rem auto 0; font-size: .95rem; }
+.ne-service-answers a { color: var(--ne-blue); text-decoration: underline; text-underline-offset: 4px; }
+.ne-answers-hero { max-width: 1380px; margin: auto; padding: clamp(4rem,8vw,8rem) 5vw clamp(3rem,6vw,5rem); }
+.ne-answers-hero h1 { max-width: 14ch; font-size: clamp(3rem,6vw,6rem); line-height: 1.04; letter-spacing: -.055em; font-weight: 600; margin: .8rem 0; }
+.ne-answers-hero > p:last-child { max-width: 58ch; margin-top: 1.5rem; color: var(--ne-muted); font-size: clamp(1.05rem,1.5vw,1.3rem); line-height: 1.7; }
+.ne-answers-list { max-width: 1380px; padding: 0 5vw 5rem; margin: auto; }
+.ne-answer { display: grid; grid-template-columns: 4rem minmax(0,1fr); gap: 3rem; padding: clamp(2rem,4vw,3.5rem) 0; border-top: 1px solid var(--ne-line); }
+.ne-answer-index { color: var(--ne-blue); font: .77rem var(--font-mono),monospace; }
+.ne-answer h2 { max-width: 30ch; font-size: clamp(1.65rem,2.7vw,2.7rem); letter-spacing: -.04em; font-weight: 580; line-height: 1.18; margin: 0 0 1rem; }
+.ne-answer p { max-width: 75ch; color: var(--ne-muted); font-size: 1.05rem; line-height: 1.7; margin: 0; }
+.ne-answer a { display: inline-block; margin-top: 1.5rem; padding-bottom: .3rem; border-bottom: 1px solid var(--ne-blue); text-decoration: none; color: var(--ne-ink); font-weight: 650; }
+.ne-answer a span { color: var(--ne-blue); }
+.ne-answers-contact { background: var(--ne-panel); padding: 4.5rem 5vw; border-block: 1px solid var(--ne-line); }
+.ne-answers-contact h2,.ne-answers-contact p { max-width: 1380px; margin: auto; }
+.ne-answers-contact h2 { font-size: clamp(2rem,4vw,4rem); font-weight: 580; letter-spacing: -.04em; }
+.ne-answers-contact p { margin-top: 1rem; color: var(--ne-muted); line-height: 1.65; }
+.ne-answers-contact .co-button { margin-top: 1.5rem; }
+.ne-presence-faq { padding: clamp(3rem,7vw,6rem) 5vw; border-block: 1px solid var(--ne-line); }
+.ne-presence-faq > h2 { max-width: 1280px; margin: .6rem auto 2.5rem; font-size: clamp(2.2rem,4vw,4rem); font-weight: 580; letter-spacing: -.04em; line-height: 1.08; }
+.ne-presence-faq > .section-label { max-width: 1280px; margin-inline: auto; }
+.ne-presence-faq > div { max-width: 1280px; margin: auto; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
+.ne-presence-faq article { padding: clamp(1.4rem,2.5vw,2rem); background: var(--ne-panel); border: 1px solid var(--ne-line); }
+.ne-presence-faq h3 { font-size: clamp(1.2rem,1.6vw,1.6rem); line-height: 1.3; font-weight: 600; margin: 0 0 1rem; }
+.ne-presence-faq p { color: var(--ne-muted); font-size: 1rem; line-height: 1.65; margin: 0; }
+.ne-presence-faq > a { max-width: 1280px; display: block; margin: 2rem auto 0; font-weight: 650; color: var(--ne-blue); text-underline-offset: 4px; }
+@media (max-width: 1050px) {
+  .co-header .co-desktop-nav { display: none; }
+  .co-mobile-menu { display: block; margin-left: auto; }
+  .co-mobile-menu summary { cursor: pointer; list-style: none; border: 1px solid var(--ne-line); border-radius: 4px; padding: .65rem 1rem; font-size: .9rem; font-weight: 650; }
+  .co-mobile-menu summary::-webkit-details-marker { display: none; }
+  .co-mobile-menu summary span { color: var(--ne-blue); margin-left: 1rem; }
+  .co-mobile-menu nav {
+    position: absolute; z-index: 50; left: 0; right: 0; top: calc(100% - 1px);
+    display: grid; padding: 1rem 5vw; background: var(--ne-panel);
+    border: 1px solid var(--ne-line); box-shadow: 0 20px 40px #0009;
+  }
+  .co-mobile-menu nav a { display: block; padding: .8rem .5rem; font-size: .95rem; }
+  .co-mobile-menu nav .co-contact { margin-top: .7rem; width: max-content; padding-inline: 1.1rem; }
+}
+@media (max-width: 900px) { .ne-presence-faq > div { grid-template-columns: 1fr; } }
+@media (max-width: 720px) {
+  .co-header { padding: 13px 5vw; min-height: 74px; }
+  .co-header .co-brand { font-size: 24px; }
+  .co-footer .co-footer-top { display: block; }
+  .co-footer .co-footer-cta { margin-top: 2rem; }
+  .co-footer .co-footer-bottom { display: grid; }
+  .ne-service-grid { grid-template-columns: 1fr; }
+  .ne-service-grid a { min-height: 0; }
+  .ne-answer { grid-template-columns: 1fr; gap: .75rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
