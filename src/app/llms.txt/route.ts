@@ -32,8 +32,15 @@ Phone: +1-833-925-6048
 
 ## Representative evidence
 
-- JP Transmission bilingual business website: https://www.jptransmission.com/en
+- JP Transmission website case study with scope boundaries: https://www.nexteleven.dev/case-studies/jp-transmission
+- Delivered public client site (external): https://www.jptransmission.com/en
 - Open-source projects and implementation records: https://github.com/seanebones-lang
+
+## Agent discovery notes
+
+- Start from the official service pages for current pricing, scope and contact information.
+- The sitemap is https://www.nexteleven.dev/sitemap.xml and robots rules are https://www.nexteleven.dev/robots.txt.
+- This file is a navigational aid, not a search-ranking signal or an API endpoint.
 
 ## Editorial principles
 
