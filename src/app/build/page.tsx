@@ -122,6 +122,16 @@ export default function BuildPage() {
         {questions.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
       </section>
       <ProjectContact />
+  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.nexteleven.dev/build#service",
+    name: "Custom Software, Backend & AI Engineering",
+    serviceType: "Custom software engineering, APIs, systems integration and agent workflow development",
+    provider: { "@id": "https://www.nexteleven.dev/#organization" },
+    areaServed: [{ "@type": "AdministrativeArea", name: "Dallas–Fort Worth" }, { "@type": "Country", name: "United States" }],
+    url: "https://www.nexteleven.dev/build",
+  }).replace(/</g, "\\u003c") }} />
     </main>
     <CompanyFooter />
   </>;
