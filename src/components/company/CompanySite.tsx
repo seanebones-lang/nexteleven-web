@@ -39,6 +39,7 @@ export function CompanyFooter() {
     </nav>
     <div className="co-footer-bottom">
       <span>© {new Date().getFullYear()} NextEleven LLC · Human-owned delivery</span>
+      <span>U.S. military veterans: 10% off labor and setup fees</span>
       <span>Mansfield · Dallas–Fort Worth · Remote US</span>
       <span><a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a> · <a href="tel:+18339256048">833-925-6048</a></span>
     </div>
