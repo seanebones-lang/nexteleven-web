@@ -625,6 +625,63 @@ export default function FrontDeskPage() {
         </div>
       </section>
 
+      <section className={styles.section} id="compare">
+        <div className={styles.wrap}>
+          <p className={styles.kicker}>HOW WE COMPARE</p>
+          <h2 className={styles.sectionTitle}>Same job. Nothing new to learn.</h2>
+          <p className={styles.sectionLede}>
+            Most AI answering services hand you a booking system to log into, learn, and
+            keep up with. FirstRing is the opposite: no dashboard, no app, nothing new to
+            run. Your phone rings, we answer it, and you read a plain summary of every
+            call. Here is the side-by-side with FrontDesk Pro, another DFW service.
+          </p>
+          <div className={styles.compareTableWrap}>
+            <table className={styles.compareTable}>
+              <thead>
+                <tr>
+                  <th scope="col"><span className={styles.compareSr}>Compared point</span></th>
+                  <th scope="col">FirstRing</th>
+                  <th scope="col">FrontDesk Pro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Monthly price</th>
+                  <td><strong>$179 flat</strong></td>
+                  <td>$247 Starter / $347 Pro</td>
+                </tr>
+                <tr>
+                  <th scope="row">Talk minutes</th>
+                  <td><strong>Included</strong> — no per-minute billing (about 1,000 a month fair use)</td>
+                  <td>300 a month on Starter, 600 a month on Pro</td>
+                </tr>
+                <tr>
+                  <th scope="row">What you have to run</th>
+                  <td><strong>Nothing.</strong> No dashboard, no app — a plain summary of every call</td>
+                  <td>A booking system with a calendar and customer list to log into</td>
+                </tr>
+                <tr>
+                  <th scope="row">Setup</th>
+                  <td>Done for you — keep your number, carrier, and phones. $499 standalone, $299 bundled with a website, free on the care plan</td>
+                  <td>$300 one-time; they configure it for you</td>
+                </tr>
+                <tr>
+                  <th scope="row">Hear it first</th>
+                  <td>Live demo line, any time: <a href="tel:+18175465305">(817) 546-5305</a></td>
+                  <td>Demo line with their receptionist, Grace: (817) 725-5450</td>
+                </tr>
+                <tr>
+                  <th scope="row">Who answers for it</th>
+                  <td>NextEleven, a Texas studio — a named local human is accountable for your install</td>
+                  <td>Carter&apos;s AI services, DFW</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className={styles.pricingNote}>FrontDesk Pro prices and terms from frontdeskproai.com, checked November 12, 2026. If their pricing changes, we update this page.</p>
+        </div>
+      </section>
+
       <section className={styles.section} id="extras">
         <div className={styles.wrap}>
           <p className={styles.kicker}>007 / Extras</p>

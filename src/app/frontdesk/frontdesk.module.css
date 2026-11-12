@@ -1043,6 +1043,16 @@
 .setupFeeOptions { border-left: 1px solid var(--line); padding-left: 1.5rem; }
 .setupFeeOptions strong { font-size: 1.1rem; color: var(--text); }
 .pricingNote { margin: 1.1rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.compareTableWrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+.compareTable { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 0.98rem; }
+.compareTable th, .compareTable td { text-align: left; padding: 1rem 1.2rem; border-top: 1px solid var(--line); vertical-align: top; line-height: 1.55; }
+.compareTable thead th { border-top: none; font-family: var(--font-mono), Consolas, monospace; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.compareTable thead th:nth-child(2) { color: var(--accent-light); }
+.compareTable tbody th { font-weight: 600; color: var(--text); white-space: nowrap; }
+.compareTable td { color: var(--muted-strong); }
+.compareTable td strong { color: var(--text); }
+.compareTable td a { color: var(--accent-light); }
+.compareSr { position: absolute; left: -9999px; }
 .formField select { width: 100%; background: var(--ink); border: 1px solid var(--line); border-radius: 10px; color: var(--text); font: inherit; font-size: 1rem; padding: 0.75rem 0.9rem; }
 .formField select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 a:focus-visible, button:focus-visible, summary:focus-visible, audio:focus-visible, video:focus-visible { outline: 3px solid #79aefc; outline-offset: 3px; }
