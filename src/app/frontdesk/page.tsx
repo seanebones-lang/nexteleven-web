@@ -80,7 +80,7 @@ export default function FrontDeskPage() {
                 <a className={styles.ctaGhost} href="#setup">Request a setup call</a>
               </div>
               <p className={styles.heroNote}>
-                Starting at <strong>$179/month</strong>, plus one-time setup. No app to install,
+                Starting at <strong>$49/month</strong>, plus one-time setup. No app to install,
                 no dashboard to learn. NextEleven sets it up and manages it for you.
               </p>
               <div className={styles.heroProof} aria-label="FirstRing essentials">

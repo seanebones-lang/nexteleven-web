@@ -16,12 +16,14 @@ export function CompanyHeader() {
     <Link href="/" className="co-brand" aria-label="NextEleven — home">Next<span className="co-eleven">Eleven</span><span className="co-tagline">Software, made useful.</span></Link>
     <nav className="co-desktop-nav" aria-label="Main navigation">
       {companyLinks.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+      <a className="co-call" href="tel:+18178031967">Call (817) 803-1967</a>
       <a className="co-contact" href="mailto:hello@nexteleven.dev?subject=Project%20conversation">Discuss a project</a>
     </nav>
     <details className="co-mobile-menu">
       <summary>Menu <span aria-hidden="true">+</span></summary>
       <nav aria-label="Mobile navigation">
         {companyLinks.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+        <a className="co-call" href="tel:+18178031967">Call (817) 803-1967</a>
         <a className="co-contact" href="mailto:hello@nexteleven.dev?subject=Project%20conversation">Discuss a project</a>
       </nav>
     </details>

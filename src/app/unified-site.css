@@ -37,6 +37,7 @@ body::after { display: none; }
   border-radius: 4px; color: #fff !important; font-weight: 650; white-space: nowrap;
 }
 .co-header .co-contact:hover { background: #2672f2; }
+.co-header .co-call,.co-mobile-menu nav .co-call { white-space: nowrap; font-weight: 700; }
 .co-mobile-menu { display: none; }
 /* One footer — no shadow nav or competing product footers. */
 .co-footer {
