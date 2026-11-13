@@ -10,7 +10,8 @@ Official website: https://www.nexteleven.dev/
 Company name: NextEleven LLC
 Location: Mansfield, Texas, United States
 Contact: hello@nexteleven.dev
-Phone: +1-833-925-6048
+Phone: +1-817-803-1967
+Text: +1-833-925-6048 (text only)
 
 ## What NextEleven provides
 

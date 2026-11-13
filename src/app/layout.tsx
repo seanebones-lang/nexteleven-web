@@ -41,7 +41,7 @@ const structuredData = {
       alternateName: "NextEleven",
       url: origin,
       email: "hello@nexteleven.dev",
-      telephone: "+1-833-925-6048",
+      telephone: "+1-817-803-1967",
       logo: origin + "/icon",
       address: {
         "@type": "PostalAddress",
@@ -59,7 +59,7 @@ const structuredData = {
         "@type": "ContactPoint",
         contactType: "sales",
         email: "hello@nexteleven.dev",
-        telephone: "+1-833-925-6048",
+        telephone: "+1-817-803-1967",
       },
     },
     {

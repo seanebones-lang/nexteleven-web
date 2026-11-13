@@ -18,7 +18,7 @@ const packages = ["Launch website — $999 · up to 5 pages, phone-first, with c
 const service = {
   "@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://www.nexteleven.dev/presence#service",
   name: "NextEleven Websites & Customer Portals", url: "https://www.nexteleven.dev/presence", email: "hello@nexteleven.dev",
-  telephone: "833-925-6048", areaServed: [{ "@type": "City", name: "Mansfield" }, { "@type": "AdministrativeArea", name: "Dallas–Fort Worth" }, { "@type": "Country", name: "United States" }], parentOrganization: { "@id": "https://www.nexteleven.dev/#organization" },
+  telephone: "+1-817-803-1967", areaServed: [{ "@type": "City", name: "Mansfield" }, { "@type": "AdministrativeArea", name: "Dallas–Fort Worth" }, { "@type": "Country", name: "United States" }], parentOrganization: { "@id": "https://www.nexteleven.dev/#organization" },
   address: { "@type": "PostalAddress", addressLocality: "Mansfield", addressRegion: "TX", addressCountry: "US" },
 };
 

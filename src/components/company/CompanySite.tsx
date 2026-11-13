@@ -41,7 +41,7 @@ export function CompanyFooter() {
       <span>© {new Date().getFullYear()} NextEleven LLC · Human-owned delivery</span>
       <span>U.S. military veterans: 10% off labor and setup fees</span>
       <span>Mansfield · Dallas–Fort Worth · Remote US</span>
-      <span><a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a> · <a href="tel:+18339256048">833-925-6048</a></span>
+      <span><a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a> · Call <a href="tel:+18178031967">(817) 803-1967</a> · Text <a href="sms:+18339256048">833-925-6048</a></span>
     </div>
   </footer>;
 }
