@@ -80,7 +80,7 @@ export default function FrontDeskPage() {
                 <a className={styles.ctaGhost} href="#setup">Request a setup call</a>
               </div>
               <p className={styles.heroNote}>
-                Starting at <strong>$49/month</strong>, plus one-time setup. No app to install,
+                Starting at <strong>$179/month</strong>, plus one-time setup. No app to install,
                 no dashboard to learn. NextEleven sets it up and manages it for you.
               </p>
               <div className={styles.heroProof} aria-label="FirstRing essentials">
@@ -578,22 +578,8 @@ export default function FrontDeskPage() {
         <div className={styles.wrap}>
           <p className={styles.kicker}>SIMPLE, TRANSPARENT PRICING</p>
           <h2 className={styles.sectionTitle}>A real front desk, without the overhead.</h2>
-          <p className={styles.sectionLede}>Choose the level of service that fits your shop. Every plan is managed by NextEleven, and call minutes are included.</p>
+          <p className={styles.sectionLede}>Choose the level of service that fits your shop. Both plans are managed by NextEleven, and call minutes are included.</p>
           <div className={styles.priceGrid}>
-            <article className={styles.priceCard}>
-              <p className={styles.priceName}>STARTER</p>
-              <p className={styles.priceBig}>$49<span>/month</span></p>
-              <p className={styles.planIntro}>A lighter front desk for shops with a quieter phone.</p>
-              <ul className={styles.planFeatures}>
-                <li><CheckIcon /> 100 minutes of answering included each month</li>
-                <li><CheckIcon /> Calls answered 24/7 in your business name</li>
-                <li><CheckIcon /> Appointment booking and messages</li>
-                <li><CheckIcon /> Email summaries after every call</li>
-                <li><CheckIcon /> Standard features on a template setup</li>
-              </ul>
-              <p className={styles.planFootnote}>$199 setup. Past 100 minutes there are never per-minute charges — we just talk about the right tier for your volume.</p>
-              <a className={styles.planCta} href="#setup">Choose Starter →</a>
-            </article>
             <article className={styles.priceCard}>
               <p className={styles.priceName}>STANDARD</p>
               <p className={styles.priceBig}>$179<span>/month</span></p>
@@ -625,17 +611,6 @@ export default function FrontDeskPage() {
           </div>
           <div className={styles.setupFees}>
             <div>
-              <p className={styles.audioLabel}>NOT SURE YET? TRY THE PILOT</p>
-              <h3>50 minutes of live answering on your own setup.</h3>
-              <p>The Pilot is a one-time trial on your business&rsquo;s own setup: 50 minutes of live answering to use within 14 days.</p>
-            </div>
-            <div className={styles.setupFeeOptions}>
-              <p><strong>$29</strong> one-time</p>
-              <p><strong>Fully credited</strong> toward setup if you sign within 7 days after the pilot ends</p>
-            </div>
-          </div>
-          <div className={styles.setupFees}>
-            <div>
               <p className={styles.audioLabel}>ONE-TIME SETUP</p>
               <h3>Configured for your business, not a generic script.</h3>
               <p>We set up your name, hours, services, and booking rules, then test the front desk with you.</p>
@@ -647,8 +622,6 @@ export default function FrontDeskPage() {
             </div>
           </div>
           <p className={styles.pricingNote}>No per-minute billing on these plans. Need to keep answering some calls yourself? We can set up forwarding for missed calls or after hours.</p>
-          <p className={styles.pricingNote}>Fine print: unlimited answering for normal business use under a fair-use budget (~750 min/mo; Starter includes 100 min). No per-minute charges, ever, and nobody gets cut off mid-call. Nothing for you to set up or maintain — no dashboard, we handle everything. Service runs on carrier and provider networks; outages on their side can pause answering until they restore it.</p>
-          <p className={styles.pricingNote}>Comparing answering services? <a className={styles.inlineLink} href="/frontdesk/compare">See the full breakdown</a> — what the others charge, what they ask you to run yourself, and the cases where FirstRing honestly isn&rsquo;t the right fit.</p>
         </div>
       </section>
 
@@ -679,7 +652,7 @@ export default function FrontDeskPage() {
                 </tr>
                 <tr>
                   <th scope="row">Talk minutes</th>
-                  <td><strong>Included</strong> — no per-minute billing (about 1,000 a month fair use)</td>
+                  <td><strong>Included</strong> — no per-minute billing (about 750 a month fair use)</td>
                   <td>300 a month on Starter, 600 a month on Pro</td>
                 </tr>
                 <tr>
