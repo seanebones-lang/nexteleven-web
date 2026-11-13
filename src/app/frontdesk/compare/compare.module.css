@@ -1,0 +1,206 @@
+/* FirstRing comparison page — extends the frontdesk design language
+   (deep navy ink, layered panels, hairline borders, cobalt accent).
+   Tokens (--ink, --panel, --line, --text, --muted, --accent…) are
+   inherited from the frontdesk shell in frontdesk.module.css. */
+
+/* ---------- wide comparison table ---------- */
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+}
+
+.wideTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1280px;
+  font-size: 0.9rem;
+}
+
+.wideTable th,
+.wideTable td {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.55;
+  min-width: 10.5rem;
+}
+
+.wideTable thead th {
+  border-top: none;
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 10.5rem;
+}
+
+.wideTable thead th .sub {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--muted);
+}
+
+.wideTable thead th.ours {
+  color: var(--accent-light);
+  background: rgba(21, 94, 239, 0.1);
+}
+
+.wideTable tbody th {
+  font-weight: 600;
+  color: var(--text);
+  position: sticky;
+  left: 0;
+  background: var(--panel);
+  min-width: 9.5rem;
+  z-index: 1;
+}
+
+.wideTable td {
+  color: var(--muted-strong);
+}
+
+.wideTable td strong {
+  color: var(--text);
+}
+
+.wideTable td.ours {
+  background: rgba(21, 94, 239, 0.08);
+  color: var(--text);
+}
+
+.wideTable td a {
+  color: var(--accent-light);
+}
+
+/* ---------- honesty box ---------- */
+
+.honestBox {
+  background: var(--panel-raised);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.honestLead {
+  font-size: 1.14rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 1.8rem;
+  max-width: 52rem;
+}
+
+.fitGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+}
+
+.fitItem {
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 1.3rem 1.4rem;
+}
+
+.fitTitle {
+  font-weight: 620;
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+  color: var(--text);
+}
+
+.fitText {
+  color: var(--muted-strong);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fitText a {
+  color: var(--accent-light);
+}
+
+/* ---------- buyer checklist ---------- */
+
+.checkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  max-width: 52rem;
+  counter-reset: ask;
+}
+
+.checkItem {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.05rem 1.4rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  counter-increment: ask;
+}
+
+.checkItem::before {
+  content: counter(ask, decimal-leading-zero);
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-light);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.28rem 0.6rem;
+  white-space: nowrap;
+  margin-top: 0.1rem;
+}
+
+.checkItem p {
+  margin: 0;
+  color: var(--muted-strong);
+  line-height: 1.6;
+  font-size: 0.99rem;
+}
+
+.checkItem p strong {
+  color: var(--text);
+}
+
+/* ---------- body copy blocks ---------- */
+
+.bodyText {
+  color: var(--muted-strong);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 46rem;
+  margin: 0 0 1.2rem;
+}
+
+.bodyText strong {
+  color: var(--text);
+}
+
+.bodyText a {
+  color: var(--accent-light);
+}
+
+@media (max-width: 900px) {
+  .fitGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .honestBox {
+    padding: 1.4rem;
+  }
+}

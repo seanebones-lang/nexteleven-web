@@ -648,6 +648,7 @@ export default function FrontDeskPage() {
           </div>
           <p className={styles.pricingNote}>No per-minute billing on these plans. Need to keep answering some calls yourself? We can set up forwarding for missed calls or after hours.</p>
           <p className={styles.pricingNote}>Fine print: unlimited answering for normal business use under a fair-use budget (~750 min/mo; Starter includes 100 min). No per-minute charges, ever, and nobody gets cut off mid-call. Nothing for you to set up or maintain — no dashboard, we handle everything. Service runs on carrier and provider networks; outages on their side can pause answering until they restore it.</p>
+          <p className={styles.pricingNote}>Comparing answering services? <a className={styles.inlineLink} href="/frontdesk/compare">See the full breakdown</a> — what the others charge, what they ask you to run yourself, and the cases where FirstRing honestly isn&rsquo;t the right fit.</p>
         </div>
       </section>
 
