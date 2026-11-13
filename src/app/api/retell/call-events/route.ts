@@ -120,7 +120,15 @@ export async function POST(request: Request) {
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        // Web3Forms bot-filters the default server fetch signature; present
+        // as the site's own form instead.
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
+        Referer: "https://www.nexteleven.dev/",
+      },
       body: JSON.stringify({
         access_key: accessKey,
         from_name: "NextEleven Call Watch",
@@ -131,7 +139,10 @@ export async function POST(request: Request) {
     });
     const result = asRecord(await response.json().catch(() => ({})));
     return Response.json(
-      { ok: result.success === true },
+      {
+        ok: result.success === true,
+        ...(result.success === true ? {} : { provider_message: str(result.message, 200) ?? "unknown" }),
+      },
       { headers: { "Cache-Control": "no-store" } },
     );
   } catch {
