@@ -15,6 +15,7 @@ const booking = createBookingService({
   functionSecret: process.env.FIRSTRING_FUNCTION_SECRET,
   calcomApiKey: process.env.CALCOM_API_KEY,
   eventTypeId: process.env.FIRSTRING_CALCOM_EVENT_TYPE_ID,
+  callbackEventTypeId: process.env.FIRSTRING_CALCOM_CALLBACK_EVENT_TYPE_ID,
   timeZone: process.env.FIRSTRING_SHOP_TIMEZONE,
 });
 

@@ -35,6 +35,8 @@ export type BookingConfig = {
   calcomApiKey?: string;
   /** Cal.com event type id for the shop's service appointment (env FIRSTRING_CALCOM_EVENT_TYPE_ID). */
   eventTypeId?: string;
+  /** Cal.com event type id used when the request URL carries ?kind=callback (env FIRSTRING_CALCOM_CALLBACK_EVENT_TYPE_ID). */
+  callbackEventTypeId?: string;
   /** Shop-local IANA time zone (env FIRSTRING_SHOP_TIMEZONE). Defaults to America/Chicago. */
   timeZone?: string;
   /** Override for tests/self-hosted Cal.com (env CALCOM_API_BASE_URL). */
@@ -320,8 +322,9 @@ export function createBookingService(config: BookingConfig) {
   const now = config.now ?? Date.now;
   const calcom = createCalcomClient(config);
 
-  function eventTypeId(): number {
-    const id = Number(config.eventTypeId);
+  function resolveEventTypeId(request: Request): number {
+    const kind = new URL(request.url).searchParams.get("kind");
+    const id = Number(kind === "callback" ? config.callbackEventTypeId : config.eventTypeId);
     if (!config.calcomApiKey || !Number.isInteger(id) || id <= 0) {
       throw new BookingFailure(500, "calendar_not_configured");
     }
@@ -335,10 +338,10 @@ export function createBookingService(config: BookingConfig) {
   }
 
   /** All open slot starts (ISO) for one shop-local date, past times removed. */
-  async function slotsForDate(date: string): Promise<string[]> {
+  async function slotsForDate(date: string, eventId: number): Promise<string[]> {
     const startUtc = new Date(zonedMidnightUtc(date, timeZone)).toISOString();
     const endUtc = new Date(zonedMidnightUtc(addDays(date, 1), timeZone)).toISOString();
-    const starts = await calcom.getSlotStarts(eventTypeId(), startUtc, endUtc, timeZone);
+    const starts = await calcom.getSlotStarts(eventId, startUtc, endUtc, timeZone);
     const cutoff = now();
     return starts.filter((start) => Date.parse(start) > cutoff);
   }
@@ -349,6 +352,7 @@ export function createBookingService(config: BookingConfig) {
 
   async function checkAvailability(request: Request) {
     const { args } = await authorizedArgs(request);
+    const eventId = resolveEventTypeId(request);
     const date = parseDateArg(args.date);
     const today = localDateString(now(), timeZone);
     if (date < today) {
@@ -364,7 +368,7 @@ export function createBookingService(config: BookingConfig) {
     }
     let starts: string[];
     try {
-      starts = await slotsForDate(date);
+      starts = await slotsForDate(date, eventId);
     } catch {
       return { ok: false, reason: "calendar_unavailable", date, message: "The calendar could not be reached." };
     }
@@ -376,7 +380,7 @@ export function createBookingService(config: BookingConfig) {
       for (let offset = 1; offset <= 3; offset += 1) {
         const probeDate = addDays(date, offset);
         try {
-          const probe = await slotsForDate(probeDate);
+          const probe = await slotsForDate(probeDate, eventId);
           if (probe.length > 0) {
             nextOpenings = { date: probeDate, slots: offer(probe, 3) };
             break;
@@ -404,6 +408,7 @@ export function createBookingService(config: BookingConfig) {
 
   async function bookAppointment(request: Request) {
     const { args, callId } = await authorizedArgs(request);
+    const eventId = resolveEventTypeId(request);
     const slotStartRaw = requiredString(args.slot_start, 40, "missing_slot_start");
     const slotMs = Date.parse(slotStartRaw);
     if (Number.isNaN(slotMs)) throw new BookingFailure(400, "invalid_slot_start");
@@ -420,7 +425,7 @@ export function createBookingService(config: BookingConfig) {
     const slotDate = localDateString(slotMs, timeZone);
     let dayStarts: string[];
     try {
-      dayStarts = await slotsForDate(slotDate);
+      dayStarts = await slotsForDate(slotDate, eventId);
     } catch {
       return { ok: false, reason: "calendar_unavailable", message: "The calendar could not be reached." };
     }
@@ -446,7 +451,7 @@ export function createBookingService(config: BookingConfig) {
     let booking: { uid: string; start: string; end: string; status: string };
     try {
       booking = await calcom.createBooking({
-        eventTypeId: eventTypeId(),
+        eventTypeId: eventId,
         start: new Date(slotMs).toISOString(),
         attendee: {
           name: callerName,
