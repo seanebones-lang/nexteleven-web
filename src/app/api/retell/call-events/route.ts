@@ -137,11 +137,23 @@ export async function POST(request: Request) {
         botcheck: "",
       }),
     });
-    const result = asRecord(await response.json().catch(() => ({})));
+    const rawBody = await response.text().catch(() => "");
+    let result: Json = {};
+    try {
+      result = asRecord(JSON.parse(rawBody));
+    } catch {
+      result = {};
+    }
     return Response.json(
       {
         ok: result.success === true,
-        ...(result.success === true ? {} : { provider_message: str(result.message, 200) ?? "unknown" }),
+        ...(result.success === true
+          ? {}
+          : {
+              provider_status: response.status,
+              provider_message: str(result.message, 200) ?? rawBody.slice(0, 200) ?? "unknown",
+              key_length: accessKey.length,
+            }),
       },
       { headers: { "Cache-Control": "no-store" } },
     );
