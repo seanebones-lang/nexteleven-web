@@ -38,7 +38,7 @@ const firstRingService = {
   description: "NextEleven's managed AI phone answering and appointment workflow service for local businesses.",
   provider: { "@id": "https://www.nexteleven.dev/#organization" },
   areaServed: [{ "@type": "AdministrativeArea", name: "Dallas–Fort Worth" }, { "@type": "Country", name: "United States" }],
-  offers: { "@type": "Offer", price: "179", priceCurrency: "USD", url: "https://www.nexteleven.dev/frontdesk", description: "Starting monthly service price; setup fee applies." },
+  offers: { "@type": "Offer", price: "49", priceCurrency: "USD", url: "https://www.nexteleven.dev/frontdesk", description: "Starting monthly service price; setup fee applies." },
 };
 
 const DEMO_TEL = "tel:+18175465305";
@@ -80,7 +80,7 @@ export default function FrontDeskPage() {
                 <a className={styles.ctaGhost} href="#setup">Request a setup call</a>
               </div>
               <p className={styles.heroNote}>
-                Starting at <strong>$179/month</strong>, plus one-time setup. No app to install,
+                Starting at <strong>$49/month</strong>, plus one-time setup. No app to install,
                 no dashboard to learn. NextEleven sets it up and manages it for you.
               </p>
               <div className={styles.heroProof} aria-label="FirstRing essentials">
@@ -578,8 +578,22 @@ export default function FrontDeskPage() {
         <div className={styles.wrap}>
           <p className={styles.kicker}>SIMPLE, TRANSPARENT PRICING</p>
           <h2 className={styles.sectionTitle}>A real front desk, without the overhead.</h2>
-          <p className={styles.sectionLede}>Choose the level of service that fits your shop. Both plans are managed by NextEleven, and call minutes are included.</p>
+          <p className={styles.sectionLede}>Choose the level of service that fits your shop. Every plan is managed by NextEleven, and call minutes are included.</p>
           <div className={styles.priceGrid}>
+            <article className={styles.priceCard}>
+              <p className={styles.priceName}>STARTER</p>
+              <p className={styles.priceBig}>$49<span>/month</span></p>
+              <p className={styles.planIntro}>The essentials for shops that just need every call answered.</p>
+              <ul className={styles.planFeatures}>
+                <li><CheckIcon /> 100 minutes of calls included each month</li>
+                <li><CheckIcon /> 24/7 calls answered in your business name</li>
+                <li><CheckIcon /> Appointment booking and messages</li>
+                <li><CheckIcon /> Email summaries after every call</li>
+                <li><CheckIcon /> Managed setup and ongoing support</li>
+              </ul>
+              <p className={styles.planFootnote}>One-time setup: $199.</p>
+              <a className={styles.planCta} href="#setup">Choose Starter →</a>
+            </article>
             <article className={styles.priceCard}>
               <p className={styles.priceName}>STANDARD</p>
               <p className={styles.priceBig}>$179<span>/month</span></p>
@@ -619,6 +633,7 @@ export default function FrontDeskPage() {
               <p><strong>$499</strong> standalone setup</p>
               <p><strong>$299</strong> with a website build (websites from $999)</p>
               <p><strong>Free</strong> with the $99/month website care plan</p>
+              <p><strong>$199</strong> setup for the Starter plan</p>
             </div>
           </div>
           <p className={styles.pricingNote}>No per-minute billing on these plans. Need to keep answering some calls yourself? We can set up forwarding for missed calls or after hours.</p>
@@ -914,6 +929,7 @@ export default function FrontDeskPage() {
               <span>Which plan are you considering?</span>
               <select name="preferred_plan" defaultValue="not_sure">
                 <option value="not_sure">Not sure yet — help me choose</option>
+                <option value="starter">Starter · $49/month</option>
                 <option value="standard">Standard · $179/month</option>
                 <option value="premier">Premier · $229/month</option>
               </select>
