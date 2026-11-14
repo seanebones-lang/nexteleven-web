@@ -625,6 +625,17 @@ export default function FrontDeskPage() {
           </div>
           <div className={styles.setupFees}>
             <div>
+              <p className={styles.audioLabel}>NOT SURE YET? TRY THE PILOT</p>
+              <h3>50 minutes of live answering on your own setup.</h3>
+              <p>The Pilot is a one-time trial on your business&rsquo;s own setup: 50 minutes of live answering to use within 14 days.</p>
+            </div>
+            <div className={styles.setupFeeOptions}>
+              <p><strong>$29</strong> one-time</p>
+              <p><strong>Fully credited</strong> toward setup if you sign within 7 days after the pilot ends</p>
+            </div>
+          </div>
+          <div className={styles.setupFees}>
+            <div>
               <p className={styles.audioLabel}>ONE-TIME SETUP</p>
               <h3>Configured for your business, not a generic script.</h3>
               <p>We set up your name, hours, services, and booking rules, then test the front desk with you.</p>
