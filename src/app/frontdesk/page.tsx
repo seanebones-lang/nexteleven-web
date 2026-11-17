@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./frontdesk.module.css";
+import EmailSignup from "@/components/company/EmailSignup";
 
 export const metadata: Metadata = {
   title: "FirstRing — Never miss the calls that matter",
@@ -963,6 +964,9 @@ export default function FrontDeskPage() {
           </form>
         </div>
       </section>
+
+      {/* ---------- Email follow-up — for visitors not ready to call today ---------- */}
+      <EmailSignup source="/frontdesk" heading="Not ready to set up today?" />
 
       <section className={styles.finalCta}>
         <div className={styles.wrap}>

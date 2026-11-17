@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CompanyHeader, CompanyFooter, ProductIndex, OtherWork, Arrow } from '@/components/company/CompanySite';
+import EmailSignup from "@/components/company/EmailSignup";
 export const metadata: Metadata = {
   title: { absolute: "NextEleven | Web Design, Custom Software & AI Services in DFW" },
   description: "NextEleven LLC in Mansfield, Texas builds small-business websites, custom software, managed AI front desks, AI visibility services and agent security tools for DFW and remote clients.",
@@ -16,4 +17,4 @@ export default function HomePage(){return <div className="company-v2"><CompanyHe
     <a href="/security"><span>04 / Operational trust</span><h3>Security for apps and agents</h3><p>Review permissions, keys and tool boundaries. Scopes for remediation and the DeadBolt execution gate.</p><strong>Review security services ↗</strong></a>
   </div>
   <p className="ne-service-answers">Comparing your options? <a href="/answers">Read clear answers to common buyer questions ↗</a></p>
-</section><OtherWork/></main><CompanyFooter/></div>}
+</section><EmailSignup source="/" /><OtherWork/></main><CompanyFooter/></div>}
