@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import styles from "./frontdesk.module.css";
 import EmailSignup from "@/components/company/EmailSignup";
 
@@ -571,6 +572,39 @@ export default function FrontDeskPage() {
               </p>
             </div>
           </div>
+          <div className={styles.panel} style={{ marginTop: "1.4rem" }}>
+            <p className={styles.audioLabel}>How booking works — on your real calendar</p>
+            <ul className={styles.beats}>
+              <li>
+                <span className={styles.beatWho}>Checked live</span>
+                <span>
+                  Before a caller is offered any time, FirstRing checks your live calendar
+                  through Cal.com — the booking service that connects to the calendar you
+                  already use: Google Calendar, Outlook, or Apple Calendar. Only slots that
+                  are actually open are ever offered — nothing is booked from memory or a
+                  printed schedule.
+                </span>
+              </li>
+              <li>
+                <span className={styles.beatWho}>Written in</span>
+                <span>
+                  When the caller picks a time, the appointment is written straight into
+                  that connected calendar and the slot is re-verified at the same moment.
+                  There is nothing for you to re-enter by hand. If it was just taken, the
+                  caller hears the nearest open times instead — the same slot can&rsquo;t be
+                  promised to two callers.
+                </span>
+              </li>
+              <li>
+                <span className={styles.beatWho}>You see it</span>
+                <span>
+                  The booking is on your calendar, and the call summary — who called, what they
+                  need, when they&rsquo;re coming in — is sent to you after the call. It is a
+                  confirmed booking on your schedule, not a request the shop has to chase.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -579,7 +613,7 @@ export default function FrontDeskPage() {
         <div className={styles.wrap}>
           <p className={styles.kicker}>SIMPLE, TRANSPARENT PRICING</p>
           <h2 className={styles.sectionTitle}>A real front desk, without the overhead.</h2>
-          <p className={styles.sectionLede}>Choose the level of service that fits your shop. Every plan is managed by NextEleven, and call minutes are included.</p>
+          <p className={styles.sectionLede}>Choose the level of service that fits your shop. Every plan is managed by NextEleven, and call minutes are included. Every plan is month-to-month — no long-term contract, cancel anytime, no cancellation fee.</p>
           <div className={styles.priceGrid}>
             <article className={styles.priceCard}>
               <p className={styles.priceName}>STARTER</p>
@@ -593,7 +627,7 @@ export default function FrontDeskPage() {
                 <li><CheckIcon /> Managed setup and ongoing support</li>
               </ul>
               <p className={styles.planFootnote}>One-time setup: $199.</p>
-              <a className={styles.planCta} href="#setup">Choose Starter →</a>
+              <a className={styles.planCta} href="#setup" data-plan="starter">Choose Starter →</a>
             </article>
             <article className={styles.priceCard}>
               <p className={styles.priceName}>STANDARD</p>
@@ -606,8 +640,8 @@ export default function FrontDeskPage() {
                 <li><CheckIcon /> Weekly call report</li>
                 <li><CheckIcon /> Managed setup and ongoing support</li>
               </ul>
-              <p className={styles.planFootnote}>Optional text summaries: +$19.99/month.</p>
-              <a className={styles.planCta} href="#setup">Choose Standard →</a>
+              <p className={styles.planFootnote}>One-time setup: $499 standalone — less bundled, free on the care plan (see setup options below). Optional text summaries: +$19.99/month.</p>
+              <a className={styles.planCta} href="#setup" data-plan="standard">Choose Standard →</a>
             </article>
             <article className={styles.priceCardFeatured}>
               <p className={styles.priceName}>PREMIER · MORE WAYS TO STAY IN THE LOOP</p>
@@ -620,8 +654,8 @@ export default function FrontDeskPage() {
                 <li><CheckIcon /> Phone number registration and verification support</li>
                 <li><CheckIcon /> Setup and ongoing management by NextEleven</li>
               </ul>
-              <p className={styles.planFootnote}>Caller ID display and spam labels depend on carriers and cannot be guaranteed.</p>
-              <a className={styles.planCta} href="#setup">Choose Premier →</a>
+              <p className={styles.planFootnote}>One-time setup: $499 standalone — less bundled, free on the care plan (see setup options below). Caller ID display and spam labels depend on carriers and cannot be guaranteed.</p>
+              <a className={styles.planCta} href="#setup" data-plan="premier">Choose Premier →</a>
             </article>
           </div>
           <div className={styles.setupFees}>
@@ -648,8 +682,9 @@ export default function FrontDeskPage() {
               <p><strong>$199</strong> setup for the Starter plan</p>
             </div>
           </div>
+          <p className={styles.pricingNote}><strong>One extra booked job a month typically covers the plan</strong> — and the calls FirstRing catches are the ones that used to ring out to voicemail.</p>
           <p className={styles.pricingNote}>No per-minute billing on these plans. Need to keep answering some calls yourself? We can set up forwarding for missed calls or after hours.</p>
-          <p className={styles.pricingNote}>Fine print: unlimited answering for normal business use under a fair-use budget (~750 min/mo; Starter includes 100 min). No per-minute charges, ever, and nobody gets cut off mid-call. Nothing for you to set up or maintain — no dashboard, we handle everything. Service runs on carrier and provider networks; outages on their side can pause answering until they restore it.</p>
+          <p className={styles.pricingNote}>Fine print: unlimited answering for normal business use under a fair-use budget (~750 min/mo on Standard, ~950 min/mo on Premier; Starter includes 100 min). No per-minute charges, ever, and nobody gets cut off mid-call. If a business regularly runs past its budget, we talk with the owner about the right tier for their volume — that conversation is the whole mechanism, never a surprise charge. Nothing for you to set up or maintain — no dashboard, we handle everything. Service runs on carrier and provider networks; outages on their side can pause answering until they restore it.</p>
         </div>
       </section>
 
@@ -661,7 +696,7 @@ export default function FrontDeskPage() {
             Most AI answering services hand you a booking system to log into, learn, and
             keep up with. FirstRing is the opposite: no dashboard, no app, nothing new to
             run. Your phone rings, we answer it, and you read a plain summary of every
-            call. Here is the side-by-side with FrontDesk Pro, another DFW service.
+            call. Here is the side-by-side with FrontDesk Pro, a similar service.
           </p>
           <div className={styles.compareTableWrap}>
             <table className={styles.compareTable}>
@@ -676,37 +711,37 @@ export default function FrontDeskPage() {
                 <tr>
                   <th scope="row">Monthly price</th>
                   <td><strong>$179 flat</strong></td>
-                  <td>$247 Starter / $347 Pro</td>
+                  <td>Not published — their current site lists no receptionist pricing</td>
                 </tr>
                 <tr>
                   <th scope="row">Talk minutes</th>
                   <td><strong>Included</strong> — no per-minute billing (about 750 a month fair use)</td>
-                  <td>300 a month on Starter, 600 a month on Pro</td>
+                  <td>Not published on their current site</td>
                 </tr>
                 <tr>
                   <th scope="row">What you have to run</th>
                   <td><strong>Nothing.</strong> No dashboard, no app — a plain summary of every call</td>
-                  <td>A booking system with a calendar and customer list to log into</td>
+                  <td>Their all-in-one CRM — your leads, calendar, and customer list live in their system</td>
                 </tr>
                 <tr>
                   <th scope="row">Setup</th>
                   <td>Done for you — keep your number, carrier, and phones. $499 standalone, $299 bundled with a website, free on the care plan</td>
-                  <td>$300 one-time; they configure it for you</td>
+                  <td>Not published on their current site</td>
                 </tr>
                 <tr>
                   <th scope="row">Hear it first</th>
                   <td>Live demo line, any time: <a href="tel:+18175465305">(817) 546-5305</a></td>
-                  <td>Demo line with their receptionist, Grace: (817) 725-5450</td>
+                  <td>No public demo line — you start with a call with Carter</td>
                 </tr>
                 <tr>
                   <th scope="row">Who answers for it</th>
-                  <td>NextEleven, a Texas studio — a named local human is accountable for your install</td>
-                  <td>Carter&apos;s AI services, DFW</td>
+                  <td>NextEleven, a Texas studio — Sean McDonnell, co-founder, is the named human accountable for your install</td>
+                  <td>Carter&apos;s AI services</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className={styles.pricingNote}>FrontDesk Pro prices and terms from frontdeskproai.com, checked November 12, 2026. If their pricing changes, we update this page.</p>
+          <p className={styles.pricingNote}>FrontDesk Pro details from frontdeskproai.com, rechecked November 21, 2026: their site no longer publishes receptionist pricing, minutes, setup fees, or a demo line, so those figures were removed rather than left stale. If their pricing changes, we update this page.</p>
         </div>
       </section>
 
@@ -853,6 +888,23 @@ export default function FrontDeskPage() {
               </p>
             </details>
             <details className={styles.faqItem}>
+              <summary>Is there a contract?</summary>
+              <p className={styles.faqAnswer}>
+                No. FirstRing is month-to-month — no long-term contract, cancel anytime, no
+                cancellation fee.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
+              <summary>What happens if I go past my minutes?</summary>
+              <p className={styles.faqAnswer}>
+                Nothing with a meter on it. There are no per-minute charges — ever — and no
+                caller is cut off mid-call. Starter includes 100 minutes a month; Standard and
+                Premier run on fair-use budgets of about 750 and 950 minutes. If your shop
+                regularly runs past its budget, we talk with you about the right tier for your
+                volume — that conversation is the whole mechanism, never a surprise charge.
+              </p>
+            </details>
+            <details className={styles.faqItem}>
               <summary>Are calls recorded?</summary>
               <p className={styles.faqAnswer}>
                 Yes. Calls are recorded and transcribed so you get an accurate summary of every
@@ -940,8 +992,9 @@ export default function FrontDeskPage() {
             </div>
             <label className={styles.formField} style={{ marginBottom: "1.4rem" }}>
               <span>Which plan are you considering?</span>
-              <select name="preferred_plan" defaultValue="not_sure">
+              <select name="preferred_plan" id="preferred-plan" defaultValue="not_sure">
                 <option value="not_sure">Not sure yet — help me choose</option>
+                <option value="pilot">Pilot · $29 one-time — the bookable first step</option>
                 <option value="starter">Starter · $49/month</option>
                 <option value="standard">Standard · $179/month</option>
                 <option value="premier">Premier · $229/month</option>
@@ -988,6 +1041,16 @@ export default function FrontDeskPage() {
           </div>
         </div>
       </section>
+      <Script id="frontdesk-plan-preselect" strategy="afterInteractive">
+        {`
+          document.querySelectorAll("[data-plan]").forEach(function (el) {
+            el.addEventListener("click", function () {
+              var select = document.getElementById("preferred-plan");
+              if (select) select.value = el.getAttribute("data-plan");
+            });
+          });
+        `}
+      </Script>
     </>
   );
 }

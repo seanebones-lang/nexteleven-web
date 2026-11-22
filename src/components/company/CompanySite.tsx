@@ -37,7 +37,7 @@ export function CompanyFooter() {
       <a className="co-footer-cta" href="mailto:hello@nexteleven.dev?subject=Project%20conversation">Tell us about your project <span aria-hidden="true">↗</span></a>
     </div>
     <nav aria-label="Footer navigation">
-      <Link href="/work">Work</Link><Link href="/build">Services</Link><Link href="/presence">Web design</Link><Link href="/referredbyai">AI visibility</Link><Link href="/frontdesk">FirstRing</Link><Link href="/security">Security</Link><Link href="/apps">Apps</Link><Link href="/answers">Questions</Link><Link href="/about">Company</Link>
+      <Link href="/work">Work</Link><Link href="/build">Services</Link><Link href="/presence">Web design</Link><Link href="/referredbyai">AI visibility</Link><Link href="/frontdesk">FirstRing</Link><Link href="/security">Security</Link><Link href="/apps">Apps</Link><Link href="/answers">Questions</Link><Link href="/about">Company</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link>
     </nav>
     <div className="co-footer-bottom">
       <span>© {new Date().getFullYear()} NextEleven LLC · Human-owned delivery</span>

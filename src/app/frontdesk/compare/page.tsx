@@ -40,7 +40,7 @@ const ROWS: Row[] = [
     label: "Headline price",
     cells: [
       <><strong>$49 Starter · $179 Base · $229 Premier</strong> — per month</>,
-      <>$247/mo Starter · $347/mo Pro</>,
+      <>Not published — their site no longer lists receptionist plans or prices (rechecked November 21, 2026)</>,
       <>Not published — the pricing page opens with a form to talk to sales (checked November 2026)</>,
       <>$0 Free · $150/mo Pro · from $500/mo Enterprise</>,
       <>$300/mo Starter · $810 Basic · $2,100 Pro</>,
@@ -64,7 +64,7 @@ const ROWS: Row[] = [
     label: "What\u2019s included at the entry level",
     cells: [
       <>100 minutes included (Starter); about 750 min fair use (Base), about 950 (Premier). 24/7 answering in your business&rsquo;s name, appointment booking, and a summary after every call. A human team — Sean and Mariam — behind it. Calls capped at 5 minutes each.</>,
-      <>300 min (Starter) / 600 min (Pro). AI receptionist plus a full booking system: booking page, text confirmations and reminders, weekly call reports. Free 1-week trial.</>,
+      <>An all-in-one AI system: lead follow-up texting, appointment booking, reminders, and a CRM. Their current site publishes no receptionist tiers, minutes, or trial (rechecked November 21, 2026).</>,
       <>The same feature set on every tier — their words. 24/7 bilingual answering available, scheduling, payment collection, outbound call assistance, client intake, 5,000+ integrations. Plans differ only in minutes.</>,
       <>25 calls/mo (Free) / 75 (Pro). 24/7 AI answering, recording, transcription and summaries, lead qualification and routing, AI scheduling (Calendly), integrations, analytics. Complex calls can transfer to live North America-based agents.</>,
       <>30 calls (Starter). 24/7 live North America-based agents, lead screening, qualification and intake, dashboard insights. No charge for spam calls.</>,
@@ -76,7 +76,7 @@ const ROWS: Row[] = [
     label: "Setup fee",
     cells: [
       <>$499 standalone / $299 bundled with other studio work / free on the $99/mo care plan. Starter setup $199. And the setup is done entirely by us.</>,
-      <>$300 one-time. They configure it for you.</>,
+      <>Not published on their current site (rechecked November 21, 2026).</>,
       <>$0 — &ldquo;no additional or hidden fees for activation, onboarding, setup, customization, or coverage during certain periods&rdquo; (their words).</>,
       <>$0 published. But read the homework row — on Pro, the setup labor is yours.</>,
       <>None. 30-day money-back guarantee.</>,
@@ -87,8 +87,8 @@ const ROWS: Row[] = [
   {
     label: "Contract / commitment",
     cells: [
-      <>Flat monthly rate. The published price is the price — never discounted or negotiated on a call.</>,
-      <>None — month-to-month, cancel anytime.</>,
+      <>Month-to-month — no long-term contract, cancel anytime, no cancellation fee. The published price is the price — never discounted or negotiated on a call.</>,
+      <>Not stated on their current site.</>,
       <>Not stated on their pricing page.</>,
       <>Month-to-month — with 30 days&rsquo; notice required to cancel.</>,
       <>Month-to-month (a cancellation bills through the end of the cycle). 10% discount for a 12-month subscription.</>,
@@ -100,7 +100,7 @@ const ROWS: Row[] = [
     label: "What YOU have to do yourself",
     cells: [
       <><strong>Nothing.</strong> No app, no dashboard, nothing to set up or maintain. We handle setup, training, updates, and maintenance — you just read the call summaries.</>,
-      <>They set it up for you — then your calendar and customer list live in their system (FrontDesk Book). Your existing calendar feeds in one-way only; two-way sync is &ldquo;not available yet&rdquo; (their words).</>,
+      <>They set it up for you — then your leads, calendar, and customer list live in their all-in-one CRM system.</>,
       <>You keep your call-handling instructions current in Ruby&rsquo;s app/portal — they advertise &ldquo;easy-to-update call handling options.&rdquo; Onboarding runs through their sales team.</>,
       <>Pro is, in their words, &ldquo;Set it up yourself with dedicated support.&rdquo; On the Free tier you train and test the AI yourself in their Quality Studio before it goes live. Only Enterprise gets full-service setup.</>,
       <>You manage your account through their dashboard, and every extra is switched on per call from an add-on menu (see the overage row).</>,
@@ -112,7 +112,7 @@ const ROWS: Row[] = [
     label: "Who you talk to when something\u2019s wrong",
     cells: [
       <>Us — Sean and Mariam, the people who run the service. <a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a></>,
-      <>A one-person operation. Their contact page promises: &ldquo;Carter will call or text you back.&rdquo;</>,
+      <>Carter — every call their site books is a call with Carter.</>,
       <>24/7 answering for your callers; a support line is published on their page (844-311-7829).</>,
       <>Pro and Enterprise: live phone, email and chat support. Free tier: support is not included (their own feature table).</>,
       <>24/7 live agents answer your callers. Account-support channels aren&rsquo;t specified on the pricing page.</>,
@@ -124,7 +124,7 @@ const ROWS: Row[] = [
     label: "What happens past your plan",
     cells: [
       <><strong>No per-minute charges, ever</strong> — and nobody is cut off mid-call. If you regularly run past your fair-use budget, we talk with you about the right tier. That conversation is the whole mechanism — never a surprise charge.</>,
-      <>No overage rate is published. Their FAQ steers you to upgrade — Pro doubles you to 600 minutes.</>,
+      <>No overage rate is published — their current site publishes no receptionist plan to go past (rechecked November 21, 2026).</>,
       <>The overage rate is not published on their pricing page. You have to ask.</>,
       <>Published: $3.00/call (Free), $2.50/call (Pro), $2.17 (Enterprise). Every answered call counts toward your quota — you may remove up to 10% per cycle as spam.</>,
       <>Published: $11.50/call (Starter), $10.50 (Basic), $8.50 (Pro) — plus per-call add-ons: appointment booking $1.50, recording &amp; transcription $0.25, Spanish line $1.00, payments $1.00, complex routing $1.50, extended intake $1.50.</>,
@@ -136,7 +136,7 @@ const ROWS: Row[] = [
     label: "Full price published on their website?",
     cells: [
       <><strong>Yes.</strong> Every price — plans, setup, the fine print — is on this website.</>,
-      <>Yes — full prices on their homepage.</>,
+      <>No — their current site publishes no receptionist pricing (rechecked November 21, 2026).</>,
       <>No. The billing model is published; the plan prices are not on the page. It opens with &ldquo;fill out the form to talk to sales.&rdquo;</>,
       <>Yes — a full pricing page.</>,
       <>Yes — a full pricing page, add-on menu included.</>,
@@ -252,7 +252,10 @@ export default function FrontDeskComparePage() {
           </div>
           <p className={styles.pricingNote}>
             Prices checked November 2026, on each provider&rsquo;s own website
-            (frontdeskproai.com, ruby.com, smith.ai, answeramerica.com, quo.com). Providers
+            (frontdeskproai.com, ruby.com, smith.ai, answeramerica.com, quo.com).
+            FrontDesk Pro was rechecked November 21, 2026 — their site no longer publishes
+            receptionist pricing, so its stale figures were replaced with what the site
+            shows now. Providers
             change their pricing without telling us; if a figure here ever goes stale, the
             provider&rsquo;s own site is the truth — and we&rsquo;ll update this page.
           </p>
