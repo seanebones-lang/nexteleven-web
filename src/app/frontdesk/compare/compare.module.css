@@ -81,6 +81,9 @@
   color: var(--accent-light);
 }
 
+.namedHuman { display: inline-flex; align-items: center; gap: 0.7rem; }
+.namedHumanPhoto { width: 44px; height: 44px; border-radius: 999px; object-fit: cover; flex: none; }
+
 /* ---------- honesty box ---------- */
 
 .honestBox {

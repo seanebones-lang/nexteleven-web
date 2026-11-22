@@ -261,6 +261,14 @@ export default function FrontDeskPage() {
             These are recordings of our demonstration line, not paid actors. Callback numbers are masked for privacy.
             Your FirstRing greets callers with your business name, hours, and booking rules.
           </p>
+          <div className={styles.panel}>
+            <p className={styles.audioLabel}>Our own line runs on it</p>
+            <p className={styles.proofCardText}>
+              We run our own business on it. NextEleven&rsquo;s own line —{" "}
+              <a className={styles.inlineLink} href="tel:+18178031967">(817) 803-1967</a>{" "}
+              — is answered by the same front desk. Call us and you&rsquo;ll hear it working.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -735,7 +743,12 @@ export default function FrontDeskPage() {
                 </tr>
                 <tr>
                   <th scope="row">Who answers for it</th>
-                  <td>NextEleven, a Texas studio — Sean McDonnell, co-founder, is the named human accountable for your install</td>
+                  <td>
+                    <span className={styles.namedHuman}>
+                      <img className={styles.namedHumanPhoto} src="/sean-mcdonnell.jpg" alt="Sean McDonnell, co-founder of NextEleven" width={44} height={44} />
+                      <span>NextEleven, a Texas studio — Sean McDonnell, co-founder, is the named human accountable for your install</span>
+                    </span>
+                  </td>
                   <td>Carter&apos;s AI services</td>
                 </tr>
               </tbody>

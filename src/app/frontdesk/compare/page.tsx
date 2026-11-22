@@ -111,7 +111,7 @@ const ROWS: Row[] = [
   {
     label: "Who you talk to when something\u2019s wrong",
     cells: [
-      <>Us — Sean and Mariam, the people who run the service. <a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a></>,
+      <><span className={cmp.namedHuman}><img className={cmp.namedHumanPhoto} src="/sean-mcdonnell.jpg" alt="Sean McDonnell, co-founder of NextEleven" width={44} height={44} /><span>Us — Sean and Mariam, the people who run the service. <a href="mailto:hello@nexteleven.dev">hello@nexteleven.dev</a></span></span></>,
       <>Carter — every call their site books is a call with Carter.</>,
       <>24/7 answering for your callers; a support line is published on their page (844-311-7829).</>,
       <>Pro and Enterprise: live phone, email and chat support. Free tier: support is not included (their own feature table).</>,
