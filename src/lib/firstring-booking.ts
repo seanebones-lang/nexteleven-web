@@ -43,7 +43,13 @@ export type BookingConfig = {
   calcomBaseUrl?: string;
   /** How far ahead callers may book, in days. Default 30. */
   bookingWindowDays?: number;
-  /** Max slots returned to the agent per availability check. Default 6. */
+  /**
+   * Safety bound on slots returned per availability check. The check is for
+   * ONE day, so this must never truncate a real day: a shop day holds at most
+   * ~24 bookable starts even at 30-minute granularity. Default 24. (The old
+   * default of 6 hid every weekday slot after 1 PM from the agent — see
+   * frontdesk-audit-2026-11-21/amy-availability-diagnosis.md.)
+   */
   maxSlotsToOffer?: number;
   fetcher?: Fetcher;
   now?: () => number;
@@ -318,7 +324,7 @@ function createCalcomClient(config: BookingConfig): CalcomClient {
 export function createBookingService(config: BookingConfig) {
   const timeZone = config.timeZone?.trim() || "America/Chicago";
   const bookingWindowDays = config.bookingWindowDays ?? 30;
-  const maxSlots = config.maxSlotsToOffer ?? 6;
+  const maxSlots = config.maxSlotsToOffer ?? 24;
   const now = config.now ?? Date.now;
   const calcom = createCalcomClient(config);
 
